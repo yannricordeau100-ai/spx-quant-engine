@@ -1,5 +1,4 @@
-python3 - <<'PY'
-content = """import streamlit as st
+import streamlit as st
 import pandas as pd
 import os
 
@@ -10,12 +9,7 @@ CATALOG_PATH = "data/catalog.csv"
 
 TARGET_ASSETS = ["SPX", "SPY", "VIX", "VIX1D", "Or+petrole", "Or+pétrole"]
 
-EXCLUDE_KEYWORDS = [
-    "ERROR",
-    "TEST",
-    "BAD",
-    "TEMP"
-]
+EXCLUDE_KEYWORDS = ["ERROR", "TEST", "BAD", "TEMP"]
 
 @st.cache_data
 def load_catalog():
@@ -56,8 +50,3 @@ row = filtered[filtered["file_name"] == selected].iloc[0]
 
 st.write("Selected path:", row["relative_path"])
 st.dataframe(filtered.head(200), width='stretch')
-"""
-with open("app.py", "w", encoding="utf-8") as f:
-    f.write(content)
-print("app.py rewritten")
-PY
