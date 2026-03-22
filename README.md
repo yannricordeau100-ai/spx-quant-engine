@@ -1,14 +1,10 @@
 ---
-title: Spx Quant Engine
-emoji: 📉
+title: SPX Quant Engine
+emoji: 🚀
 colorFrom: blue
 colorTo: green
-sdk: gradio
-sdk_version: 6.9.0
+sdk: streamlit
 app_file: app.py
-pinned: false
-license: mit
-short_description: SPX Quant Engine - Multi-asset statistical & pattern analysi
 ---
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+# SPX Quant Engine
