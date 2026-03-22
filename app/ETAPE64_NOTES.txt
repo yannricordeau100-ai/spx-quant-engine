@@ -1,0 +1,1 @@
+ETAPE 64\n- upload CSV direct dans l’interface ajouté\n- scan / refresh local depuis Streamlit ajouté\n- incoming_new_csv exploitable depuis l’app\n- base posée pour futur recalcul moteur après upload\n- prochaine cible: recalcul partiel / complet + amélioration visuelle assistant\n

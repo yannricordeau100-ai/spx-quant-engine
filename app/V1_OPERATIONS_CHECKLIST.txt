@@ -1,0 +1,8 @@
+SPX OPEN ENGINE — CHECKLIST V1
+
+1. Vérifier que Google Drive contient bien le projet complet
+2. Vérifier que app_streamlit/app.py existe
+3. Vérifier que exports/ui_ready contient les CSV principaux
+4. Vérifier que exports/ingestion contient les fichiers ETAPE60
+5. Vérifier que raw/incoming_new_csv existe
+6. Lancer ensuite Streamlit hors Colab au bon moment

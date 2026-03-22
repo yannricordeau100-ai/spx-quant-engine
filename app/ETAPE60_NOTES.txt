@@ -1,0 +1,6 @@
+ETAPE 60
+- incoming_new_csv scanné
+- inventaire des nouveaux CSV généré
+- classification automatique initiale générée
+- fichiers reconnus / inconnus séparés
+- base prête pour futur refresh dans Streamlit

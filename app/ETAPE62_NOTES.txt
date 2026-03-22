@@ -1,0 +1,6 @@
+ETAPE 62
+- Home page ajoutée
+- Run / Deploy page ajoutée
+- ui_config mis à jour
+- checklist exploitation ajoutée
+- V1 prête pour préparation du lancement local

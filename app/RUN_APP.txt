@@ -1,0 +1,3 @@
+# Lancement local hors Colab :
+cd "/content/drive/MyDrive/IA/SPX_OPEN_ENGINE_PROJECT/app_streamlit"
+streamlit run app.py

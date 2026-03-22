@@ -1,0 +1,13 @@
+{
+  "auth_enabled": true,
+  "auth_mode": "single_local_password",
+  "username": "admin",
+  "password_salt": "f2317490455761cd42ecc3cafe4decbd",
+  "password_hash_sha256_of_salt_double_colon_password": "8b91a9f06e9dddc77262cb7c1a4916fa6f614b8e770d71026d358f9a36c30896",
+  "password_placeholder_plaintext_for_setup_only": "CHANGE_ME_LOCAL_PASSWORD",
+  "session_cookie_name": "spx_local_auth",
+  "session_ttl_minutes": 720,
+  "reset_password_supported": false,
+  "remember_me_supported": false,
+  "lockout_enabled": false
+}

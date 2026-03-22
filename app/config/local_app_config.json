@@ -1,0 +1,33 @@
+{
+  "project_name": "SPX_OPEN_ENGINE_PROJECT",
+  "app_mode": "local_private_mac",
+  "open_url": "http://localhost:8501",
+  "offline_friendly_mode": true,
+  "source_of_truth_priority": [
+    "ETAPE89B current query context repaired",
+    "ETAPE88B strict current propagation board",
+    "ETAPE86 horizon no-edge status",
+    "ETAPE89B pattern query registry repaired"
+  ],
+  "runtime_files": {
+    "pattern_query_registry": "app_streamlit/data_runtime/pattern_query_registry.csv",
+    "current_query_context": "app_streamlit/data_runtime/current_query_context.csv",
+    "horizon_no_edge_status": "app_streamlit/data_runtime/horizon_no_edge_status.csv",
+    "strict_current_propagation_board": "app_streamlit/data_runtime/strict_current_propagation_board.csv",
+    "auth_config": "app_streamlit/security/auth_config.json"
+  },
+  "behavioral_rules": {
+    "no_edge_must_override_actionability": true,
+    "show_no_edge_honestly": true,
+    "prefer_strict_propagated_matches_over_base_matches_when_both_exist": true,
+    "do_not_infer_edge_from_llm_without_registry_match": true
+  },
+  "tabs_planned": [
+    "Dashboard",
+    "Current Signals",
+    "Pattern Query",
+    "CSV Ingestion",
+    "CSV Registry",
+    "Settings/Auth"
+  ]
+}

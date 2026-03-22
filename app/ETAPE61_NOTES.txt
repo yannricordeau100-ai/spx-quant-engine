@@ -1,0 +1,6 @@
+ETAPE 61
+- Page Ingestion ajoutée dans Streamlit
+- Affichage résumé ingestion
+- Affichage inventaire incoming_new_csv
+- Affichage reconnus / rejetés
+- App compatible même si incoming_new_csv est vide

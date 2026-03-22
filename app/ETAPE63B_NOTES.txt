@@ -1,0 +1,1 @@
+ETAPE 63B\n- app.py réécrit proprement en mode portable\n- chemins Colab supprimés\n- structure relative locale activée\n- prochaine action: re-télécharger le projet depuis Drive\n

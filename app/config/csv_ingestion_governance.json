@@ -1,0 +1,26 @@
+{
+  "project_root": "/content/drive/MyDrive/IA/SPX_OPEN_ENGINE_PROJECT",
+  "csv_inbox_folder": "/content/drive/MyDrive/IA/SPX_OPEN_ENGINE_PROJECT/csv_inbox",
+  "accepted_extensions": [
+    ".csv",
+    ".tsv",
+    ".txt"
+  ],
+  "auto_profile_new_files": true,
+  "auto_detect_separator": true,
+  "required_output_folder": "/content/drive/MyDrive/IA/SPX_OPEN_ENGINE_PROJECT/processed",
+  "critical_rules": [
+    "never overwrite cloud multi-asset master silently",
+    "keep original raw uploaded file",
+    "profile datetime column before merge",
+    "preserve trading-bars-not-wall-clock policy",
+    "new csv ingestion must not break target registry compatibility"
+  ],
+  "future_outputs_expected": [
+    "csv_profile",
+    "column_map",
+    "asset_guess_map",
+    "frequency_profile",
+    "merge_readiness_audit"
+  ]
+}

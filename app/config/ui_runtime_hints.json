@@ -1,0 +1,159 @@
+{
+  "dashboard_cards": [
+    {
+      "key": "current_actionable_matches",
+      "value": 6
+    },
+    {
+      "key": "current_total_matches",
+      "value": 7
+    },
+    {
+      "key": "horizons_no_edge",
+      "value": 2
+    },
+    {
+      "key": "strict_propagation_live_rows",
+      "value": 5
+    }
+  ],
+  "default_sort_current_signals": [
+    "is_current_actionable_repaired",
+    "strict_propagation_score",
+    "validation_score",
+    "wilson_lb_edge"
+  ],
+  "default_descending": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "highlight_direction_colors": {
+    "up": "green",
+    "down": "red",
+    "neutral": "gray"
+  },
+  "top_current_actionable_preview": [
+    {
+      "query_id": "PROP_H8_0025",
+      "query_type": "propagated_pattern",
+      "horizon_bar": 8,
+      "horizon_trading_min_est": 240,
+      "pattern_signature": "lower_band_1_spy_30min=low&open_spy_daily=low|rsi_iwm_daily_iwm_put_call_ratio=mid",
+      "direction_label": "up",
+      "meta_label": "ACTIONABLE",
+      "horizon_edge_status": "EDGE_AVAILABLE",
+      "validation_score": 1.7405979165999077,
+      "continuation_score": 1.2527849756856408,
+      "failure_risk_score": 0.0,
+      "sample_size": 38.0,
+      "prob_label": 0.9473684210526316,
+      "edge_vs_baseline": 0.4304853041695147,
+      "wilson_lb_edge": 0.3628665866251714,
+      "strict_propagation_score": 2.909324612630245,
+      "is_current_match_repaired": true,
+      "is_current_actionable_repaired": true
+    },
+    {
+      "query_id": "PROP_H8_0026",
+      "query_type": "propagated_pattern",
+      "horizon_bar": 8,
+      "horizon_trading_min_est": 240,
+      "pattern_signature": "lower_band_1_spy_30min=low&open_spy_daily=low|high_unknown_daily_advance_decline_ratio_net_ratio_put_call=high",
+      "direction_label": "up",
+      "meta_label": "ACTIONABLE",
+      "horizon_edge_status": "EDGE_AVAILABLE",
+      "validation_score": 1.7405979165999077,
+      "continuation_score": 1.2527849756856408,
+      "failure_risk_score": 0.0,
+      "sample_size": 40.0,
+      "prob_label": 0.95,
+      "edge_vs_baseline": 0.4331168831168831,
+      "wilson_lb_edge": 0.3685886587139477,
+      "strict_propagation_score": 2.704090019658274,
+      "is_current_match_repaired": true,
+      "is_current_actionable_repaired": true
+    },
+    {
+      "query_id": "PROP_H8_0028",
+      "query_type": "propagated_pattern",
+      "horizon_bar": 8,
+      "horizon_trading_min_est": 240,
+      "pattern_signature": "lower_band_1_spy_30min=low&open_spy_daily=low|close_spy_daily=low",
+      "direction_label": "up",
+      "meta_label": "ACTIONABLE",
+      "horizon_edge_status": "EDGE_AVAILABLE",
+      "validation_score": 1.7405979165999077,
+      "continuation_score": 1.2527849756856408,
+      "failure_risk_score": 0.0,
+      "sample_size": 44.0,
+      "prob_label": 0.9090909090909092,
+      "edge_vs_baseline": 0.3922077922077922,
+      "wilson_lb_edge": 0.3210023772698999,
+      "strict_propagation_score": 2.6492999103478745,
+      "is_current_match_repaired": true,
+      "is_current_actionable_repaired": true
+    },
+    {
+      "query_id": "PROP_H8_0029",
+      "query_type": "propagated_pattern",
+      "horizon_bar": 8,
+      "horizon_trading_min_est": 240,
+      "pattern_signature": "lower_band_1_spy_30min=low&open_spy_daily=low|rsi_ftse100_daily=high",
+      "direction_label": "up",
+      "meta_label": "ACTIONABLE",
+      "horizon_edge_status": "EDGE_AVAILABLE",
+      "validation_score": 1.7405979165999077,
+      "continuation_score": 1.2527849756856408,
+      "failure_risk_score": 0.0,
+      "sample_size": 37.0,
+      "prob_label": 0.945945945945946,
+      "edge_vs_baseline": 0.4290628290628291,
+      "wilson_lb_edge": 0.3597857903779089,
+      "strict_propagation_score": 2.600032686031481,
+      "is_current_match_repaired": true,
+      "is_current_actionable_repaired": true
+    },
+    {
+      "query_id": "PROP_H8_0030",
+      "query_type": "propagated_pattern",
+      "horizon_bar": 8,
+      "horizon_trading_min_est": 240,
+      "pattern_signature": "lower_band_1_spy_30min=low&open_spy_daily=low|open_skew_daily=very_low",
+      "direction_label": "up",
+      "meta_label": "ACTIONABLE",
+      "horizon_edge_status": "EDGE_AVAILABLE",
+      "validation_score": 1.7405979165999077,
+      "continuation_score": 1.2527849756856408,
+      "failure_risk_score": 0.0,
+      "sample_size": 37.0,
+      "prob_label": 0.945945945945946,
+      "edge_vs_baseline": 0.4290628290628291,
+      "wilson_lb_edge": 0.3597857903779089,
+      "strict_propagation_score": 2.600032686031481,
+      "is_current_match_repaired": true,
+      "is_current_actionable_repaired": true
+    },
+    {
+      "query_id": "BASE_H8_0001",
+      "query_type": "base_pattern",
+      "horizon_bar": 8,
+      "horizon_trading_min_est": 240,
+      "pattern_signature": "lower_band_1_spy_30min=low&open_spy_daily=low",
+      "direction_label": "up",
+      "meta_label": "",
+      "horizon_edge_status": "EDGE_AVAILABLE",
+      "validation_score": 1.7405979165999077,
+      "continuation_score": 1.2527849756856408,
+      "failure_risk_score": 0.0,
+      "sample_size": 83.0,
+      "prob_label": 0.7831325301204819,
+      "edge_vs_baseline": 0.266249413237365,
+      "wilson_lb_edge": 0.2030873515033165,
+      "strict_propagation_score": NaN,
+      "is_current_match_repaired": true,
+      "is_current_actionable_repaired": true
+    }
+  ]
+}

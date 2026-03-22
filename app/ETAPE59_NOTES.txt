@@ -1,0 +1,6 @@
+ETAPE 59
+- Sidebar navigation ajoutée
+- Pages: Dashboard / Open Decisions / RIC Recommendations / Session Overview / Assistant
+- Filtres avancés ajoutés
+- Bloc assistant guidé ajouté
+- Exports CSV conservés

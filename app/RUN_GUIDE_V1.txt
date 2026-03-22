@@ -1,0 +1,9 @@
+SPX OPEN ENGINE — RUN GUIDE
+
+APP_DIR = /content/drive/MyDrive/IA/SPX_OPEN_ENGINE_PROJECT/app_streamlit
+
+Commandes :
+cd "/content/drive/MyDrive/IA/SPX_OPEN_ENGINE_PROJECT/app_streamlit"
+streamlit run app.py
+
+Note : cette étape prépare le lancement. Le moment de sortie de Colab sera validé explicitement ensuite.
