@@ -1,33 +1,43 @@
 import streamlit as st
-import os
 import pandas as pd
+import requests
+import re
 
 st.set_page_config(layout="wide")
-
 st.title("SPX Quant Engine")
 
-DATA_PATH = "./data"
+DRIVE_FOLDER_URL = "https://drive.google.com/drive/folders/1szXsXMH_SfrLn6dBF2DQ5mhJ8LpN7dZ_?usp=drive_link"
+
+def extract_file_ids(folder_url):
+    try:
+        html = requests.get(folder_url, timeout=20).text
+        ids = re.findall(r"[\"']([a-zA-Z0-9_-]{25,})[\"']", html)
+        return sorted(list(set(ids)))
+    except:
+        return []
 
 @st.cache_data
-def load_csvs():
-    data = {}
-    for root, dirs, files in os.walk(DATA_PATH):
-        for f in files:
-            if f.endswith(".csv"):
-                path = os.path.join(root, f)
-                try:
-                    data[f] = pd.read_csv(path)
-                except:
-                    pass
-    return data
+def load_csv(file_id):
+    try:
+        url = f"https://drive.google.com/uc?id={file_id}"
+        return pd.read_csv(url)
+    except:
+        return None
 
-data = load_csvs()
+st.write("Scanning Drive...")
+file_ids = extract_file_ids(DRIVE_FOLDER_URL)
+st.write("Files detected:", len(file_ids))
 
-st.write("CSV loaded:", len(data))
+if len(file_ids) == 0:
+    st.warning("No files detected (check Drive sharing and folder link)")
+    st.stop()
 
-if len(data) == 0:
-    st.warning("No data loaded")
-else:
-    st.success("Data OK")
+selected_id = st.selectbox("Select file", file_ids)
 
-st.write(list(data.keys())[:20])
+if st.button("Load file"):
+    df = load_csv(selected_id)
+    if df is None:
+        st.error("Failed to load file")
+    else:
+        st.success("Loaded")
+        st.dataframe(df.head())
