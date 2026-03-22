@@ -1,6 +1,5 @@
-cd ~/spx-quant-engine
-cat > app.py <<'PY'
-import streamlit as st
+python3 - <<'PY'
+content = """import streamlit as st
 import pandas as pd
 import os
 
@@ -22,7 +21,10 @@ EXCLUDE_KEYWORDS = [
 def load_catalog():
     if not os.path.exists(CATALOG_PATH):
         return pd.DataFrame(columns=["file_name", "relative_path"])
-    return pd.read_csv(CATALOG_PATH)
+    try:
+        return pd.read_csv(CATALOG_PATH)
+    except:
+        return pd.DataFrame(columns=["file_name", "relative_path"])
 
 def filter_catalog(df):
     if len(df) == 0:
@@ -30,18 +32,14 @@ def filter_catalog(df):
 
     df = df.copy()
 
-    # filtre exclusion
     for k in EXCLUDE_KEYWORDS:
-        df = df[~df["file_name"].str.contains(k, case=False, na=False)]
+        df = df[~df["file_name"].astype(str).str.contains(k, case=False, na=False)]
 
-    # filtre actifs
     mask = False
     for asset in TARGET_ASSETS:
-        mask = mask | df["relative_path"].str.contains(asset, case=False, na=False)
+        mask = mask | df["relative_path"].astype(str).str.contains(asset, case=False, na=False)
 
-    df = df[mask]
-
-    return df
+    return df[mask]
 
 catalog = load_catalog()
 filtered = filter_catalog(catalog)
@@ -53,13 +51,13 @@ if len(filtered) == 0:
     st.warning("No matching datasets")
     st.stop()
 
-# sélection dataset
-selected = st.selectbox(
-    "Select dataset",
-    filtered["file_name"].values
-)
-
+selected = st.selectbox("Select dataset", filtered["file_name"].values)
 row = filtered[filtered["file_name"] == selected].iloc[0]
 
 st.write("Selected path:", row["relative_path"])
+st.dataframe(filtered.head(200), width='stretch')
+"""
+with open("app.py", "w", encoding="utf-8") as f:
+    f.write(content)
+print("app.py rewritten")
 PY
