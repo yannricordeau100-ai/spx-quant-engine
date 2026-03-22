@@ -1,4 +1,3 @@
-cd ~/spx-quant-engine
 cat > app.py <<'PY'
 import streamlit as st
 import pandas as pd
