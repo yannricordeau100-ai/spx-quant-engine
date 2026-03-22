@@ -1,4 +1,3 @@
-cat > app.py <<'PY'
 import streamlit as st
 import pandas as pd
 import os
@@ -38,4 +37,3 @@ if q.strip():
 
 st.write("Matched rows:", len(view))
 st.dataframe(view.head(200), use_container_width=True)
-PY
