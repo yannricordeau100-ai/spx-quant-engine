@@ -100,4 +100,23 @@ if q.strip():
     view = view[mask]
 
 st.write("Matched rows:", len(view))
-st.dataframe(view[["asset", "file_name", "relative_path", "size_bytes", "freq_guess", "tz_guess"]].head(300), width="stretch")
+st.dataframe(
+    view[["asset", "file_name", "relative_path", "size_bytes", "freq_guess", "tz_guess"]].head(300),
+    width="stretch"
+)
+
+if len(view) == 0:
+    st.stop()
+
+selected_file = st.selectbox("Dataset preview", view["file_name"].tolist())
+row = view[view["file_name"] == selected_file].iloc[0]
+
+st.subheader("Dataset summary")
+st.write({
+    "asset": row["asset"],
+    "file_name": row["file_name"],
+    "relative_path": row["relative_path"],
+    "size_bytes": int(row["size_bytes"]) if pd.notna(row["size_bytes"]) else None,
+    "freq_guess": row["freq_guess"],
+    "tz_guess": row["tz_guess"],
+})
