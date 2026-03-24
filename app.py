@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import os
@@ -81,11 +80,26 @@ def guess_time_column(cols):
 def load_real_csv(file_name):
     full_path = os.path.join(LIVE_ROOT, file_name)
     if not os.path.exists(full_path):
-        return None
+        return None, "missing"
+
+    # try automatic separator detection first
     try:
-        return pd.read_csv(full_path)
+        df = pd.read_csv(full_path, sep=None, engine="python")
+        if df is not None and len(df.columns) > 1:
+            return df, "auto"
     except Exception:
-        return None
+        pass
+
+    # fallback common separators
+    for sep, label in [(";", "semicolon"), (",", "comma"), ("\t", "tab"), ("|", "pipe")]:
+        try:
+            df = pd.read_csv(full_path, sep=sep)
+            if df is not None and len(df.columns) >= 1:
+                return df, label
+        except Exception:
+            continue
+
+    return None, "failed"
 
 catalog = load_catalog()
 cleaned = clean_catalog(catalog)
@@ -147,13 +161,14 @@ st.write({
 
 st.subheader("Dataset structure preview (REAL ON HF)")
 
-df = load_real_csv(row["file_name"])
+df, sep_mode = load_real_csv(row["file_name"])
 
 if df is None:
-    st.error("CSV not found in data/live_selected")
+    st.error("CSV not found or unreadable in data/live_selected")
     st.stop()
 
 st.success("Loaded real CSV")
+st.write("Separator detection:", sep_mode)
 st.write("Shape:", df.shape)
 st.write("Columns:", list(df.columns))
 
