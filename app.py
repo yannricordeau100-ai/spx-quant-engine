@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 import os
@@ -6,7 +7,7 @@ st.set_page_config(layout="wide")
 st.title("SPX Quant Engine")
 
 CATALOG_PATH = "data/selected_catalog.csv"
-LOCAL_ROOT = "/Users/yann/Library/CloudStorage/GoogleDrive-yannricordeau100@gmail.com/Mon Drive/IA (ancien)"
+LIVE_ROOT = "data/live_selected"
 
 BAD_PATH_KEYWORDS = [
     "portable_backup_temp",
@@ -65,9 +66,20 @@ def clean_catalog(df):
     out = out.drop_duplicates(subset=["asset", "file_name"], keep="first")
     return out.reset_index(drop=True)
 
+def guess_time_column(cols):
+    for c in cols:
+        cl = str(c).lower()
+        if cl in ["time", "datetime", "date", "timestamp"]:
+            return c
+    for c in cols:
+        cl = str(c).lower()
+        if "time" in cl or "date" in cl:
+            return c
+    return None
+
 @st.cache_data
-def load_real_csv(relative_path):
-    full_path = os.path.join(LOCAL_ROOT, relative_path)
+def load_real_csv(file_name):
+    full_path = os.path.join(LIVE_ROOT, file_name)
     if not os.path.exists(full_path):
         return None
     try:
@@ -133,35 +145,30 @@ st.write({
     "tz_guess": row["tz_guess"],
 })
 
-st.subheader("Dataset structure preview (LOCAL TEST)")
+st.subheader("Dataset structure preview (REAL ON HF)")
 
-df = load_real_csv(row["relative_path"])
+df = load_real_csv(row["file_name"])
 
 if df is None:
-    st.error("File not accessible on HF server. This is expected for now.")
-else:
-    st.success("Loaded real CSV")
-    st.write("Shape:", df.shape)
-    st.write("Columns:", list(df.columns))
+    st.error("CSV not found in data/live_selected")
+    st.stop()
 
-    time_col = None
-    for c in df.columns:
-        cl = str(c).lower()
-        if "time" in cl or "date" in cl:
-            time_col = c
-            break
+st.success("Loaded real CSV")
+st.write("Shape:", df.shape)
+st.write("Columns:", list(df.columns))
 
-    if time_col:
-        try:
-            ts = pd.to_datetime(df[time_col], errors="coerce")
-            st.write("Time column:", time_col)
-            st.write("Min:", ts.min())
-            st.write("Max:", ts.max())
-        except Exception:
-            pass
+time_col = guess_time_column(df.columns)
+if time_col:
+    try:
+        ts = pd.to_datetime(df[time_col], errors="coerce")
+        st.write("Time column:", time_col)
+        st.write("Min:", ts.min())
+        st.write("Max:", ts.max())
+    except Exception:
+        pass
 
-    st.write("Head")
-    st.dataframe(df.head(50), width="stretch")
+st.write("Head")
+st.dataframe(df.head(50), width="stretch")
 
-    st.write("Tail")
-    st.dataframe(df.tail(50), width="stretch")
+st.write("Tail")
+st.dataframe(df.tail(50), width="stretch")
