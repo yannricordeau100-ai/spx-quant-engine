@@ -63,6 +63,21 @@ def clean_catalog(df):
     out = out.drop_duplicates(subset=["asset", "file_name"], keep="first")
     return out.reset_index(drop=True)
 
+def guess_time_column(cols):
+    candidates = []
+    for c in cols:
+        cl = str(c).lower()
+        if cl in ["time", "datetime", "date", "timestamp"]:
+            candidates.append(c)
+        elif "time" in cl or "date" in cl:
+            candidates.append(c)
+    return candidates[0] if candidates else None
+
+@st.cache_data
+def load_preview_catalog_only(selected_file_name):
+    # safe placeholder until direct file loading is connected to HF
+    return None
+
 catalog = load_catalog()
 cleaned = clean_catalog(catalog)
 
@@ -120,3 +135,15 @@ st.write({
     "freq_guess": row["freq_guess"],
     "tz_guess": row["tz_guess"],
 })
+
+st.subheader("Dataset structure preview")
+
+# structure preview from catalog metadata only for now
+time_col_guess = guess_time_column(["time", "date", "datetime", "timestamp"])
+st.write({
+    "preview_mode": "catalog_only",
+    "direct_csv_loading_on_hf": "next_step",
+    "time_column_guess_priority": time_col_guess,
+})
+
+st.info("Next step: connect direct CSV loading from cloud and show real head/tail/columns.")
