@@ -6,7 +6,7 @@ st.set_page_config(layout="wide")
 st.title("SPX Quant Engine")
 
 CATALOG_PATH = "data/selected_catalog.csv"
-LOCAL_ROOT = "/Users/yann/Library/CloudStorage/GoogleDrive-yannricordeau100@gmail.com/Mon Drive/IA"
+LOCAL_ROOT = "/Users/yann/Library/CloudStorage/GoogleDrive-yannricordeau100@gmail.com/Mon Drive/IA (ancien)"
 
 BAD_PATH_KEYWORDS = [
     "portable_backup_temp",
@@ -15,6 +15,7 @@ BAD_PATH_KEYWORDS = [
     "processed/",
     "derived/",
     "backup",
+    "spx_open_engine_project/",
 ]
 
 BAD_FILE_KEYWORDS = [
@@ -45,16 +46,16 @@ def clean_catalog(df):
     rp = out["relative_path"].astype(str).str.lower()
     fn = out["file_name"].astype(str).str.lower()
 
-    bad_path_mask = False
+    bad_path_mask = pd.Series(False, index=out.index)
     for k in BAD_PATH_KEYWORDS:
         bad_path_mask = bad_path_mask | rp.str.contains(k, na=False)
 
-    bad_file_mask = False
+    bad_file_mask = pd.Series(False, index=out.index)
     for k in BAD_FILE_KEYWORDS:
         bad_file_mask = bad_file_mask | fn.str.contains(k, na=False)
 
-    out = out[~bad_path_mask]
-    out = out[~bad_file_mask]
+    out = out.loc[~bad_path_mask]
+    out = out.loc[~bad_file_mask]
 
     out = out.sort_values(
         by=["asset", "file_name", "size_bytes"],
