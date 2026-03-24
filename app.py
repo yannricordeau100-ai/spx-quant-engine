@@ -6,6 +6,7 @@ st.set_page_config(layout="wide")
 st.title("SPX Quant Engine")
 
 CATALOG_PATH = "data/selected_catalog.csv"
+LOCAL_ROOT = "/Users/yann/Library/CloudStorage/GoogleDrive-yannricordeau100@gmail.com/Mon Drive/IA"
 
 BAD_PATH_KEYWORDS = [
     "portable_backup_temp",
@@ -63,20 +64,15 @@ def clean_catalog(df):
     out = out.drop_duplicates(subset=["asset", "file_name"], keep="first")
     return out.reset_index(drop=True)
 
-def guess_time_column(cols):
-    candidates = []
-    for c in cols:
-        cl = str(c).lower()
-        if cl in ["time", "datetime", "date", "timestamp"]:
-            candidates.append(c)
-        elif "time" in cl or "date" in cl:
-            candidates.append(c)
-    return candidates[0] if candidates else None
-
 @st.cache_data
-def load_preview_catalog_only(selected_file_name):
-    # safe placeholder until direct file loading is connected to HF
-    return None
+def load_real_csv(relative_path):
+    full_path = os.path.join(LOCAL_ROOT, relative_path)
+    if not os.path.exists(full_path):
+        return None
+    try:
+        return pd.read_csv(full_path)
+    except Exception:
+        return None
 
 catalog = load_catalog()
 cleaned = clean_catalog(catalog)
@@ -136,14 +132,35 @@ st.write({
     "tz_guess": row["tz_guess"],
 })
 
-st.subheader("Dataset structure preview")
+st.subheader("Dataset structure preview (LOCAL TEST)")
 
-# structure preview from catalog metadata only for now
-time_col_guess = guess_time_column(["time", "date", "datetime", "timestamp"])
-st.write({
-    "preview_mode": "catalog_only",
-    "direct_csv_loading_on_hf": "next_step",
-    "time_column_guess_priority": time_col_guess,
-})
+df = load_real_csv(row["relative_path"])
 
-st.info("Next step: connect direct CSV loading from cloud and show real head/tail/columns.")
+if df is None:
+    st.error("File not accessible on HF server. This is expected for now.")
+else:
+    st.success("Loaded real CSV")
+    st.write("Shape:", df.shape)
+    st.write("Columns:", list(df.columns))
+
+    time_col = None
+    for c in df.columns:
+        cl = str(c).lower()
+        if "time" in cl or "date" in cl:
+            time_col = c
+            break
+
+    if time_col:
+        try:
+            ts = pd.to_datetime(df[time_col], errors="coerce")
+            st.write("Time column:", time_col)
+            st.write("Min:", ts.min())
+            st.write("Max:", ts.max())
+        except Exception:
+            pass
+
+    st.write("Head")
+    st.dataframe(df.head(50), width="stretch")
+
+    st.write("Tail")
+    st.dataframe(df.tail(50), width="stretch")
