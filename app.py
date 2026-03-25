@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
+import re
 import numpy as np
 
 st.set_page_config(layout="wide")
@@ -41,9 +42,7 @@ def load_catalog():
 def clean_catalog(df):
     if len(df) == 0:
         return df
-
     out = df.copy()
-
     rp = out["relative_path"].astype(str).str.lower()
     fn = out["file_name"].astype(str).str.lower()
 
@@ -57,12 +56,7 @@ def clean_catalog(df):
 
     out = out.loc[~bad_path_mask]
     out = out.loc[~bad_file_mask]
-
-    out = out.sort_values(
-        by=["asset", "file_name", "size_bytes"],
-        ascending=[True, True, False]
-    )
-
+    out = out.sort_values(by=["asset", "file_name", "size_bytes"], ascending=[True, True, False])
     out = out.drop_duplicates(subset=["asset", "file_name"], keep="first")
     return out.reset_index(drop=True)
 
@@ -126,6 +120,50 @@ def load_real_csv(file_name):
 
     return None, "failed"
 
+def parse_simple_query(text):
+    t = str(text).lower().strip()
+    if not t:
+        return {}
+
+    direction = None
+    if any(x in t for x in ["hausse", "up", "monte", "rise"]):
+        direction = "up"
+    elif any(x in t for x in ["baisse", "down", "drop", "chute"]):
+        direction = "down"
+    elif any(x in t for x in ["absolu", "absolute", "abs", "move"]):
+        direction = "abs"
+
+    move_mode = "absolute"
+    if "%" in t or "percent" in t or "pourcent" in t:
+        move_mode = "percent"
+
+    m_threshold = re.search(r'(\d+(?:[.,]\d+)?)\s*%', t)
+    if m_threshold:
+        threshold = float(m_threshold.group(1).replace(",", "."))
+        move_mode = "percent"
+    else:
+        m_threshold = re.search(r'([<>]=?|sup[ée]rieur|plus de|moins de)?\s*(\d+(?:[.,]\d+)?)', t)
+        threshold = float(m_threshold.group(2).replace(",", ".")) if m_threshold else None
+
+    m_horizon = re.search(r'(\d+)\s*(min|minute|minutes|h|heure|heures|day|daily|jour|jours)', t)
+    horizon_minutes = None
+    if m_horizon:
+        value = int(m_horizon.group(1))
+        unit = m_horizon.group(2)
+        if unit.startswith("min"):
+            horizon_minutes = value
+        elif unit in ["h", "heure", "heures"]:
+            horizon_minutes = value * 60
+        elif unit in ["day", "daily", "jour", "jours"]:
+            horizon_minutes = value * 1440
+
+    return {
+        "direction": direction,
+        "move_mode": move_mode,
+        "threshold": threshold,
+        "horizon_minutes": horizon_minutes,
+    }
+
 catalog = load_catalog()
 cleaned = clean_catalog(catalog)
 
@@ -143,13 +181,11 @@ view = cleaned[cleaned["asset"] == selected_asset].copy()
 
 freqs = ["ALL"] + sorted(view["freq_guess"].dropna().astype(str).unique().tolist())
 selected_freq = st.selectbox("Frequency", freqs)
-
 if selected_freq != "ALL":
     view = view[view["freq_guess"].astype(str) == selected_freq]
 
 tzs = ["ALL"] + sorted(view["tz_guess"].dropna().astype(str).unique().tolist())
 selected_tz = st.selectbox("Timezone", tzs)
-
 if selected_tz != "ALL":
     view = view[view["tz_guess"].astype(str) == selected_tz]
 
@@ -184,14 +220,12 @@ st.write({
     "tz_guess": row["tz_guess"],
 })
 
-st.subheader("Dataset structure preview (REAL ON HF)")
-
 df, sep_mode = load_real_csv(row["file_name"])
-
 if df is None:
     st.error("CSV not found or unreadable in data/live_selected")
     st.stop()
 
+st.subheader("Dataset structure preview (REAL ON HF)")
 st.success("Loaded real CSV")
 st.write("Separator detection:", sep_mode)
 st.write("Shape:", df.shape)
@@ -210,12 +244,15 @@ else:
     ts = None
 
 st.write("Head")
-st.dataframe(df.head(50), width="stretch")
+st.dataframe(df.head(20), width="stretch")
 
-st.write("Tail")
-st.dataframe(df.tail(50), width="stretch")
+st.subheader("Simple Query Engine v3")
 
-st.subheader("Simple Query Engine v2")
+question = st.text_input(
+    "Natural language query",
+    value="hausse > 5 points en 30 min"
+)
+parsed = parse_simple_query(question)
 
 price_candidates = guess_price_columns(df.columns)
 if len(price_candidates) == 0:
@@ -231,16 +268,26 @@ price_col = st.selectbox("Price column", price_candidates, index=default_price_i
 freq_guess = str(row["freq_guess"])
 freq_minutes = freq_to_minutes(freq_guess)
 
+default_move_mode = parsed.get("move_mode") or "absolute"
+move_mode = st.selectbox("Move mode", ["absolute", "percent"], index=0 if default_move_mode == "absolute" else 1)
+
 if freq_minutes is not None and freq_minutes < 1440:
-    horizon_minutes = st.selectbox("Horizon (minutes)", [5, 10, 15, 30, 60, 120], index=3)
+    minute_options = [5, 10, 15, 30, 60, 120]
+    default_horizon = parsed.get("horizon_minutes") if parsed.get("horizon_minutes") in minute_options else 30
+    horizon_minutes = st.selectbox("Horizon (minutes)", minute_options, index=minute_options.index(default_horizon))
     horizon_steps = max(1, int(round(horizon_minutes / freq_minutes)))
 else:
     horizon_minutes = None
-    horizon_steps = st.selectbox("Horizon (rows)", [1, 2, 3, 5, 10], index=1)
+    row_options = [1, 2, 3, 5, 10]
+    horizon_steps = st.selectbox("Horizon (rows)", row_options, index=1)
 
-move_mode = st.selectbox("Move mode", ["absolute", "percent"])
-threshold = st.number_input("Threshold", value=5.0, min_value=0.0)
-direction = st.selectbox("Direction", ["up", "down", "abs"])
+default_threshold = parsed.get("threshold") if parsed.get("threshold") is not None else 5.0
+threshold = st.number_input("Threshold", value=float(default_threshold), min_value=0.0)
+
+default_direction = parsed.get("direction") if parsed.get("direction") in ["up", "down", "abs"] else "up"
+direction = st.selectbox("Direction", ["up", "down", "abs"], index=["up", "down", "abs"].index(default_direction))
+
+st.write("Parsed query", parsed)
 
 df_q = df.copy()
 
@@ -288,4 +335,4 @@ if time_col and time_col in df_q.columns:
     preview_cols = [time_col] + preview_cols
 
 st.write("Query preview")
-st.dataframe(df_q[preview_cols].head(50), width="stretch")
+st.dataframe(df_q[preview_cols].head(30), width="stretch")
