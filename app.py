@@ -187,3 +187,37 @@ st.dataframe(df.head(50), width="stretch")
 
 st.write("Tail")
 st.dataframe(df.tail(50), width="stretch")
+st.subheader("Simple Query Engine")
+
+if df is not None and len(df) > 0:
+
+    col_price = st.selectbox("Price column", [c for c in df.columns if c != "time"])
+
+    horizon = st.selectbox("Horizon (rows)", [5, 10, 30, 60])
+
+    threshold = st.number_input("Threshold (absolute move)", value=5.0)
+
+    direction = st.selectbox("Direction", ["up", "down", "abs"])
+
+    df_q = df.copy()
+
+    df_q["future"] = df_q[col_price].shift(-horizon)
+    df_q["move"] = df_q["future"] - df_q[col_price]
+
+    if direction == "up":
+        cond = df_q["move"] > threshold
+    elif direction == "down":
+        cond = df_q["move"] < -threshold
+    else:
+        cond = df_q["move"].abs() > threshold
+
+    total = cond.notna().sum()
+    success = cond.sum()
+
+    prob = success / total if total > 0 else 0
+
+    st.write({
+        "total_samples": int(total),
+        "success": int(success),
+        "probability": round(prob, 4)
+    })
