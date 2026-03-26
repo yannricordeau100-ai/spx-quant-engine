@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import os
 import re
-import numpy as np
 
 st.set_page_config(layout="wide")
 st.title("SPX Quant Engine")
@@ -30,6 +29,14 @@ BAD_FILE_KEYWORDS = [
 
 ASSET_ORDER = ["SPX", "SPY", "VIX", "VIX1D", "Or+pétrole"]
 
+ASSET_ALIASES = {
+    "SPX": ["spx", "s&p", "s&p500", "sp 500", "es1", "es future", "spooz"],
+    "SPY": ["spy"],
+    "VIX": ["vix", "vix cash", "vix open", "vix ouverture"],
+    "VIX1D": ["vix1d", "vix 1d", "1-day vix"],
+    "Or+pétrole": ["or+pétrole", "or+petrole", "gold+oil", "gold oil", "or", "petrole", "pétrole", "oil"],
+}
+
 @st.cache_data
 def load_catalog():
     if not os.path.exists(CATALOG_PATH):
@@ -43,6 +50,7 @@ def clean_catalog(df):
     if len(df) == 0:
         return df
     out = df.copy()
+
     rp = out["relative_path"].astype(str).str.lower()
     fn = out["file_name"].astype(str).str.lower()
 
@@ -60,65 +68,15 @@ def clean_catalog(df):
     out = out.drop_duplicates(subset=["asset", "file_name"], keep="first")
     return out.reset_index(drop=True)
 
-def guess_time_column(cols):
-    exact = ["time", "datetime", "date", "timestamp"]
-    for c in cols:
-        cl = str(c).lower()
-        if cl in exact:
-            return c
-    for c in cols:
-        cl = str(c).lower()
-        if "time" in cl or "date" in cl:
-            return c
-    return None
-
-def guess_price_columns(cols):
-    preferred = ["close", "open", "high", "low", "price", "last"]
-    out = []
-    lower_map = {str(c).lower(): c for c in cols}
-    for p in preferred:
-        if p in lower_map:
-            out.append(lower_map[p])
-    for c in cols:
-        cl = str(c).lower()
-        if cl not in [str(x).lower() for x in out]:
-            if any(k in cl for k in preferred):
-                out.append(c)
-    return out
-
-def freq_to_minutes(freq_guess):
-    m = {
-        "1min": 1,
-        "5min": 5,
-        "15min": 15,
-        "30min": 30,
-        "1h": 60,
-        "daily": 1440,
-    }
-    return m.get(str(freq_guess), None)
-
-@st.cache_data
-def load_real_csv(file_name):
-    full_path = os.path.join(LIVE_ROOT, file_name)
-    if not os.path.exists(full_path):
-        return None, "missing"
-
-    try:
-        df = pd.read_csv(full_path, sep=None, engine="python")
-        if df is not None and len(df.columns) > 1:
-            return df, "auto"
-    except Exception:
-        pass
-
-    for sep, label in [(";", "semicolon"), (",", "comma"), ("\t", "tab"), ("|", "pipe")]:
-        try:
-            df = pd.read_csv(full_path, sep=sep)
-            if df is not None and len(df.columns) >= 1:
-                return df, label
-        except Exception:
-            continue
-
-    return None, "failed"
+def detect_assets_from_query(text):
+    t = str(text).lower()
+    found = []
+    for asset, aliases in ASSET_ALIASES.items():
+        if any(alias in t for alias in aliases):
+            found.append(asset)
+    # preserve project order
+    ordered = [a for a in ASSET_ORDER if a in found]
+    return ordered[:5]
 
 def parse_simple_query(text):
     t = str(text).lower().strip()
@@ -130,23 +88,25 @@ def parse_simple_query(text):
         direction = "up"
     elif any(x in t for x in ["baisse", "down", "drop", "chute"]):
         direction = "down"
-    elif any(x in t for x in ["absolu", "absolute", "abs", "move"]):
+    elif any(x in t for x in ["absolu", "absolute", "abs", "bouge", "move"]):
         direction = "abs"
 
     move_mode = "absolute"
     if "%" in t or "percent" in t or "pourcent" in t:
         move_mode = "percent"
 
-    m_threshold = re.search(r'(\d+(?:[.,]\d+)?)\s*%', t)
-    if m_threshold:
-        threshold = float(m_threshold.group(1).replace(",", "."))
+    threshold = None
+    m_threshold_pct = re.search(r'(\d+(?:[.,]\d+)?)\s*%', t)
+    if m_threshold_pct:
+        threshold = float(m_threshold_pct.group(1).replace(",", "."))
         move_mode = "percent"
     else:
-        m_threshold = re.search(r'([<>]=?|sup[ée]rieur|plus de|moins de)?\s*(\d+(?:[.,]\d+)?)', t)
-        threshold = float(m_threshold.group(2).replace(",", ".")) if m_threshold else None
+        m_threshold = re.search(r'(\d+(?:[.,]\d+)?)', t)
+        if m_threshold:
+            threshold = float(m_threshold.group(1).replace(",", "."))
 
-    m_horizon = re.search(r'(\d+)\s*(min|minute|minutes|h|heure|heures|day|daily|jour|jours)', t)
     horizon_minutes = None
+    m_horizon = re.search(r'(\d+)\s*(min|minute|minutes|h|heure|heures|day|daily|jour|jours)', t)
     if m_horizon:
         value = int(m_horizon.group(1))
         unit = m_horizon.group(2)
@@ -157,182 +117,121 @@ def parse_simple_query(text):
         elif unit in ["day", "daily", "jour", "jours"]:
             horizon_minutes = value * 1440
 
+    condition_flag = any(x in t for x in ["si ", "when ", "condition", "à condition", "if "])
+
     return {
         "direction": direction,
         "move_mode": move_mode,
         "threshold": threshold,
         "horizon_minutes": horizon_minutes,
+        "condition_flag": condition_flag,
+        "date_scope": "entire selected dataset history",
     }
+
+def score_dataset_row(row):
+    score = 0
+    fn = str(row["file_name"]).lower()
+    freq = str(row["freq_guess"]).lower()
+    tz = str(row["tz_guess"]).lower()
+
+    if "1min" in freq:
+        score += 50
+    elif "5min" in freq:
+        score += 35
+    elif "30min" in freq:
+        score += 20
+    elif "daily" in freq:
+        score += 10
+
+    if "new_york" in tz or "unknown" in tz:
+        score += 5
+
+    if "future" not in fn:
+        score += 3
+
+    return score
+
+def build_candidates(cleaned, assets):
+    rows = []
+    for asset in assets:
+        sub = cleaned[cleaned["asset"] == asset].copy()
+        if len(sub) == 0:
+            rows.append({
+                "asset": asset,
+                "status": "missing",
+                "file_name": None,
+                "freq_guess": None,
+                "tz_guess": None,
+                "relative_path": None,
+                "score": None,
+            })
+            continue
+
+        sub["score"] = sub.apply(score_dataset_row, axis=1)
+        sub = sub.sort_values(by=["score", "size_bytes"], ascending=[False, False])
+
+        best = sub.iloc[0]
+        rows.append({
+            "asset": asset,
+            "status": "ok",
+            "file_name": best["file_name"],
+            "freq_guess": best["freq_guess"],
+            "tz_guess": best["tz_guess"],
+            "relative_path": best["relative_path"],
+            "score": int(best["score"]),
+        })
+    return pd.DataFrame(rows)
 
 catalog = load_catalog()
 cleaned = clean_catalog(catalog)
-
-st.write("Selected catalog rows:", len(catalog))
-st.write("Canonical rows:", len(cleaned))
 
 if len(cleaned) == 0:
     st.warning("No canonical datasets found")
     st.stop()
 
-assets = [a for a in ASSET_ORDER if a in cleaned["asset"].astype(str).unique().tolist()]
-selected_asset = st.selectbox("Asset", assets)
-
-view = cleaned[cleaned["asset"] == selected_asset].copy()
-
-freqs = ["ALL"] + sorted(view["freq_guess"].dropna().astype(str).unique().tolist())
-selected_freq = st.selectbox("Frequency", freqs)
-if selected_freq != "ALL":
-    view = view[view["freq_guess"].astype(str) == selected_freq]
-
-tzs = ["ALL"] + sorted(view["tz_guess"].dropna().astype(str).unique().tolist())
-selected_tz = st.selectbox("Timezone", tzs)
-if selected_tz != "ALL":
-    view = view[view["tz_guess"].astype(str) == selected_tz]
-
-q = st.text_input("Search dataset", "")
-if q.strip():
-    ql = q.strip().lower()
-    mask = (
-        view["file_name"].astype(str).str.lower().str.contains(ql, na=False) |
-        view["relative_path"].astype(str).str.lower().str.contains(ql, na=False)
-    )
-    view = view[mask]
-
-st.write("Matched rows:", len(view))
-st.dataframe(
-    view[["asset", "file_name", "relative_path", "size_bytes", "freq_guess", "tz_guess"]].head(300),
-    width="stretch"
-)
-
-if len(view) == 0:
-    st.stop()
-
-selected_file = st.selectbox("Dataset preview", view["file_name"].tolist())
-row = view[view["file_name"] == selected_file].iloc[0]
-
-st.subheader("Dataset summary")
-st.write({
-    "asset": row["asset"],
-    "file_name": row["file_name"],
-    "relative_path": row["relative_path"],
-    "size_bytes": int(row["size_bytes"]) if pd.notna(row["size_bytes"]) else None,
-    "freq_guess": row["freq_guess"],
-    "tz_guess": row["tz_guess"],
-})
-
-df, sep_mode = load_real_csv(row["file_name"])
-if df is None:
-    st.error("CSV not found or unreadable in data/live_selected")
-    st.stop()
-
-st.subheader("Dataset structure preview (REAL ON HF)")
-st.success("Loaded real CSV")
-st.write("Separator detection:", sep_mode)
-st.write("Shape:", df.shape)
-st.write("Columns:", list(df.columns))
-
-time_col = guess_time_column(df.columns)
-if time_col:
-    try:
-        ts = pd.to_datetime(df[time_col], errors="coerce")
-        st.write("Time column:", time_col)
-        st.write("Min:", ts.min())
-        st.write("Max:", ts.max())
-    except Exception:
-        ts = None
-else:
-    ts = None
-
-st.write("Head")
-st.dataframe(df.head(20), width="stretch")
-
-st.subheader("Simple Query Engine v3")
+st.subheader("Question")
 
 question = st.text_input(
-    "Natural language query",
-    value="hausse > 5 points en 30 min"
+    "Ask in French or English",
+    value="hausse > 5 points en 30 min sur SPX et VIX"
 )
+
 parsed = parse_simple_query(question)
+detected_assets = detect_assets_from_query(question)
 
-price_candidates = guess_price_columns(df.columns)
-if len(price_candidates) == 0:
-    st.warning("No price-like columns detected")
-    st.stop()
+manual_assets = st.multiselect(
+    "Manual asset override (optional)",
+    options=ASSET_ORDER,
+    default=detected_assets if len(detected_assets) > 0 else ["SPX"]
+)
 
-default_price_idx = 0
-if "close" in [str(c).lower() for c in price_candidates]:
-    default_price_idx = [str(c).lower() for c in price_candidates].index("close")
+final_assets = manual_assets[:5]
+candidates = build_candidates(cleaned, final_assets)
 
-price_col = st.selectbox("Price column", price_candidates, index=default_price_idx)
-
-freq_guess = str(row["freq_guess"])
-freq_minutes = freq_to_minutes(freq_guess)
-
-default_move_mode = parsed.get("move_mode") or "absolute"
-move_mode = st.selectbox("Move mode", ["absolute", "percent"], index=0 if default_move_mode == "absolute" else 1)
-
-if freq_minutes is not None and freq_minutes < 1440:
-    minute_options = [5, 10, 15, 30, 60, 120]
-    default_horizon = parsed.get("horizon_minutes") if parsed.get("horizon_minutes") in minute_options else 30
-    horizon_minutes = st.selectbox("Horizon (minutes)", minute_options, index=minute_options.index(default_horizon))
-    horizon_steps = max(1, int(round(horizon_minutes / freq_minutes)))
-else:
-    horizon_minutes = None
-    row_options = [1, 2, 3, 5, 10]
-    horizon_steps = st.selectbox("Horizon (rows)", row_options, index=1)
-
-default_threshold = parsed.get("threshold") if parsed.get("threshold") is not None else 5.0
-threshold = st.number_input("Threshold", value=float(default_threshold), min_value=0.0)
-
-default_direction = parsed.get("direction") if parsed.get("direction") in ["up", "down", "abs"] else "up"
-direction = st.selectbox("Direction", ["up", "down", "abs"], index=["up", "down", "abs"].index(default_direction))
-
-st.write("Parsed query", parsed)
-
-df_q = df.copy()
-
-try:
-    price_series = pd.to_numeric(df_q[price_col], errors="coerce")
-except Exception:
-    st.error("Selected price column is not numeric")
-    st.stop()
-
-df_q["future_price"] = price_series.shift(-horizon_steps)
-
-if move_mode == "absolute":
-    df_q["move"] = df_q["future_price"] - price_series
-else:
-    df_q["move"] = (df_q["future_price"] - price_series) / price_series * 100.0
-
-valid = df_q["move"].notna()
-
-if direction == "up":
-    cond = df_q["move"] > threshold
-elif direction == "down":
-    cond = df_q["move"] < -threshold
-else:
-    cond = df_q["move"].abs() > threshold
-
-total = int(valid.sum())
-success = int((cond & valid).sum())
-prob = (success / total) if total > 0 else 0.0
-
+st.subheader("Result")
 st.write({
-    "dataset": row["file_name"],
-    "price_column": price_col,
-    "move_mode": move_mode,
-    "direction": direction,
-    "threshold": threshold,
-    "horizon_steps": int(horizon_steps),
-    "horizon_minutes": horizon_minutes,
-    "total_samples": total,
-    "success": success,
-    "probability": round(prob, 4),
+    "question": question,
+    "detected_assets": detected_assets,
+    "final_assets": final_assets,
+    "direction": parsed.get("direction"),
+    "move_mode": parsed.get("move_mode"),
+    "threshold": parsed.get("threshold"),
+    "horizon_minutes": parsed.get("horizon_minutes"),
+    "condition_flag": parsed.get("condition_flag"),
+    "date_scope": parsed.get("date_scope"),
 })
 
-preview_cols = [price_col, "future_price", "move"]
-if time_col and time_col in df_q.columns:
-    preview_cols = [time_col] + preview_cols
+if len(candidates) > 0:
+    st.dataframe(candidates, width="stretch")
 
-st.write("Query preview")
-st.dataframe(df_q[preview_cols].head(30), width="stretch")
+with st.expander("Dataset browser details", expanded=False):
+    st.write("Selected catalog rows:", len(catalog))
+    st.write("Canonical rows:", len(cleaned))
+    st.dataframe(
+        cleaned[["asset", "file_name", "relative_path", "size_bytes", "freq_guess", "tz_guess"]].head(300),
+        width="stretch"
+    )
+
+with st.expander("Query parsing details", expanded=False):
+    st.write("Parsed query", parsed)
+    st.write("Detected assets", detected_assets)
