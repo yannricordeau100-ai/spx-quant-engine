@@ -11,25 +11,6 @@ LIVE_ROOT = "data/live_selected"
 
 ASSET_ORDER = ["SPX", "SPY", "VIX", "VIX1D", "Or+pétrole"]
 
-BAD_PATH_KEYWORDS = [
-    "portable_backup_temp",
-    "streamlit_community_cloud_pack",
-    "exports/",
-    "processed/",
-    "derived/",
-    "backup",
-    "spx_open_engine_project/",
-]
-
-BAD_FILE_KEYWORDS = [
-    "ratio__",
-    "zscore_",
-    "spread__",
-    "rolling_ratio",
-    "copie de",
-    "future",
-]
-
 ASSET_ALIASES = {
     "SPX": ["spx", "s&p", "sp 500", "s&p500"],
     "SPY": ["spy"],
@@ -38,36 +19,18 @@ ASSET_ALIASES = {
     "Or+pétrole": ["or+pétrole", "or+petrole", "gold+oil", "gold oil", "or", "gold", "pétrole", "petrole", "oil"],
 }
 
+MANUAL_TZ_OVERRIDES = {
+    "VIX_9H30_CET_SPX_OPENING_daily.csv": "Europe/Paris",
+}
+
 @st.cache_data
 def load_catalog():
     if not os.path.exists(CATALOG_PATH):
-        return pd.DataFrame(columns=["asset", "file_name", "relative_path", "size_bytes", "freq_guess", "tz_guess"])
+        return pd.DataFrame(columns=["asset", "file_name", "relative_path", "local_file_name", "size_bytes", "freq_guess", "tz_guess"])
     try:
         return pd.read_csv(CATALOG_PATH)
     except Exception:
-        return pd.DataFrame(columns=["asset", "file_name", "relative_path", "size_bytes", "freq_guess", "tz_guess"])
-
-def clean_catalog(df):
-    if len(df) == 0:
-        return df
-
-    out = df.copy()
-    rp = out["relative_path"].astype(str).str.lower()
-    fn = out["file_name"].astype(str).str.lower()
-
-    bad_path_mask = pd.Series(False, index=out.index)
-    for k in BAD_PATH_KEYWORDS:
-        bad_path_mask = bad_path_mask | rp.str.contains(k, na=False)
-
-    bad_file_mask = pd.Series(False, index=out.index)
-    for k in BAD_FILE_KEYWORDS:
-        bad_file_mask = bad_file_mask | fn.str.contains(k, na=False)
-
-    out = out.loc[~bad_path_mask]
-    out = out.loc[~bad_file_mask]
-    out = out.sort_values(by=["asset", "file_name", "size_bytes"], ascending=[True, True, False])
-    out = out.drop_duplicates(subset=["asset", "file_name"], keep="first")
-    return out.reset_index(drop=True)
+        return pd.DataFrame(columns=["asset", "file_name", "relative_path", "local_file_name", "size_bytes", "freq_guess", "tz_guess"])
 
 def detect_assets_from_query(text):
     t = str(text).lower()
@@ -75,30 +38,52 @@ def detect_assets_from_query(text):
     for asset, aliases in ASSET_ALIASES.items():
         if any(alias in t for alias in aliases):
             found.append(asset)
-    ordered = [a for a in ASSET_ORDER if a in found]
-    return ordered
+    return [a for a in ASSET_ORDER if a in found]
 
-def load_real_csv(file_name):
-    full_path = os.path.join(LIVE_ROOT, file_name)
-    if not os.path.exists(full_path):
-        return None, "missing"
+def parse_question(text):
+    t = str(text).lower().strip()
+    out = {
+        "direction": None,
+        "move_mode": "absolute",
+        "threshold": None,
+        "horizon_minutes": None,
+        "condition_flag": any(x in t for x in ["si ", "when ", "condition", "à condition", "if "]),
+    }
 
-    try:
-        df = pd.read_csv(full_path, sep=None, engine="python")
-        if df is not None and len(df.columns) > 1:
-            return df, "auto"
-    except Exception:
-        pass
+    if any(x in t for x in ["hausse", "up", "monte", "rise"]):
+        out["direction"] = "up"
+    elif any(x in t for x in ["baisse", "down", "drop", "chute"]):
+        out["direction"] = "down"
+    elif any(x in t for x in ["absolu", "absolute", "abs", "mouvement", "move"]):
+        out["direction"] = "abs"
 
-    for sep, label in [(";", "semicolon"), (",", "comma"), ("\t", "tab"), ("|", "pipe")]:
-        try:
-            df = pd.read_csv(full_path, sep=sep)
-            if df is not None and len(df.columns) > 1:
-                return df, label
-        except Exception:
-            continue
+    m_pct = re.search(r'(\d+(?:[.,]\d+)?)\s*%', t)
+    if m_pct:
+        out["threshold"] = float(m_pct.group(1).replace(",", "."))
+        out["move_mode"] = "percent"
+    else:
+        m_num = re.search(r'(\d+(?:[.,]\d+)?)', t)
+        if m_num:
+            out["threshold"] = float(m_num.group(1).replace(",", "."))
 
-    return None, "failed"
+    m_h = re.search(r'(\d+)\s*(min|minute|minutes|h|heure|heures|day|daily|jour|jours)', t)
+    if m_h:
+        value = int(m_h.group(1))
+        unit = m_h.group(2)
+        if unit.startswith("min"):
+            out["horizon_minutes"] = value
+        elif unit in ["h", "heure", "heures"]:
+            out["horizon_minutes"] = value * 60
+        elif unit in ["day", "daily", "jour", "jours"]:
+            out["horizon_minutes"] = value * 1440
+
+    # question test hebdomadaire
+    if ("semaine" in t or "week" in t) and any(x in t for x in ["baissé", "baisse", "down", "drop", "chute"]) and ("1%" in t or "1 %" in t):
+        out["special_case"] = "weekly_drop_count"
+    else:
+        out["special_case"] = None
+
+    return out
 
 def guess_time_column(cols):
     exact = ["time", "datetime", "date", "timestamp"]
@@ -121,164 +106,319 @@ def guess_close_column(cols):
             return c
     return None
 
-def choose_best_dataset(asset, cleaned):
-    sub = cleaned[cleaned["asset"] == asset].copy()
-    if len(sub) == 0:
-        return None
+def guess_price_columns(cols):
+    preferred = ["close", "open", "high", "low", "price", "last"]
+    out = []
+    lower_map = {str(c).lower(): c for c in cols}
+    for p in preferred:
+        if p in lower_map:
+            out.append(lower_map[p])
+    for c in cols:
+        cl = str(c).lower()
+        if cl not in [str(x).lower() for x in out]:
+            if any(k in cl for k in preferred):
+                out.append(c)
+    return out
 
-    # priorité stricte voulue pour le moteur actuel
-    priority = {
+def freq_to_minutes(freq_guess):
+    m = {
+        "1min": 1,
+        "5min": 5,
+        "15min": 15,
+        "30min": 30,
+        "1h": 60,
+        "daily": 1440,
+        "unknown": None,
+    }
+    return m.get(str(freq_guess), None)
+
+def infer_timezone(row):
+    fn = str(row["file_name"])
+    tz = str(row["tz_guess"])
+    if fn in MANUAL_TZ_OVERRIDES:
+        return MANUAL_TZ_OVERRIDES[fn]
+    if tz and tz != "unknown":
+        return tz
+    return "unknown"
+
+@st.cache_data
+def load_real_csv(local_file_name):
+    full_path = os.path.join(LIVE_ROOT, local_file_name)
+    if not os.path.exists(full_path):
+        return None, "missing"
+
+    try:
+        df = pd.read_csv(full_path, sep=None, engine="python")
+        if df is not None and len(df.columns) > 1:
+            return df, "auto"
+    except Exception:
+        pass
+
+    for sep, label in [(";", "semicolon"), (",", "comma"), ("\t", "tab"), ("|", "pipe")]:
+        try:
+            df = pd.read_csv(full_path, sep=sep)
+            if df is not None and len(df.columns) > 1:
+                return df, label
+        except Exception:
+            continue
+
+    return None, "failed"
+
+def dataset_priority(freq):
+    # priorité voulue: 1min > 5min > 30min > daily
+    order = {
         "1min": 100,
+        "5min": 90,
         "30min": 80,
-        "daily": 60,
-        "5min": 50,
-        "1h": 40,
-        "unknown": 0
+        "daily": 70,
+        "1h": 60,
+        "unknown": 10,
     }
+    return order.get(str(freq), 0)
 
-    sub["prio"] = sub["freq_guess"].astype(str).map(lambda x: priority.get(x, 0))
-    sub = sub.sort_values(by=["prio", "size_bytes"], ascending=[False, False])
+def choose_all_datasets_for_asset(asset, catalog):
+    sub = catalog[catalog["asset"] == asset].copy()
+    if len(sub) == 0:
+        return sub
+    sub["priority"] = sub["freq_guess"].astype(str).map(dataset_priority)
+    return sub.sort_values(by=["priority", "size_bytes"], ascending=[False, False]).reset_index(drop=True)
 
-    return sub.iloc[0]
+def answer_weekly_drop(asset, datasets):
+    results = []
 
-def parse_weekly_drop_question(text):
-    t = str(text).lower()
+    for _, row in datasets.iterrows():
+        df, sep_mode = load_real_csv(row["local_file_name"])
+        if df is None:
+            results.append({
+                "asset": asset,
+                "dataset": row["file_name"],
+                "freq": row["freq_guess"],
+                "status": "unreadable",
+                "text": f"Dataset illisible: {row['file_name']}"
+            })
+            continue
 
-    if "semaine" not in t and "week" not in t:
-        return None
+        time_col = guess_time_column(df.columns)
+        close_col = guess_close_column(df.columns)
 
-    if not any(x in t for x in ["baissé", "baisse", "down", "drop", "chute"]):
-        return None
+        if time_col is None or close_col is None:
+            results.append({
+                "asset": asset,
+                "dataset": row["file_name"],
+                "freq": row["freq_guess"],
+                "status": "missing_columns",
+                "text": f"Colonnes insuffisantes dans {row['file_name']}."
+            })
+            continue
 
-    m_pct = re.search(r'(\d+(?:[.,]\d+)?)\s*%', t)
-    if not m_pct:
-        return None
+        work = df.copy()
+        work[time_col] = pd.to_datetime(work[time_col], errors="coerce")
+        work[close_col] = pd.to_numeric(work[close_col], errors="coerce")
+        work = work.dropna(subset=[time_col, close_col]).sort_values(time_col)
 
-    threshold_pct = float(m_pct.group(1).replace(",", "."))
+        if len(work) < 3:
+            results.append({
+                "asset": asset,
+                "dataset": row["file_name"],
+                "freq": row["freq_guess"],
+                "status": "too_short",
+                "text": f"Dataset trop court: {row['file_name']}."
+            })
+            continue
 
-    m_times = re.search(r'(\d+)\s*fois', t)
-    n_times = int(m_times.group(1)) if m_times else 2
+        work["ret_pct"] = work[close_col].pct_change() * 100.0
+        work["year_week"] = work[time_col].dt.strftime("%G-W%V")
 
-    last_flag = any(x in t for x in ["dernière", "dernier", "last"])
+        threshold = -1.0
+        week_counts = (
+            work.assign(hit=work["ret_pct"] <= threshold)
+                .groupby("year_week", as_index=False)["hit"]
+                .sum()
+                .rename(columns={"hit": "drop_count"})
+        )
 
-    return {
-        "type": "weekly_drop_count",
-        "threshold_pct": threshold_pct,
-        "n_times": n_times,
-        "last_flag": last_flag,
-    }
+        qualified = week_counts[week_counts["drop_count"] >= 2].copy()
 
-def answer_weekly_drop(asset, dataset_row):
-    df, sep_mode = load_real_csv(dataset_row["file_name"])
-    if df is None:
-        return {
-            "ok": False,
-            "text": f"Je n’ai pas pu charger le dataset `{dataset_row['file_name']}`.",
-        }
+        if len(qualified) == 0:
+            results.append({
+                "asset": asset,
+                "dataset": row["file_name"],
+                "freq": row["freq_guess"],
+                "status": "no_match",
+                "text": f"Aucune semaine trouvée dans {row['file_name']}."
+            })
+            continue
 
-    time_col = guess_time_column(df.columns)
-    close_col = guess_close_column(df.columns)
+        last_week = qualified.iloc[-1]["year_week"]
+        last_count = int(qualified.iloc[-1]["drop_count"])
 
-    if time_col is None or close_col is None:
-        return {
-            "ok": False,
-            "text": f"Le dataset `{dataset_row['file_name']}` n’a pas les colonnes minimales attendues (`time` et `close`).",
-        }
+        results.append({
+            "asset": asset,
+            "dataset": row["file_name"],
+            "freq": row["freq_guess"],
+            "status": "ok",
+            "last_week": last_week,
+            "count": last_count,
+            "text": f"{row['file_name']} → dernière semaine trouvée: {last_week} ({last_count} occurrences)."
+        })
 
-    out = df.copy()
-    out[time_col] = pd.to_datetime(out[time_col], errors="coerce")
-    out[close_col] = pd.to_numeric(out[close_col], errors="coerce")
-    out = out.dropna(subset=[time_col, close_col]).sort_values(time_col)
+    return results
 
-    if len(out) < 3:
-        return {
-            "ok": False,
-            "text": f"Le dataset `{dataset_row['file_name']}` n’a pas assez de lignes exploitables.",
-        }
+def answer_generic(asset, datasets, parsed):
+    results = []
 
-    out["ret_pct"] = out[close_col].pct_change() * 100.0
-    out["year_week"] = out[time_col].dt.strftime("%G-W%V")
+    for _, row in datasets.iterrows():
+        df, sep_mode = load_real_csv(row["local_file_name"])
+        if df is None:
+            continue
 
-    threshold = -1.0
-    week_counts = (
-        out.assign(hit=out["ret_pct"] <= threshold)
-           .groupby("year_week", as_index=False)["hit"]
-           .sum()
-           .rename(columns={"hit": "drop_count"})
-    )
+        price_candidates = guess_price_columns(df.columns)
+        if len(price_candidates) == 0:
+            continue
 
-    qualified = week_counts[week_counts["drop_count"] >= 2].copy()
+        price_col = price_candidates[0]
+        if "close" in [str(c).lower() for c in price_candidates]:
+            price_col = price_candidates[[str(c).lower() for c in price_candidates].index("close")]
 
-    if len(qualified) == 0:
-        return {
-            "ok": True,
-            "text": (
-                f"Je n’ai trouvé aucune semaine où **{asset}** a baissé d’au moins **1%** "
-                f"au moins **2 fois** dans le dataset `{dataset_row['file_name']}`."
-            ),
-        }
+        freq_minutes = freq_to_minutes(row["freq_guess"])
+        horizon_minutes = parsed.get("horizon_minutes")
 
-    last_week = qualified.iloc[-1]["year_week"]
-    last_count = int(qualified.iloc[-1]["drop_count"])
+        if horizon_minutes is not None and freq_minutes is not None:
+            if freq_minutes > horizon_minutes:
+                continue
+            horizon_steps = max(1, int(round(horizon_minutes / freq_minutes)))
+        else:
+            horizon_steps = 1
 
-    matching_rows = out[
-        (out["year_week"] == last_week) &
-        (out["ret_pct"] <= threshold)
-    ][[time_col, close_col, "ret_pct"]].copy()
+        price_series = pd.to_numeric(df[price_col], errors="coerce")
+        future_price = price_series.shift(-horizon_steps)
 
-    return {
-        "ok": True,
-        "text": (
-            f"La dernière semaine où **{asset}** a baissé d’au moins **1%** "
-            f"au moins **2 fois** est **{last_week}**.\n\n"
-            f"J’ai utilisé le dataset **`{dataset_row['file_name']}`** "
-            f"(fréquence : **{dataset_row['freq_guess']}**). "
-            f"Dans cette semaine, j’ai compté **{last_count}** occurrences répondant au critère."
-        ),
-        "details": matching_rows,
-    }
+        move_mode = parsed.get("move_mode") or "absolute"
+        threshold = parsed.get("threshold")
+        direction = parsed.get("direction") or "up"
+
+        if threshold is None:
+            threshold = 5.0 if move_mode == "absolute" else 0.2
+
+        if move_mode == "absolute":
+            move = future_price - price_series
+        else:
+            move = (future_price - price_series) / price_series * 100.0
+
+        valid = move.notna()
+
+        if direction == "up":
+            cond = move > threshold
+        elif direction == "down":
+            cond = move < -threshold
+        else:
+            cond = move.abs() > threshold
+
+        total = int(valid.sum())
+        success = int((cond & valid).sum())
+        prob = (success / total) if total > 0 else 0.0
+
+        results.append({
+            "asset": asset,
+            "dataset": row["file_name"],
+            "freq": row["freq_guess"],
+            "status": "ok",
+            "probability": round(prob, 4),
+            "success": success,
+            "total": total,
+        })
+
+    return results
+
+def format_answer(question, parsed, assets, all_results):
+    lines = []
+    lines.append("### Réponse")
+    lines.append("")
+
+    if len(assets) == 0:
+        lines.append("Je n’ai détecté aucun actif clairement dans ta question.")
+        return "\n".join(lines)
+
+    clear_question = (len(assets) > 0 and not parsed.get("condition_flag"))
+    if not clear_question:
+        lines.append(f"J’ai interprété ta question comme : **{question}**.")
+        lines.append("")
+
+    if parsed.get("special_case") == "weekly_drop_count":
+        for asset in assets:
+            res = all_results.get(asset, [])
+            ok_rows = [r for r in res if r["status"] == "ok"]
+
+            if not ok_rows:
+                lines.append(f"**{asset}** — je n’ai trouvé aucune semaine correspondante sur les datasets exploitables actuellement testés.")
+                continue
+
+            ok_rows = sorted(ok_rows, key=lambda r: (r["last_week"], r["freq"]), reverse=True)
+            best = ok_rows[0]
+            lines.append(
+                f"**{asset}** — la dernière semaine trouvée est **{best['last_week']}**, "
+                f"sur le dataset **`{best['dataset']}`** (fréquence **{best['freq']}**), "
+                f"avec **{best['count']}** occurrences dans cette semaine."
+            )
+
+        lines.append("")
+        lines.append("J’ai testé l’actif sur **tous les CSV canoniques disponibles pour cet actif**, pas sur un seul fichier.")
+        return "\n".join(lines)
+
+    for asset in assets:
+        res = all_results.get(asset, [])
+        ok_rows = [r for r in res if r["status"] == "ok"]
+
+        if not ok_rows:
+            lines.append(f"**{asset}** — je n’ai pas trouvé de dataset exploitable avec une granularité suffisante.")
+            continue
+
+        lines.append(f"**{asset}** — résultats sur tous les CSV canoniques :")
+        for r in ok_rows:
+            lines.append(
+                f"- `{r['dataset']}` ({r['freq']}) : probabilité **{r['probability']:.2%}** "
+                f"({r['success']} succès / {r['total']} observations)"
+            )
+
+    lines.append("")
+    lines.append("La réponse porte sur **tout l’historique disponible des datasets utilisés**, pas sur une date unique.")
+    return "\n".join(lines)
 
 catalog = load_catalog()
-cleaned = clean_catalog(catalog)
 
 question = st.text_input(
     "Question",
     value="Quand est ce que SPX a baissé d'au moins 1% 2 fois dans la même semaine la dernière fois ?"
 )
 
+parsed = parse_question(question)
 assets = detect_assets_from_query(question)
-weekly_rule = parse_weekly_drop_question(question)
 
-if len(assets) == 0:
-    st.warning("Je n’ai pas détecté d’actif clairement dans la question.")
-    st.stop()
+all_results = {}
+datasets_used = []
 
-if weekly_rule is None:
-    st.info("Cette version traite pour l’instant surtout la question test hebdomadaire sur les baisses >= 1%.")
-    with st.expander("Ce que j’ai compris", expanded=False):
-        st.write({"assets": assets, "question": question})
-    st.stop()
+for asset in assets:
+    ds = choose_all_datasets_for_asset(asset, catalog)
+    datasets_used.append(ds)
+    if parsed.get("special_case") == "weekly_drop_count":
+        all_results[asset] = answer_weekly_drop(asset, ds)
+    else:
+        all_results[asset] = answer_generic(asset, ds, parsed)
 
-asset = assets[0]
-dataset_row = choose_best_dataset(asset, cleaned)
+st.markdown(format_answer(question, parsed, assets, all_results))
 
-if dataset_row is None:
-    st.error(f"Aucun dataset exploitable trouvé pour {asset}.")
-    st.stop()
-
-answer = answer_weekly_drop(asset, dataset_row)
-
-st.markdown("### Réponse")
-st.markdown(answer["text"])
-
-if answer.get("details") is not None and len(answer["details"]) > 0:
-    with st.expander("Voir les lignes correspondantes", expanded=False):
-        st.dataframe(answer["details"], width="stretch")
+with st.expander("Datasets utilisés", expanded=False):
+    for asset in assets:
+        st.markdown(f"**{asset}**")
+        ds = choose_all_datasets_for_asset(asset, catalog)
+        if len(ds) == 0:
+            st.write("Aucun dataset")
+        else:
+            st.dataframe(
+                ds[["asset", "file_name", "relative_path", "freq_guess", "tz_guess", "size_bytes"]],
+                width="stretch"
+            )
 
 with st.expander("Détails techniques", expanded=False):
-    st.write({
-        "actif_detecté": asset,
-        "dataset_utilisé": dataset_row["file_name"],
-        "fréquence": dataset_row["freq_guess"],
-        "chemin": dataset_row["relative_path"],
-    })
+    st.write(parsed)
+    st.write("Actifs détectés :", assets)
