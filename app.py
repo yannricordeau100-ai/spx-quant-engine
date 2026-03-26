@@ -9,6 +9,8 @@ st.title("SPX Quant Engine")
 CATALOG_PATH = "data/selected_catalog.csv"
 LIVE_ROOT = "data/live_selected"
 
+ASSET_ORDER = ["SPX", "SPY", "VIX", "VIX1D", "Or+pétrole"]
+
 BAD_PATH_KEYWORDS = [
     "portable_backup_temp",
     "streamlit_community_cloud_pack",
@@ -25,26 +27,15 @@ BAD_FILE_KEYWORDS = [
     "spread__",
     "rolling_ratio",
     "copie de",
+    "future",
 ]
 
-ASSET_ORDER = ["SPX", "SPY", "VIX", "VIX1D", "Or+pétrole"]
-
 ASSET_ALIASES = {
-    "SPX": ["spx", "s&p", "sp 500", "s&p500", "es1", "es future"],
+    "SPX": ["spx", "s&p", "sp 500", "s&p500"],
     "SPY": ["spy"],
     "VIX": ["vix", "vix cash", "vix open", "vix ouverture"],
     "VIX1D": ["vix1d", "vix 1d"],
     "Or+pétrole": ["or+pétrole", "or+petrole", "gold+oil", "gold oil", "or", "gold", "pétrole", "petrole", "oil"],
-}
-
-# Tu pourras me donner les cas ambigus plus tard, on les fixera ici.
-MANUAL_TZ_OVERRIDES = {
-    "VIX_9H30_CET_SPX_OPENING_daily.csv": "Europe/Paris",
-}
-
-TZ_PATH_HINTS = {
-    "Europe/Paris": ["cet", "paris", "9h30_cet"],
-    "America/New_York": ["new_york", "ny", "_et", " et ", "opening"],
 }
 
 @st.cache_data
@@ -59,6 +50,7 @@ def load_catalog():
 def clean_catalog(df):
     if len(df) == 0:
         return df
+
     out = df.copy()
     rp = out["relative_path"].astype(str).str.lower()
     fn = out["file_name"].astype(str).str.lower()
@@ -84,97 +76,8 @@ def detect_assets_from_query(text):
         if any(alias in t for alias in aliases):
             found.append(asset)
     ordered = [a for a in ASSET_ORDER if a in found]
-    return ordered[:5]
+    return ordered
 
-def parse_simple_query(text):
-    t = str(text).lower().strip()
-    if not t:
-        return {}
-
-    direction = None
-    if any(x in t for x in ["hausse", "up", "monte", "rise"]):
-        direction = "up"
-    elif any(x in t for x in ["baisse", "down", "drop", "chute"]):
-        direction = "down"
-    elif any(x in t for x in ["absolu", "absolute", "abs", "move", "mouvement"]):
-        direction = "abs"
-
-    move_mode = "absolute"
-    if "%" in t or "percent" in t or "pourcent" in t:
-        move_mode = "percent"
-
-    threshold = None
-    m_threshold_pct = re.search(r'(\d+(?:[.,]\d+)?)\s*%', t)
-    if m_threshold_pct:
-        threshold = float(m_threshold_pct.group(1).replace(",", "."))
-        move_mode = "percent"
-    else:
-        m_threshold = re.search(r'(\d+(?:[.,]\d+)?)', t)
-        if m_threshold:
-            threshold = float(m_threshold.group(1).replace(",", "."))
-
-    horizon_minutes = None
-    m_horizon = re.search(r'(\d+)\s*(min|minute|minutes|h|heure|heures|day|daily|jour|jours)', t)
-    if m_horizon:
-        value = int(m_horizon.group(1))
-        unit = m_horizon.group(2)
-        if unit.startswith("min"):
-            horizon_minutes = value
-        elif unit in ["h", "heure", "heures"]:
-            horizon_minutes = value * 60
-        elif unit in ["day", "daily", "jour", "jours"]:
-            horizon_minutes = value * 1440
-
-    condition_flag = any(x in t for x in ["si ", "when ", "condition", "à condition", "if "])
-
-    return {
-        "direction": direction,
-        "move_mode": move_mode,
-        "threshold": threshold,
-        "horizon_minutes": horizon_minutes,
-        "condition_flag": condition_flag,
-        "date_scope": "entire selected dataset history",
-    }
-
-def guess_time_column(cols):
-    exact = ["time", "datetime", "date", "timestamp"]
-    for c in cols:
-        cl = str(c).lower()
-        if cl in exact:
-            return c
-    for c in cols:
-        cl = str(c).lower()
-        if "time" in cl or "date" in cl:
-            return c
-    return None
-
-def guess_price_columns(cols):
-    preferred = ["close", "open", "high", "low", "price", "last"]
-    out = []
-    lower_map = {str(c).lower(): c for c in cols}
-    for p in preferred:
-        if p in lower_map:
-            out.append(lower_map[p])
-    for c in cols:
-        cl = str(c).lower()
-        if cl not in [str(x).lower() for x in out]:
-            if any(k in cl for k in preferred):
-                out.append(c)
-    return out
-
-def freq_to_minutes(freq_guess):
-    m = {
-        "1min": 1,
-        "5min": 5,
-        "15min": 15,
-        "30min": 30,
-        "1h": 60,
-        "daily": 1440,
-        "unknown": None,
-    }
-    return m.get(str(freq_guess), None)
-
-@st.cache_data
 def load_real_csv(file_name):
     full_path = os.path.join(LIVE_ROOT, file_name)
     if not os.path.exists(full_path):
@@ -190,280 +93,192 @@ def load_real_csv(file_name):
     for sep, label in [(";", "semicolon"), (",", "comma"), ("\t", "tab"), ("|", "pipe")]:
         try:
             df = pd.read_csv(full_path, sep=sep)
-            if df is not None and len(df.columns) >= 1:
+            if df is not None and len(df.columns) > 1:
                 return df, label
         except Exception:
             continue
 
     return None, "failed"
 
-def infer_timezone(row):
-    fn = str(row["file_name"])
-    rel = str(row["relative_path"]).lower()
-    cat_tz = str(row["tz_guess"])
+def guess_time_column(cols):
+    exact = ["time", "datetime", "date", "timestamp"]
+    for c in cols:
+        cl = str(c).lower()
+        if cl in exact:
+            return c
+    for c in cols:
+        cl = str(c).lower()
+        if "time" in cl or "date" in cl:
+            return c
+    return None
 
-    if fn in MANUAL_TZ_OVERRIDES:
-        return MANUAL_TZ_OVERRIDES[fn]
+def guess_close_column(cols):
+    for c in cols:
+        if str(c).lower() == "close":
+            return c
+    for c in cols:
+        if "close" in str(c).lower():
+            return c
+    return None
 
-    if cat_tz and cat_tz != "unknown":
-        return cat_tz
+def choose_best_dataset(asset, cleaned):
+    sub = cleaned[cleaned["asset"] == asset].copy()
+    if len(sub) == 0:
+        return None
 
-    for tz, hints in TZ_PATH_HINTS.items():
-        if any(h in rel for h in hints):
-            return tz
-
-    return "unknown"
-
-def score_dataset_row(row, parsed):
-    freq = str(row["freq_guess"])
-    freq_minutes = freq_to_minutes(freq)
-    tz = infer_timezone(row)
-
-    base = 0
-    if freq == "1min":
-        base = 100
-    elif freq == "5min":
-        base = 85
-    elif freq == "30min":
-        base = 65
-    elif freq == "1h":
-        base = 55
-    elif freq == "daily":
-        base = 40
-    else:
-        base = 10
-
-    threshold = parsed.get("threshold")
-    horizon_minutes = parsed.get("horizon_minutes")
-
-    if horizon_minutes is not None and freq_minutes is not None:
-        if freq_minutes > horizon_minutes:
-            base -= 200
-        else:
-            base += 15
-
-    if tz != "unknown":
-        base += 3
-
-    return base
-
-def build_candidates(cleaned, assets, parsed):
-    rows = []
-    for asset in assets:
-        sub = cleaned[cleaned["asset"] == asset].copy()
-        if len(sub) == 0:
-            rows.append({
-                "asset": asset,
-                "status": "missing",
-                "file_name": None,
-                "freq_guess": None,
-                "tz": None,
-                "relative_path": None,
-                "score": None,
-            })
-            continue
-
-        sub["resolved_tz"] = sub.apply(infer_timezone, axis=1)
-        sub["score"] = sub.apply(lambda r: score_dataset_row(r, parsed), axis=1)
-        sub = sub.sort_values(by=["score", "size_bytes"], ascending=[False, False])
-
-        best = sub.iloc[0]
-        rows.append({
-            "asset": asset,
-            "status": "ok" if best["score"] > -100 else "insufficient_granularity",
-            "file_name": best["file_name"],
-            "freq_guess": best["freq_guess"],
-            "tz": best["resolved_tz"],
-            "relative_path": best["relative_path"],
-            "score": int(best["score"]),
-        })
-    return pd.DataFrame(rows)
-
-def compute_asset_result(asset, candidate_row, parsed):
-    if candidate_row["status"] != "ok":
-        return {
-            "asset": asset,
-            "status": candidate_row["status"],
-            "message": "No dataset with sufficient granularity for this question.",
-        }
-
-    df, sep_mode = load_real_csv(candidate_row["file_name"])
-    if df is None:
-        return {
-            "asset": asset,
-            "status": "unreadable",
-            "message": "Dataset could not be loaded on HF.",
-        }
-
-    price_candidates = guess_price_columns(df.columns)
-    if len(price_candidates) == 0:
-        return {
-            "asset": asset,
-            "status": "no_price_column",
-            "message": "No price-like column detected.",
-        }
-
-    price_col = price_candidates[0]
-    if "close" in [str(c).lower() for c in price_candidates]:
-        price_col = price_candidates[[str(c).lower() for c in price_candidates].index("close")]
-
-    freq_minutes = freq_to_minutes(candidate_row["freq_guess"])
-    horizon_minutes = parsed.get("horizon_minutes")
-    if horizon_minutes is not None and freq_minutes is not None:
-        if freq_minutes > horizon_minutes:
-            return {
-                "asset": asset,
-                "status": "insufficient_granularity",
-                "message": f"{candidate_row['file_name']} is too coarse for {horizon_minutes} minutes.",
-            }
-        horizon_steps = max(1, int(round(horizon_minutes / freq_minutes)))
-    else:
-        horizon_steps = 1
-
-    try:
-        price_series = pd.to_numeric(df[price_col], errors="coerce")
-    except Exception:
-        return {
-            "asset": asset,
-            "status": "bad_price_column",
-            "message": "Selected price column is not numeric.",
-        }
-
-    move_mode = parsed.get("move_mode") or "absolute"
-    threshold = parsed.get("threshold")
-    direction = parsed.get("direction") or "up"
-
-    if threshold is None:
-        threshold = 5.0 if move_mode == "absolute" else 0.2
-
-    future_price = price_series.shift(-horizon_steps)
-    if move_mode == "absolute":
-        move = future_price - price_series
-    else:
-        move = (future_price - price_series) / price_series * 100.0
-
-    valid = move.notna()
-
-    if direction == "up":
-        cond = move > threshold
-    elif direction == "down":
-        cond = move < -threshold
-    else:
-        cond = move.abs() > threshold
-
-    total = int(valid.sum())
-    success = int((cond & valid).sum())
-    prob = (success / total) if total > 0 else 0.0
-
-    time_col = guess_time_column(df.columns)
-    if time_col:
-        try:
-            ts = pd.to_datetime(df[time_col], errors="coerce")
-            min_ts = str(ts.min())
-            max_ts = str(ts.max())
-        except Exception:
-            min_ts = None
-            max_ts = None
-    else:
-        min_ts = None
-        max_ts = None
-
-    return {
-        "asset": asset,
-        "status": "ok",
-        "file_name": candidate_row["file_name"],
-        "freq_guess": candidate_row["freq_guess"],
-        "tz": candidate_row["tz"],
-        "price_column": price_col,
-        "separator": sep_mode,
-        "move_mode": move_mode,
-        "direction": direction,
-        "threshold": threshold,
-        "horizon_minutes": horizon_minutes,
-        "horizon_steps": horizon_steps,
-        "total_samples": total,
-        "success": success,
-        "probability": round(prob, 4),
-        "time_min": min_ts,
-        "time_max": max_ts,
+    # priorité stricte voulue pour le moteur actuel
+    priority = {
+        "1min": 100,
+        "30min": 80,
+        "daily": 60,
+        "5min": 50,
+        "1h": 40,
+        "unknown": 0
     }
 
-def format_llm_answer(question, parsed, results):
-    lines = []
-    lines.append("### Answer")
-    lines.append("")
-    lines.append(f"I interpreted your question as: **{question}**.")
-    lines.append("")
-    lines.append("I evaluated the request on the **entire history of each selected dataset**, not on a single date.")
-    lines.append("")
+    sub["prio"] = sub["freq_guess"].astype(str).map(lambda x: priority.get(x, 0))
+    sub = sub.sort_values(by=["prio", "size_bytes"], ascending=[False, False])
 
-    for r in results:
-        asset = r["asset"]
-        if r["status"] == "ok":
-            mode_label = "points" if r["move_mode"] == "absolute" else "%"
-            horizon_text = f"{r['horizon_minutes']} minutes" if r["horizon_minutes"] is not None else f"{r['horizon_steps']} rows"
-            direction_text = {"up": "up move", "down": "down move", "abs": "absolute move"}[r["direction"]]
-            lines.append(
-                f"**{asset}** — using `{r['file_name']}` ({r['freq_guess']}, {r['tz']}). "
-                f"Probability of a **{direction_text} > {r['threshold']} {mode_label}** over **{horizon_text}**: "
-                f"**{r['probability']:.2%}** "
-                f"({r['success']} successes over {r['total_samples']} valid observations)."
-            )
-        else:
-            lines.append(
-                f"**{asset}** — I cannot answer this cleanly with the currently selected datasets: {r['message']}"
-            )
+    return sub.iloc[0]
 
-    lines.append("")
-    lines.append("### Interpretation notes")
-    lines.append("")
-    lines.append("- The result is computed over the **full available history of the chosen dataset**.")
-    lines.append("- It is **not** restricted to the open, a single day, or a conditional event yet.")
-    lines.append("- Multi-asset **joint conditions** will be the next step; this version computes one result **per asset**.")
-    return "\n".join(lines)
+def parse_weekly_drop_question(text):
+    t = str(text).lower()
+
+    if "semaine" not in t and "week" not in t:
+        return None
+
+    if not any(x in t for x in ["baissé", "baisse", "down", "drop", "chute"]):
+        return None
+
+    m_pct = re.search(r'(\d+(?:[.,]\d+)?)\s*%', t)
+    if not m_pct:
+        return None
+
+    threshold_pct = float(m_pct.group(1).replace(",", "."))
+
+    m_times = re.search(r'(\d+)\s*fois', t)
+    n_times = int(m_times.group(1)) if m_times else 2
+
+    last_flag = any(x in t for x in ["dernière", "dernier", "last"])
+
+    return {
+        "type": "weekly_drop_count",
+        "threshold_pct": threshold_pct,
+        "n_times": n_times,
+        "last_flag": last_flag,
+    }
+
+def answer_weekly_drop(asset, dataset_row):
+    df, sep_mode = load_real_csv(dataset_row["file_name"])
+    if df is None:
+        return {
+            "ok": False,
+            "text": f"Je n’ai pas pu charger le dataset `{dataset_row['file_name']}`.",
+        }
+
+    time_col = guess_time_column(df.columns)
+    close_col = guess_close_column(df.columns)
+
+    if time_col is None or close_col is None:
+        return {
+            "ok": False,
+            "text": f"Le dataset `{dataset_row['file_name']}` n’a pas les colonnes minimales attendues (`time` et `close`).",
+        }
+
+    out = df.copy()
+    out[time_col] = pd.to_datetime(out[time_col], errors="coerce")
+    out[close_col] = pd.to_numeric(out[close_col], errors="coerce")
+    out = out.dropna(subset=[time_col, close_col]).sort_values(time_col)
+
+    if len(out) < 3:
+        return {
+            "ok": False,
+            "text": f"Le dataset `{dataset_row['file_name']}` n’a pas assez de lignes exploitables.",
+        }
+
+    out["ret_pct"] = out[close_col].pct_change() * 100.0
+    out["year_week"] = out[time_col].dt.strftime("%G-W%V")
+
+    threshold = -1.0
+    week_counts = (
+        out.assign(hit=out["ret_pct"] <= threshold)
+           .groupby("year_week", as_index=False)["hit"]
+           .sum()
+           .rename(columns={"hit": "drop_count"})
+    )
+
+    qualified = week_counts[week_counts["drop_count"] >= 2].copy()
+
+    if len(qualified) == 0:
+        return {
+            "ok": True,
+            "text": (
+                f"Je n’ai trouvé aucune semaine où **{asset}** a baissé d’au moins **1%** "
+                f"au moins **2 fois** dans le dataset `{dataset_row['file_name']}`."
+            ),
+        }
+
+    last_week = qualified.iloc[-1]["year_week"]
+    last_count = int(qualified.iloc[-1]["drop_count"])
+
+    matching_rows = out[
+        (out["year_week"] == last_week) &
+        (out["ret_pct"] <= threshold)
+    ][[time_col, close_col, "ret_pct"]].copy()
+
+    return {
+        "ok": True,
+        "text": (
+            f"La dernière semaine où **{asset}** a baissé d’au moins **1%** "
+            f"au moins **2 fois** est **{last_week}**.\n\n"
+            f"J’ai utilisé le dataset **`{dataset_row['file_name']}`** "
+            f"(fréquence : **{dataset_row['freq_guess']}**). "
+            f"Dans cette semaine, j’ai compté **{last_count}** occurrences répondant au critère."
+        ),
+        "details": matching_rows,
+    }
 
 catalog = load_catalog()
 cleaned = clean_catalog(catalog)
 
-if len(cleaned) == 0:
-    st.warning("No canonical datasets found")
+question = st.text_input(
+    "Question",
+    value="Quand est ce que SPX a baissé d'au moins 1% 2 fois dans la même semaine la dernière fois ?"
+)
+
+assets = detect_assets_from_query(question)
+weekly_rule = parse_weekly_drop_question(question)
+
+if len(assets) == 0:
+    st.warning("Je n’ai pas détecté d’actif clairement dans la question.")
     st.stop()
 
-question = st.text_input(
-    "Ask in French or English",
-    value="hausse > 5 points en 30 min sur SPX et VIX"
-)
+if weekly_rule is None:
+    st.info("Cette version traite pour l’instant surtout la question test hebdomadaire sur les baisses >= 1%.")
+    with st.expander("Ce que j’ai compris", expanded=False):
+        st.write({"assets": assets, "question": question})
+    st.stop()
 
-parsed = parse_simple_query(question)
-detected_assets = detect_assets_from_query(question)
+asset = assets[0]
+dataset_row = choose_best_dataset(asset, cleaned)
 
-manual_assets = st.multiselect(
-    "Manual asset override (optional)",
-    options=ASSET_ORDER,
-    default=detected_assets if len(detected_assets) > 0 else ["SPX"]
-)
+if dataset_row is None:
+    st.error(f"Aucun dataset exploitable trouvé pour {asset}.")
+    st.stop()
 
-final_assets = manual_assets[:5]
-candidates = build_candidates(cleaned, final_assets, parsed)
+answer = answer_weekly_drop(asset, dataset_row)
 
-results = []
-for _, cand in candidates.iterrows():
-    results.append(compute_asset_result(cand["asset"], cand, parsed))
+st.markdown("### Réponse")
+st.markdown(answer["text"])
 
-st.markdown(format_llm_answer(question, parsed, results))
+if answer.get("details") is not None and len(answer["details"]) > 0:
+    with st.expander("Voir les lignes correspondantes", expanded=False):
+        st.dataframe(answer["details"], width="stretch")
 
-with st.expander("Datasets used", expanded=False):
-    st.dataframe(candidates, width="stretch")
-
-with st.expander("Query parsing details", expanded=False):
-    st.write(parsed)
-    st.write("Detected assets:", detected_assets)
-    st.write("Final assets:", final_assets)
-
-with st.expander("Catalog browser", expanded=False):
-    st.write("Selected catalog rows:", len(catalog))
-    st.write("Canonical rows:", len(cleaned))
-    st.dataframe(
-        cleaned[["asset", "file_name", "relative_path", "size_bytes", "freq_guess", "tz_guess"]].head(300),
-        width="stretch"
-    )
+with st.expander("Détails techniques", expanded=False):
+    st.write({
+        "actif_detecté": asset,
+        "dataset_utilisé": dataset_row["file_name"],
+        "fréquence": dataset_row["freq_guess"],
+        "chemin": dataset_row["relative_path"],
+    })
