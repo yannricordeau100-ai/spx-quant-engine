@@ -30,11 +30,21 @@ BAD_FILE_KEYWORDS = [
 ASSET_ORDER = ["SPX", "SPY", "VIX", "VIX1D", "Or+pétrole"]
 
 ASSET_ALIASES = {
-    "SPX": ["spx", "s&p", "s&p500", "sp 500", "es1", "es future", "spooz"],
+    "SPX": ["spx", "s&p", "sp 500", "s&p500", "es1", "es future"],
     "SPY": ["spy"],
     "VIX": ["vix", "vix cash", "vix open", "vix ouverture"],
-    "VIX1D": ["vix1d", "vix 1d", "1-day vix"],
-    "Or+pétrole": ["or+pétrole", "or+petrole", "gold+oil", "gold oil", "or", "petrole", "pétrole", "oil"],
+    "VIX1D": ["vix1d", "vix 1d"],
+    "Or+pétrole": ["or+pétrole", "or+petrole", "gold+oil", "gold oil", "or", "gold", "pétrole", "petrole", "oil"],
+}
+
+# Tu pourras me donner les cas ambigus plus tard, on les fixera ici.
+MANUAL_TZ_OVERRIDES = {
+    "VIX_9H30_CET_SPX_OPENING_daily.csv": "Europe/Paris",
+}
+
+TZ_PATH_HINTS = {
+    "Europe/Paris": ["cet", "paris", "9h30_cet"],
+    "America/New_York": ["new_york", "ny", "_et", " et ", "opening"],
 }
 
 @st.cache_data
@@ -50,7 +60,6 @@ def clean_catalog(df):
     if len(df) == 0:
         return df
     out = df.copy()
-
     rp = out["relative_path"].astype(str).str.lower()
     fn = out["file_name"].astype(str).str.lower()
 
@@ -74,7 +83,6 @@ def detect_assets_from_query(text):
     for asset, aliases in ASSET_ALIASES.items():
         if any(alias in t for alias in aliases):
             found.append(asset)
-    # preserve project order
     ordered = [a for a in ASSET_ORDER if a in found]
     return ordered[:5]
 
@@ -88,7 +96,7 @@ def parse_simple_query(text):
         direction = "up"
     elif any(x in t for x in ["baisse", "down", "drop", "chute"]):
         direction = "down"
-    elif any(x in t for x in ["absolu", "absolute", "abs", "bouge", "move"]):
+    elif any(x in t for x in ["absolu", "absolute", "abs", "move", "mouvement"]):
         direction = "abs"
 
     move_mode = "absolute"
@@ -128,30 +136,118 @@ def parse_simple_query(text):
         "date_scope": "entire selected dataset history",
     }
 
-def score_dataset_row(row):
-    score = 0
-    fn = str(row["file_name"]).lower()
-    freq = str(row["freq_guess"]).lower()
-    tz = str(row["tz_guess"]).lower()
+def guess_time_column(cols):
+    exact = ["time", "datetime", "date", "timestamp"]
+    for c in cols:
+        cl = str(c).lower()
+        if cl in exact:
+            return c
+    for c in cols:
+        cl = str(c).lower()
+        if "time" in cl or "date" in cl:
+            return c
+    return None
 
-    if "1min" in freq:
-        score += 50
-    elif "5min" in freq:
-        score += 35
-    elif "30min" in freq:
-        score += 20
-    elif "daily" in freq:
-        score += 10
+def guess_price_columns(cols):
+    preferred = ["close", "open", "high", "low", "price", "last"]
+    out = []
+    lower_map = {str(c).lower(): c for c in cols}
+    for p in preferred:
+        if p in lower_map:
+            out.append(lower_map[p])
+    for c in cols:
+        cl = str(c).lower()
+        if cl not in [str(x).lower() for x in out]:
+            if any(k in cl for k in preferred):
+                out.append(c)
+    return out
 
-    if "new_york" in tz or "unknown" in tz:
-        score += 5
+def freq_to_minutes(freq_guess):
+    m = {
+        "1min": 1,
+        "5min": 5,
+        "15min": 15,
+        "30min": 30,
+        "1h": 60,
+        "daily": 1440,
+        "unknown": None,
+    }
+    return m.get(str(freq_guess), None)
 
-    if "future" not in fn:
-        score += 3
+@st.cache_data
+def load_real_csv(file_name):
+    full_path = os.path.join(LIVE_ROOT, file_name)
+    if not os.path.exists(full_path):
+        return None, "missing"
 
-    return score
+    try:
+        df = pd.read_csv(full_path, sep=None, engine="python")
+        if df is not None and len(df.columns) > 1:
+            return df, "auto"
+    except Exception:
+        pass
 
-def build_candidates(cleaned, assets):
+    for sep, label in [(";", "semicolon"), (",", "comma"), ("\t", "tab"), ("|", "pipe")]:
+        try:
+            df = pd.read_csv(full_path, sep=sep)
+            if df is not None and len(df.columns) >= 1:
+                return df, label
+        except Exception:
+            continue
+
+    return None, "failed"
+
+def infer_timezone(row):
+    fn = str(row["file_name"])
+    rel = str(row["relative_path"]).lower()
+    cat_tz = str(row["tz_guess"])
+
+    if fn in MANUAL_TZ_OVERRIDES:
+        return MANUAL_TZ_OVERRIDES[fn]
+
+    if cat_tz and cat_tz != "unknown":
+        return cat_tz
+
+    for tz, hints in TZ_PATH_HINTS.items():
+        if any(h in rel for h in hints):
+            return tz
+
+    return "unknown"
+
+def score_dataset_row(row, parsed):
+    freq = str(row["freq_guess"])
+    freq_minutes = freq_to_minutes(freq)
+    tz = infer_timezone(row)
+
+    base = 0
+    if freq == "1min":
+        base = 100
+    elif freq == "5min":
+        base = 85
+    elif freq == "30min":
+        base = 65
+    elif freq == "1h":
+        base = 55
+    elif freq == "daily":
+        base = 40
+    else:
+        base = 10
+
+    threshold = parsed.get("threshold")
+    horizon_minutes = parsed.get("horizon_minutes")
+
+    if horizon_minutes is not None and freq_minutes is not None:
+        if freq_minutes > horizon_minutes:
+            base -= 200
+        else:
+            base += 15
+
+    if tz != "unknown":
+        base += 3
+
+    return base
+
+def build_candidates(cleaned, assets, parsed):
     rows = []
     for asset in assets:
         sub = cleaned[cleaned["asset"] == asset].copy()
@@ -161,26 +257,170 @@ def build_candidates(cleaned, assets):
                 "status": "missing",
                 "file_name": None,
                 "freq_guess": None,
-                "tz_guess": None,
+                "tz": None,
                 "relative_path": None,
                 "score": None,
             })
             continue
 
-        sub["score"] = sub.apply(score_dataset_row, axis=1)
+        sub["resolved_tz"] = sub.apply(infer_timezone, axis=1)
+        sub["score"] = sub.apply(lambda r: score_dataset_row(r, parsed), axis=1)
         sub = sub.sort_values(by=["score", "size_bytes"], ascending=[False, False])
 
         best = sub.iloc[0]
         rows.append({
             "asset": asset,
-            "status": "ok",
+            "status": "ok" if best["score"] > -100 else "insufficient_granularity",
             "file_name": best["file_name"],
             "freq_guess": best["freq_guess"],
-            "tz_guess": best["tz_guess"],
+            "tz": best["resolved_tz"],
             "relative_path": best["relative_path"],
             "score": int(best["score"]),
         })
     return pd.DataFrame(rows)
+
+def compute_asset_result(asset, candidate_row, parsed):
+    if candidate_row["status"] != "ok":
+        return {
+            "asset": asset,
+            "status": candidate_row["status"],
+            "message": "No dataset with sufficient granularity for this question.",
+        }
+
+    df, sep_mode = load_real_csv(candidate_row["file_name"])
+    if df is None:
+        return {
+            "asset": asset,
+            "status": "unreadable",
+            "message": "Dataset could not be loaded on HF.",
+        }
+
+    price_candidates = guess_price_columns(df.columns)
+    if len(price_candidates) == 0:
+        return {
+            "asset": asset,
+            "status": "no_price_column",
+            "message": "No price-like column detected.",
+        }
+
+    price_col = price_candidates[0]
+    if "close" in [str(c).lower() for c in price_candidates]:
+        price_col = price_candidates[[str(c).lower() for c in price_candidates].index("close")]
+
+    freq_minutes = freq_to_minutes(candidate_row["freq_guess"])
+    horizon_minutes = parsed.get("horizon_minutes")
+    if horizon_minutes is not None and freq_minutes is not None:
+        if freq_minutes > horizon_minutes:
+            return {
+                "asset": asset,
+                "status": "insufficient_granularity",
+                "message": f"{candidate_row['file_name']} is too coarse for {horizon_minutes} minutes.",
+            }
+        horizon_steps = max(1, int(round(horizon_minutes / freq_minutes)))
+    else:
+        horizon_steps = 1
+
+    try:
+        price_series = pd.to_numeric(df[price_col], errors="coerce")
+    except Exception:
+        return {
+            "asset": asset,
+            "status": "bad_price_column",
+            "message": "Selected price column is not numeric.",
+        }
+
+    move_mode = parsed.get("move_mode") or "absolute"
+    threshold = parsed.get("threshold")
+    direction = parsed.get("direction") or "up"
+
+    if threshold is None:
+        threshold = 5.0 if move_mode == "absolute" else 0.2
+
+    future_price = price_series.shift(-horizon_steps)
+    if move_mode == "absolute":
+        move = future_price - price_series
+    else:
+        move = (future_price - price_series) / price_series * 100.0
+
+    valid = move.notna()
+
+    if direction == "up":
+        cond = move > threshold
+    elif direction == "down":
+        cond = move < -threshold
+    else:
+        cond = move.abs() > threshold
+
+    total = int(valid.sum())
+    success = int((cond & valid).sum())
+    prob = (success / total) if total > 0 else 0.0
+
+    time_col = guess_time_column(df.columns)
+    if time_col:
+        try:
+            ts = pd.to_datetime(df[time_col], errors="coerce")
+            min_ts = str(ts.min())
+            max_ts = str(ts.max())
+        except Exception:
+            min_ts = None
+            max_ts = None
+    else:
+        min_ts = None
+        max_ts = None
+
+    return {
+        "asset": asset,
+        "status": "ok",
+        "file_name": candidate_row["file_name"],
+        "freq_guess": candidate_row["freq_guess"],
+        "tz": candidate_row["tz"],
+        "price_column": price_col,
+        "separator": sep_mode,
+        "move_mode": move_mode,
+        "direction": direction,
+        "threshold": threshold,
+        "horizon_minutes": horizon_minutes,
+        "horizon_steps": horizon_steps,
+        "total_samples": total,
+        "success": success,
+        "probability": round(prob, 4),
+        "time_min": min_ts,
+        "time_max": max_ts,
+    }
+
+def format_llm_answer(question, parsed, results):
+    lines = []
+    lines.append("### Answer")
+    lines.append("")
+    lines.append(f"I interpreted your question as: **{question}**.")
+    lines.append("")
+    lines.append("I evaluated the request on the **entire history of each selected dataset**, not on a single date.")
+    lines.append("")
+
+    for r in results:
+        asset = r["asset"]
+        if r["status"] == "ok":
+            mode_label = "points" if r["move_mode"] == "absolute" else "%"
+            horizon_text = f"{r['horizon_minutes']} minutes" if r["horizon_minutes"] is not None else f"{r['horizon_steps']} rows"
+            direction_text = {"up": "up move", "down": "down move", "abs": "absolute move"}[r["direction"]]
+            lines.append(
+                f"**{asset}** — using `{r['file_name']}` ({r['freq_guess']}, {r['tz']}). "
+                f"Probability of a **{direction_text} > {r['threshold']} {mode_label}** over **{horizon_text}**: "
+                f"**{r['probability']:.2%}** "
+                f"({r['success']} successes over {r['total_samples']} valid observations)."
+            )
+        else:
+            lines.append(
+                f"**{asset}** — I cannot answer this cleanly with the currently selected datasets: {r['message']}"
+            )
+
+    lines.append("")
+    lines.append("### Interpretation notes")
+    lines.append("")
+    lines.append("- The result is computed over the **full available history of the chosen dataset**.")
+    lines.append("- It is **not** restricted to the open, a single day, or a conditional event yet.")
+    lines.append("- Multi-asset **joint conditions** will be the next step; this version computes one result **per asset**.")
+    return "\n".join(lines)
 
 catalog = load_catalog()
 cleaned = clean_catalog(catalog)
@@ -188,8 +428,6 @@ cleaned = clean_catalog(catalog)
 if len(cleaned) == 0:
     st.warning("No canonical datasets found")
     st.stop()
-
-st.subheader("Question")
 
 question = st.text_input(
     "Ask in French or English",
@@ -206,32 +444,26 @@ manual_assets = st.multiselect(
 )
 
 final_assets = manual_assets[:5]
-candidates = build_candidates(cleaned, final_assets)
+candidates = build_candidates(cleaned, final_assets, parsed)
 
-st.subheader("Result")
-st.write({
-    "question": question,
-    "detected_assets": detected_assets,
-    "final_assets": final_assets,
-    "direction": parsed.get("direction"),
-    "move_mode": parsed.get("move_mode"),
-    "threshold": parsed.get("threshold"),
-    "horizon_minutes": parsed.get("horizon_minutes"),
-    "condition_flag": parsed.get("condition_flag"),
-    "date_scope": parsed.get("date_scope"),
-})
+results = []
+for _, cand in candidates.iterrows():
+    results.append(compute_asset_result(cand["asset"], cand, parsed))
 
-if len(candidates) > 0:
+st.markdown(format_llm_answer(question, parsed, results))
+
+with st.expander("Datasets used", expanded=False):
     st.dataframe(candidates, width="stretch")
 
-with st.expander("Dataset browser details", expanded=False):
+with st.expander("Query parsing details", expanded=False):
+    st.write(parsed)
+    st.write("Detected assets:", detected_assets)
+    st.write("Final assets:", final_assets)
+
+with st.expander("Catalog browser", expanded=False):
     st.write("Selected catalog rows:", len(catalog))
     st.write("Canonical rows:", len(cleaned))
     st.dataframe(
         cleaned[["asset", "file_name", "relative_path", "size_bytes", "freq_guess", "tz_guess"]].head(300),
         width="stretch"
     )
-
-with st.expander("Query parsing details", expanded=False):
-    st.write("Parsed query", parsed)
-    st.write("Detected assets", detected_assets)
