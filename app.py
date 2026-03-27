@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 import re
+import numpy as np
 from datetime import date
 
 st.set_page_config(layout="wide")
@@ -31,6 +32,7 @@ WEEKDAYS_FR = {
 
 MANUAL_TZ_OVERRIDES = {
     "VIX_9H30_CET_SPX_OPENING_daily.csv": "Europe/Paris",
+    "calendar_events_daily.csv": "America/New_York",
 }
 
 @st.cache_data
@@ -70,11 +72,12 @@ def parse_question(text):
         "special_case": None,
         "options_case": False,
         "need_interpretation_notice": False,
+        "list_mode": False,
     }
 
     if any(x in t for x in ["hausse", "up", "monte", "rise"]):
         out["direction"] = "up"
-    elif any(x in t for x in ["baisse", "down", "drop", "chute"]):
+    elif any(x in t for x in ["baissé", "baisse", "down", "drop", "chute"]):
         out["direction"] = "down"
     elif any(x in t for x in ["absolu", "absolute", "abs", "mouvement", "move"]):
         out["direction"] = "abs"
@@ -131,6 +134,9 @@ def parse_question(text):
     else:
         out["structure"] = None
 
+    if any(x in t for x in ["dernières fois", "dernieres fois", "last times", "où ", "ou "]):
+        out["list_mode"] = True
+
     clear_enough = (
         len(out["assets"]) > 0 and (
             out["special_case"] is not None or
@@ -140,6 +146,28 @@ def parse_question(text):
     )
     out["need_interpretation_notice"] = not clear_enough
     return out
+
+def format_date_fr(dt):
+    if pd.isna(dt):
+        return None
+    return f"{WEEKDAYS_FR[dt.weekday()]} {dt.day} {MONTHS_FR[dt.month]} {dt.year}"
+
+def iso_week_to_range_fr(year_week):
+    try:
+        year_str, week_str = year_week.split("-W")
+        year = int(year_str)
+        week = int(week_str)
+        start = date.fromisocalendar(year, week, 1)  # lundi
+        end = date.fromisocalendar(year, week, 5)    # vendredi
+        start_txt = f"{WEEKDAYS_FR[start.weekday()]} {start.day} {MONTHS_FR[start.month]} {start.year}"
+        end_txt = f"{WEEKDAYS_FR[end.weekday()]} {end.day} {MONTHS_FR[end.month]} {end.year}"
+        return {
+            "start": start,
+            "end": end,
+            "label": f"du {start_txt} au {end_txt}",
+        }
+    except Exception:
+        return {"start": None, "end": None, "label": year_week}
 
 def guess_time_column(cols):
     exact = ["time", "datetime", "date", "timestamp"]
@@ -189,19 +217,6 @@ def freq_to_minutes(freq_guess):
     }
     return m.get(str(freq_guess), None)
 
-def iso_week_to_date_range_fr(year_week):
-    try:
-        year_str, week_str = year_week.split("-W")
-        year = int(year_str)
-        week = int(week_str)
-        start = date.fromisocalendar(year, week, 1)
-        end = date.fromisocalendar(year, week, 7)
-        start_txt = f"{WEEKDAYS_FR[start.weekday()]} {start.strftime('%d-%m-%Y')}"
-        end_txt = f"{WEEKDAYS_FR[end.weekday()]} {end.strftime('%d-%m-%Y')}"
-        return f"du {start_txt} au {end_txt}"
-    except Exception:
-        return year_week
-
 def infer_timezone(row):
     fn = str(row["file_name"])
     if fn in MANUAL_TZ_OVERRIDES:
@@ -239,7 +254,7 @@ def choose_all_standard_datasets(asset, catalog):
     sub["priority"] = sub["freq_guess"].astype(str).map(lambda x: priority.get(x, 0))
     return sub.sort_values(by=["priority", "size_bytes"], ascending=[False, False]).reset_index(drop=True)
 
-def load_option_chain_row(df):
+def normalize_option_chain(df):
     if df is None or len(df) == 0:
         return None
 
@@ -255,17 +270,17 @@ def load_option_chain_row(df):
         cl = str(c).strip().lower().replace(" ", "").replace("_", "")
         if cl in ["strike", "strikeprice"]:
             rename_map[c] = "Strike"
-        elif cl in ["callbid"]:
+        elif cl == "callbid":
             rename_map[c] = "CallBid"
-        elif cl in ["callask"]:
+        elif cl == "callask":
             rename_map[c] = "CallAsk"
-        elif cl in ["calldelta"]:
+        elif cl == "calldelta":
             rename_map[c] = "CallDelta"
-        elif cl in ["putbid"]:
+        elif cl == "putbid":
             rename_map[c] = "PutBid"
-        elif cl in ["putask"]:
+        elif cl == "putask":
             rename_map[c] = "PutAsk"
-        elif cl in ["putdelta"]:
+        elif cl == "putdelta":
             rename_map[c] = "PutDelta"
 
     df = df.rename(columns=rename_map)
@@ -278,19 +293,6 @@ def load_option_chain_row(df):
         df[c] = pd.to_numeric(df[c], errors="coerce")
     df = df.dropna(subset=needed).sort_values("Strike").reset_index(drop=True)
     return df
-
-def choose_nearest_option_file(catalog, target_vix):
-    sub = catalog[catalog["doc_type"] == "options"].copy()
-    if len(sub) == 0:
-        return None
-    sub["vix_snapshot_num"] = pd.to_numeric(sub["vix_snapshot"], errors="coerce")
-    sub = sub.dropna(subset=["vix_snapshot_num"])
-    if len(sub) == 0:
-        return None
-    if target_vix is None:
-        return sub.sort_values("vix_snapshot_num").iloc[0]
-    sub["dist"] = (sub["vix_snapshot_num"] - target_vix).abs()
-    return sub.sort_values(["dist", "size_bytes"], ascending=[True, False]).iloc[0]
 
 def nearest_strike(strikes, target, side=None):
     strikes = sorted([float(x) for x in strikes])
@@ -306,28 +308,21 @@ def nearest_strike(strikes, target, side=None):
         return min(candidates, key=lambda x: abs(x - target))
     return min(strikes, key=lambda x: abs(x - target))
 
-def compute_ic_ric(question_parsed, catalog):
-    row = choose_nearest_option_file(catalog, question_parsed.get("target_vix"))
-    if row is None:
-        return {"ok": False, "text": "Aucun fichier d’options exploitable n’a été trouvé."}
-
+def compute_chain_metrics(row, wing_mode, wing_value):
     raw_df, sep_mode = load_real_csv(row["local_file_name"])
-    chain = load_option_chain_row(raw_df)
+    chain = normalize_option_chain(raw_df)
     if chain is None or len(chain) == 0:
-        return {"ok": False, "text": f"Le tableau d’options `{row['file_name']}` n’est pas exploitable."}
+        return None
 
     work = chain.copy()
     work["center_score"] = (work["CallDelta"] - 0.5).abs() + (work["PutDelta"] + 0.5).abs()
     center = work.sort_values("center_score").iloc[0]
     center_strike = float(center["Strike"])
 
-    wing_mode = question_parsed.get("wing_mode") or "points"
-    wing_value = float(question_parsed.get("wing_value") or 10.0)
-
     if wing_mode == "percent":
-        wing_points_raw = center_strike * wing_value / 100.0
+        wing_points_raw = center_strike * float(wing_value) / 100.0
     else:
-        wing_points_raw = wing_value
+        wing_points_raw = float(wing_value)
 
     strikes = work["Strike"].tolist()
     lower_target = center_strike - wing_points_raw
@@ -344,7 +339,6 @@ def compute_ic_ric(question_parsed, catalog):
     width_call = upper_strike - center_strike
     width = max(width_put, width_call)
 
-    # exécution réaliste bid/ask
     ic_credit = (
         row_center["PutBid"] - row_lower["PutAsk"] +
         row_center["CallBid"] - row_upper["CallAsk"]
@@ -354,88 +348,162 @@ def compute_ic_ric(question_parsed, catalog):
         row_center["CallAsk"] - row_upper["CallBid"]
     )
 
-    # mid
     center_put_mid = (row_center["PutBid"] + row_center["PutAsk"]) / 2
     lower_put_mid = (row_lower["PutBid"] + row_lower["PutAsk"]) / 2
     center_call_mid = (row_center["CallBid"] + row_center["CallAsk"]) / 2
     upper_call_mid = (row_upper["CallBid"] + row_upper["CallAsk"]) / 2
 
     ic_mid = (center_put_mid - lower_put_mid) + (center_call_mid - upper_call_mid)
-    ric_mid = (center_put_mid - lower_put_mid) + (center_call_mid - upper_call_mid)
+    ric_mid = (row_center["PutAsk"] - row_lower["PutBid"]) + (row_center["CallAsk"] - row_upper["CallBid"])
+    ric_mid_fair = (center_put_mid - lower_put_mid) + (center_call_mid - upper_call_mid)
 
-    ic_max_gain = ic_credit
-    ic_max_loss = width - ic_credit
-    ic_be_low = center_strike - ic_credit
-    ic_be_high = center_strike + ic_credit
-
-    ric_max_loss = ric_debit
-    ric_max_gain = width - ric_debit
-    ric_be_low = center_strike - ric_debit
-    ric_be_high = center_strike + ric_debit
-
-    structure = question_parsed.get("structure")
-    if structure == "IC":
-        text = (
-            f"### Réponse\n\n"
-            f"Pour un **IC** avec un **VIX cible de {question_parsed.get('target_vix')}**, "
-            f"j’ai utilisé le fichier **`{row['file_name']}`** "
-            f"(VIX observé le plus proche : **{row['vix_snapshot']}**).\n\n"
-            f"Le **strike central** retenu est **{int(center_strike)}**, car c’est celui qui est le plus proche de "
-            f"**delta +0,5 côté call** et **delta -0,5 côté put**.\n\n"
-            f"Les ailes retenues sont **{int(lower_strike)} / {int(center_strike)} / {int(upper_strike)}**.\n\n"
-            f"- **Crédit IC (bid/ask réaliste)** : **{ic_credit:.2f}**\n"
-            f"- **Valeur mid** : **{ic_mid:.2f}**\n"
-            f"- **Max gain** : **{ic_max_gain:.2f}**\n"
-            f"- **Max loss** : **{ic_max_loss:.2f}**\n"
-            f"- **Break-even bas** : **{ic_be_low:.2f}**\n"
-            f"- **Break-even haut** : **{ic_be_high:.2f}**"
-        )
-    elif structure == "RIC":
-        text = (
-            f"### Réponse\n\n"
-            f"Pour un **RIC** avec un **VIX cible de {question_parsed.get('target_vix')}**, "
-            f"j’ai utilisé le fichier **`{row['file_name']}`** "
-            f"(VIX observé le plus proche : **{row['vix_snapshot']}**).\n\n"
-            f"Le **strike central** retenu est **{int(center_strike)}**, car c’est celui qui est le plus proche de "
-            f"**delta +0,5 côté call** et **delta -0,5 côté put**.\n\n"
-            f"Les ailes retenues sont **{int(lower_strike)} / {int(center_strike)} / {int(upper_strike)}**.\n\n"
-            f"- **Débit RIC (bid/ask réaliste)** : **{ric_debit:.2f}**\n"
-            f"- **Valeur mid** : **{ric_mid:.2f}**\n"
-            f"- **Max gain** : **{ric_max_gain:.2f}**\n"
-            f"- **Max loss** : **{ric_max_loss:.2f}**\n"
-            f"- **Break-even bas** : **{ric_be_low:.2f}**\n"
-            f"- **Break-even haut** : **{ric_be_high:.2f}**"
-        )
-    else:
-        text = (
-            f"### Réponse\n\n"
-            f"J’ai utilisé le fichier **`{row['file_name']}`** "
-            f"(VIX observé le plus proche : **{row['vix_snapshot']}**).\n\n"
-            f"Centre retenu : **{int(center_strike)}**. "
-            f"Ailes retenues : **{int(lower_strike)} / {int(center_strike)} / {int(upper_strike)}**.\n\n"
-            f"- **IC** : crédit **{ic_credit:.2f}**, max gain **{ic_max_gain:.2f}**, max loss **{ic_max_loss:.2f}**\n"
-            f"- **RIC** : débit **{ric_debit:.2f}**, max gain **{ric_max_gain:.2f}**, max loss **{ric_max_loss:.2f}**"
-        )
-
-    details = {
-        "fichier": row["file_name"],
-        "vix_snapshot_utilisé": row["vix_snapshot"],
+    metrics = {
+        "file_name": row["file_name"],
+        "vix_snapshot": float(row["vix_snapshot"]) if str(row["vix_snapshot"]) not in ["", "nan"] else None,
         "sep_mode": sep_mode,
         "center_strike": center_strike,
         "lower_strike": lower_strike,
         "upper_strike": upper_strike,
-        "wing_mode": wing_mode,
-        "wing_value": wing_value,
         "wing_points_raw": wing_points_raw,
-        "ic_credit": round(ic_credit, 4),
-        "ric_debit": round(ric_debit, 4),
-        "ic_mid": round(ic_mid, 4),
-        "ric_mid": round(ric_mid, 4),
+        "ic_credit": float(ic_credit),
+        "ric_debit": float(ric_debit),
+        "ic_mid": float(ic_mid),
+        "ric_mid": float(ric_mid_fair),
+        "ic_max_gain": float(ic_credit),
+        "ic_max_loss": float(width - ic_credit),
+        "ic_be_low": float(center_strike - ic_credit),
+        "ic_be_high": float(center_strike + ic_credit),
+        "ric_max_gain": float(width - ric_debit),
+        "ric_max_loss": float(ric_debit),
+        "ric_be_low": float(center_strike - ric_debit),
+        "ric_be_high": float(center_strike + ric_debit),
+    }
+    return metrics
+
+def choose_option_rows_for_interpolation(catalog, target_vix):
+    sub = catalog[catalog["doc_type"] == "options"].copy()
+    if len(sub) == 0:
+        return sub
+    sub["vix_snapshot_num"] = pd.to_numeric(sub["vix_snapshot"], errors="coerce")
+    sub = sub.dropna(subset=["vix_snapshot_num"]).sort_values("vix_snapshot_num").reset_index(drop=True)
+    if target_vix is None or len(sub) == 0:
+        return sub.head(1)
+
+    exact = sub[np.isclose(sub["vix_snapshot_num"], target_vix)]
+    if len(exact) > 0:
+        return exact.head(1)
+
+    below = sub[sub["vix_snapshot_num"] < target_vix].sort_values("vix_snapshot_num", ascending=False).head(2)
+    above = sub[sub["vix_snapshot_num"] > target_vix].sort_values("vix_snapshot_num", ascending=True).head(2)
+    out = pd.concat([below, above]).sort_values("vix_snapshot_num").drop_duplicates(subset=["file_name"])
+    if len(out) == 0:
+        sub["dist"] = (sub["vix_snapshot_num"] - target_vix).abs()
+        return sub.sort_values("dist").head(4)
+    return out
+
+def interpolate_metric(points_x, points_y, target_x):
+    if len(points_x) == 0:
+        return None
+    if len(points_x) == 1:
+        return float(points_y[0])
+
+    x = np.array(points_x, dtype=float)
+    y = np.array(points_y, dtype=float)
+
+    deg = 2 if len(x) >= 3 else 1
+    try:
+        coeffs = np.polyfit(x, y, deg=deg)
+        val = np.polyval(coeffs, target_x)
+        return float(val)
+    except Exception:
+        # fallback inverse distance
+        dist = np.abs(x - float(target_x))
+        dist = np.where(dist == 0, 1e-9, dist)
+        w = 1.0 / dist
+        return float(np.sum(w * y) / np.sum(w))
+
+def compute_ic_ric(question_parsed, catalog):
+    rows = choose_option_rows_for_interpolation(catalog, question_parsed.get("target_vix"))
+    if rows is None or len(rows) == 0:
+        return {"ok": False, "text": "Aucun fichier d’options exploitable n’a été trouvé."}
+
+    metrics_list = []
+    for _, row in rows.iterrows():
+        m = compute_chain_metrics(row, question_parsed.get("wing_mode"), question_parsed.get("wing_value"))
+        if m is not None and m.get("vix_snapshot") is not None:
+            metrics_list.append(m)
+
+    if len(metrics_list) == 0:
+        return {"ok": False, "text": "Les tableaux d’options trouvés ne sont pas exploitables."}
+
+    target_vix = question_parsed.get("target_vix")
+    if target_vix is None:
+        target_vix = metrics_list[0]["vix_snapshot"]
+
+    xs = [m["vix_snapshot"] for m in metrics_list]
+
+    interpolated = {}
+    for key in [
+        "center_strike", "lower_strike", "upper_strike", "wing_points_raw",
+        "ic_credit", "ric_debit", "ic_mid", "ric_mid",
+        "ic_max_gain", "ic_max_loss", "ic_be_low", "ic_be_high",
+        "ric_max_gain", "ric_max_loss", "ric_be_low", "ric_be_high"
+    ]:
+        ys = [m[key] for m in metrics_list]
+        interpolated[key] = interpolate_metric(xs, ys, target_vix)
+
+    used_files = [m["file_name"] for m in metrics_list]
+    structure = question_parsed.get("structure")
+
+    if structure == "IC":
+        text = (
+            f"### Réponse\n\n"
+            f"Pour un **IC** avec un **VIX cible de {target_vix:.2f}**, j’ai utilisé les fichiers d’options les plus proches "
+            f"et effectué une **interpolation locale non linéaire**.\n\n"
+            f"Le **strike central estimé** est **{round(interpolated['center_strike'])}**.\n"
+            f"Les ailes estimées sont **{round(interpolated['lower_strike'])} / {round(interpolated['center_strike'])} / {round(interpolated['upper_strike'])}**.\n\n"
+            f"- **Crédit IC estimé** : **{interpolated['ic_credit']:.2f}**\n"
+            f"- **Valeur mid estimée** : **{interpolated['ic_mid']:.2f}**\n"
+            f"- **Max gain estimé** : **{interpolated['ic_max_gain']:.2f}**\n"
+            f"- **Max loss estimé** : **{interpolated['ic_max_loss']:.2f}**\n"
+            f"- **Break-even bas estimé** : **{interpolated['ic_be_low']:.2f}**\n"
+            f"- **Break-even haut estimé** : **{interpolated['ic_be_high']:.2f}**"
+        )
+    elif structure == "RIC":
+        text = (
+            f"### Réponse\n\n"
+            f"Pour un **RIC** avec un **VIX cible de {target_vix:.2f}**, j’ai utilisé les fichiers d’options les plus proches "
+            f"et effectué une **interpolation locale non linéaire**.\n\n"
+            f"Le **strike central estimé** est **{round(interpolated['center_strike'])}**.\n"
+            f"Les ailes estimées sont **{round(interpolated['lower_strike'])} / {round(interpolated['center_strike'])} / {round(interpolated['upper_strike'])}**.\n\n"
+            f"- **Débit RIC estimé** : **{interpolated['ric_debit']:.2f}**\n"
+            f"- **Valeur mid estimée** : **{interpolated['ric_mid']:.2f}**\n"
+            f"- **Max gain estimé** : **{interpolated['ric_max_gain']:.2f}**\n"
+            f"- **Max loss estimé** : **{interpolated['ric_max_loss']:.2f}**\n"
+            f"- **Break-even bas estimé** : **{interpolated['ric_be_low']:.2f}**\n"
+            f"- **Break-even haut estimé** : **{interpolated['ric_be_high']:.2f}**"
+        )
+    else:
+        text = (
+            f"### Réponse\n\n"
+            f"J’ai effectué une interpolation locale non linéaire autour d’un **VIX cible de {target_vix:.2f}**.\n\n"
+            f"- **IC estimé** : **{interpolated['ic_credit']:.2f}**\n"
+            f"- **RIC estimé** : **{interpolated['ric_debit']:.2f}**"
+        )
+
+    return {
+        "ok": True,
+        "text": text,
+        "details": {
+            "fichiers_utilisés": used_files,
+            "target_vix": target_vix,
+            "wing_mode": question_parsed.get("wing_mode"),
+            "wing_value": question_parsed.get("wing_value"),
+            **{k: round(v, 4) if isinstance(v, (int, float, np.floating)) else v for k, v in interpolated.items()}
+        }
     }
 
-    return {"ok": True, "text": text, "details": details}
-
-def answer_weekly_drop(asset, datasets):
+def answer_weekly_drop(asset, datasets, list_mode=False):
     results = []
 
     for _, row in datasets.iterrows():
@@ -445,7 +513,6 @@ def answer_weekly_drop(asset, datasets):
 
         time_col = guess_time_column(df.columns)
         close_col = guess_close_column(df.columns)
-
         if time_col is None or close_col is None:
             continue
 
@@ -472,18 +539,16 @@ def answer_weekly_drop(asset, datasets):
         if len(qualified) == 0:
             continue
 
-        last_week = qualified.iloc[-1]["year_week"]
-        last_count = int(qualified.iloc[-1]["drop_count"])
-
-        results.append({
-            "asset": asset,
-            "dataset": row["file_name"],
-            "freq": row["freq_guess"],
-            "status": "ok",
-            "last_week": last_week,
-            "week_label_fr": iso_week_to_date_range_fr(last_week),
-            "count": last_count,
-        })
+        for _, qrow in qualified.iterrows():
+            rng = iso_week_to_range_fr(qrow["year_week"])
+            results.append({
+                "asset": asset,
+                "dataset": row["file_name"],
+                "freq": row["freq_guess"],
+                "last_week": qrow["year_week"],
+                "week_label_fr": rng["label"],
+                "count": int(qrow["drop_count"]),
+            })
 
     if len(results) == 0:
         return {
@@ -492,18 +557,30 @@ def answer_weekly_drop(asset, datasets):
         }
 
     results = sorted(results, key=lambda r: r["last_week"], reverse=True)
-    best = results[0]
-    return {
-        "ok": True,
-        "text": (
-            f"### Réponse\n\n"
-            f"Pour **{asset}**, la dernière période trouvée est **{best['week_label_fr']}**.\n\n"
-            f"J’ai retenu le dataset **`{best['dataset']}`** (fréquence **{best['freq']}**), "
-            f"dans lequel j’ai compté **{best['count']}** occurrences répondant au critère dans cette semaine.\n\n"
-            f"J’ai testé **tous les CSV canoniques disponibles pour {asset}**, pas un seul."
-        ),
-        "details": results,
-    }
+
+    if not list_mode:
+        best = results[0]
+        return {
+            "ok": True,
+            "text": (
+                f"### Réponse\n\n"
+                f"Pour **{asset}**, la dernière semaine trouvée a commencé **{best['week_label_fr'].replace('du ', '')}**.\n\n"
+                f"J’ai retenu le dataset **`{best['dataset']}`** (fréquence **{best['freq']}**), "
+                f"dans lequel j’ai compté **{best['count']}** occurrences répondant au critère dans cette semaine.\n\n"
+                f"J’ai testé **tous les CSV canoniques disponibles pour {asset}**, pas un seul."
+            ),
+            "details": results,
+        }
+
+    top = results[:5]
+    lines = [f"### Réponse\n", f"Pour **{asset}**, les dernières semaines trouvées sont les suivantes :\n"]
+    for r in top:
+        lines.append(
+            f"- **{r['week_label_fr']}** — dataset **`{r['dataset']}`** ({r['freq']}), "
+            f"avec **{r['count']}** occurrences"
+        )
+    lines.append("\nJ’ai testé **tous les CSV canoniques disponibles pour cet actif**.")
+    return {"ok": True, "text": "\n".join(lines), "details": results}
 
 def answer_generic(asset, datasets, parsed):
     rows = []
@@ -608,7 +685,7 @@ question = st.text_input(
 parsed = parse_question(question)
 assets = parsed["assets"]
 
-# petite mémoire de session pour la suite
+# mémoire minimale de session pour la future étape
 st.session_state["last_question"] = question
 st.session_state["last_assets"] = assets
 
@@ -619,22 +696,22 @@ if parsed["options_case"]:
         with st.expander("Détails techniques", expanded=False):
             st.write(result["details"])
 else:
-    final_blocks = []
+    blocks = []
 
     if parsed["need_interpretation_notice"]:
-        final_blocks.append("### Réponse\n\nJ’ai dû interpréter partiellement la question, car elle n’était pas complètement explicite sur tous les paramètres.")
+        blocks.append("### Réponse\n\nJ’ai dû interpréter partiellement la question, car elle n’était pas complètement explicite sur tous les paramètres.")
 
     for asset in assets:
         ds = choose_all_standard_datasets(asset, catalog)
 
         if parsed.get("special_case") == "weekly_drop_count":
-            result = answer_weekly_drop(asset, ds)
+            result = answer_weekly_drop(asset, ds, list_mode=parsed.get("list_mode", False))
         else:
             result = answer_generic(asset, ds, parsed)
 
-        final_blocks.append(result["text"])
+        blocks.append(result["text"])
 
-    st.markdown("\n\n".join(final_blocks))
+    st.markdown("\n\n".join(blocks))
 
     with st.expander("Datasets utilisés", expanded=False):
         for asset in assets:
