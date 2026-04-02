@@ -126,12 +126,64 @@ Tous les CSV daily + ratio VIX1D/VIX (priorité absolue sur VIX_daily si questio
 
 ## 5. SYNCHRO TEMPORELLE
 
-- **Référence = heure New York (ET)**
-- "À l'ouverture" = 9h30 ET = Open du daily
-- "30 min après l'ouverture" = 10h00 ET → utiliser CSV 30min
-- Changements d'heure EU/US gérés (décalage 1 semaine parfois)
-- "Dans la journée" = 9h30-16h00 ET
-- "Prémarket" = toute période avant 9h30 ET
+### Référence universelle : heure New York (ET)
+- "À l'ouverture" = 09:30 ET = Open du daily
+- "30 min après l'ouverture" = 10:00 ET → utiliser CSV 30min
+- "Dans la journée" = 09:30-16:00 ET
+- "Prémarket" = toute période avant 09:30 ET
+
+### CSV en heure Paris (à convertir vers NY)
+SPX_1min, SPX_5min, SPX_30min, SPY_1min, SPY_30min, QQQ_1min, QQQ_30min,
+IWM_30min, VIX1D_1min, VIX1D_30min, SPX_FUTURE_1min, SPX_FUTURE_5min,
+SPX_FUTURE_30min, Gold_1hour, oil_5min, TICK_4hours
+
+### CSV en heure NY (pas de conversion)
+Tous les CSV daily, Calendar, VIX_SPX_OPEN_daily
+
+### CSV en heure locale de leur bourse (pas de conversion, alignement sur date calendaire uniquement)
+DAX40_daily (Frankfurt), FTSE100_daily (London), NIKKEI225_daily (Tokyo)
+
+### Règles de conversion Paris → NY
+Les CSV Paris utilisent l'heure locale Paris qui change automatiquement
+(CET hiver = UTC+1, CEST été = UTC+2)
+
+| Période | Heure Paris | Heure NY | Écart |
+|---|---|---|---|
+| Hiver normal (janv-mars, nov-déc) | 15:30 | 09:30 | -6h |
+| Décalage USA été / FR hiver (~2 sem mars) | 14:30 | 09:30 | -5h |
+| Été normal (avril-oct) | 15:30 | 09:30 | -6h |
+| Décalage FR hiver / USA été (~1 sem nov) | 15:30 | 10:30 | -5h |
+
+**Fonction de conversion à utiliser :**
+```python
+import pytz
+from datetime import datetime
+
+paris_tz = pytz.timezone('Europe/Paris')
+ny_tz = pytz.timezone('America/New_York')
+
+def paris_to_ny(dt_paris_naive):
+    """Convertit datetime Paris naive → datetime NY naive"""
+    dt_paris = paris_tz.localize(dt_paris_naive)
+    dt_ny = dt_paris.astimezone(ny_tz)
+    return dt_ny.replace(tzinfo=None)
+```
+
+### Règle spéciale TICK_4hours
+Le TICK a 3 lignes par jour. La première ligne de chaque jour est décalée de +1h30
+par rapport à l'ouverture réelle (bug de construction du CSV — espacement 4h fixe).
+
+Correction : **ajouter 1h30 à la première ligne de chaque jour uniquement**
+
+| Ligne | Heure dans fichier (Paris) | Heure NY réelle |
+|---|---|---|
+| 1ère (hiver) | 14:00 Paris | 09:30 NY ← corriger +1h30 |
+| 1ère (décalage mars) | 13:00 Paris | 09:30 NY ← corriger +1h30 |
+| 1ère (été) | 14:00 Paris | 09:30 NY ← corriger +1h30 |
+| 2ème | 18:00 Paris hiver / 18:00 été | 12:00 NY ✅ |
+| 3ème | 22:00 Paris hiver / 22:00 été | 16:00 NY ✅ |
+
+"À l'ouverture" pour TICK = première ligne du jour (après correction = 09:30 NY)
 
 ---
 
