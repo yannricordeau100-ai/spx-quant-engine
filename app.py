@@ -70,16 +70,33 @@ _HC_SUBJECTS = {
     "aaoi": "AAOI.csv",
 }
 
+# Intraday CSVs for open→+Xmin computation (Paris-time, converted in load_csv)
+_INTRADAY_30MIN = {
+    "spx": "SPX_30min.csv",
+    "spy": "SPY_30min.csv",
+    "qqq": "QQQ_30min.csv",
+    "iwm": "IWM_30_min.csv",
+}
+
 # ─── Timezone conversion ──────────────────────────────────────────────────
 
 _TZ_PARIS = pytz.timezone("Europe/Paris")
 _TZ_NY    = pytz.timezone("America/New_York")
 
 _PARIS_FILES = {
+    # Daily Paris-time files
     "DAX40_daily.csv", "FTSE100_daily.csv", "NIKKEI225_daily.csv",
     "Gold_daily.csv", "Gold_1hour.csv", "DXY_daily.csv",
     "OANDA_USB02YUSD, 1D.csv", "OANDA_USB10YUSD, 1D.csv",
     "Yield_Curve_Spread_10Y_2Y.csv",
+    # Intraday Paris-time files (from CLAUDE.md §5)
+    "SPX_1min.csv", "SPX_5min.csv", "SPX_30min.csv",
+    "SPY_1min.csv", "SPY_30min.csv",
+    "QQQ_1_min.csv", "QQQ_30min.csv",
+    "IWM_30_min.csv",
+    "VIX1D_1min.csv", "VIX1D_30min.csv",
+    "SPX_FUTURE_1min.csv", "SPX_FUTURE_5min.csv", "SPX_FUTURE_30min.csv",
+    "oil_5min.csv",
 }
 
 _TICK_OFFSET = pd.Timedelta("1h30min")
@@ -235,6 +252,71 @@ def get_subject_df(asset_key: str):
             df[col] = _to_numeric(df[col])
     return df.set_index("time")
 
+
+@st.cache_data
+def intraday_vars(subject: str, window_min: int) -> pd.Series:
+    """
+    Returns daily variation series (%) from 09:30 open to 09:30+window_min close
+    for the given subject, using its 30min intraday CSV (Paris → NY converted).
+    """
+    fname = _INTRADAY_30MIN.get(subject)
+    if not fname:
+        return pd.Series(dtype=float, name="var_pct")
+    path = DATA_DIR / fname
+    if not path.exists():
+        return pd.Series(dtype=float, name="var_pct")
+    df = load_csv(path)  # Paris→NY already applied by load_csv for these files
+    df["_date"] = df["time"].dt.normalize()
+    df["_h"]    = df["time"].dt.hour
+    df["_m"]    = df["time"].dt.minute
+
+    open_df = df[(df["_h"] == 9) & (df["_m"] == 30)].copy()
+    open_df["open_num"] = _to_numeric(open_df["open"])
+    open_idx = open_df.set_index("_date")["open_num"]
+
+    end_total = 9 * 60 + 30 + window_min
+    end_h, end_m = divmod(end_total, 60)
+    end_df = df[(df["_h"] == end_h) & (df["_m"] == end_m)].copy()
+    end_df["close_num"] = _to_numeric(end_df["close"])
+    end_idx = end_df.set_index("_date")["close_num"]
+
+    merged = pd.DataFrame({"open": open_idx, "close": end_idx}).dropna()
+    return ((merged["close"] - merged["open"]) / merged["open"] * 100).rename("var_pct")
+
+
+@st.cache_data
+def _load_calendar() -> pd.DataFrame:
+    path = DATA_DIR / "calendar_events_daily.csv"
+    if not path.exists():
+        return pd.DataFrame()
+    df = pd.read_csv(path, sep=";")
+    df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
+    df["time"] = pd.to_datetime(df["time"].astype(str).str.strip(), errors="coerce")
+    return df.dropna(subset=["time"]).set_index("time")
+
+
+def calendar_dates(cal_filter: dict) -> set:
+    """Filter calendar by event keywords and optional surprise direction."""
+    df = _load_calendar()
+    if df.empty:
+        return set()
+    col = "macro_event"
+    if col not in df.columns:
+        return set()
+    keywords = cal_filter["keywords"]
+    mask = df[col].fillna("").str.lower().apply(
+        lambda x: any(kw.lower() in x for kw in keywords)
+    )
+    df_f = df[mask].copy()
+    if cal_filter.get("surprise") in ("positive", "negative"):
+        actual   = _to_numeric(df_f.get("actual",   pd.Series(dtype=str)))
+        estimate = _to_numeric(df_f.get("estimate", pd.Series(dtype=str)))
+        if cal_filter["surprise"] == "positive":
+            df_f = df_f[(actual > estimate).fillna(False)]
+        else:
+            df_f = df_f[(actual < estimate).fillna(False)]
+    return set(df_f.index.normalize())
+
 # ─── Query parsing ────────────────────────────────────────────────────────
 
 _WEEKDAYS = {
@@ -263,8 +345,42 @@ _OVERNIGHT_NEG_RE = re.compile(
     re.IGNORECASE,
 )
 
+_INTRADAY_RE = re.compile(
+    r"(\d+)\s*min(?:utes?)?\s*apr[eè]s"
+    r"|open\s*\+\s*(\d+)"
+    r"|(\d+)\s*h(?:eure)?\s*apr[eè]s",
+    re.IGNORECASE,
+)
+
+# Calendar event keyword groups: (query-detection regex, macro_event search keywords)
+_CAL_EVENTS = [
+    (r"\bemploi\b|\bchômage\b|\bchomage\b|\bnfp\b|\bjobless\b|\bpayroll\b",
+     ["jobless", "nfp", "employment", "payroll", "labor"]),
+    (r"\bcpi\b|\binflation\b",
+     ["cpi", "inflation", "consumer price"]),
+    (r"\bfomc\b|\bfed\b",
+     ["fomc", "fed funds", "federal reserve", "fomc minutes"]),
+    (r"\bpmi\b",
+     ["pmi"]),
+    (r"\bism\b",
+     ["ism"]),
+    (r"\bpce\b",
+     ["pce"]),
+    (r"\bearnings\b|\brésultats\b|\bresultats\b",
+     ["earnings"]),
+]
+
+_SURPRISE_POS_RE = re.compile(
+    r"meilleures?\s+qu[e']?\s*annonc[eé]|better\s+than\s+expected|au[\s-]?dessus\s+des\s+attentes",
+    re.IGNORECASE,
+)
+_SURPRISE_NEG_RE = re.compile(
+    r"moins\s+bonnes?\s+qu[e']?\s*annonc[eé]|worse\s+than\s+expected|en[\s-]?dessous\s+des\s+attentes",
+    re.IGNORECASE,
+)
+
 _KEYWORD_RE = re.compile(
-    r"\b(?:quand|si|when|if|avec|après|apres|sur|pour)\b",
+    r"\b(?:quand|si|when|if|avec|après|apres|sur|pour|lors)\b",
     re.IGNORECASE,
 )
 
@@ -287,7 +403,6 @@ def _detect_subject(q: str, eff_subj: dict) -> str:
     for s in sorted(eff_subj, key=len, reverse=True):
         if re.search(rf"\b{re.escape(s)}\b", prefix, re.IGNORECASE):
             return s
-    # Fallback: full query
     for s in sorted(eff_subj, key=len, reverse=True):
         if re.search(rf"\b{re.escape(s)}\b", q, re.IGNORECASE):
             return s
@@ -295,17 +410,13 @@ def _detect_subject(q: str, eff_subj: dict) -> str:
 
 
 def _detect_overnight(q: str, eff_subj: dict):
-    """
-    Returns {"direction": "positive"|"negative", "asset": str|None} or None.
-    Detects optional asset before the overnight keyword: "AAPL ouvre en positif".
-    """
+    """Returns {"direction": "positive"|"negative", "asset": str|None} or None."""
     if _OVERNIGHT_POS_RE.search(q):
         direction = "positive"
     elif _OVERNIGHT_NEG_RE.search(q):
         direction = "negative"
     else:
         return None
-    # Optional: detect which asset the overnight applies to
     overnight_asset = None
     for ticker in sorted(eff_subj, key=len, reverse=True):
         if re.search(
@@ -315,6 +426,38 @@ def _detect_overnight(q: str, eff_subj: dict):
             overnight_asset = ticker
             break
     return {"direction": direction, "asset": overnight_asset}
+
+
+def _detect_intraday(q: str):
+    """
+    Returns window in minutes or None.
+    Patterns: '30 min après', 'open+30', '1h après'.
+    """
+    m = _INTRADAY_RE.search(q)
+    if not m:
+        return None
+    if m.group(1):
+        return int(m.group(1))
+    if m.group(2):
+        return int(m.group(2))
+    if m.group(3):
+        return int(m.group(3)) * 60
+    return None
+
+
+def _detect_calendar(q: str):
+    """
+    Returns {"keywords": [...], "surprise": "positive"|"negative"|None} or None.
+    """
+    for pattern, keywords in _CAL_EVENTS:
+        if re.search(pattern, q, re.IGNORECASE):
+            surprise = None
+            if _SURPRISE_POS_RE.search(q):
+                surprise = "positive"
+            elif _SURPRISE_NEG_RE.search(q):
+                surprise = "negative"
+            return {"keywords": keywords, "surprise": surprise}
+    return None
 
 
 def _parse_single_condition(chunk: str, eff_cond: dict):
@@ -331,7 +474,7 @@ def _parse_single_condition(chunk: str, eff_cond: dict):
 
 def parse_query(query: str):
     """
-    Returns {subject, conditions, weekday, overnight} or None on failure.
+    Returns {subject, conditions, weekday, overnight, intraday_min, calendar} or None.
 
     Examples:
       "SPX quand VIX1D/VIX > 1.2"
@@ -339,13 +482,17 @@ def parse_query(query: str):
       "QQQ si VIX < 20 et ouverture positive"
       "SPX quand AAPL ouvre en négatif"
       "AAOI quand AAOI > 50"
+      "SPX quand VIX > 18 entre l'ouverture et 30 min après"
+      "SPX lors des publications emploi meilleure qu'annoncé"
     """
     eff_cond, eff_subj = get_effective_registries()
     q = query.strip()
 
-    subject   = _detect_subject(q, eff_subj)
-    overnight = _detect_overnight(q, eff_subj)
-    weekday   = _detect_weekday(q)
+    subject      = _detect_subject(q, eff_subj)
+    overnight    = _detect_overnight(q, eff_subj)
+    weekday      = _detect_weekday(q)
+    intraday_min = _detect_intraday(q)
+    calendar     = _detect_calendar(q)
 
     chunks = re.split(r"\s+(?:ET|AND)\s+", q, flags=re.IGNORECASE)
     conditions = []
@@ -355,14 +502,16 @@ def parse_query(query: str):
             asset, op, threshold = result
             conditions.append({"asset": asset, "op": op, "threshold": threshold})
 
-    if not conditions and overnight is None:
+    if not conditions and overnight is None and intraday_min is None and calendar is None:
         return None
 
     return {
-        "subject":    subject,
-        "conditions": conditions,
-        "weekday":    weekday,
-        "overnight":  overnight,
+        "subject":      subject,
+        "conditions":   conditions,
+        "weekday":      weekday,
+        "overnight":    overnight,
+        "intraday_min": intraday_min,
+        "calendar":     calendar,
     }
 
 # ─── Filters & stats ──────────────────────────────────────────────────────
@@ -379,10 +528,7 @@ def _apply_op(series: pd.Series, op: str, threshold: float) -> pd.Series:
 
 
 def overnight_dates(df: pd.DataFrame, direction: str = "positive") -> set:
-    """
-    Dates where open[J] > close[J-1] (positive) or open[J] < close[J-1] (negative).
-    Works on any daily DataFrame with 'open' and 'close' columns.
-    """
+    """Dates where open[J] > close[J-1] (positive) or open[J] < close[J-1] (negative)."""
     d = df[["open", "close"]].dropna().sort_index().copy()
     d["prev_close"] = d["close"].shift(1)
     d = d.dropna(subset=["prev_close"])
@@ -397,6 +543,20 @@ def compute_stats(subject_df: pd.DataFrame, valid_dates: set) -> dict:
     if df.empty:
         return {}
     df["var_pct"] = (df["close"] - df["open"]) / df["open"] * 100
+    return _stats_from_df(df)
+
+
+def compute_stats_intraday(var_series: pd.Series, valid_dates: set) -> dict:
+    """Stats from intraday variation series, filtered to valid_dates."""
+    var_series = var_series.copy()
+    var_series.index = var_series.index.normalize()
+    df = var_series[var_series.index.isin(valid_dates)].to_frame("var_pct")
+    if df.empty:
+        return {}
+    return _stats_from_df(df)
+
+
+def _stats_from_df(df: pd.DataFrame) -> dict:
     n         = len(df)
     bull      = int((df["var_pct"] > 0).sum())
     bear      = int((df["var_pct"] < 0).sum())
@@ -431,21 +591,25 @@ def run_analysis(query: str) -> None:
             "- `SPX quand VIX > 18 ET VIX1D/VIX > 1.2`\n"
             "- `QQQ si VIX < 20 les lundis`\n"
             "- `SPX quand VIX > 18 et ouverture positive`\n"
-            "- `SPX quand AAPL ouvre en négatif`"
+            "- `SPX quand AAPL ouvre en négatif`\n"
+            "- `SPX quand VIX > 18 entre l'ouverture et 30 min après`\n"
+            "- `SPX lors des publications emploi meilleure qu'annoncé`"
         )
         return
 
-    subject    = parsed["subject"]
-    conditions = parsed["conditions"]
-    weekday    = parsed["weekday"]
-    overnight  = parsed["overnight"]
+    subject      = parsed["subject"]
+    conditions   = parsed["conditions"]
+    weekday      = parsed["weekday"]
+    overnight    = parsed["overnight"]
+    intraday_min = parsed["intraday_min"]
+    calendar     = parsed["calendar"]
 
     subject_df = get_subject_df(subject)
     if subject_df is None:
         st.error(f"Fichier introuvable pour le sujet : **{subject}**")
         return
 
-    # Build intersection of valid dates starting from subject dates
+    # Build intersection of valid dates from daily subject
     valid_dates = set(subject_df.dropna(subset=["open", "close"]).index.normalize())
 
     for cond in conditions:
@@ -464,10 +628,31 @@ def run_analysis(query: str) -> None:
             return
         valid_dates &= overnight_dates(ov_df, overnight["direction"])
 
+    if calendar:
+        cal_dates = calendar_dates(calendar)
+        if not cal_dates:
+            st.warning("Aucune publication économique trouvée pour ce critère dans le calendrier.")
+            return
+        valid_dates &= cal_dates
+
     if weekday is not None:
         valid_dates = {d for d in valid_dates if d.weekday() == weekday}
 
-    stats = compute_stats(subject_df, valid_dates)
+    # Compute stats (intraday or daily)
+    if intraday_min:
+        if subject not in _INTRADAY_30MIN:
+            st.warning(
+                f"Fenêtre intraday non disponible pour **{subject.upper()}**. "
+                f"Actifs supportés : {', '.join(k.upper() for k in _INTRADAY_30MIN)}"
+            )
+            return
+        iv = intraday_vars(subject, intraday_min)
+        stats = compute_stats_intraday(iv, valid_dates)
+        window_label = f"open → +{intraday_min}min"
+    else:
+        stats = compute_stats(subject_df, valid_dates)
+        window_label = "open → close"
+
     if not stats:
         st.warning("Aucun jour ne correspond à cette combinaison de conditions.")
         return
@@ -477,10 +662,19 @@ def run_analysis(query: str) -> None:
         f"{c['asset'].upper()} {c['op']} {c['threshold']}" for c in conditions
     )
     flags = []
+    if intraday_min:
+        flags.append(window_label)
     if overnight:
         ov_label  = (overnight["asset"] or subject).upper() + " "
         dir_label = "positive" if overnight["direction"] == "positive" else "négative"
         flags.append(f"{ov_label}ouverture {dir_label} vs veille")
+    if calendar:
+        kw_label = calendar["keywords"][0].upper()
+        if calendar.get("surprise") == "positive":
+            kw_label += " meilleure qu'annoncé"
+        elif calendar.get("surprise") == "negative":
+            kw_label += " moins bonne qu'annoncé"
+        flags.append(f"publi. {kw_label}")
     if weekday is not None:
         flags.append(f"les {_WEEKDAY_LABELS[weekday]}")
     if flags:
@@ -492,15 +686,16 @@ def run_analysis(query: str) -> None:
     pct   = n / total * 100 if total else 0
 
     st.markdown(f"### {subject.upper()} — {cond_str}")
-    st.caption(f"{n} jours sur {total} ({pct:.1f}% de l'historique)")
+    st.caption(f"{n} jours sur {total} ({pct:.1f}% de l'historique)  ·  fenêtre : {window_label}")
     st.markdown("")
 
     # ── 5 stat cards
     c1, c2, c3, c4, c5 = st.columns(5)
     sign = "+" if stats["mean_var"] >= 0 else ""
-    c1.metric("Variation moy. open→close", f"{sign}{stats['mean_var']:.2f}%")
-    c2.metric("Jours haussiers",           f"{stats['pct_bull']:.1f}%")
-    c3.metric("Jours baissiers",           f"{stats['pct_bear']:.1f}%")
+    c1.metric("Variation moy.", f"{sign}{stats['mean_var']:.2f}%",
+              delta=window_label, delta_color="off")
+    c2.metric("Jours haussiers", f"{stats['pct_bull']:.1f}%")
+    c3.metric("Jours baissiers", f"{stats['pct_bear']:.1f}%")
     c4.metric("Meilleur jour", f"+{stats['best_val']:.2f}%",
               delta=stats["best_date"], delta_color="off")
     c5.metric("Pire jour",    f"{stats['worst_val']:.2f}%",
@@ -548,8 +743,8 @@ _n_cond = len(_eff_cond)
 
 st.markdown(
     f"<div style='color:#888;font-size:0.8rem;margin-top:-0.8rem;margin-bottom:0.5rem'>"
-    f"<b>{_n_subj}</b> actifs sujets · <b>{_n_cond}</b> actifs conditions détectés automatiquement"
-    f"&nbsp;|&nbsp; Filtres : jour de semaine · ouverture +/- vs veille · multi-ET"
+    f"<b>{_n_subj}</b> actifs sujets · <b>{_n_cond}</b> actifs conditions"
+    f"&nbsp;|&nbsp; Filtres : jour · ouverture +/- vs veille · intraday · calendrier éco · multi-ET"
     f"</div>",
     unsafe_allow_html=True,
 )
@@ -570,8 +765,9 @@ query = st.text_input(
     value=DEFAULT_Q,
     label_visibility="collapsed",
     placeholder=(
-        "ex: SPX quand VIX > 18 ET VIX1D/VIX > 1.2 les lundis  |  "
-        "AAPL quand AAPL ouvre en négatif  |  QQQ si VIX < 20"
+        "ex: SPX quand VIX > 18  |  QQQ si VIX < 20 les lundis  |  "
+        "SPX quand VIX > 18 entre l'ouverture et 30 min après  |  "
+        "SPX lors des publications emploi meilleure qu'annoncé"
     ),
 )
 
