@@ -398,7 +398,7 @@ def run_analysis(query: str) -> None:
             ctx.columns = ["Date", cond["asset"].upper()]
             ctx["Date"] = ctx["Date"].dt.strftime("%Y-%m-%d")
             st.dataframe(ctx.sort_values("Date", ascending=False),
-                         width="stretch", height=260)
+                         use_container_width=True, height=260)
 
 # ─── UI ───────────────────────────────────────────────────────────────────
 
