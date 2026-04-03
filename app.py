@@ -386,7 +386,7 @@ def run_analysis(query: str) -> None:
         .rename(columns={"var_pct": "Variation open→close (%)"})
     )
     chart_df.index = chart_df.index.strftime("%Y-%m-%d")
-    st.bar_chart(chart_df, height=300, width="stretch")
+    st.bar_chart(chart_df, height=300, use_container_width=True)
 
     # ── Raw condition series (expander)
     for cond in conditions:
