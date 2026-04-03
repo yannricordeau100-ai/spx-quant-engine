@@ -189,8 +189,10 @@ _OVERNIGHT_RE = re.compile(
 
 
 def _detect_weekday(q: str):
+    # Require explicit "les/le/the" prefix to avoid false positives
+    # e.g. "les lundis", "le mardi", "the friday"
     for name, day in _WEEKDAYS.items():
-        if re.search(rf"\b{name}\b", q, re.IGNORECASE):
+        if re.search(rf"\b(?:les?|the)\s+{name}\b", q, re.IGNORECASE):
             return day
     return None
 
@@ -380,13 +382,15 @@ def run_analysis(query: str) -> None:
 
     st.markdown("---")
 
-    # ── Bar chart
-    chart_df = (
-        stats["df"][["var_pct"]]
-        .rename(columns={"var_pct": "Variation open→close (%)"})
-    )
-    chart_df.index = chart_df.index.strftime("%Y-%m-%d")
-    st.bar_chart(chart_df, height=300, use_container_width=True)
+    # ── Bar chart (vert = hausse, rouge = baisse)
+    var = stats["df"]["var_pct"].copy()
+    var.index = var.index.strftime("%Y-%m-%d")
+    chart_df = pd.DataFrame({
+        "Hausse (%)": var.where(var >= 0),
+        "Baisse (%)": var.where(var < 0),
+    })
+    st.bar_chart(chart_df, color=["#26a269", "#e01b24"],
+                 height=300, use_container_width=True)
 
     # ── Raw condition series (expander)
     for cond in conditions:
