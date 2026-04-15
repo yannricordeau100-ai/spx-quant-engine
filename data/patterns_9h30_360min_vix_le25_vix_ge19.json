@@ -1,0 +1,201 @@
+{
+  "ok": true,
+  "entry_point": "9h30",
+  "target": "360min",
+  "filter": {
+    "vix_open_max": 25.0,
+    "vix_open_min": 19.0,
+    "label": "_vix_le25_vix_ge19"
+  },
+  "n_sessions": 189,
+  "n_sessions_is": 132,
+  "n_sessions_oos": 57,
+  "n_features": 211,
+  "n_actionable": 2,
+  "n_robust": 0,
+  "all_patterns": [
+    {
+      "type": "univariate",
+      "features": [
+        "cal_days_since_opex"
+      ],
+      "conditions": [
+        {
+          "feature": "cal_days_since_opex",
+          "direction": "below",
+          "threshold": 13.0,
+          "percentile_is": 40
+        }
+      ],
+      "n_is": 56,
+      "n_oos": 23,
+      "precision_is": 55.4,
+      "precision_oos": 87.0,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 3,
+      "is_robust": false,
+      "mean_precision_wf": 62.0,
+      "std_precision_wf": 31.9,
+      "precisions_by_window": [
+        33.3,
+        41.7,
+        66.7,
+        0.0,
+        100.0,
+        80.0,
+        85.7,
+        88.9
+      ],
+      "occs_by_window": [
+        9,
+        12,
+        9,
+        6,
+        9,
+        10,
+        7,
+        9
+      ],
+      "per_quarter_oos": 23.0
+    },
+    {
+      "type": "univariate",
+      "features": [
+        "cal_days_since_opex"
+      ],
+      "conditions": [
+        {
+          "feature": "cal_days_since_opex",
+          "direction": "below",
+          "threshold": 7.0,
+          "percentile_is": 20
+        }
+      ],
+      "n_is": 32,
+      "n_oos": 15,
+      "precision_is": 59.4,
+      "precision_oos": 86.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 63.3,
+      "std_precision_wf": 32.5,
+      "precisions_by_window": [
+        20.0,
+        71.4,
+        71.4,
+        0.0,
+        100.0,
+        75.0,
+        80.0,
+        88.9
+      ],
+      "occs_by_window": [
+        5,
+        7,
+        7,
+        2,
+        3,
+        4,
+        5,
+        9
+      ],
+      "per_quarter_oos": 15.0
+    }
+  ],
+  "actionable_patterns": [
+    {
+      "type": "univariate",
+      "features": [
+        "cal_days_since_opex"
+      ],
+      "conditions": [
+        {
+          "feature": "cal_days_since_opex",
+          "direction": "below",
+          "threshold": 13.0,
+          "percentile_is": 40
+        }
+      ],
+      "n_is": 56,
+      "n_oos": 23,
+      "precision_is": 55.4,
+      "precision_oos": 87.0,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 3,
+      "is_robust": false,
+      "mean_precision_wf": 62.0,
+      "std_precision_wf": 31.9,
+      "precisions_by_window": [
+        33.3,
+        41.7,
+        66.7,
+        0.0,
+        100.0,
+        80.0,
+        85.7,
+        88.9
+      ],
+      "occs_by_window": [
+        9,
+        12,
+        9,
+        6,
+        9,
+        10,
+        7,
+        9
+      ],
+      "per_quarter_oos": 23.0
+    },
+    {
+      "type": "univariate",
+      "features": [
+        "cal_days_since_opex"
+      ],
+      "conditions": [
+        {
+          "feature": "cal_days_since_opex",
+          "direction": "below",
+          "threshold": 7.0,
+          "percentile_is": 20
+        }
+      ],
+      "n_is": 32,
+      "n_oos": 15,
+      "precision_is": 59.4,
+      "precision_oos": 86.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 63.3,
+      "std_precision_wf": 32.5,
+      "precisions_by_window": [
+        20.0,
+        71.4,
+        71.4,
+        0.0,
+        100.0,
+        75.0,
+        80.0,
+        88.9
+      ],
+      "occs_by_window": [
+        5,
+        7,
+        7,
+        2,
+        3,
+        4,
+        5,
+        9
+      ],
+      "per_quarter_oos": 15.0
+    }
+  ],
+  "robust_patterns": []
+}

@@ -1,0 +1,185 @@
+{
+  "ok": true,
+  "entry_point": "10h00",
+  "target": "360min",
+  "filter": {
+    "vix_open_max": 19.0,
+    "vix_open_min": null,
+    "label": "_vix_le19"
+  },
+  "n_sessions": 577,
+  "n_sessions_is": 403,
+  "n_sessions_oos": 174,
+  "n_features": 2746,
+  "n_actionable": 0,
+  "n_robust": 0,
+  "all_patterns": [
+    {
+      "type": "combo2_AND",
+      "features": [
+        "spy_close_z20",
+        "spy_put_call_ratio_close_accel5"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "spy_close_z20",
+          "threshold": -0.0007,
+          "direction": "below",
+          "prec_is": 59.3,
+          "percentile": 20
+        },
+        {
+          "feature": "spy_put_call_ratio_close_accel5",
+          "threshold": -12.8436,
+          "direction": "above",
+          "prec_is": 37.6,
+          "percentile": 30
+        }
+      ],
+      "n_is": 62,
+      "n_oos": 6,
+      "precision_is": 59.7,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 64.8,
+      "std_precision_wf": 19.1,
+      "precisions_by_window": [
+        53.8,
+        50.0,
+        75.0,
+        44.4,
+        100.0,
+        80.0,
+        null,
+        50.0
+      ],
+      "occs_by_window": [
+        26,
+        4,
+        8,
+        9,
+        3,
+        10,
+        1,
+        2
+      ],
+      "per_quarter_oos": 2.2
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "spy_close_z20",
+        "spy_put_call_ratio_rsi_accel5"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "spy_close_z20",
+          "threshold": -0.0007,
+          "direction": "below",
+          "prec_is": 59.3,
+          "percentile": 20
+        },
+        {
+          "feature": "spy_put_call_ratio_rsi_accel5",
+          "threshold": -4.3045,
+          "direction": "above",
+          "prec_is": 37.6,
+          "percentile": 40
+        }
+      ],
+      "n_is": 59,
+      "n_oos": 6,
+      "precision_is": 57.6,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 64.2,
+      "std_precision_wf": 19.0,
+      "precisions_by_window": [
+        52.0,
+        50.0,
+        75.0,
+        44.4,
+        100.0,
+        77.8,
+        null,
+        50.0
+      ],
+      "occs_by_window": [
+        25,
+        4,
+        8,
+        9,
+        3,
+        9,
+        1,
+        2
+      ],
+      "per_quarter_oos": 2.2
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "spy_close_z20",
+        "spy_put_call_ratio_high_accel5"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "spy_close_z20",
+          "threshold": -0.0007,
+          "direction": "below",
+          "prec_is": 59.3,
+          "percentile": 20
+        },
+        {
+          "feature": "spy_put_call_ratio_high_accel5",
+          "threshold": -12.8436,
+          "direction": "above",
+          "prec_is": 37.6,
+          "percentile": 30
+        }
+      ],
+      "n_is": 62,
+      "n_oos": 6,
+      "precision_is": 59.7,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 64.8,
+      "std_precision_wf": 19.1,
+      "precisions_by_window": [
+        53.8,
+        50.0,
+        75.0,
+        44.4,
+        100.0,
+        80.0,
+        null,
+        50.0
+      ],
+      "occs_by_window": [
+        26,
+        4,
+        8,
+        9,
+        3,
+        10,
+        1,
+        2
+      ],
+      "per_quarter_oos": 2.2
+    }
+  ],
+  "actionable_patterns": [],
+  "robust_patterns": []
+}

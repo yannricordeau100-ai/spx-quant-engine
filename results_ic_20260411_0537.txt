@@ -1,0 +1,3 @@
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+ImportError: cannot import name 'run_ic_search' from 'spx_pattern_search' (/Users/yann/spx-quant-engine/spx_pattern_search.py). Did you mean: 'run_full_search'?

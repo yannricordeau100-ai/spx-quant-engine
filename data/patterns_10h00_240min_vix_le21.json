@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "entry_point": "10h00",
+  "target": "240min",
+  "filter": {
+    "vix_open_max": 21.0,
+    "vix_open_min": null,
+    "label": "_vix_le21"
+  },
+  "n_sessions": 688,
+  "n_sessions_is": 481,
+  "n_sessions_oos": 207,
+  "n_features": 2746,
+  "n_actionable": 0,
+  "n_robust": 0,
+  "all_patterns": [],
+  "actionable_patterns": [],
+  "robust_patterns": []
+}

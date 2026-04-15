@@ -1,0 +1,274 @@
+
+============================================================
+RECHERCHE FILTRÉE 9h30 / 360min
+CONDITION: VIX open ≤ 17.0
+============================================================
+
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 17.0
+[filtered/9h30] Sessions: 791 → 442 (349 exclues)
+[filtered/9h30] FORT: 150 | FAIBLE: 163 | INCERT: 129
+[filtered] Sélection top 50 features...
+[filtered] Top 10: ['spx_high_mom5d', 'spy_low_z20', 'spy_high_mom5d', 'vix3m_high_mom3d', 'vix_low_z60', 'equity_put_call_ratio_close_pct252', 'iwm_put_call_ratio_close_distma20', 'iwm_open_mom10d', 'us_10_years_bonds_rsi_mom5d', 'qqq_low_mom1d']
+[filtered] Règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[filtered] Règles combinatoires...
+[pattern_search] Combos testés: 2352 | Patterns actionnables: 0
+
+[filtered] RÉSULTATS:
+  Patterns actionnables: 0
+  Patterns robustes: 0
+
+TOP 10 PATTERNS (VIX open ≤17.0):
+[filtered] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_9h30_360min_vix_le17.json
+
+============================================================
+RECHERCHE FILTRÉE 9h30 / 240min
+CONDITION: VIX open ≤ 17.0
+============================================================
+
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 17.0
+[filtered/9h30] Sessions: 791 → 442 (349 exclues)
+[filtered/9h30] FORT: 124 | FAIBLE: 196 | INCERT: 122
+[filtered] Sélection top 50 features...
+[filtered] Top 10: ['vix9d_high', 'spx_iv_rank_level', 'vix9d_open_pct252', 'spy_high_mom5d', 'spy_rsi', 'vix1d_vix_ratio_open_mom10d', 'vix3m_high', 'dxy_micro_atr14', 'spy_close_z60', 'vix6m_high_z60']
+[filtered] Règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[filtered] Règles combinatoires...
+[pattern_search] Combos testés: 2465 | Patterns actionnables: 1
+
+[filtered] RÉSULTATS:
+  Patterns actionnables: 0
+  Patterns robustes: 0
+
+TOP 10 PATTERNS (VIX open ≤17.0):
+  #1 [combo2_AND] vix6m_open_z20 + vix9d_high_pct252 
+       IS=54.3% (35 occ) | OOS=83.3% (6 occ) | ~2.8/trim | WF=2/6
+         vix6m_open_z20 ≥ 0.6775 (P80)
+         vix9d_high_pct252 ≥ 41.5873 (P70)
+[filtered] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_9h30_240min_vix_le17.json
+
+============================================================
+RECHERCHE FILTRÉE 9h30 / 180min
+CONDITION: VIX open ≤ 17.0
+============================================================
+
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 17.0
+[filtered/9h30] Sessions: 791 → 442 (349 exclues)
+[filtered/9h30] FORT: 113 | FAIBLE: 204 | INCERT: 125
+[filtered] Sélection top 50 features...
+[filtered] Top 10: ['spy_rsi_pct252', 'spx_iv_percentile_level', 'qqq_high_mom10d', 'vix9d_high_mom3d', 'cal_macro_surprise', 'is_friday', 'interact_vvix_vix9d', 'vix_put_call_ratio_close_diff_3_10', 'qqq_put_call_ratio_close_mom3d', 'dxy_micro_close_position']
+[filtered] Règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[filtered] Règles combinatoires...
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+
+[filtered] RÉSULTATS:
+  Patterns actionnables: 0
+  Patterns robustes: 0
+
+TOP 10 PATTERNS (VIX open ≤17.0):
+[filtered] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_9h30_180min_vix_le17.json
+
+============================================================
+RECHERCHE FILTRÉE 10h00 / 360min
+CONDITION: VIX open ≤ 17.0
+============================================================
+
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 17.0
+[filtered/10h00] Sessions: 791 → 442 (349 exclues)
+[filtered/10h00] FORT: 131 | FAIBLE: 176 | INCERT: 135
+[filtered] Sélection top 50 features...
+[filtered] Top 10: ['spx_williams_vix_fix_level', 'vix9d_high', 'vix3m_rsi_lag2', 'spy_high_mom5d', 'gold_low_pct252', 'vix9d_close_lag2', 'gold_close_diff_1_3', 'spy_close_vol10', 'vix9d_close_mom1d', 'equity_put_call_ratio_close_z20']
+[filtered] Règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[filtered] Règles combinatoires...
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+
+[filtered] RÉSULTATS:
+  Patterns actionnables: 0
+  Patterns robustes: 0
+
+TOP 10 PATTERNS (VIX open ≤17.0):
+[filtered] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_10h00_360min_vix_le17.json
+
+============================================================
+RECHERCHE FILTRÉE 10h00 / 240min
+CONDITION: VIX open ≤ 17.0
+============================================================
+
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 17.0
+[filtered/10h00] Sessions: 791 → 442 (349 exclues)
+[filtered/10h00] FORT: 111 | FAIBLE: 212 | INCERT: 119
+[filtered] Sélection top 50 features...
+[filtered] Top 10: ['spx_rsi_lag2', 'qqq_close_diff_3_10', 'spy_close_distma50', 'spx_open_z20', 'vvix_rsi_lag2', 'vvix_open_z60', 'us_10_years_bonds_open_pct252', 'qqq_put_call_ratio_open', 'spx_open_accel5', 'us_bonds_30_days_contract_close_vol20']
+[filtered] Règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[filtered] Règles combinatoires...
+[pattern_search] Combos testés: 2352 | Patterns actionnables: 0
+
+[filtered] RÉSULTATS:
+  Patterns actionnables: 0
+  Patterns robustes: 0
+
+TOP 10 PATTERNS (VIX open ≤17.0):
+[filtered] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_10h00_240min_vix_le17.json
+
+============================================================
+RECHERCHE FILTRÉE 10h00 / 180min
+CONDITION: VIX open ≤ 17.0
+============================================================
+
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 17.0
+[filtered/10h00] Sessions: 791 → 442 (349 exclues)
+[filtered/10h00] FORT: 83 | FAIBLE: 224 | INCERT: 135
+[filtered] Sélection top 50 features...
+[filtered] Top 10: ['vvix_close_z60', 'spx_iv_percentile_level', 'spx_dist_ma60_pct', 'spy_put_call_ratio_rsi', 'advance_decline_ratio_net_ratio_put_call_close_mom3d', 'spy_micro_gap_pct', 'vix9d_high', 'spy_rsi', 'pcf_iwm_spx_ratio_z20', 'vix_spx_open_open']
+[filtered] Règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[filtered] Règles combinatoires...
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+
+[filtered] RÉSULTATS:
+  Patterns actionnables: 0
+  Patterns robustes: 0
+
+TOP 10 PATTERNS (VIX open ≤17.0):
+[filtered] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_10h00_180min_vix_le17.json

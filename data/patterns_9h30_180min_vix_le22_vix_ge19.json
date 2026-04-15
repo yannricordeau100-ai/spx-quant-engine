@@ -1,0 +1,717 @@
+{
+  "ok": true,
+  "entry_point": "9h30",
+  "target": "180min",
+  "filter": {
+    "vix_open_max": 22.0,
+    "vix_open_min": 19.0,
+    "label": "_vix_le22_vix_ge19"
+  },
+  "n_sessions": 145,
+  "n_sessions_is": 101,
+  "n_sessions_oos": 44,
+  "n_features": 2051,
+  "n_actionable": 6,
+  "n_robust": 1,
+  "all_patterns": [
+    {
+      "type": "combo2_AND",
+      "features": [
+        "dxy_low_mom20d",
+        "vix_spx_open_plus_30_close_distma50"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "dxy_low_mom20d",
+          "threshold": 2.3144,
+          "direction": "below",
+          "prec_is": 45.7,
+          "percentile": 80
+        },
+        {
+          "feature": "vix_spx_open_plus_30_close_distma50",
+          "threshold": 20.4439,
+          "direction": "above",
+          "prec_is": 66.7,
+          "percentile": 80
+        }
+      ],
+      "n_is": 18,
+      "n_oos": 12,
+      "precision_is": 77.8,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 5,
+      "n_windows_valid": 3,
+      "is_robust": true,
+      "mean_precision_wf": 81.9,
+      "std_precision_wf": 17.4,
+      "precisions_by_window": [
+        null,
+        null,
+        100.0,
+        66.7,
+        null,
+        57.1,
+        100.0,
+        85.7
+      ],
+      "occs_by_window": [
+        0,
+        0,
+        7,
+        6,
+        0,
+        7,
+        3,
+        7
+      ],
+      "per_quarter_oos": 12.0
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "gold_close_mom10d",
+        "vix6m_rsi_mom5d"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "gold_close_mom10d",
+          "threshold": 3.9846,
+          "direction": "above",
+          "prec_is": 52.4,
+          "percentile": 80
+        },
+        {
+          "feature": "vix6m_rsi_mom5d",
+          "threshold": 20.7373,
+          "direction": "below",
+          "prec_is": 42.0,
+          "percentile": 80
+        }
+      ],
+      "n_is": 18,
+      "n_oos": 9,
+      "precision_is": 61.1,
+      "precision_oos": 88.9,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 61.1,
+      "std_precision_wf": 33.9,
+      "precisions_by_window": [
+        null,
+        33.3,
+        83.3,
+        null,
+        0.0,
+        75.0,
+        75.0,
+        100.0
+      ],
+      "occs_by_window": [
+        0,
+        3,
+        6,
+        0,
+        3,
+        4,
+        4,
+        4
+      ],
+      "per_quarter_oos": 9.0
+    },
+    {
+      "type": "combo2_OR",
+      "features": [
+        "vix_spx_open_plus_30_close_distma50",
+        "iwm_close_diff_3_10"
+      ],
+      "operator": "OR",
+      "conditions": [
+        {
+          "feature": "vix_spx_open_plus_30_close_distma50",
+          "threshold": 20.4439,
+          "direction": "above",
+          "prec_is": 66.7,
+          "percentile": 80
+        },
+        {
+          "feature": "iwm_close_diff_3_10",
+          "threshold": -5.4336,
+          "direction": "below",
+          "prec_is": 52.4,
+          "percentile": 20
+        }
+      ],
+      "n_is": 30,
+      "n_oos": 15,
+      "precision_is": 60.0,
+      "precision_oos": 86.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 63.8,
+      "std_precision_wf": 29.5,
+      "precisions_by_window": [
+        null,
+        66.7,
+        72.7,
+        62.5,
+        0.0,
+        57.1,
+        100.0,
+        87.5
+      ],
+      "occs_by_window": [
+        1,
+        3,
+        11,
+        8,
+        2,
+        7,
+        5,
+        8
+      ],
+      "per_quarter_oos": 15.0
+    },
+    {
+      "type": "univariate",
+      "features": [
+        "vix_spx_open_plus_30_close_distma50"
+      ],
+      "conditions": [
+        {
+          "feature": "vix_spx_open_plus_30_close_distma50",
+          "direction": "above",
+          "threshold": 20.4439,
+          "percentile_is": 80
+        }
+      ],
+      "n_is": 21,
+      "n_oos": 13,
+      "precision_is": 66.7,
+      "precision_oos": 84.6,
+      "leakage_suspect": false,
+      "n_windows_tested": 5,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 75.9,
+      "std_precision_wf": 15.2,
+      "precisions_by_window": [
+        null,
+        null,
+        70.0,
+        66.7,
+        null,
+        57.1,
+        100.0,
+        85.7
+      ],
+      "occs_by_window": [
+        0,
+        0,
+        10,
+        6,
+        0,
+        7,
+        4,
+        7
+      ],
+      "per_quarter_oos": 13.0
+    },
+    {
+      "type": "combo2_OR",
+      "features": [
+        "vix_spx_open_plus_30_close_distma50",
+        "dxy_close_lag3"
+      ],
+      "operator": "OR",
+      "conditions": [
+        {
+          "feature": "vix_spx_open_plus_30_close_distma50",
+          "threshold": 20.4439,
+          "direction": "above",
+          "prec_is": 66.7,
+          "percentile": 80
+        },
+        {
+          "feature": "dxy_close_lag3",
+          "threshold": 105.258,
+          "direction": "above",
+          "prec_is": 52.4,
+          "percentile": 80
+        }
+      ],
+      "n_is": 31,
+      "n_oos": 13,
+      "precision_is": 54.8,
+      "precision_oos": 84.6,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 66.7,
+      "std_precision_wf": 21.5,
+      "precisions_by_window": [
+        null,
+        null,
+        57.1,
+        66.7,
+        33.3,
+        57.1,
+        100.0,
+        85.7
+      ],
+      "occs_by_window": [
+        0,
+        0,
+        14,
+        6,
+        6,
+        7,
+        4,
+        7
+      ],
+      "per_quarter_oos": 13.0
+    },
+    {
+      "type": "combo2_OR",
+      "features": [
+        "vix_spx_open_plus_30_close_distma50",
+        "vix_put_call_ratio_close_accel5"
+      ],
+      "operator": "OR",
+      "conditions": [
+        {
+          "feature": "vix_spx_open_plus_30_close_distma50",
+          "threshold": 20.4439,
+          "direction": "above",
+          "prec_is": 66.7,
+          "percentile": 80
+        },
+        {
+          "feature": "vix_put_call_ratio_close_accel5",
+          "threshold": 73.4211,
+          "direction": "above",
+          "prec_is": 57.1,
+          "percentile": 80
+        }
+      ],
+      "n_is": 39,
+      "n_oos": 17,
+      "precision_is": 61.5,
+      "precision_oos": 82.4,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 61.0,
+      "std_precision_wf": 25.8,
+      "precisions_by_window": [
+        60.0,
+        0.0,
+        80.0,
+        63.6,
+        50.0,
+        66.7,
+        80.0,
+        87.5
+      ],
+      "occs_by_window": [
+        5,
+        2,
+        10,
+        11,
+        4,
+        9,
+        5,
+        8
+      ],
+      "per_quarter_oos": 17.0
+    }
+  ],
+  "actionable_patterns": [
+    {
+      "type": "combo2_AND",
+      "features": [
+        "dxy_low_mom20d",
+        "vix_spx_open_plus_30_close_distma50"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "dxy_low_mom20d",
+          "threshold": 2.3144,
+          "direction": "below",
+          "prec_is": 45.7,
+          "percentile": 80
+        },
+        {
+          "feature": "vix_spx_open_plus_30_close_distma50",
+          "threshold": 20.4439,
+          "direction": "above",
+          "prec_is": 66.7,
+          "percentile": 80
+        }
+      ],
+      "n_is": 18,
+      "n_oos": 12,
+      "precision_is": 77.8,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 5,
+      "n_windows_valid": 3,
+      "is_robust": true,
+      "mean_precision_wf": 81.9,
+      "std_precision_wf": 17.4,
+      "precisions_by_window": [
+        null,
+        null,
+        100.0,
+        66.7,
+        null,
+        57.1,
+        100.0,
+        85.7
+      ],
+      "occs_by_window": [
+        0,
+        0,
+        7,
+        6,
+        0,
+        7,
+        3,
+        7
+      ],
+      "per_quarter_oos": 12.0
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "gold_close_mom10d",
+        "vix6m_rsi_mom5d"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "gold_close_mom10d",
+          "threshold": 3.9846,
+          "direction": "above",
+          "prec_is": 52.4,
+          "percentile": 80
+        },
+        {
+          "feature": "vix6m_rsi_mom5d",
+          "threshold": 20.7373,
+          "direction": "below",
+          "prec_is": 42.0,
+          "percentile": 80
+        }
+      ],
+      "n_is": 18,
+      "n_oos": 9,
+      "precision_is": 61.1,
+      "precision_oos": 88.9,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 61.1,
+      "std_precision_wf": 33.9,
+      "precisions_by_window": [
+        null,
+        33.3,
+        83.3,
+        null,
+        0.0,
+        75.0,
+        75.0,
+        100.0
+      ],
+      "occs_by_window": [
+        0,
+        3,
+        6,
+        0,
+        3,
+        4,
+        4,
+        4
+      ],
+      "per_quarter_oos": 9.0
+    },
+    {
+      "type": "combo2_OR",
+      "features": [
+        "vix_spx_open_plus_30_close_distma50",
+        "iwm_close_diff_3_10"
+      ],
+      "operator": "OR",
+      "conditions": [
+        {
+          "feature": "vix_spx_open_plus_30_close_distma50",
+          "threshold": 20.4439,
+          "direction": "above",
+          "prec_is": 66.7,
+          "percentile": 80
+        },
+        {
+          "feature": "iwm_close_diff_3_10",
+          "threshold": -5.4336,
+          "direction": "below",
+          "prec_is": 52.4,
+          "percentile": 20
+        }
+      ],
+      "n_is": 30,
+      "n_oos": 15,
+      "precision_is": 60.0,
+      "precision_oos": 86.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 63.8,
+      "std_precision_wf": 29.5,
+      "precisions_by_window": [
+        null,
+        66.7,
+        72.7,
+        62.5,
+        0.0,
+        57.1,
+        100.0,
+        87.5
+      ],
+      "occs_by_window": [
+        1,
+        3,
+        11,
+        8,
+        2,
+        7,
+        5,
+        8
+      ],
+      "per_quarter_oos": 15.0
+    },
+    {
+      "type": "univariate",
+      "features": [
+        "vix_spx_open_plus_30_close_distma50"
+      ],
+      "conditions": [
+        {
+          "feature": "vix_spx_open_plus_30_close_distma50",
+          "direction": "above",
+          "threshold": 20.4439,
+          "percentile_is": 80
+        }
+      ],
+      "n_is": 21,
+      "n_oos": 13,
+      "precision_is": 66.7,
+      "precision_oos": 84.6,
+      "leakage_suspect": false,
+      "n_windows_tested": 5,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 75.9,
+      "std_precision_wf": 15.2,
+      "precisions_by_window": [
+        null,
+        null,
+        70.0,
+        66.7,
+        null,
+        57.1,
+        100.0,
+        85.7
+      ],
+      "occs_by_window": [
+        0,
+        0,
+        10,
+        6,
+        0,
+        7,
+        4,
+        7
+      ],
+      "per_quarter_oos": 13.0
+    },
+    {
+      "type": "combo2_OR",
+      "features": [
+        "vix_spx_open_plus_30_close_distma50",
+        "dxy_close_lag3"
+      ],
+      "operator": "OR",
+      "conditions": [
+        {
+          "feature": "vix_spx_open_plus_30_close_distma50",
+          "threshold": 20.4439,
+          "direction": "above",
+          "prec_is": 66.7,
+          "percentile": 80
+        },
+        {
+          "feature": "dxy_close_lag3",
+          "threshold": 105.258,
+          "direction": "above",
+          "prec_is": 52.4,
+          "percentile": 80
+        }
+      ],
+      "n_is": 31,
+      "n_oos": 13,
+      "precision_is": 54.8,
+      "precision_oos": 84.6,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 66.7,
+      "std_precision_wf": 21.5,
+      "precisions_by_window": [
+        null,
+        null,
+        57.1,
+        66.7,
+        33.3,
+        57.1,
+        100.0,
+        85.7
+      ],
+      "occs_by_window": [
+        0,
+        0,
+        14,
+        6,
+        6,
+        7,
+        4,
+        7
+      ],
+      "per_quarter_oos": 13.0
+    },
+    {
+      "type": "combo2_OR",
+      "features": [
+        "vix_spx_open_plus_30_close_distma50",
+        "vix_put_call_ratio_close_accel5"
+      ],
+      "operator": "OR",
+      "conditions": [
+        {
+          "feature": "vix_spx_open_plus_30_close_distma50",
+          "threshold": 20.4439,
+          "direction": "above",
+          "prec_is": 66.7,
+          "percentile": 80
+        },
+        {
+          "feature": "vix_put_call_ratio_close_accel5",
+          "threshold": 73.4211,
+          "direction": "above",
+          "prec_is": 57.1,
+          "percentile": 80
+        }
+      ],
+      "n_is": 39,
+      "n_oos": 17,
+      "precision_is": 61.5,
+      "precision_oos": 82.4,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 61.0,
+      "std_precision_wf": 25.8,
+      "precisions_by_window": [
+        60.0,
+        0.0,
+        80.0,
+        63.6,
+        50.0,
+        66.7,
+        80.0,
+        87.5
+      ],
+      "occs_by_window": [
+        5,
+        2,
+        10,
+        11,
+        4,
+        9,
+        5,
+        8
+      ],
+      "per_quarter_oos": 17.0
+    }
+  ],
+  "robust_patterns": [
+    {
+      "type": "combo2_AND",
+      "features": [
+        "dxy_low_mom20d",
+        "vix_spx_open_plus_30_close_distma50"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "dxy_low_mom20d",
+          "threshold": 2.3144,
+          "direction": "below",
+          "prec_is": 45.7,
+          "percentile": 80
+        },
+        {
+          "feature": "vix_spx_open_plus_30_close_distma50",
+          "threshold": 20.4439,
+          "direction": "above",
+          "prec_is": 66.7,
+          "percentile": 80
+        }
+      ],
+      "n_is": 18,
+      "n_oos": 12,
+      "precision_is": 77.8,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 5,
+      "n_windows_valid": 3,
+      "is_robust": true,
+      "mean_precision_wf": 81.9,
+      "std_precision_wf": 17.4,
+      "precisions_by_window": [
+        null,
+        null,
+        100.0,
+        66.7,
+        null,
+        57.1,
+        100.0,
+        85.7
+      ],
+      "occs_by_window": [
+        0,
+        0,
+        7,
+        6,
+        0,
+        7,
+        3,
+        7
+      ],
+      "per_quarter_oos": 12.0
+    }
+  ]
+}

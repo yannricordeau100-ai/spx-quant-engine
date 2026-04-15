@@ -1,0 +1,216 @@
+
+============================================================
+RECHERCHE FILTRÉE 9h30 / 360min
+CONDITION: VIX open ≤ 19.0
+============================================================
+
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Total: 2060 → 2051 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2051 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 218 | FAIBLE: 202 | INCERT: 157
+[filtered] Sélection top 50 features...
+[filtered] Top 10: ['spx_high_z60', 'iwm_high_pct252', 'vix3m_high_z60', 'iwm_close_z20', 'spx_low_mom3d', 'skew_rsi_mom3d', 'vix9d_open_mom10d', 'iwm_low', 'ratio_vix9d_vix3m', 'vvix_rsi_lag2']
+[filtered] Règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[filtered] Règles combinatoires...
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+
+[filtered] RÉSULTATS:
+  Patterns actionnables: 0
+  Patterns robustes: 0
+
+TOP 10 PATTERNS (VIX open ≤19.0):
+[filtered] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_9h30_360min_vix_le19.json
+
+============================================================
+RECHERCHE FILTRÉE 9h30 / 240min
+CONDITION: VIX open ≤ 19.0
+============================================================
+
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Total: 2060 → 2051 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2051 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 188 | FAIBLE: 235 | INCERT: 154
+[filtered] Sélection top 50 features...
+[filtered] Top 10: ['vix9d_high', 'spy_open_z60', 'spx_open_z60', 'spx_high_z60', 'spy_high_z60', 'vix9d_open', 'spx_iv_rank', 'vix3m_open_z20', 'iwm_put_call_ratio_close_diff_5_10', 'vix9d_high_mom3d']
+[filtered] Règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[filtered] Règles combinatoires...
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+
+[filtered] RÉSULTATS:
+  Patterns actionnables: 0
+  Patterns robustes: 0
+
+TOP 10 PATTERNS (VIX open ≤19.0):
+[filtered] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_9h30_240min_vix_le19.json
+
+============================================================
+RECHERCHE FILTRÉE 9h30 / 180min
+CONDITION: VIX open ≤ 19.0
+============================================================
+
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Total: 2060 → 2051 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2051 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 173 | FAIBLE: 247 | INCERT: 157
+[filtered] Sélection top 50 features...
+[filtered] Top 10: ['spx_open_z60', 'spx_low_z20', 'vix_close', 'spx_high_z60', 'qqq_high_pct252', 'spy_open_z60', 'vix_low_mom20d', 'spy_close_mom5d', 'vvix_close_distma50', 'spy_high_z60']
+[filtered] Règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[filtered] Règles combinatoires...
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+
+[filtered] RÉSULTATS:
+  Patterns actionnables: 0
+  Patterns robustes: 0
+
+TOP 10 PATTERNS (VIX open ≤19.0):
+[filtered] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_9h30_180min_vix_le19.json
+
+============================================================
+RECHERCHE FILTRÉE 10h00 / 360min
+CONDITION: VIX open ≤ 19.0
+============================================================
+
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Total: 2060 → 2051 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2051 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 182 | FAIBLE: 222 | INCERT: 173
+[filtered] Sélection top 50 features...
+[filtered] Top 10: ['vix6m_rsi_pct252', 'spy_close_z20', 'spy_open_mom1d', 'spy_high_mom5d', 'vix6m_open_mom3d', 'interact_vvix_vix9d', 'vvix_open_z60', 'vix_put_call_ratio_close_cross_ma20_up', 'spy_put_call_ratio_close_lag5', 'spx_williams_vix_fix']
+[filtered] Règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[filtered] Règles combinatoires...
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+
+[filtered] RÉSULTATS:
+  Patterns actionnables: 0
+  Patterns robustes: 0
+
+TOP 10 PATTERNS (VIX open ≤19.0):
+[filtered] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_10h00_360min_vix_le19.json
+
+============================================================
+RECHERCHE FILTRÉE 10h00 / 240min
+CONDITION: VIX open ≤ 19.0
+============================================================
+
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Total: 2060 → 2051 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2051 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 166 | FAIBLE: 251 | INCERT: 160
+[filtered] Sélection top 50 features...
+[filtered] Top 10: ['spy_open_z60', 'spx_open_z60', 'dax40_open', 'spy_high_mom5d', 'nikkei225_rsi', 'spy_close_distma50', 'vix9d_high_z20', 'vix_high', 'us_bonds_30_days_contract_open_z60', 'spx_put_call_ratio_low_mom10d']
+[filtered] Règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[filtered] Règles combinatoires...
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+
+[filtered] RÉSULTATS:
+  Patterns actionnables: 0
+  Patterns robustes: 0
+
+TOP 10 PATTERNS (VIX open ≤19.0):
+[filtered] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_10h00_240min_vix_le19.json
+
+============================================================
+RECHERCHE FILTRÉE 10h00 / 180min
+CONDITION: VIX open ≤ 19.0
+============================================================
+
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Total: 2060 → 2051 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2051 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 133 | FAIBLE: 275 | INCERT: 169
+[filtered] Sélection top 50 features...
+[filtered] Top 10: ['spx_open_z60', 'vix9d_high', 'vix_close', 'vix_put_call_ratio_close_mom1d', 'vix_open_z20', 'iwm_volume_lag10', 'us_10_years_bonds_high_accel5', 'spx_put_call_ratio_close_mom1d', 'vix1d_vix_ratio_open', 'vix_spx_open_plus_30_open_mom10d']
+[filtered] Règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[filtered] Règles combinatoires...
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+
+[filtered] RÉSULTATS:
+  Patterns actionnables: 0
+  Patterns robustes: 0
+
+TOP 10 PATTERNS (VIX open ≤19.0):
+[filtered] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_10h00_180min_vix_le19.json

@@ -1,0 +1,2363 @@
+{
+  "ok": true,
+  "entry_point": "9h30",
+  "target": "360min",
+  "filter": {
+    "vix_open_max": 22.0,
+    "vix_open_min": null,
+    "label": "_vix_le22"
+  },
+  "n_sessions": 721,
+  "n_sessions_is": 504,
+  "n_sessions_oos": 217,
+  "n_features": 2746,
+  "n_actionable": 2,
+  "n_robust": 0,
+  "all_patterns": [
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_low_z20",
+        "pcf_spx_pc_x_vix"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "pcf_spx_pc_x_vix",
+          "threshold": 0.3248,
+          "direction": "above",
+          "prec_is": 57.6,
+          "percentile": 70
+        }
+      ],
+      "n_is": 22,
+      "n_oos": 6,
+      "precision_is": 77.3,
+      "precision_oos": 100.0,
+      "leakage_suspect": false,
+      "n_windows_tested": 5,
+      "n_windows_valid": 3,
+      "is_robust": true,
+      "mean_precision_wf": 79.4,
+      "std_precision_wf": 24.5,
+      "precisions_by_window": [
+        85.7,
+        77.8,
+        33.3,
+        null,
+        null,
+        null,
+        100.0,
+        100.0
+      ],
+      "occs_by_window": [
+        7,
+        9,
+        3,
+        0,
+        0,
+        1,
+        2,
+        3
+      ],
+      "per_quarter_oos": 1.7,
+      "oos_dates": [
+        "2025-02-27",
+        "2025-08-04",
+        "2025-08-05",
+        "2025-11-17",
+        "2025-11-20",
+        "2026-02-06"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "vix9d_close_lag2",
+        "spy_put_call_ratio_open_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "vix9d_close_lag2",
+          "threshold": 19.655,
+          "direction": "above",
+          "prec_is": 62.7,
+          "percentile": 90
+        },
+        {
+          "feature": "spy_put_call_ratio_open_z20",
+          "threshold": -0.3398,
+          "direction": "below",
+          "prec_is": 46.5,
+          "percentile": 40
+        }
+      ],
+      "n_is": 15,
+      "n_oos": 8,
+      "precision_is": 86.7,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 4,
+      "n_windows_valid": 3,
+      "is_robust": true,
+      "mean_precision_wf": 95.0,
+      "std_precision_wf": 8.7,
+      "precisions_by_window": [
+        null,
+        100.0,
+        null,
+        null,
+        100.0,
+        80.0,
+        100.0,
+        null
+      ],
+      "occs_by_window": [
+        1,
+        2,
+        0,
+        1,
+        4,
+        5,
+        2,
+        1
+      ],
+      "per_quarter_oos": 2.3,
+      "oos_dates": [
+        "2025-03-19",
+        "2025-03-21",
+        "2025-05-12",
+        "2025-05-13",
+        "2025-06-20",
+        "2025-10-16",
+        "2025-10-20",
+        "2025-11-20"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_high_z20",
+        "vix_put_call_ratio_close_vol20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_high_z20",
+          "threshold": -1.4752,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "vix_put_call_ratio_close_vol20",
+          "threshold": 71.2373,
+          "direction": "above",
+          "prec_is": 45.7,
+          "percentile": 70
+        }
+      ],
+      "n_is": 18,
+      "n_oos": 7,
+      "precision_is": 88.9,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 4,
+      "n_windows_valid": 3,
+      "is_robust": true,
+      "mean_precision_wf": 85.0,
+      "std_precision_wf": 12.1,
+      "precisions_by_window": [
+        90.0,
+        null,
+        66.7,
+        null,
+        100.0,
+        83.3,
+        null,
+        null
+      ],
+      "occs_by_window": [
+        10,
+        0,
+        3,
+        0,
+        3,
+        6,
+        1,
+        0
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-02-13",
+        "2025-02-25",
+        "2025-02-26",
+        "2025-02-27",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-08-01"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "interact_vvix_vix9d",
+        "iwm_low_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "interact_vvix_vix9d",
+          "threshold": 1517.4949,
+          "direction": "above",
+          "prec_is": 58.3,
+          "percentile": 70
+        },
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        }
+      ],
+      "n_is": 37,
+      "n_oos": 13,
+      "precision_is": 75.7,
+      "precision_oos": 92.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 4,
+      "is_robust": false,
+      "mean_precision_wf": 84.6,
+      "std_precision_wf": 14.2,
+      "precisions_by_window": [
+        71.4,
+        70.6,
+        66.7,
+        null,
+        100.0,
+        83.3,
+        100.0,
+        100.0
+      ],
+      "occs_by_window": [
+        7,
+        17,
+        6,
+        0,
+        3,
+        6,
+        2,
+        5
+      ],
+      "per_quarter_oos": 3.8,
+      "oos_dates": [
+        "2025-02-24",
+        "2025-02-25",
+        "2025-02-26",
+        "2025-02-27",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-08-04",
+        "2025-08-05",
+        "2025-11-10",
+        "2025-11-14",
+        "2025-11-17",
+        "2025-11-20",
+        "2026-02-06"
+      ]
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "interact_vvix_vix9d",
+        "iwm_low_z20",
+        "iwm_high_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "interact_vvix_vix9d",
+          "threshold": 1517.4949,
+          "direction": "above",
+          "prec_is": 58.3,
+          "percentile": 70
+        },
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "iwm_high_z20",
+          "threshold": -1.4752,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        }
+      ],
+      "n_is": 31,
+      "n_oos": 10,
+      "precision_is": 74.2,
+      "precision_oos": 90.0,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 4,
+      "is_robust": false,
+      "mean_precision_wf": 84.3,
+      "std_precision_wf": 15.4,
+      "precisions_by_window": [
+        83.3,
+        66.7,
+        60.0,
+        null,
+        100.0,
+        80.0,
+        100.0,
+        100.0
+      ],
+      "occs_by_window": [
+        6,
+        15,
+        5,
+        0,
+        2,
+        5,
+        2,
+        3
+      ],
+      "per_quarter_oos": 2.9,
+      "oos_dates": [
+        "2025-02-25",
+        "2025-02-26",
+        "2025-02-27",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-08-04",
+        "2025-08-05",
+        "2025-11-10",
+        "2025-11-17",
+        "2025-11-20"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_low_z20",
+        "qqq_put_call_ratio_low_accel5"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "qqq_put_call_ratio_low_accel5",
+          "threshold": -0.0052,
+          "direction": "above",
+          "prec_is": 46.5,
+          "percentile": 50
+        }
+      ],
+      "n_is": 25,
+      "n_oos": 9,
+      "precision_is": 84.0,
+      "precision_oos": 88.9,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 4,
+      "is_robust": false,
+      "mean_precision_wf": 87.3,
+      "std_precision_wf": 11.3,
+      "precisions_by_window": [
+        83.3,
+        77.8,
+        75.0,
+        100.0,
+        100.0,
+        75.0,
+        null,
+        100.0
+      ],
+      "occs_by_window": [
+        6,
+        9,
+        4,
+        2,
+        2,
+        4,
+        1,
+        4
+      ],
+      "per_quarter_oos": 2.6,
+      "oos_dates": [
+        "2025-02-13",
+        "2025-02-26",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-08-05",
+        "2025-11-14",
+        "2025-11-17",
+        "2025-11-20",
+        "2026-02-06"
+      ]
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "iwm_low_z20",
+        "qqq_put_call_ratio_low_accel5",
+        "iwm_high_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "qqq_put_call_ratio_low_accel5",
+          "threshold": -0.0052,
+          "direction": "above",
+          "prec_is": 46.5,
+          "percentile": 50
+        },
+        {
+          "feature": "iwm_high_z20",
+          "threshold": -1.4752,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        }
+      ],
+      "n_is": 23,
+      "n_oos": 7,
+      "precision_is": 82.6,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 4,
+      "is_robust": false,
+      "mean_precision_wf": 86.9,
+      "std_precision_wf": 11.7,
+      "precisions_by_window": [
+        83.3,
+        75.0,
+        75.0,
+        100.0,
+        100.0,
+        75.0,
+        null,
+        100.0
+      ],
+      "occs_by_window": [
+        6,
+        8,
+        4,
+        2,
+        2,
+        4,
+        1,
+        2
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-02-13",
+        "2025-02-26",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-08-05",
+        "2025-11-17",
+        "2025-11-20"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_low_z20",
+        "advance_decline_ratio_net_ratio_put_call_high_z60"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_high_z60",
+          "threshold": -0.3322,
+          "direction": "below",
+          "prec_is": 47.7,
+          "percentile": 50
+        }
+      ],
+      "n_is": 34,
+      "n_oos": 10,
+      "precision_is": 79.4,
+      "precision_oos": 90.0,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 3,
+      "is_robust": false,
+      "mean_precision_wf": 83.8,
+      "std_precision_wf": 15.5,
+      "precisions_by_window": [
+        100.0,
+        66.7,
+        80.0,
+        60.0,
+        100.0,
+        100.0,
+        null,
+        80.0
+      ],
+      "occs_by_window": [
+        7,
+        12,
+        5,
+        5,
+        2,
+        4,
+        1,
+        5
+      ],
+      "per_quarter_oos": 2.9,
+      "oos_dates": [
+        "2025-02-13",
+        "2025-02-24",
+        "2025-02-25",
+        "2025-02-28",
+        "2025-08-04",
+        "2025-11-14",
+        "2025-11-17",
+        "2025-11-20",
+        "2026-01-02",
+        "2026-02-06"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_high_z20",
+        "spy_volume_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_high_z20",
+          "threshold": -1.4752,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "spy_volume_z20",
+          "threshold": 0.7374,
+          "direction": "above",
+          "prec_is": 44.6,
+          "percentile": 80
+        }
+      ],
+      "n_is": 17,
+      "n_oos": 8,
+      "precision_is": 70.6,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 3,
+      "is_robust": false,
+      "mean_precision_wf": 70.2,
+      "std_precision_wf": 33.9,
+      "precisions_by_window": [
+        50.0,
+        75.0,
+        0.0,
+        null,
+        100.0,
+        66.7,
+        100.0,
+        100.0
+      ],
+      "occs_by_window": [
+        2,
+        8,
+        2,
+        0,
+        2,
+        3,
+        2,
+        3
+      ],
+      "per_quarter_oos": 2.3,
+      "oos_dates": [
+        "2025-02-26",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-08-01",
+        "2025-08-04",
+        "2025-11-10",
+        "2025-11-17",
+        "2025-11-20"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_low_z20",
+        "vvix_micro_body_ratio"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "vvix_micro_body_ratio",
+          "threshold": 0.1144,
+          "direction": "above",
+          "prec_is": 42.4,
+          "percentile": 10
+        }
+      ],
+      "n_is": 47,
+      "n_oos": 14,
+      "precision_is": 78.7,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 3,
+      "is_robust": false,
+      "mean_precision_wf": 82.4,
+      "std_precision_wf": 14.6,
+      "precisions_by_window": [
+        80.0,
+        76.5,
+        71.4,
+        60.0,
+        100.0,
+        100.0,
+        100.0,
+        71.4
+      ],
+      "occs_by_window": [
+        10,
+        17,
+        7,
+        5,
+        4,
+        5,
+        2,
+        7
+      ],
+      "per_quarter_oos": 4.1,
+      "oos_dates": [
+        "2025-02-13",
+        "2025-02-24",
+        "2025-02-27",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-08-04",
+        "2025-08-05",
+        "2025-11-10",
+        "2025-11-14",
+        "2025-11-17",
+        "2025-11-20",
+        "2026-01-02",
+        "2026-01-05",
+        "2026-02-06"
+      ]
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "iwm_low_z20",
+        "advance_decline_ratio_net_ratio_put_call_high_z60",
+        "iwm_high_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_high_z60",
+          "threshold": -0.3322,
+          "direction": "below",
+          "prec_is": 47.7,
+          "percentile": 50
+        },
+        {
+          "feature": "iwm_high_z20",
+          "threshold": -1.4752,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        }
+      ],
+      "n_is": 29,
+      "n_oos": 7,
+      "precision_is": 79.3,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 3,
+      "is_robust": false,
+      "mean_precision_wf": 82.4,
+      "std_precision_wf": 16.0,
+      "precisions_by_window": [
+        100.0,
+        60.0,
+        75.0,
+        75.0,
+        100.0,
+        100.0,
+        null,
+        66.7
+      ],
+      "occs_by_window": [
+        7,
+        10,
+        4,
+        4,
+        2,
+        3,
+        1,
+        3
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-02-13",
+        "2025-02-25",
+        "2025-02-28",
+        "2025-08-04",
+        "2025-11-17",
+        "2025-11-20",
+        "2026-01-02"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_low_z20",
+        "spy_volume_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "spy_volume_z20",
+          "threshold": 0.7374,
+          "direction": "above",
+          "prec_is": 44.6,
+          "percentile": 80
+        }
+      ],
+      "n_is": 22,
+      "n_oos": 10,
+      "precision_is": 68.2,
+      "precision_oos": 90.0,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 69.9,
+      "std_precision_wf": 27.6,
+      "precisions_by_window": [
+        33.3,
+        77.8,
+        33.3,
+        null,
+        100.0,
+        75.0,
+        null,
+        100.0
+      ],
+      "occs_by_window": [
+        3,
+        9,
+        3,
+        1,
+        3,
+        4,
+        1,
+        5
+      ],
+      "per_quarter_oos": 2.9,
+      "oos_dates": [
+        "2025-02-24",
+        "2025-02-26",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-08-04",
+        "2025-11-10",
+        "2025-11-14",
+        "2025-11-17",
+        "2025-11-20",
+        "2026-02-06"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_low_z20",
+        "vvix_micro_body_pct"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "vvix_micro_body_pct",
+          "threshold": 3.9262,
+          "direction": "above",
+          "prec_is": 47.0,
+          "percentile": 70
+        }
+      ],
+      "n_is": 27,
+      "n_oos": 9,
+      "precision_is": 74.1,
+      "precision_oos": 88.9,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 78.3,
+      "std_precision_wf": 16.5,
+      "precisions_by_window": [
+        60.0,
+        60.0,
+        75.0,
+        null,
+        100.0,
+        100.0,
+        null,
+        75.0
+      ],
+      "occs_by_window": [
+        5,
+        10,
+        4,
+        0,
+        4,
+        4,
+        1,
+        4
+      ],
+      "per_quarter_oos": 2.6,
+      "oos_dates": [
+        "2025-02-13",
+        "2025-02-24",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-08-05",
+        "2025-11-10",
+        "2025-11-14",
+        "2025-11-17",
+        "2026-01-02"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_low_z20",
+        "vix9d_open_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "vix9d_open_z20",
+          "threshold": 1.4754,
+          "direction": "above",
+          "prec_is": 58.8,
+          "percentile": 90
+        }
+      ],
+      "n_is": 20,
+      "n_oos": 8,
+      "precision_is": 75.0,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 80.7,
+      "std_precision_wf": 14.8,
+      "precisions_by_window": [
+        75.0,
+        62.5,
+        80.0,
+        null,
+        null,
+        66.7,
+        100.0,
+        100.0
+      ],
+      "occs_by_window": [
+        4,
+        8,
+        5,
+        0,
+        1,
+        3,
+        2,
+        3
+      ],
+      "per_quarter_oos": 2.3,
+      "oos_dates": [
+        "2025-02-26",
+        "2025-02-27",
+        "2025-03-03",
+        "2025-08-04",
+        "2025-08-05",
+        "2025-11-17",
+        "2025-11-20",
+        "2026-02-06"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_high_z20",
+        "vix9d_open_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_high_z20",
+          "threshold": -1.4752,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "vix9d_open_z20",
+          "threshold": 1.4754,
+          "direction": "above",
+          "prec_is": 58.8,
+          "percentile": 90
+        }
+      ],
+      "n_is": 20,
+      "n_oos": 7,
+      "precision_is": 70.0,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 77.1,
+      "std_precision_wf": 18.3,
+      "precisions_by_window": [
+        75.0,
+        62.5,
+        75.0,
+        null,
+        null,
+        50.0,
+        100.0,
+        100.0
+      ],
+      "occs_by_window": [
+        4,
+        8,
+        4,
+        0,
+        1,
+        4,
+        2,
+        2
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-02-26",
+        "2025-02-27",
+        "2025-03-03",
+        "2025-08-04",
+        "2025-08-05",
+        "2025-11-17",
+        "2025-11-20"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "vts_vix9d_vix6m_ratio",
+        "advance_decline_ratio_net_ratio_put_call_high_z60"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "vts_vix9d_vix6m_ratio",
+          "threshold": 0.9046,
+          "direction": "above",
+          "prec_is": 58.8,
+          "percentile": 90
+        },
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_high_z60",
+          "threshold": -0.3322,
+          "direction": "below",
+          "prec_is": 47.7,
+          "percentile": 50
+        }
+      ],
+      "n_is": 21,
+      "n_oos": 7,
+      "precision_is": 61.9,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 68.2,
+      "std_precision_wf": 22.6,
+      "precisions_by_window": [
+        null,
+        60.0,
+        33.3,
+        80.0,
+        50.0,
+        85.7,
+        null,
+        100.0
+      ],
+      "occs_by_window": [
+        0,
+        5,
+        3,
+        5,
+        4,
+        7,
+        0,
+        2
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-02-28",
+        "2025-03-19",
+        "2025-03-21",
+        "2025-03-28",
+        "2025-06-18",
+        "2025-11-20",
+        "2026-02-06"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "vts_vix9d_vix6m_spread",
+        "advance_decline_ratio_net_ratio_put_call_high_z60"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "vts_vix9d_vix6m_spread",
+          "threshold": -1.952,
+          "direction": "above",
+          "prec_is": 56.9,
+          "percentile": 90
+        },
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_high_z60",
+          "threshold": -0.3322,
+          "direction": "below",
+          "prec_is": 47.7,
+          "percentile": 50
+        }
+      ],
+      "n_is": 20,
+      "n_oos": 7,
+      "precision_is": 65.0,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 70.7,
+      "std_precision_wf": 22.4,
+      "precisions_by_window": [
+        null,
+        75.0,
+        33.3,
+        80.0,
+        50.0,
+        85.7,
+        null,
+        100.0
+      ],
+      "occs_by_window": [
+        0,
+        4,
+        3,
+        5,
+        4,
+        7,
+        0,
+        2
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-02-28",
+        "2025-03-19",
+        "2025-03-21",
+        "2025-03-28",
+        "2025-06-18",
+        "2025-11-20",
+        "2026-02-06"
+      ]
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "interact_vvix_vix9d",
+        "iwm_low_z20",
+        "iwm_rsi_mom3d"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "interact_vvix_vix9d",
+          "threshold": 1517.4949,
+          "direction": "above",
+          "prec_is": 58.3,
+          "percentile": 70
+        },
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "iwm_rsi_mom3d",
+          "threshold": -15.8217,
+          "direction": "below",
+          "prec_is": 60.8,
+          "percentile": 10
+        }
+      ],
+      "n_is": 18,
+      "n_oos": 7,
+      "precision_is": 72.2,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 76.4,
+      "std_precision_wf": 18.3,
+      "precisions_by_window": [
+        66.7,
+        50.0,
+        75.0,
+        null,
+        100.0,
+        66.7,
+        null,
+        100.0
+      ],
+      "occs_by_window": [
+        3,
+        6,
+        4,
+        0,
+        2,
+        3,
+        1,
+        3
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-02-24",
+        "2025-02-25",
+        "2025-02-26",
+        "2025-08-04",
+        "2025-11-14",
+        "2025-11-17",
+        "2026-02-06"
+      ]
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "iwm_low_z20",
+        "spy_volume_z20",
+        "iwm_high_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "spy_volume_z20",
+          "threshold": 0.7374,
+          "direction": "above",
+          "prec_is": 44.6,
+          "percentile": 80
+        },
+        {
+          "feature": "iwm_high_z20",
+          "threshold": -1.4752,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        }
+      ],
+      "n_is": 16,
+      "n_oos": 7,
+      "precision_is": 68.8,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 65.3,
+      "std_precision_wf": 34.2,
+      "precisions_by_window": [
+        50.0,
+        75.0,
+        0.0,
+        null,
+        100.0,
+        66.7,
+        null,
+        100.0
+      ],
+      "occs_by_window": [
+        2,
+        8,
+        2,
+        0,
+        2,
+        3,
+        1,
+        3
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-02-26",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-08-04",
+        "2025-11-10",
+        "2025-11-17",
+        "2025-11-20"
+      ]
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "iwm_low_z20",
+        "vvix_micro_body_pct",
+        "iwm_high_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "vvix_micro_body_pct",
+          "threshold": 3.9262,
+          "direction": "above",
+          "prec_is": 47.0,
+          "percentile": 70
+        },
+        {
+          "feature": "iwm_high_z20",
+          "threshold": -1.4752,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        }
+      ],
+      "n_is": 22,
+      "n_oos": 7,
+      "precision_is": 72.7,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 76.4,
+      "std_precision_wf": 18.3,
+      "precisions_by_window": [
+        75.0,
+        50.0,
+        66.7,
+        null,
+        100.0,
+        100.0,
+        null,
+        66.7
+      ],
+      "occs_by_window": [
+        4,
+        8,
+        3,
+        0,
+        3,
+        3,
+        1,
+        3
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-02-13",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-08-05",
+        "2025-11-10",
+        "2025-11-17",
+        "2026-01-02"
+      ]
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "iwm_low_z20",
+        "vix9d_open_z20",
+        "iwm_high_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "vix9d_open_z20",
+          "threshold": 1.4754,
+          "direction": "above",
+          "prec_is": 58.8,
+          "percentile": 90
+        },
+        {
+          "feature": "iwm_high_z20",
+          "threshold": -1.4752,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        }
+      ],
+      "n_is": 19,
+      "n_oos": 7,
+      "precision_is": 73.7,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 79.9,
+      "std_precision_wf": 14.9,
+      "precisions_by_window": [
+        75.0,
+        62.5,
+        75.0,
+        null,
+        null,
+        66.7,
+        100.0,
+        100.0
+      ],
+      "occs_by_window": [
+        4,
+        8,
+        4,
+        0,
+        1,
+        3,
+        2,
+        2
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-02-26",
+        "2025-02-27",
+        "2025-03-03",
+        "2025-08-04",
+        "2025-08-05",
+        "2025-11-17",
+        "2025-11-20"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "interact_vvix_vix9d",
+        "iwm_put_call_ratio_close_diff_5_10"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "interact_vvix_vix9d",
+          "threshold": 1517.4949,
+          "direction": "above",
+          "prec_is": 58.3,
+          "percentile": 70
+        },
+        {
+          "feature": "iwm_put_call_ratio_close_diff_5_10",
+          "threshold": 0.877,
+          "direction": "above",
+          "prec_is": 49.0,
+          "percentile": 90
+        }
+      ],
+      "n_is": 22,
+      "n_oos": 6,
+      "precision_is": 63.6,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 56.3,
+      "std_precision_wf": 41.8,
+      "precisions_by_window": [
+        null,
+        71.4,
+        100.0,
+        0.0,
+        0.0,
+        66.7,
+        null,
+        100.0
+      ],
+      "occs_by_window": [
+        1,
+        7,
+        2,
+        2,
+        3,
+        3,
+        1,
+        2
+      ],
+      "per_quarter_oos": 1.7,
+      "oos_dates": [
+        "2025-03-27",
+        "2025-05-29",
+        "2025-06-02",
+        "2025-08-12",
+        "2025-11-25",
+        "2026-02-09"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_close_z60",
+        "advance_decline_ratio_net_ratio_put_call_high_z60"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_close_z60",
+          "threshold": -1.1267,
+          "direction": "below",
+          "prec_is": 68.6,
+          "percentile": 10
+        },
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_high_z60",
+          "threshold": -0.3322,
+          "direction": "below",
+          "prec_is": 47.7,
+          "percentile": 50
+        }
+      ],
+      "n_is": 29,
+      "n_oos": 8,
+      "precision_is": 75.9,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 2,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 80.6,
+      "std_precision_wf": 6.9,
+      "precisions_by_window": [
+        null,
+        73.7,
+        null,
+        null,
+        null,
+        87.5,
+        null,
+        null
+      ],
+      "occs_by_window": [
+        1,
+        19,
+        1,
+        0,
+        0,
+        8,
+        0,
+        1
+      ],
+      "per_quarter_oos": 2.3,
+      "oos_dates": [
+        "2025-02-24",
+        "2025-02-25",
+        "2025-02-28",
+        "2025-03-19",
+        "2025-03-21",
+        "2025-03-24",
+        "2025-03-28",
+        "2025-11-20"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_high_z20",
+        "vvix_micro_body_pct"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_high_z20",
+          "threshold": -1.4752,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "vvix_micro_body_pct",
+          "threshold": 3.9262,
+          "direction": "above",
+          "prec_is": 47.0,
+          "percentile": 70
+        }
+      ],
+      "n_is": 26,
+      "n_oos": 8,
+      "precision_is": 69.2,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 74.0,
+      "std_precision_wf": 14.3,
+      "precisions_by_window": [
+        75.0,
+        50.0,
+        66.7,
+        null,
+        80.0,
+        80.0,
+        100.0,
+        66.7
+      ],
+      "occs_by_window": [
+        4,
+        8,
+        3,
+        0,
+        5,
+        5,
+        2,
+        3
+      ],
+      "per_quarter_oos": 2.3,
+      "oos_dates": [
+        "2025-02-13",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-08-01",
+        "2025-08-05",
+        "2025-11-10",
+        "2025-11-17",
+        "2026-01-02"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_close_z60",
+        "iwm_low_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_close_z60",
+          "threshold": -1.1267,
+          "direction": "below",
+          "prec_is": 68.6,
+          "percentile": 10
+        },
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        }
+      ],
+      "n_is": 25,
+      "n_oos": 7,
+      "precision_is": 76.0,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 3,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 76.9,
+      "std_precision_wf": 4.7,
+      "precisions_by_window": [
+        null,
+        72.2,
+        75.0,
+        null,
+        null,
+        83.3,
+        null,
+        null
+      ],
+      "occs_by_window": [
+        0,
+        18,
+        4,
+        0,
+        0,
+        6,
+        0,
+        1
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-02-24",
+        "2025-02-25",
+        "2025-02-26",
+        "2025-02-27",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-11-20"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_low_z20",
+        "vix_put_call_ratio_close_vol20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "vix_put_call_ratio_close_vol20",
+          "threshold": 71.2373,
+          "direction": "above",
+          "prec_is": 45.7,
+          "percentile": 70
+        }
+      ],
+      "n_is": 16,
+      "n_oos": 7,
+      "precision_is": 81.2,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 3,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 80.2,
+      "std_precision_wf": 4.4,
+      "precisions_by_window": [
+        80.0,
+        null,
+        75.0,
+        null,
+        null,
+        85.7,
+        null,
+        null
+      ],
+      "occs_by_window": [
+        10,
+        0,
+        4,
+        0,
+        1,
+        7,
+        0,
+        0
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-02-13",
+        "2025-02-24",
+        "2025-02-25",
+        "2025-02-26",
+        "2025-02-27",
+        "2025-02-28",
+        "2025-03-03"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "vix9d_close_lag2",
+        "vix_put_call_ratio_close_vol20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "vix9d_close_lag2",
+          "threshold": 19.655,
+          "direction": "above",
+          "prec_is": 62.7,
+          "percentile": 90
+        },
+        {
+          "feature": "vix_put_call_ratio_close_vol20",
+          "threshold": 71.2373,
+          "direction": "above",
+          "prec_is": 45.7,
+          "percentile": 70
+        }
+      ],
+      "n_is": 15,
+      "n_oos": 7,
+      "precision_is": 66.7,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 3,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 66.3,
+      "std_precision_wf": 23.5,
+      "precisions_by_window": [
+        null,
+        null,
+        null,
+        33.3,
+        80.0,
+        85.7,
+        null,
+        null
+      ],
+      "occs_by_window": [
+        1,
+        0,
+        1,
+        3,
+        5,
+        7,
+        0,
+        0
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-03-03",
+        "2025-03-18",
+        "2025-03-19",
+        "2025-03-20",
+        "2025-03-21",
+        "2025-03-28",
+        "2025-06-20"
+      ]
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "interact_vvix_vix9d",
+        "iwm_low_z20",
+        "iwm_close_z60"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "interact_vvix_vix9d",
+          "threshold": 1517.4949,
+          "direction": "above",
+          "prec_is": 58.3,
+          "percentile": 70
+        },
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "iwm_close_z60",
+          "threshold": -1.1267,
+          "direction": "below",
+          "prec_is": 68.6,
+          "percentile": 10
+        }
+      ],
+      "n_is": 24,
+      "n_oos": 7,
+      "precision_is": 75.0,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 3,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 76.3,
+      "std_precision_wf": 5.3,
+      "precisions_by_window": [
+        null,
+        70.6,
+        75.0,
+        null,
+        null,
+        83.3,
+        null,
+        null
+      ],
+      "occs_by_window": [
+        0,
+        17,
+        4,
+        0,
+        0,
+        6,
+        0,
+        1
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-02-24",
+        "2025-02-25",
+        "2025-02-26",
+        "2025-02-27",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-11-20"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_close_z60",
+        "vvix_micro_body_pct"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_close_z60",
+          "threshold": -1.1267,
+          "direction": "below",
+          "prec_is": 68.6,
+          "percentile": 10
+        },
+        {
+          "feature": "vvix_micro_body_pct",
+          "threshold": 3.9262,
+          "direction": "above",
+          "prec_is": 47.0,
+          "percentile": 70
+        }
+      ],
+      "n_is": 24,
+      "n_oos": 6,
+      "precision_is": 66.7,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 3,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 78.7,
+      "std_precision_wf": 16.1,
+      "precisions_by_window": [
+        null,
+        61.1,
+        100.0,
+        null,
+        null,
+        75.0,
+        null,
+        null
+      ],
+      "occs_by_window": [
+        0,
+        18,
+        2,
+        0,
+        0,
+        8,
+        0,
+        0
+      ],
+      "per_quarter_oos": 1.7,
+      "oos_dates": [
+        "2025-02-24",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-03-20",
+        "2025-03-21",
+        "2025-03-24"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "interact_vvix_vix9d",
+        "skew_close_distma20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "interact_vvix_vix9d",
+          "threshold": 1517.4949,
+          "direction": "above",
+          "prec_is": 58.3,
+          "percentile": 70
+        },
+        {
+          "feature": "skew_close_distma20",
+          "threshold": -5.0583,
+          "direction": "below",
+          "prec_is": 60.8,
+          "percentile": 10
+        }
+      ],
+      "n_is": 26,
+      "n_oos": 7,
+      "precision_is": 61.5,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 5,
+      "n_windows_valid": 0,
+      "is_robust": false,
+      "mean_precision_wf": 63.9,
+      "std_precision_wf": 11.9,
+      "precisions_by_window": [
+        75.0,
+        null,
+        66.7,
+        50.0,
+        50.0,
+        77.8,
+        null,
+        null
+      ],
+      "occs_by_window": [
+        4,
+        1,
+        6,
+        6,
+        6,
+        9,
+        0,
+        1
+      ],
+      "per_quarter_oos": 2.0,
+      "oos_dates": [
+        "2025-02-25",
+        "2025-02-27",
+        "2025-02-28",
+        "2025-03-18",
+        "2025-03-19",
+        "2025-03-20",
+        "2026-02-06"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_close_z60",
+        "iwm_high_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_close_z60",
+          "threshold": -1.1267,
+          "direction": "below",
+          "prec_is": 68.6,
+          "percentile": 10
+        },
+        {
+          "feature": "iwm_high_z20",
+          "threshold": -1.4752,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        }
+      ],
+      "n_is": 23,
+      "n_oos": 6,
+      "precision_is": 69.6,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 3,
+      "n_windows_valid": 0,
+      "is_robust": false,
+      "mean_precision_wf": 71.0,
+      "std_precision_wf": 3.4,
+      "precisions_by_window": [
+        null,
+        66.7,
+        75.0,
+        null,
+        null,
+        71.4,
+        null,
+        null
+      ],
+      "occs_by_window": [
+        0,
+        15,
+        4,
+        0,
+        0,
+        7,
+        0,
+        1
+      ],
+      "per_quarter_oos": 1.7,
+      "oos_dates": [
+        "2025-02-25",
+        "2025-02-26",
+        "2025-02-27",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-11-20"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "vts_vix9d_vix6m_ratio",
+        "vix9d_close_lag2"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "vts_vix9d_vix6m_ratio",
+          "threshold": 0.9046,
+          "direction": "above",
+          "prec_is": 58.8,
+          "percentile": 90
+        },
+        {
+          "feature": "vix9d_close_lag2",
+          "threshold": 19.655,
+          "direction": "above",
+          "prec_is": 62.7,
+          "percentile": 90
+        }
+      ],
+      "n_is": 28,
+      "n_oos": 6,
+      "precision_is": 60.7,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 4,
+      "n_windows_valid": 0,
+      "is_robust": false,
+      "mean_precision_wf": 53.3,
+      "std_precision_wf": 20.5,
+      "precisions_by_window": [
+        null,
+        33.3,
+        null,
+        33.3,
+        66.7,
+        80.0,
+        null,
+        null
+      ],
+      "occs_by_window": [
+        0,
+        3,
+        1,
+        6,
+        6,
+        5,
+        0,
+        1
+      ],
+      "per_quarter_oos": 1.7,
+      "oos_dates": [
+        "2025-03-18",
+        "2025-03-19",
+        "2025-03-20",
+        "2025-03-21",
+        "2025-03-28",
+        "2025-11-20"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "vix9d_close_lag2",
+        "vts_vix9d_vix6m_spread"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "vix9d_close_lag2",
+          "threshold": 19.655,
+          "direction": "above",
+          "prec_is": 62.7,
+          "percentile": 90
+        },
+        {
+          "feature": "vts_vix9d_vix6m_spread",
+          "threshold": -1.952,
+          "direction": "above",
+          "prec_is": 56.9,
+          "percentile": 90
+        }
+      ],
+      "n_is": 26,
+      "n_oos": 6,
+      "precision_is": 57.7,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 4,
+      "n_windows_valid": 0,
+      "is_robust": false,
+      "mean_precision_wf": 56.3,
+      "std_precision_wf": 19.2,
+      "precisions_by_window": [
+        null,
+        50.0,
+        null,
+        28.6,
+        66.7,
+        80.0,
+        null,
+        null
+      ],
+      "occs_by_window": [
+        0,
+        2,
+        1,
+        7,
+        6,
+        5,
+        0,
+        1
+      ],
+      "per_quarter_oos": 1.7,
+      "oos_dates": [
+        "2025-03-18",
+        "2025-03-19",
+        "2025-03-20",
+        "2025-03-21",
+        "2025-03-28",
+        "2025-11-20"
+      ]
+    }
+  ],
+  "actionable_patterns": [
+    {
+      "type": "combo2_AND",
+      "features": [
+        "interact_vvix_vix9d",
+        "iwm_low_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "interact_vvix_vix9d",
+          "threshold": 1517.4949,
+          "direction": "above",
+          "prec_is": 58.3,
+          "percentile": 70
+        },
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        }
+      ],
+      "n_is": 37,
+      "n_oos": 13,
+      "precision_is": 75.7,
+      "precision_oos": 92.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 4,
+      "is_robust": false,
+      "mean_precision_wf": 84.6,
+      "std_precision_wf": 14.2,
+      "precisions_by_window": [
+        71.4,
+        70.6,
+        66.7,
+        null,
+        100.0,
+        83.3,
+        100.0,
+        100.0
+      ],
+      "occs_by_window": [
+        7,
+        17,
+        6,
+        0,
+        3,
+        6,
+        2,
+        5
+      ],
+      "per_quarter_oos": 3.8,
+      "oos_dates": [
+        "2025-02-24",
+        "2025-02-25",
+        "2025-02-26",
+        "2025-02-27",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-08-04",
+        "2025-08-05",
+        "2025-11-10",
+        "2025-11-14",
+        "2025-11-17",
+        "2025-11-20",
+        "2026-02-06"
+      ]
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "iwm_low_z20",
+        "vvix_micro_body_ratio"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "iwm_low_z20",
+          "threshold": -1.4827,
+          "direction": "below",
+          "prec_is": 76.5,
+          "percentile": 10
+        },
+        {
+          "feature": "vvix_micro_body_ratio",
+          "threshold": 0.1144,
+          "direction": "above",
+          "prec_is": 42.4,
+          "percentile": 10
+        }
+      ],
+      "n_is": 47,
+      "n_oos": 14,
+      "precision_is": 78.7,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 3,
+      "is_robust": false,
+      "mean_precision_wf": 82.4,
+      "std_precision_wf": 14.6,
+      "precisions_by_window": [
+        80.0,
+        76.5,
+        71.4,
+        60.0,
+        100.0,
+        100.0,
+        100.0,
+        71.4
+      ],
+      "occs_by_window": [
+        10,
+        17,
+        7,
+        5,
+        4,
+        5,
+        2,
+        7
+      ],
+      "per_quarter_oos": 4.1,
+      "oos_dates": [
+        "2025-02-13",
+        "2025-02-24",
+        "2025-02-27",
+        "2025-02-28",
+        "2025-03-03",
+        "2025-08-04",
+        "2025-08-05",
+        "2025-11-10",
+        "2025-11-14",
+        "2025-11-17",
+        "2025-11-20",
+        "2026-01-02",
+        "2026-01-05",
+        "2026-02-06"
+      ]
+    }
+  ],
+  "robust_patterns": []
+}

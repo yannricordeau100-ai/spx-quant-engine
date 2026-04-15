@@ -1,0 +1,201 @@
+{
+  "ok": true,
+  "entry_point": "10h00",
+  "target": "240min",
+  "filter": {
+    "vix_open_max": 22.0,
+    "vix_open_min": null,
+    "label": "_vix_le22"
+  },
+  "n_sessions": 721,
+  "n_sessions_is": 504,
+  "n_sessions_oos": 217,
+  "n_features": 2746,
+  "n_actionable": 0,
+  "n_robust": 0,
+  "all_patterns": [
+    {
+      "type": "combo2_AND",
+      "features": [
+        "vix9d_low",
+        "vvix_open_z60"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "vix9d_low",
+          "threshold": 18.605,
+          "direction": "above",
+          "prec_is": 54.9,
+          "percentile": 90
+        },
+        {
+          "feature": "vvix_open_z60",
+          "threshold": 0.6257,
+          "direction": "above",
+          "prec_is": 47.5,
+          "percentile": 80
+        }
+      ],
+      "n_is": 21,
+      "n_oos": 7,
+      "precision_is": 57.1,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 5,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 67.0,
+      "std_precision_wf": 23.2,
+      "precisions_by_window": [
+        null,
+        71.4,
+        null,
+        50.0,
+        33.3,
+        100.0,
+        null,
+        80.0
+      ],
+      "occs_by_window": [
+        1,
+        7,
+        0,
+        4,
+        3,
+        2,
+        1,
+        5
+      ],
+      "per_quarter_oos": 2.0
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "vix9d_low",
+        "vvix_open_z60",
+        "vix_high"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "vix9d_low",
+          "threshold": 18.605,
+          "direction": "above",
+          "prec_is": 54.9,
+          "percentile": 90
+        },
+        {
+          "feature": "vvix_open_z60",
+          "threshold": 0.6257,
+          "direction": "above",
+          "prec_is": 47.5,
+          "percentile": 80
+        },
+        {
+          "feature": "vix_high",
+          "threshold": 18.391,
+          "direction": "above",
+          "prec_is": 49.0,
+          "percentile": 70
+        }
+      ],
+      "n_is": 21,
+      "n_oos": 7,
+      "precision_is": 57.1,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 5,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 67.0,
+      "std_precision_wf": 23.2,
+      "precisions_by_window": [
+        null,
+        71.4,
+        null,
+        50.0,
+        33.3,
+        100.0,
+        null,
+        80.0
+      ],
+      "occs_by_window": [
+        1,
+        7,
+        0,
+        4,
+        3,
+        2,
+        1,
+        5
+      ],
+      "per_quarter_oos": 2.0
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "vix9d_low",
+        "vvix_open_z60",
+        "spx_low_pct252"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "vix9d_low",
+          "threshold": 18.605,
+          "direction": "above",
+          "prec_is": 54.9,
+          "percentile": 90
+        },
+        {
+          "feature": "vvix_open_z60",
+          "threshold": 0.6257,
+          "direction": "above",
+          "prec_is": 47.5,
+          "percentile": 80
+        },
+        {
+          "feature": "spx_low_pct252",
+          "threshold": 96.4286,
+          "direction": "below",
+          "prec_is": 42.6,
+          "percentile": 50
+        }
+      ],
+      "n_is": 21,
+      "n_oos": 7,
+      "precision_is": 57.1,
+      "precision_oos": 85.7,
+      "leakage_suspect": false,
+      "n_windows_tested": 5,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 67.0,
+      "std_precision_wf": 23.2,
+      "precisions_by_window": [
+        null,
+        71.4,
+        null,
+        50.0,
+        33.3,
+        100.0,
+        null,
+        80.0
+      ],
+      "occs_by_window": [
+        1,
+        7,
+        0,
+        4,
+        3,
+        2,
+        1,
+        5
+      ],
+      "per_quarter_oos": 2.0
+    }
+  ],
+  "actionable_patterns": [],
+  "robust_patterns": []
+}

@@ -1,0 +1,4002 @@
+
+============================================================
+GRILLE 9h30/360min
+============================================================
+
+[grid] 9h30/360min | RIC≥0.45% | VIX≤22.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 22.0
+[filtered/9h30] Sessions: 791 → 721 (70 exclues)
+[filtered/9h30] FORT: 304 | FAIBLE: 232 | INCERT: 185
+[grid] Sessions: 721 | RIC≥0.45%: 304 (42.2%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2627 | Patterns actionnables: 33
+[grid] 🟡 4 patterns ≥90% | Best: 92.3% OOS / 13 occ / WF 4/7
+
+[grid] 9h30/360min | RIC≥0.45% | VIX≤21.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 21.0
+[filtered/9h30] Sessions: 791 → 688 (103 exclues)
+[filtered/9h30] FORT: 280 | FAIBLE: 228 | INCERT: 180
+[grid] Sessions: 688 | RIC≥0.45%: 280 (40.7%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2641 | Patterns actionnables: 41
+[grid] 🟡 1 patterns ≥90% | Best: 90.9% OOS / 11 occ / WF 4/8
+
+[grid] 9h30/360min | RIC≥0.45% | VIX≤20.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 20.0
+[filtered/9h30] Sessions: 791 → 649 (142 exclues)
+[filtered/9h30] FORT: 257 | FAIBLE: 218 | INCERT: 174
+[grid] Sessions: 649 | RIC≥0.45%: 257 (39.6%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2542 | Patterns actionnables: 36
+[grid] 🟢 1 patterns ≥90% | Best: 90.0% OOS / 10 occ / WF 5/7
+
+[grid] 9h30/360min | RIC≥0.45% | VIX≤19.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 218 | FAIBLE: 202 | INCERT: 157
+[grid] Sessions: 577 | RIC≥0.45%: 218 (37.8%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2286 | Patterns actionnables: 2
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/360min | RIC≥0.4% | VIX≤22.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 22.0
+[filtered/9h30] Sessions: 791 → 721 (70 exclues)
+[filtered/9h30] FORT: 304 | FAIBLE: 232 | INCERT: 185
+[grid] Sessions: 721 | RIC≥0.4%: 343 (47.6%)
+[pattern_search] Règles univariées: 1 passent le filtre
+[pattern_search] Combos testés: 2645 | Patterns actionnables: 54
+[grid] 🟡 6 patterns ≥90% | Best: 100.0% OOS / 8 occ / WF 5/8
+
+[grid] 9h30/360min | RIC≥0.4% | VIX≤21.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 21.0
+[filtered/9h30] Sessions: 791 → 688 (103 exclues)
+[filtered/9h30] FORT: 280 | FAIBLE: 228 | INCERT: 180
+[grid] Sessions: 688 | RIC≥0.4%: 319 (46.4%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2644 | Patterns actionnables: 40
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/360min | RIC≥0.4% | VIX≤20.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 20.0
+[filtered/9h30] Sessions: 791 → 649 (142 exclues)
+[filtered/9h30] FORT: 257 | FAIBLE: 218 | INCERT: 174
+[grid] Sessions: 649 | RIC≥0.4%: 294 (45.3%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2629 | Patterns actionnables: 40
+[grid] 🟡 1 patterns ≥90% | Best: 91.7% OOS / 12 occ / WF 2/4
+
+[grid] 9h30/360min | RIC≥0.4% | VIX≤19.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 218 | FAIBLE: 202 | INCERT: 157
+[grid] Sessions: 577 | RIC≥0.4%: 250 (43.3%)
+[pattern_search] Règles univariées: 1 passent le filtre
+[pattern_search] Combos testés: 2570 | Patterns actionnables: 9
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/360min | RIC≥0.35% | VIX≤22.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 22.0
+[filtered/9h30] Sessions: 791 → 721 (70 exclues)
+[filtered/9h30] FORT: 304 | FAIBLE: 232 | INCERT: 185
+[grid] Sessions: 721 | RIC≥0.35%: 387 (53.7%)
+[pattern_search] Règles univariées: 5 passent le filtre
+[pattern_search] Combos testés: 2627 | Patterns actionnables: 132
+[grid] 🟢 32 patterns ≥90% | Best: 100.0% OOS / 10 occ / WF 5/6
+
+[grid] 9h30/360min | RIC≥0.35% | VIX≤21.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 21.0
+[filtered/9h30] Sessions: 791 → 688 (103 exclues)
+[filtered/9h30] FORT: 280 | FAIBLE: 228 | INCERT: 180
+[grid] Sessions: 688 | RIC≥0.35%: 362 (52.6%)
+[pattern_search] Règles univariées: 5 passent le filtre
+[pattern_search] Combos testés: 2645 | Patterns actionnables: 55
+[grid] 🟢 3 patterns ≥90% | Best: 92.3% OOS / 13 occ / WF 6/8
+
+[grid] 9h30/360min | RIC≥0.35% | VIX≤20.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 20.0
+[filtered/9h30] Sessions: 791 → 649 (142 exclues)
+[filtered/9h30] FORT: 257 | FAIBLE: 218 | INCERT: 174
+[grid] Sessions: 649 | RIC≥0.35%: 337 (51.9%)
+[pattern_search] Règles univariées: 5 passent le filtre
+[pattern_search] Combos testés: 2629 | Patterns actionnables: 66
+[grid] 🟢 13 patterns ≥90% | Best: 100.0% OOS / 12 occ / WF 6/8
+
+[grid] 9h30/360min | RIC≥0.35% | VIX≤19.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 218 | FAIBLE: 202 | INCERT: 157
+[grid] Sessions: 577 | RIC≥0.35%: 287 (49.7%)
+[pattern_search] Règles univariées: 2 passent le filtre
+[pattern_search] Combos testés: 2626 | Patterns actionnables: 25
+[grid] 🟡 1 patterns ≥90% | Best: 90.9% OOS / 11 occ / WF 4/7
+
+[grid] 9h30/360min | RIC≥0.3% | VIX≤22.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 22.0
+[filtered/9h30] Sessions: 791 → 721 (70 exclues)
+[filtered/9h30] FORT: 304 | FAIBLE: 232 | INCERT: 185
+[grid] Sessions: 721 | RIC≥0.3%: 436 (60.5%)
+[pattern_search] Règles univariées: 5 passent le filtre
+[pattern_search] Combos testés: 2644 | Patterns actionnables: 134
+[grid] 🟢 32 patterns ≥90% | Best: 100.0% OOS / 7 occ / WF 5/6
+
+[grid] 9h30/360min | RIC≥0.3% | VIX≤21.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 21.0
+[filtered/9h30] Sessions: 791 → 688 (103 exclues)
+[filtered/9h30] FORT: 280 | FAIBLE: 228 | INCERT: 180
+[grid] Sessions: 688 | RIC≥0.3%: 410 (59.6%)
+[pattern_search] Règles univariées: 8 passent le filtre
+[pattern_search] Combos testés: 2646 | Patterns actionnables: 178
+[grid] 🟢 46 patterns ≥90% | Best: 100.0% OOS / 17 occ / WF 6/6
+
+[grid] 9h30/360min | RIC≥0.3% | VIX≤20.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 20.0
+[filtered/9h30] Sessions: 791 → 649 (142 exclues)
+[filtered/9h30] FORT: 257 | FAIBLE: 218 | INCERT: 174
+[grid] Sessions: 649 | RIC≥0.3%: 384 (59.2%)
+[pattern_search] Règles univariées: 6 passent le filtre
+[pattern_search] Combos testés: 2633 | Patterns actionnables: 47
+[grid] 🟡 1 patterns ≥90% | Best: 92.9% OOS / 14 occ / WF 2/8
+
+[grid] 9h30/360min | RIC≥0.3% | VIX≤19.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/9h30] FORT≥0.45%: 351 | FAIBLE≤0.23%: 243 | INCERT: 197
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 218 | FAIBLE: 202 | INCERT: 157
+[grid] Sessions: 577 | RIC≥0.3%: 331 (57.4%)
+[pattern_search] Règles univariées: 2 passent le filtre
+[pattern_search] Combos testés: 2628 | Patterns actionnables: 33
+[grid] 🟡 5 patterns ≥90% | Best: 91.7% OOS / 12 occ / WF 5/8
+
+============================================================
+GRILLE 9h30/240min
+============================================================
+
+[grid] 9h30/240min | RIC≥0.45% | VIX≤22.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 22.0
+[filtered/9h30] Sessions: 791 → 721 (70 exclues)
+[filtered/9h30] FORT: 254 | FAIBLE: 276 | INCERT: 191
+[grid] Sessions: 721 | RIC≥0.45%: 254 (35.2%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2600 | Patterns actionnables: 21
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/240min | RIC≥0.45% | VIX≤21.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 21.0
+[filtered/9h30] Sessions: 791 → 688 (103 exclues)
+[filtered/9h30] FORT: 235 | FAIBLE: 269 | INCERT: 184
+[grid] Sessions: 688 | RIC≥0.45%: 235 (34.2%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2495 | Patterns actionnables: 5
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/240min | RIC≥0.45% | VIX≤20.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 20.0
+[filtered/9h30] Sessions: 791 → 649 (142 exclues)
+[filtered/9h30] FORT: 215 | FAIBLE: 258 | INCERT: 176
+[grid] Sessions: 649 | RIC≥0.45%: 215 (33.1%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2631 | Patterns actionnables: 20
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/240min | RIC≥0.45% | VIX≤19.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 188 | FAIBLE: 235 | INCERT: 154
+[grid] Sessions: 577 | RIC≥0.45%: 188 (32.6%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/240min | RIC≥0.4% | VIX≤22.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 22.0
+[filtered/9h30] Sessions: 791 → 721 (70 exclues)
+[filtered/9h30] FORT: 254 | FAIBLE: 276 | INCERT: 191
+[grid] Sessions: 721 | RIC≥0.4%: 290 (40.2%)
+[pattern_search] Règles univariées: 1 passent le filtre
+[pattern_search] Combos testés: 2643 | Patterns actionnables: 92
+[grid] 🟢 21 patterns ≥90% | Best: 100.0% OOS / 7 occ / WF 4/6
+
+[grid] 9h30/240min | RIC≥0.4% | VIX≤21.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 21.0
+[filtered/9h30] Sessions: 791 → 688 (103 exclues)
+[filtered/9h30] FORT: 235 | FAIBLE: 269 | INCERT: 184
+[grid] Sessions: 688 | RIC≥0.4%: 267 (38.8%)
+[pattern_search] Règles univariées: 2 passent le filtre
+[pattern_search] Combos testés: 2545 | Patterns actionnables: 65
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/240min | RIC≥0.4% | VIX≤20.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 20.0
+[filtered/9h30] Sessions: 791 → 649 (142 exclues)
+[filtered/9h30] FORT: 215 | FAIBLE: 258 | INCERT: 176
+[grid] Sessions: 649 | RIC≥0.4%: 246 (37.9%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2586 | Patterns actionnables: 38
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/240min | RIC≥0.4% | VIX≤19.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 188 | FAIBLE: 235 | INCERT: 154
+[grid] Sessions: 577 | RIC≥0.4%: 215 (37.3%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2545 | Patterns actionnables: 7
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/240min | RIC≥0.35% | VIX≤22.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 22.0
+[filtered/9h30] Sessions: 791 → 721 (70 exclues)
+[filtered/9h30] FORT: 254 | FAIBLE: 276 | INCERT: 191
+[grid] Sessions: 721 | RIC≥0.35%: 332 (46.0%)
+[pattern_search] Règles univariées: 1 passent le filtre
+[pattern_search] Combos testés: 2643 | Patterns actionnables: 66
+[grid] 🟢 15 patterns ≥90% | Best: 90.9% OOS / 11 occ / WF 3/5
+
+[grid] 9h30/240min | RIC≥0.35% | VIX≤21.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 21.0
+[filtered/9h30] Sessions: 791 → 688 (103 exclues)
+[filtered/9h30] FORT: 235 | FAIBLE: 269 | INCERT: 184
+[grid] Sessions: 688 | RIC≥0.35%: 308 (44.8%)
+[pattern_search] Règles univariées: 5 passent le filtre
+[pattern_search] Combos testés: 2529 | Patterns actionnables: 106
+[grid] 🟢 32 patterns ≥90% | Best: 100.0% OOS / 7 occ / WF 4/6
+
+[grid] 9h30/240min | RIC≥0.35% | VIX≤20.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 20.0
+[filtered/9h30] Sessions: 791 → 649 (142 exclues)
+[filtered/9h30] FORT: 215 | FAIBLE: 258 | INCERT: 176
+[grid] Sessions: 649 | RIC≥0.35%: 284 (43.8%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2643 | Patterns actionnables: 46
+[grid] 🟡 1 patterns ≥90% | Best: 90.0% OOS / 10 occ / WF 2/7
+
+[grid] 9h30/240min | RIC≥0.35% | VIX≤19.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 188 | FAIBLE: 235 | INCERT: 154
+[grid] Sessions: 577 | RIC≥0.35%: 248 (43.0%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2635 | Patterns actionnables: 15
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/240min | RIC≥0.3% | VIX≤22.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 22.0
+[filtered/9h30] Sessions: 791 → 721 (70 exclues)
+[filtered/9h30] FORT: 254 | FAIBLE: 276 | INCERT: 191
+[grid] Sessions: 721 | RIC≥0.3%: 378 (52.4%)
+[pattern_search] Règles univariées: 11 passent le filtre
+[pattern_search] Combos testés: 2634 | Patterns actionnables: 205
+[grid] 🟢 66 patterns ≥90% | Best: 100.0% OOS / 15 occ / WF 5/6
+
+[grid] 9h30/240min | RIC≥0.3% | VIX≤21.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 21.0
+[filtered/9h30] Sessions: 791 → 688 (103 exclues)
+[filtered/9h30] FORT: 235 | FAIBLE: 269 | INCERT: 184
+[grid] Sessions: 688 | RIC≥0.3%: 353 (51.3%)
+[pattern_search] Règles univariées: 11 passent le filtre
+[pattern_search] Combos testés: 2627 | Patterns actionnables: 128
+[grid] 🟢 38 patterns ≥90% | Best: 100.0% OOS / 11 occ / WF 5/5
+
+[grid] 9h30/240min | RIC≥0.3% | VIX≤20.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 20.0
+[filtered/9h30] Sessions: 791 → 649 (142 exclues)
+[filtered/9h30] FORT: 215 | FAIBLE: 258 | INCERT: 176
+[grid] Sessions: 649 | RIC≥0.3%: 326 (50.2%)
+[pattern_search] Règles univariées: 4 passent le filtre
+[pattern_search] Combos testés: 2645 | Patterns actionnables: 65
+[grid] 🟢 11 patterns ≥90% | Best: 100.0% OOS / 10 occ / WF 4/6
+
+[grid] 9h30/240min | RIC≥0.3% | VIX≤19.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 188 | FAIBLE: 235 | INCERT: 154
+[grid] Sessions: 577 | RIC≥0.3%: 283 (49.0%)
+[pattern_search] Règles univariées: 3 passent le filtre
+[pattern_search] Combos testés: 2643 | Patterns actionnables: 92
+[grid] 🟢 33 patterns ≥90% | Best: 100.0% OOS / 6 occ / WF 3/5
+
+============================================================
+GRILLE 9h30/180min
+============================================================
+
+[grid] 9h30/180min | RIC≥0.45% | VIX≤22.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 22.0
+[filtered/9h30] Sessions: 791 → 721 (70 exclues)
+[filtered/9h30] FORT: 236 | FAIBLE: 284 | INCERT: 201
+[grid] Sessions: 721 | RIC≥0.45%: 236 (32.7%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2600 | Patterns actionnables: 43
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/180min | RIC≥0.45% | VIX≤21.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 21.0
+[filtered/9h30] Sessions: 791 → 688 (103 exclues)
+[filtered/9h30] FORT: 217 | FAIBLE: 282 | INCERT: 189
+[grid] Sessions: 688 | RIC≥0.45%: 217 (31.5%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2592 | Patterns actionnables: 18
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/180min | RIC≥0.45% | VIX≤20.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 20.0
+[filtered/9h30] Sessions: 791 → 649 (142 exclues)
+[filtered/9h30] FORT: 199 | FAIBLE: 272 | INCERT: 178
+[grid] Sessions: 649 | RIC≥0.45%: 199 (30.7%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/180min | RIC≥0.45% | VIX≤19.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 173 | FAIBLE: 247 | INCERT: 157
+[grid] Sessions: 577 | RIC≥0.45%: 173 (30.0%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/180min | RIC≥0.4% | VIX≤22.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 22.0
+[filtered/9h30] Sessions: 791 → 721 (70 exclues)
+[filtered/9h30] FORT: 236 | FAIBLE: 284 | INCERT: 201
+[grid] Sessions: 721 | RIC≥0.4%: 274 (38.0%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2578 | Patterns actionnables: 12
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/180min | RIC≥0.4% | VIX≤21.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 21.0
+[filtered/9h30] Sessions: 791 → 688 (103 exclues)
+[filtered/9h30] FORT: 217 | FAIBLE: 282 | INCERT: 189
+[grid] Sessions: 688 | RIC≥0.4%: 252 (36.6%)
+[pattern_search] Règles univariées: 1 passent le filtre
+[pattern_search] Combos testés: 2627 | Patterns actionnables: 21
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/180min | RIC≥0.4% | VIX≤20.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 20.0
+[filtered/9h30] Sessions: 791 → 649 (142 exclues)
+[filtered/9h30] FORT: 199 | FAIBLE: 272 | INCERT: 178
+[grid] Sessions: 649 | RIC≥0.4%: 232 (35.7%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2515 | Patterns actionnables: 5
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/180min | RIC≥0.4% | VIX≤19.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 173 | FAIBLE: 247 | INCERT: 157
+[grid] Sessions: 577 | RIC≥0.4%: 203 (35.2%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/180min | RIC≥0.35% | VIX≤22.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 22.0
+[filtered/9h30] Sessions: 791 → 721 (70 exclues)
+[filtered/9h30] FORT: 236 | FAIBLE: 284 | INCERT: 201
+[grid] Sessions: 721 | RIC≥0.35%: 315 (43.7%)
+[pattern_search] Règles univariées: 1 passent le filtre
+[pattern_search] Combos testés: 2623 | Patterns actionnables: 16
+[grid] 🟢 1 patterns ≥90% | Best: 100.0% OOS / 7 occ / WF 3/5
+
+[grid] 9h30/180min | RIC≥0.35% | VIX≤21.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 21.0
+[filtered/9h30] Sessions: 791 → 688 (103 exclues)
+[filtered/9h30] FORT: 217 | FAIBLE: 282 | INCERT: 189
+[grid] Sessions: 688 | RIC≥0.35%: 291 (42.3%)
+[pattern_search] Règles univariées: 1 passent le filtre
+[pattern_search] Combos testés: 2627 | Patterns actionnables: 21
+[grid] 🟡 1 patterns ≥90% | Best: 100.0% OOS / 7 occ / WF 4/7
+
+[grid] 9h30/180min | RIC≥0.35% | VIX≤20.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 20.0
+[filtered/9h30] Sessions: 791 → 649 (142 exclues)
+[filtered/9h30] FORT: 199 | FAIBLE: 272 | INCERT: 178
+[grid] Sessions: 649 | RIC≥0.35%: 268 (41.3%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2570 | Patterns actionnables: 11
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/180min | RIC≥0.35% | VIX≤19.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 173 | FAIBLE: 247 | INCERT: 157
+[grid] Sessions: 577 | RIC≥0.35%: 235 (40.7%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2490 | Patterns actionnables: 3
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 9h30/180min | RIC≥0.3% | VIX≤22.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 22.0
+[filtered/9h30] Sessions: 791 → 721 (70 exclues)
+[filtered/9h30] FORT: 236 | FAIBLE: 284 | INCERT: 201
+[grid] Sessions: 721 | RIC≥0.3%: 356 (49.4%)
+[pattern_search] Règles univariées: 2 passent le filtre
+[pattern_search] Combos testés: 2629 | Patterns actionnables: 53
+[grid] 🟢 25 patterns ≥90% | Best: 100.0% OOS / 9 occ / WF 3/5
+
+[grid] 9h30/180min | RIC≥0.3% | VIX≤21.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 21.0
+[filtered/9h30] Sessions: 791 → 688 (103 exclues)
+[filtered/9h30] FORT: 217 | FAIBLE: 282 | INCERT: 189
+[grid] Sessions: 688 | RIC≥0.3%: 330 (48.0%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2630 | Patterns actionnables: 28
+[grid] 🟡 1 patterns ≥90% | Best: 90.9% OOS / 11 occ / WF 2/7
+
+[grid] 9h30/180min | RIC≥0.3% | VIX≤20.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 20.0
+[filtered/9h30] Sessions: 791 → 649 (142 exclues)
+[filtered/9h30] FORT: 199 | FAIBLE: 272 | INCERT: 178
+[grid] Sessions: 649 | RIC≥0.3%: 306 (47.1%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2644 | Patterns actionnables: 42
+[grid] 🟢 13 patterns ≥90% | Best: 100.0% OOS / 8 occ / WF 3/4
+
+[grid] 9h30/180min | RIC≥0.3% | VIX≤19.0
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[filtered/9h30] Filtre: VIX_open ≤ 19.0
+[filtered/9h30] Sessions: 791 → 577 (214 exclues)
+[filtered/9h30] FORT: 173 | FAIBLE: 247 | INCERT: 157
+[grid] Sessions: 577 | RIC≥0.3%: 270 (46.8%)
+[pattern_search] Règles univariées: 1 passent le filtre
+[pattern_search] Combos testés: 2525 | Patterns actionnables: 5
+[grid] 🟡 1 patterns ≥90% | Best: 100.0% OOS / 6 occ / WF 2/4
+
+============================================================
+GRILLE 10h00/360min
+============================================================
+
+[grid] 10h00/360min | RIC≥0.45% | VIX≤22.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 22.0
+[filtered/10h00] Sessions: 791 → 721 (70 exclues)
+[filtered/10h00] FORT: 268 | FAIBLE: 253 | INCERT: 200
+[grid] Sessions: 721 | RIC≥0.45%: 268 (37.2%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2627 | Patterns actionnables: 49
+[grid] 🟢 3 patterns ≥90% | Best: 100.0% OOS / 7 occ / WF 3/5
+
+[grid] 10h00/360min | RIC≥0.45% | VIX≤21.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 21.0
+[filtered/10h00] Sessions: 791 → 688 (103 exclues)
+[filtered/10h00] FORT: 242 | FAIBLE: 250 | INCERT: 196
+[grid] Sessions: 688 | RIC≥0.45%: 242 (35.2%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2626 | Patterns actionnables: 48
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/360min | RIC≥0.45% | VIX≤20.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 20.0
+[filtered/10h00] Sessions: 791 → 649 (142 exclues)
+[filtered/10h00] FORT: 221 | FAIBLE: 242 | INCERT: 186
+[grid] Sessions: 649 | RIC≥0.45%: 221 (34.1%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2495 | Patterns actionnables: 3
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/360min | RIC≥0.45% | VIX≤19.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 182 | FAIBLE: 222 | INCERT: 173
+[grid] Sessions: 577 | RIC≥0.45%: 182 (31.5%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2495 | Patterns actionnables: 3
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/360min | RIC≥0.4% | VIX≤22.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 22.0
+[filtered/10h00] Sessions: 791 → 721 (70 exclues)
+[filtered/10h00] FORT: 268 | FAIBLE: 253 | INCERT: 200
+[grid] Sessions: 721 | RIC≥0.4%: 306 (42.4%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2642 | Patterns actionnables: 125
+[grid] 🟡 1 patterns ≥90% | Best: 100.0% OOS / 7 occ / WF 3/7
+
+[grid] 10h00/360min | RIC≥0.4% | VIX≤21.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 21.0
+[filtered/10h00] Sessions: 791 → 688 (103 exclues)
+[filtered/10h00] FORT: 242 | FAIBLE: 250 | INCERT: 196
+[grid] Sessions: 688 | RIC≥0.4%: 279 (40.6%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2640 | Patterns actionnables: 79
+[grid] 🟡 7 patterns ≥90% | Best: 92.3% OOS / 13 occ / WF 2/8
+
+[grid] 10h00/360min | RIC≥0.4% | VIX≤20.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 20.0
+[filtered/10h00] Sessions: 791 → 649 (142 exclues)
+[filtered/10h00] FORT: 221 | FAIBLE: 242 | INCERT: 186
+[grid] Sessions: 649 | RIC≥0.4%: 255 (39.3%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2641 | Patterns actionnables: 29
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/360min | RIC≥0.4% | VIX≤19.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 182 | FAIBLE: 222 | INCERT: 173
+[grid] Sessions: 577 | RIC≥0.4%: 214 (37.1%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2480 | Patterns actionnables: 2
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/360min | RIC≥0.35% | VIX≤22.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 22.0
+[filtered/10h00] Sessions: 791 → 721 (70 exclues)
+[filtered/10h00] FORT: 268 | FAIBLE: 253 | INCERT: 200
+[grid] Sessions: 721 | RIC≥0.35%: 357 (49.5%)
+[pattern_search] Règles univariées: 2 passent le filtre
+[pattern_search] Combos testés: 2641 | Patterns actionnables: 115
+[grid] 🟢 30 patterns ≥90% | Best: 100.0% OOS / 7 occ / WF 4/6
+
+[grid] 10h00/360min | RIC≥0.35% | VIX≤21.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 21.0
+[filtered/10h00] Sessions: 791 → 688 (103 exclues)
+[filtered/10h00] FORT: 242 | FAIBLE: 250 | INCERT: 196
+[grid] Sessions: 688 | RIC≥0.35%: 327 (47.5%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2643 | Patterns actionnables: 44
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/360min | RIC≥0.35% | VIX≤20.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 20.0
+[filtered/10h00] Sessions: 791 → 649 (142 exclues)
+[filtered/10h00] FORT: 221 | FAIBLE: 242 | INCERT: 186
+[grid] Sessions: 649 | RIC≥0.35%: 301 (46.4%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2642 | Patterns actionnables: 47
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/360min | RIC≥0.35% | VIX≤19.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 182 | FAIBLE: 222 | INCERT: 173
+[grid] Sessions: 577 | RIC≥0.35%: 256 (44.4%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2540 | Patterns actionnables: 6
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/360min | RIC≥0.3% | VIX≤22.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 22.0
+[filtered/10h00] Sessions: 791 → 721 (70 exclues)
+[filtered/10h00] FORT: 268 | FAIBLE: 253 | INCERT: 200
+[grid] Sessions: 721 | RIC≥0.3%: 400 (55.5%)
+[pattern_search] Règles univariées: 2 passent le filtre
+[pattern_search] Combos testés: 2644 | Patterns actionnables: 161
+[grid] 🟢 18 patterns ≥90% | Best: 92.3% OOS / 13 occ / WF 6/8
+
+[grid] 10h00/360min | RIC≥0.3% | VIX≤21.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 21.0
+[filtered/10h00] Sessions: 791 → 688 (103 exclues)
+[filtered/10h00] FORT: 242 | FAIBLE: 250 | INCERT: 196
+[grid] Sessions: 688 | RIC≥0.3%: 370 (53.8%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2641 | Patterns actionnables: 95
+[grid] 🟢 22 patterns ≥90% | Best: 90.0% OOS / 10 occ / WF 4/6
+
+[grid] 10h00/360min | RIC≥0.3% | VIX≤20.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 20.0
+[filtered/10h00] Sessions: 791 → 649 (142 exclues)
+[filtered/10h00] FORT: 221 | FAIBLE: 242 | INCERT: 186
+[grid] Sessions: 649 | RIC≥0.3%: 342 (52.7%)
+[pattern_search] Règles univariées: 1 passent le filtre
+[pattern_search] Combos testés: 2643 | Patterns actionnables: 37
+[grid] 🟡 1 patterns ≥90% | Best: 100.0% OOS / 8 occ / WF 4/8
+
+[grid] 10h00/360min | RIC≥0.3% | VIX≤19.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 182 | FAIBLE: 222 | INCERT: 173
+[grid] Sessions: 577 | RIC≥0.3%: 296 (51.3%)
+[pattern_search] Règles univariées: 1 passent le filtre
+[pattern_search] Combos testés: 2585 | Patterns actionnables: 20
+[grid] 🟢 3 patterns ≥90% | Best: 100.0% OOS / 6 occ / WF 6/7
+
+============================================================
+GRILLE 10h00/240min
+============================================================
+
+[grid] 10h00/240min | RIC≥0.45% | VIX≤22.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 22.0
+[filtered/10h00] Sessions: 791 → 721 (70 exclues)
+[filtered/10h00] FORT: 230 | FAIBLE: 290 | INCERT: 201
+[grid] Sessions: 721 | RIC≥0.45%: 230 (31.9%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2485 | Patterns actionnables: 3
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/240min | RIC≥0.45% | VIX≤21.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 21.0
+[filtered/10h00] Sessions: 791 → 688 (103 exclues)
+[filtered/10h00] FORT: 213 | FAIBLE: 284 | INCERT: 191
+[grid] Sessions: 688 | RIC≥0.45%: 213 (31.0%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/240min | RIC≥0.45% | VIX≤20.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 20.0
+[filtered/10h00] Sessions: 791 → 649 (142 exclues)
+[filtered/10h00] FORT: 195 | FAIBLE: 272 | INCERT: 182
+[grid] Sessions: 649 | RIC≥0.45%: 195 (30.0%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/240min | RIC≥0.45% | VIX≤19.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 166 | FAIBLE: 251 | INCERT: 160
+[grid] Sessions: 577 | RIC≥0.45%: 166 (28.8%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/240min | RIC≥0.4% | VIX≤22.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 22.0
+[filtered/10h00] Sessions: 791 → 721 (70 exclues)
+[filtered/10h00] FORT: 230 | FAIBLE: 290 | INCERT: 201
+[grid] Sessions: 721 | RIC≥0.4%: 266 (36.9%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2505 | Patterns actionnables: 4
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/240min | RIC≥0.4% | VIX≤21.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 21.0
+[filtered/10h00] Sessions: 791 → 688 (103 exclues)
+[filtered/10h00] FORT: 213 | FAIBLE: 284 | INCERT: 191
+[grid] Sessions: 688 | RIC≥0.4%: 246 (35.8%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2510 | Patterns actionnables: 6
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/240min | RIC≥0.4% | VIX≤20.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 20.0
+[filtered/10h00] Sessions: 791 → 649 (142 exclues)
+[filtered/10h00] FORT: 195 | FAIBLE: 272 | INCERT: 182
+[grid] Sessions: 649 | RIC≥0.4%: 226 (34.8%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2465 | Patterns actionnables: 1
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/240min | RIC≥0.4% | VIX≤19.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 166 | FAIBLE: 251 | INCERT: 160
+[grid] Sessions: 577 | RIC≥0.4%: 194 (33.6%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/240min | RIC≥0.35% | VIX≤22.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 22.0
+[filtered/10h00] Sessions: 791 → 721 (70 exclues)
+[filtered/10h00] FORT: 230 | FAIBLE: 290 | INCERT: 201
+[grid] Sessions: 721 | RIC≥0.35%: 304 (42.2%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2540 | Patterns actionnables: 13
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/240min | RIC≥0.35% | VIX≤21.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 21.0
+[filtered/10h00] Sessions: 791 → 688 (103 exclues)
+[filtered/10h00] FORT: 213 | FAIBLE: 284 | INCERT: 191
+[grid] Sessions: 688 | RIC≥0.35%: 283 (41.1%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2646 | Patterns actionnables: 34
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/240min | RIC≥0.35% | VIX≤20.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 20.0
+[filtered/10h00] Sessions: 791 → 649 (142 exclues)
+[filtered/10h00] FORT: 195 | FAIBLE: 272 | INCERT: 182
+[grid] Sessions: 649 | RIC≥0.35%: 259 (39.9%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2510 | Patterns actionnables: 5
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/240min | RIC≥0.35% | VIX≤19.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 166 | FAIBLE: 251 | INCERT: 160
+[grid] Sessions: 577 | RIC≥0.35%: 221 (38.3%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2515 | Patterns actionnables: 5
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/240min | RIC≥0.3% | VIX≤22.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 22.0
+[filtered/10h00] Sessions: 791 → 721 (70 exclues)
+[filtered/10h00] FORT: 230 | FAIBLE: 290 | INCERT: 201
+[grid] Sessions: 721 | RIC≥0.3%: 357 (49.5%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2590 | Patterns actionnables: 10
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/240min | RIC≥0.3% | VIX≤21.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 21.0
+[filtered/10h00] Sessions: 791 → 688 (103 exclues)
+[filtered/10h00] FORT: 213 | FAIBLE: 284 | INCERT: 191
+[grid] Sessions: 688 | RIC≥0.3%: 335 (48.7%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2578 | Patterns actionnables: 16
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/240min | RIC≥0.3% | VIX≤20.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 20.0
+[filtered/10h00] Sessions: 791 → 649 (142 exclues)
+[filtered/10h00] FORT: 195 | FAIBLE: 272 | INCERT: 182
+[grid] Sessions: 649 | RIC≥0.3%: 310 (47.8%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2613 | Patterns actionnables: 21
+[grid] 🟢 2 patterns ≥90% | Best: 100.0% OOS / 7 occ / WF 3/4
+
+[grid] 10h00/240min | RIC≥0.3% | VIX≤19.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 166 | FAIBLE: 251 | INCERT: 160
+[grid] Sessions: 577 | RIC≥0.3%: 268 (46.4%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2569 | Patterns actionnables: 9
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+============================================================
+GRILLE 10h00/180min
+============================================================
+
+[grid] 10h00/180min | RIC≥0.45% | VIX≤22.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 22.0
+[filtered/10h00] Sessions: 791 → 721 (70 exclues)
+[filtered/10h00] FORT: 190 | FAIBLE: 328 | INCERT: 203
+[grid] Sessions: 721 | RIC≥0.45%: 190 (26.4%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.45% | VIX≤21.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 21.0
+[filtered/10h00] Sessions: 791 → 688 (103 exclues)
+[filtered/10h00] FORT: 173 | FAIBLE: 317 | INCERT: 198
+[grid] Sessions: 688 | RIC≥0.45%: 173 (25.1%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2540 | Patterns actionnables: 11
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.45% | VIX≤20.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 20.0
+[filtered/10h00] Sessions: 791 → 649 (142 exclues)
+[filtered/10h00] FORT: 158 | FAIBLE: 303 | INCERT: 188
+[grid] Sessions: 649 | RIC≥0.45%: 158 (24.3%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.45% | VIX≤19.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 133 | FAIBLE: 275 | INCERT: 169
+[grid] Sessions: 577 | RIC≥0.45%: 133 (23.1%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.4% | VIX≤22.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 22.0
+[filtered/10h00] Sessions: 791 → 721 (70 exclues)
+[filtered/10h00] FORT: 190 | FAIBLE: 328 | INCERT: 203
+[grid] Sessions: 721 | RIC≥0.4%: 222 (30.8%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.4% | VIX≤21.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 21.0
+[filtered/10h00] Sessions: 791 → 688 (103 exclues)
+[filtered/10h00] FORT: 173 | FAIBLE: 317 | INCERT: 198
+[grid] Sessions: 688 | RIC≥0.4%: 204 (29.7%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.4% | VIX≤20.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 20.0
+[filtered/10h00] Sessions: 791 → 649 (142 exclues)
+[filtered/10h00] FORT: 158 | FAIBLE: 303 | INCERT: 188
+[grid] Sessions: 649 | RIC≥0.4%: 188 (29.0%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.4% | VIX≤19.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 133 | FAIBLE: 275 | INCERT: 169
+[grid] Sessions: 577 | RIC≥0.4%: 159 (27.6%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2450 | Patterns actionnables: 0
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.35% | VIX≤22.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 22.0
+[filtered/10h00] Sessions: 791 → 721 (70 exclues)
+[filtered/10h00] FORT: 190 | FAIBLE: 328 | INCERT: 203
+[grid] Sessions: 721 | RIC≥0.35%: 263 (36.5%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2540 | Patterns actionnables: 13
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.35% | VIX≤21.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 21.0
+[filtered/10h00] Sessions: 791 → 688 (103 exclues)
+[filtered/10h00] FORT: 173 | FAIBLE: 317 | INCERT: 198
+[grid] Sessions: 688 | RIC≥0.35%: 243 (35.3%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2475 | Patterns actionnables: 2
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.35% | VIX≤20.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 20.0
+[filtered/10h00] Sessions: 791 → 649 (142 exclues)
+[filtered/10h00] FORT: 158 | FAIBLE: 303 | INCERT: 188
+[grid] Sessions: 649 | RIC≥0.35%: 223 (34.4%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2505 | Patterns actionnables: 4
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.35% | VIX≤19.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 133 | FAIBLE: 275 | INCERT: 169
+[grid] Sessions: 577 | RIC≥0.35%: 190 (32.9%)
+[pattern_search] Règles univariées: 2 passent le filtre
+[pattern_search] Combos testés: 2642 | Patterns actionnables: 40
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.3% | VIX≤22.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 22.0
+[filtered/10h00] Sessions: 791 → 721 (70 exclues)
+[filtered/10h00] FORT: 190 | FAIBLE: 328 | INCERT: 203
+[grid] Sessions: 721 | RIC≥0.3%: 321 (44.5%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2571 | Patterns actionnables: 20
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.3% | VIX≤21.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 21.0
+[filtered/10h00] Sessions: 791 → 688 (103 exclues)
+[filtered/10h00] FORT: 173 | FAIBLE: 317 | INCERT: 198
+[grid] Sessions: 688 | RIC≥0.3%: 300 (43.6%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2465 | Patterns actionnables: 1
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.3% | VIX≤20.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 20.0
+[filtered/10h00] Sessions: 791 → 649 (142 exclues)
+[filtered/10h00] FORT: 158 | FAIBLE: 303 | INCERT: 188
+[grid] Sessions: 649 | RIC≥0.3%: 277 (42.7%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2571 | Patterns actionnables: 27
+[grid] 🔴 0 patterns ≥90% | Best: 0.0% OOS / 0 occ / WF 0/0
+
+[grid] 10h00/180min | RIC≥0.3% | VIX≤19.0
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 133 | FAIBLE: 275 | INCERT: 169
+[grid] Sessions: 577 | RIC≥0.3%: 242 (41.9%)
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2628 | Patterns actionnables: 31
+[grid] 🟡 3 patterns ≥90% | Best: 90.9% OOS / 11 occ / WF 1/7
+
+[grid] Résultats sauvegardés: /Users/yann/spx-quant-engine/data/grid_results.json
+
+============================================================
+RÉSUMÉ GRILLE
+============================================================
+
+9h30/360min:
+  RIC≥0.45%    🟡92%   🟡91%   🟢90%   🔴0% 
+  RIC≥0.40%    🟡100%   🔴0%   🟡92%   🔴0% 
+  RIC≥0.35%    🟢100%   🟢92%   🟢100%   🟡91% 
+  RIC≥0.30%    🟢100%   🟢100%   🟡93%   🟡92% 
+
+9h30/240min:
+  RIC≥0.45%    🔴0%   🔴0%   🔴0%   🔴0% 
+  RIC≥0.40%    🟢100%   🔴0%   🔴0%   🔴0% 
+  RIC≥0.35%    🟢91%   🟢100%   🟡90%   🔴0% 
+  RIC≥0.30%    🟢100%   🟢100%   🟢100%   🟢100% 
+
+9h30/180min:
+  RIC≥0.45%    🔴0%   🔴0%   🔴0%   🔴0% 
+  RIC≥0.40%    🔴0%   🔴0%   🔴0%   🔴0% 
+  RIC≥0.35%    🟢100%   🟡100%   🔴0%   🔴0% 
+  RIC≥0.30%    🟢100%   🟡91%   🟢100%   🟡100% 
+
+10h00/360min:
+  RIC≥0.45%    🟢100%   🔴0%   🔴0%   🔴0% 
+  RIC≥0.40%    🟡100%   🟡92%   🔴0%   🔴0% 
+  RIC≥0.35%    🟢100%   🔴0%   🔴0%   🔴0% 
+  RIC≥0.30%    🟢92%   🟢90%   🟡100%   🟢100% 
+
+10h00/240min:
+  RIC≥0.45%    🔴0%   🔴0%   🔴0%   🔴0% 
+  RIC≥0.40%    🔴0%   🔴0%   🔴0%   🔴0% 
+  RIC≥0.35%    🔴0%   🔴0%   🔴0%   🔴0% 
+  RIC≥0.30%    🔴0%   🔴0%   🟢100%   🔴0% 
+
+10h00/180min:
+  RIC≥0.45%    🔴0%   🔴0%   🔴0%   🔴0% 
+  RIC≥0.40%    🔴0%   🔴0%   🔴0%   🔴0% 
+  RIC≥0.35%    🔴0%   🔴0%   🔴0%   🔴0% 
+  RIC≥0.30%    🔴0%   🔴0%   🔴0%   🟡91% 

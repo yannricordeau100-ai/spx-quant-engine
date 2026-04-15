@@ -1,0 +1,155 @@
+
+============================================================
+RECHERCHE IC 10h00 / 360min
+CIBLE: amplitude ≤ 0.23% (marché calme)
+CONDITION: VIX open ≤ 19.0
+============================================================
+
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 182 | FAIBLE: 222 | INCERT: 173
+[ic_search] Sessions IC (calme ≤0.23%): 222/577 (38.5%)
+[ic_search] IS: 147/403 IC
+[ic_search] OOS: 75/174 IC
+[ic_search] Top 10 features IC: ['spy_high_mom5d', 'vts_skew_vix_ratio', 'nikkei225_open', 'spy_close_lag10', 'spy_rsi', 'qqq_volume_z20', 'nikkei225_high', 'qqq_put_call_ratio_close_lag3', 'spx_low_mom5d', 'cal_n_medium_events']
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2644 | Patterns actionnables: 25
+
+[ic_search] RÉSULTATS IC:
+  Patterns actionnables: 7
+  Patterns robustes: 0
+
+TOP 10 PATTERNS IC (amplitude ≤ 0.23%):
+  #1 [combo2_AND] spy_close_mom5d + vix_put_call_ratio_rsi_mom3d [ROBUSTE]
+       IS=76.5% (17 occ) | OOS=83.3% (6 occ) | ~2.2/trim | WF=3/5
+         spy_close_mom5d ≥ 1.9137 (P80)
+         vix_put_call_ratio_rsi_mom3d ≥ 8.51 (P80)
+  #2 [combo3_AND] spy_close_mom5d + vix_put_call_ratio_rsi_mom3d + vix_spx_open_plus_30_close_diff_1_5 [ROBUSTE]
+       IS=76.5% (17 occ) | OOS=83.3% (6 occ) | ~2.2/trim | WF=3/5
+         spy_close_mom5d ≥ 1.9137 (P80)
+         vix_put_call_ratio_rsi_mom3d ≥ 8.51 (P80)
+         vix_spx_open_plus_30_close_diff_1_5 ≤ 1.792 (P90)
+  #3 [combo2_AND] spx_low_mom5d + vix9d_close_z20 
+       IS=60.0% (20 occ) | OOS=87.5% (8 occ) | ~2.9/trim | WF=3/6
+         spx_low_mom5d ≥ 2.1174 (P80)
+         vix9d_close_z20 ≤ -1.3491 (P10)
+  #4 [combo3_AND] spx_low_mom5d + vix9d_close_z20 + vix_spx_open_plus_30_close_diff_1_5 
+       IS=60.0% (20 occ) | OOS=87.5% (8 occ) | ~2.9/trim | WF=3/6
+         spx_low_mom5d ≥ 2.1174 (P80)
+         vix9d_close_z20 ≤ -1.3491 (P10)
+         vix_spx_open_plus_30_close_diff_1_5 ≤ 1.792 (P90)
+  #5 [combo4_AND] spx_low_mom5d + vix9d_close_z20 + vix_spx_open_plus_30_close_diff_1_5 + spy_high_mom5d 
+       IS=60.0% (20 occ) | OOS=87.5% (8 occ) | ~2.9/trim | WF=3/6
+         spx_low_mom5d ≥ 2.1174 (P80)
+         vix9d_close_z20 ≤ -1.3491 (P10)
+         vix_spx_open_plus_30_close_diff_1_5 ≤ 1.792 (P90)
+         spy_high_mom5d ≥ 0.2909 (P40)
+  #6 [combo2_AND] qqq_put_call_ratio_close_lag3 + advance_decline_ratio_net_ratio_put_call_rsi_z20 
+       IS=57.9% (19 occ) | OOS=85.7% (7 occ) | ~2.5/trim | WF=3/7
+         qqq_put_call_ratio_close_lag3 ≥ 1.22 (P50)
+         advance_decline_ratio_net_ratio_put_call_rsi_z20 ≥ 1.5048 (P90)
+  #7 [combo2_AND] spy_high_mom5d + vix9d_close_z20 
+       IS=54.1% (37 occ) | OOS=83.3% (12 occ) | ~4.3/trim | WF=2/7
+         spy_high_mom5d ≥ 0.2909 (P40)
+         vix9d_close_z20 ≤ -1.3491 (P10)
+  #8 [combo3_AND] spy_high_mom5d + vix9d_close_z20 + nikkei225_open 
+       IS=59.1% (22 occ) | OOS=83.3% (12 occ) | ~4.3/trim | WF=2/6
+         spy_high_mom5d ≥ 0.2909 (P40)
+         vix9d_close_z20 ≤ -1.3491 (P10)
+         nikkei225_open ≥ 32827.0 (P30)
+  #9 [combo3_AND] spy_high_mom5d + vix9d_close_z20 + nikkei225_high 
+       IS=62.5% (24 occ) | OOS=83.3% (12 occ) | ~4.3/trim | WF=2/6
+         spy_high_mom5d ≥ 0.2909 (P40)
+         vix9d_close_z20 ≤ -1.3491 (P10)
+         nikkei225_high ≥ 33123.6 (P30)
+  #10 [combo3_AND] spy_high_mom5d + vix9d_close_z20 + vix_spx_open_plus_30_close_diff_1_5 
+       IS=54.1% (37 occ) | OOS=83.3% (12 occ) | ~4.3/trim | WF=2/7
+         spy_high_mom5d ≥ 0.2909 (P40)
+         vix9d_close_z20 ≤ -1.3491 (P10)
+         vix_spx_open_plus_30_close_diff_1_5 ≤ 1.792 (P90)
+[ic_search] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_10h00_360min_ic_23bps_vix_le19.json
+
+============================================================
+RECHERCHE IC 10h00 / 360min
+CIBLE: amplitude ≤ 0.23% (marché calme)
+CONDITION: VIX open ≤ 18.0
+============================================================
+
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] SPX 5min J-1: 14 features calculées
+[feat_eng] Futures 30min overnight: 10 features
+[feat_eng] SPY 30min J-1: 5 features
+[feat_eng] Features intraday J-1 total: 29
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2784 → 2746 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2746 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 18.0
+[filtered/10h00] Sessions: 791 → 521 (270 exclues)
+[filtered/10h00] FORT: 161 | FAIBLE: 201 | INCERT: 159
+[ic_search] Sessions IC (calme ≤0.23%): 201/521 (38.6%)
+[ic_search] IS: 134/364 IC
+[ic_search] OOS: 67/157 IC
+[ic_search] Top 10 features IC: ['spx_high_mom5d', 'spx_rsi_mom3d', 'us_bonds_30_days_contract_close_mom10d', 'div_spx_dax_1d', 'spx_williams_vix_fix', 'qqq_close_mom5d', 'spy_high_mom5d', 'spx_low_pct252', 'iwm_micro_true_range', 'iwm_put_call_ratio_rsi_mom10d']
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2510 | Patterns actionnables: 4
+
+[ic_search] RÉSULTATS IC:
+  Patterns actionnables: 2
+  Patterns robustes: 0
+
+TOP 10 PATTERNS IC (amplitude ≤ 0.23%):
+  #1 [combo2_AND] advance_decline_ratio_net_ratio_put_call_rsi_mom10d + vts_vix9d_vix_ratio_z60 
+       IS=76.5% (17 occ) | OOS=88.9% (9 occ) | ~3.6/trim | WF=3/6
+         advance_decline_ratio_net_ratio_put_call_rsi_mom10d ≥ 7.5565 (P80)
+         vts_vix9d_vix_ratio_z60 ≤ -1.0425 (P20)
+  #2 [combo2_AND] vix9d_close_breakout_down10 + advance_decline_ratio_net_ratio_put_call_rsi_mom10d 
+       IS=65.2% (23 occ) | OOS=88.9% (9 occ) | ~3.6/trim | WF=2/8
+         vix9d_close_breakout_down10 ≥ 1.0 (P90)
+         advance_decline_ratio_net_ratio_put_call_rsi_mom10d ≥ 7.5565 (P80)
+  #3 [combo2_AND] spx_put_call_ratio_low_pct252 + vts_vix9d_vix_ratio_z60 
+       IS=72.2% (18 occ) | OOS=85.7% (7 occ) | ~2.8/trim | WF=2/7
+         spx_put_call_ratio_low_pct252 ≤ 17.5247 (P20)
+         vts_vix9d_vix_ratio_z60 ≤ -1.0425 (P20)
+  #4 [combo2_AND] spx_put_call_ratio_low_pct252 + advance_decline_ratio_net_ratio_put_call_rsi_mom10d 
+       IS=60.0% (20 occ) | OOS=83.3% (6 occ) | ~2.4/trim | WF=1/5
+         spx_put_call_ratio_low_pct252 ≤ 17.5247 (P20)
+         advance_decline_ratio_net_ratio_put_call_rsi_mom10d ≥ 7.5565 (P80)
+[ic_search] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_10h00_360min_ic_23bps_vix_le18.json

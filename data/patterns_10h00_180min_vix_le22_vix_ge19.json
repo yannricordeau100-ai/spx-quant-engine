@@ -1,0 +1,1107 @@
+{
+  "ok": true,
+  "entry_point": "10h00",
+  "target": "180min",
+  "filter": {
+    "vix_open_max": 22.0,
+    "vix_open_min": 19.0,
+    "label": "_vix_le22_vix_ge19"
+  },
+  "n_sessions": 145,
+  "n_sessions_is": 101,
+  "n_sessions_oos": 44,
+  "n_features": 2051,
+  "n_actionable": 9,
+  "n_robust": 0,
+  "all_patterns": [
+    {
+      "type": "combo3_AND",
+      "features": [
+        "vix9d_low_mom1d",
+        "vix_spx_open_plus_30_close_accel5",
+        "vix_put_call_ratio_rsi_mom3d"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "vix9d_low_mom1d",
+          "threshold": 0.2336,
+          "direction": "above",
+          "prec_is": 39.2,
+          "percentile": 50
+        },
+        {
+          "feature": "vix_spx_open_plus_30_close_accel5",
+          "threshold": 10.7457,
+          "direction": "below",
+          "prec_is": 40.8,
+          "percentile": 70
+        },
+        {
+          "feature": "vix_put_call_ratio_rsi_mom3d",
+          "threshold": -4.3354,
+          "direction": "above",
+          "prec_is": 40.8,
+          "percentile": 30
+        }
+      ],
+      "n_is": 25,
+      "n_oos": 8,
+      "precision_is": 64.0,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 3,
+      "is_robust": false,
+      "mean_precision_wf": 69.8,
+      "std_precision_wf": 26.1,
+      "precisions_by_window": [
+        60.0,
+        33.3,
+        75.0,
+        100.0,
+        40.0,
+        100.0,
+        50.0,
+        100.0
+      ],
+      "occs_by_window": [
+        5,
+        3,
+        4,
+        2,
+        5,
+        2,
+        2,
+        4
+      ],
+      "per_quarter_oos": 8.0
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "advance_decline_ratio_net_ratio_put_call_close_z20",
+        "vvix_close_mom5d"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_close_z20",
+          "threshold": -0.5883,
+          "direction": "below",
+          "prec_is": 43.9,
+          "percentile": 40
+        },
+        {
+          "feature": "vvix_close_mom5d",
+          "threshold": 8.3498,
+          "direction": "below",
+          "prec_is": 43.7,
+          "percentile": 70
+        }
+      ],
+      "n_is": 22,
+      "n_oos": 9,
+      "precision_is": 63.6,
+      "precision_oos": 88.9,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 66.2,
+      "std_precision_wf": 31.8,
+      "precisions_by_window": [
+        0.0,
+        75.0,
+        75.0,
+        80.0,
+        33.3,
+        100.0,
+        66.7,
+        100.0
+      ],
+      "occs_by_window": [
+        2,
+        4,
+        4,
+        5,
+        3,
+        2,
+        3,
+        4
+      ],
+      "per_quarter_oos": 9.0
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "advance_decline_ratio_net_ratio_put_call_close_z20",
+        "vvix_close_mom5d",
+        "advance_decline_ratio_net_ratio_put_call_low"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_close_z20",
+          "threshold": -0.5883,
+          "direction": "below",
+          "prec_is": 43.9,
+          "percentile": 40
+        },
+        {
+          "feature": "vvix_close_mom5d",
+          "threshold": 8.3498,
+          "direction": "below",
+          "prec_is": 43.7,
+          "percentile": 70
+        },
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_low",
+          "threshold": 0.61,
+          "direction": "below",
+          "prec_is": 42.6,
+          "percentile": 60
+        }
+      ],
+      "n_is": 21,
+      "n_oos": 9,
+      "precision_is": 61.9,
+      "precision_oos": 88.9,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 66.2,
+      "std_precision_wf": 31.8,
+      "precisions_by_window": [
+        0.0,
+        75.0,
+        75.0,
+        80.0,
+        33.3,
+        100.0,
+        66.7,
+        100.0
+      ],
+      "occs_by_window": [
+        2,
+        4,
+        4,
+        5,
+        3,
+        2,
+        3,
+        4
+      ],
+      "per_quarter_oos": 9.0
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "advance_decline_ratio_net_ratio_put_call_close_z20",
+        "vvix_close_mom5d",
+        "advance_decline_ratio_net_ratio_put_call_high_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_close_z20",
+          "threshold": -0.5883,
+          "direction": "below",
+          "prec_is": 43.9,
+          "percentile": 40
+        },
+        {
+          "feature": "vvix_close_mom5d",
+          "threshold": 8.3498,
+          "direction": "below",
+          "prec_is": 43.7,
+          "percentile": 70
+        },
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_high_z20",
+          "threshold": -0.589,
+          "direction": "below",
+          "prec_is": 46.3,
+          "percentile": 40
+        }
+      ],
+      "n_is": 21,
+      "n_oos": 8,
+      "precision_is": 61.9,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 65.6,
+      "std_precision_wf": 31.6,
+      "precisions_by_window": [
+        0.0,
+        75.0,
+        75.0,
+        75.0,
+        33.3,
+        100.0,
+        66.7,
+        100.0
+      ],
+      "occs_by_window": [
+        2,
+        4,
+        4,
+        4,
+        3,
+        2,
+        3,
+        3
+      ],
+      "per_quarter_oos": 8.0
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "advance_decline_ratio_net_ratio_put_call_close_z20",
+        "vvix_close_mom5d",
+        "vix_spx_open_plus_30_high_mom5d"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_close_z20",
+          "threshold": -0.5883,
+          "direction": "below",
+          "prec_is": 43.9,
+          "percentile": 40
+        },
+        {
+          "feature": "vvix_close_mom5d",
+          "threshold": 8.3498,
+          "direction": "below",
+          "prec_is": 43.7,
+          "percentile": 70
+        },
+        {
+          "feature": "vix_spx_open_plus_30_high_mom5d",
+          "threshold": 8.63,
+          "direction": "below",
+          "prec_is": 39.4,
+          "percentile": 70
+        }
+      ],
+      "n_is": 21,
+      "n_oos": 8,
+      "precision_is": 61.9,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 65.6,
+      "std_precision_wf": 31.6,
+      "precisions_by_window": [
+        0.0,
+        75.0,
+        75.0,
+        75.0,
+        33.3,
+        100.0,
+        66.7,
+        100.0
+      ],
+      "occs_by_window": [
+        2,
+        4,
+        4,
+        4,
+        3,
+        2,
+        3,
+        3
+      ],
+      "per_quarter_oos": 8.0
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "advance_decline_ratio_net_ratio_put_call_close_z20",
+        "vvix_close_mom5d",
+        "advance_decline_ratio_net_ratio_put_call_high"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_close_z20",
+          "threshold": -0.5883,
+          "direction": "below",
+          "prec_is": 43.9,
+          "percentile": 40
+        },
+        {
+          "feature": "vvix_close_mom5d",
+          "threshold": 8.3498,
+          "direction": "below",
+          "prec_is": 43.7,
+          "percentile": 70
+        },
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_high",
+          "threshold": 1.45,
+          "direction": "below",
+          "prec_is": 46.3,
+          "percentile": 40
+        }
+      ],
+      "n_is": 20,
+      "n_oos": 8,
+      "precision_is": 60.0,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 65.6,
+      "std_precision_wf": 31.6,
+      "precisions_by_window": [
+        0.0,
+        75.0,
+        75.0,
+        75.0,
+        33.3,
+        100.0,
+        66.7,
+        100.0
+      ],
+      "occs_by_window": [
+        2,
+        4,
+        4,
+        4,
+        3,
+        2,
+        3,
+        3
+      ],
+      "per_quarter_oos": 8.0
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "vix9d_low_mom1d",
+        "vix_spx_open_plus_30_close_accel5"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "vix9d_low_mom1d",
+          "threshold": 0.2336,
+          "direction": "above",
+          "prec_is": 39.2,
+          "percentile": 50
+        },
+        {
+          "feature": "vix_spx_open_plus_30_close_accel5",
+          "threshold": 10.7457,
+          "direction": "below",
+          "prec_is": 40.8,
+          "percentile": 70
+        }
+      ],
+      "n_is": 33,
+      "n_oos": 12,
+      "precision_is": 54.5,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 65.9,
+      "std_precision_wf": 24.2,
+      "precisions_by_window": [
+        37.5,
+        40.0,
+        60.0,
+        100.0,
+        40.0,
+        75.0,
+        75.0,
+        100.0
+      ],
+      "occs_by_window": [
+        8,
+        5,
+        5,
+        2,
+        5,
+        4,
+        4,
+        5
+      ],
+      "per_quarter_oos": 12.0
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "advance_decline_ratio_net_ratio_put_call_close_z20",
+        "vix_spx_open_plus_30_close_accel5"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_close_z20",
+          "threshold": -0.5883,
+          "direction": "below",
+          "prec_is": 43.9,
+          "percentile": 40
+        },
+        {
+          "feature": "vix_spx_open_plus_30_close_accel5",
+          "threshold": 10.7457,
+          "direction": "below",
+          "prec_is": 40.8,
+          "percentile": 70
+        }
+      ],
+      "n_is": 22,
+      "n_oos": 8,
+      "precision_is": 63.6,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 62.6,
+      "std_precision_wf": 31.5,
+      "precisions_by_window": [
+        33.3,
+        75.0,
+        75.0,
+        75.0,
+        0.0,
+        100.0,
+        null,
+        80.0
+      ],
+      "occs_by_window": [
+        3,
+        4,
+        4,
+        4,
+        2,
+        2,
+        1,
+        5
+      ],
+      "per_quarter_oos": 8.0
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "advance_decline_ratio_net_ratio_put_call_close_z20",
+        "vix_spx_open_plus_30_close_accel5",
+        "advance_decline_ratio_net_ratio_put_call_low"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_close_z20",
+          "threshold": -0.5883,
+          "direction": "below",
+          "prec_is": 43.9,
+          "percentile": 40
+        },
+        {
+          "feature": "vix_spx_open_plus_30_close_accel5",
+          "threshold": 10.7457,
+          "direction": "below",
+          "prec_is": 40.8,
+          "percentile": 70
+        },
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_low",
+          "threshold": 0.61,
+          "direction": "below",
+          "prec_is": 42.6,
+          "percentile": 60
+        }
+      ],
+      "n_is": 21,
+      "n_oos": 8,
+      "precision_is": 61.9,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 62.6,
+      "std_precision_wf": 31.5,
+      "precisions_by_window": [
+        33.3,
+        75.0,
+        75.0,
+        75.0,
+        0.0,
+        100.0,
+        null,
+        80.0
+      ],
+      "occs_by_window": [
+        3,
+        4,
+        4,
+        4,
+        2,
+        2,
+        1,
+        5
+      ],
+      "per_quarter_oos": 8.0
+    }
+  ],
+  "actionable_patterns": [
+    {
+      "type": "combo3_AND",
+      "features": [
+        "vix9d_low_mom1d",
+        "vix_spx_open_plus_30_close_accel5",
+        "vix_put_call_ratio_rsi_mom3d"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "vix9d_low_mom1d",
+          "threshold": 0.2336,
+          "direction": "above",
+          "prec_is": 39.2,
+          "percentile": 50
+        },
+        {
+          "feature": "vix_spx_open_plus_30_close_accel5",
+          "threshold": 10.7457,
+          "direction": "below",
+          "prec_is": 40.8,
+          "percentile": 70
+        },
+        {
+          "feature": "vix_put_call_ratio_rsi_mom3d",
+          "threshold": -4.3354,
+          "direction": "above",
+          "prec_is": 40.8,
+          "percentile": 30
+        }
+      ],
+      "n_is": 25,
+      "n_oos": 8,
+      "precision_is": 64.0,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 3,
+      "is_robust": false,
+      "mean_precision_wf": 69.8,
+      "std_precision_wf": 26.1,
+      "precisions_by_window": [
+        60.0,
+        33.3,
+        75.0,
+        100.0,
+        40.0,
+        100.0,
+        50.0,
+        100.0
+      ],
+      "occs_by_window": [
+        5,
+        3,
+        4,
+        2,
+        5,
+        2,
+        2,
+        4
+      ],
+      "per_quarter_oos": 8.0
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "advance_decline_ratio_net_ratio_put_call_close_z20",
+        "vvix_close_mom5d"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_close_z20",
+          "threshold": -0.5883,
+          "direction": "below",
+          "prec_is": 43.9,
+          "percentile": 40
+        },
+        {
+          "feature": "vvix_close_mom5d",
+          "threshold": 8.3498,
+          "direction": "below",
+          "prec_is": 43.7,
+          "percentile": 70
+        }
+      ],
+      "n_is": 22,
+      "n_oos": 9,
+      "precision_is": 63.6,
+      "precision_oos": 88.9,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 66.2,
+      "std_precision_wf": 31.8,
+      "precisions_by_window": [
+        0.0,
+        75.0,
+        75.0,
+        80.0,
+        33.3,
+        100.0,
+        66.7,
+        100.0
+      ],
+      "occs_by_window": [
+        2,
+        4,
+        4,
+        5,
+        3,
+        2,
+        3,
+        4
+      ],
+      "per_quarter_oos": 9.0
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "advance_decline_ratio_net_ratio_put_call_close_z20",
+        "vvix_close_mom5d",
+        "advance_decline_ratio_net_ratio_put_call_low"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_close_z20",
+          "threshold": -0.5883,
+          "direction": "below",
+          "prec_is": 43.9,
+          "percentile": 40
+        },
+        {
+          "feature": "vvix_close_mom5d",
+          "threshold": 8.3498,
+          "direction": "below",
+          "prec_is": 43.7,
+          "percentile": 70
+        },
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_low",
+          "threshold": 0.61,
+          "direction": "below",
+          "prec_is": 42.6,
+          "percentile": 60
+        }
+      ],
+      "n_is": 21,
+      "n_oos": 9,
+      "precision_is": 61.9,
+      "precision_oos": 88.9,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 66.2,
+      "std_precision_wf": 31.8,
+      "precisions_by_window": [
+        0.0,
+        75.0,
+        75.0,
+        80.0,
+        33.3,
+        100.0,
+        66.7,
+        100.0
+      ],
+      "occs_by_window": [
+        2,
+        4,
+        4,
+        5,
+        3,
+        2,
+        3,
+        4
+      ],
+      "per_quarter_oos": 9.0
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "advance_decline_ratio_net_ratio_put_call_close_z20",
+        "vvix_close_mom5d",
+        "advance_decline_ratio_net_ratio_put_call_high_z20"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_close_z20",
+          "threshold": -0.5883,
+          "direction": "below",
+          "prec_is": 43.9,
+          "percentile": 40
+        },
+        {
+          "feature": "vvix_close_mom5d",
+          "threshold": 8.3498,
+          "direction": "below",
+          "prec_is": 43.7,
+          "percentile": 70
+        },
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_high_z20",
+          "threshold": -0.589,
+          "direction": "below",
+          "prec_is": 46.3,
+          "percentile": 40
+        }
+      ],
+      "n_is": 21,
+      "n_oos": 8,
+      "precision_is": 61.9,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 65.6,
+      "std_precision_wf": 31.6,
+      "precisions_by_window": [
+        0.0,
+        75.0,
+        75.0,
+        75.0,
+        33.3,
+        100.0,
+        66.7,
+        100.0
+      ],
+      "occs_by_window": [
+        2,
+        4,
+        4,
+        4,
+        3,
+        2,
+        3,
+        3
+      ],
+      "per_quarter_oos": 8.0
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "advance_decline_ratio_net_ratio_put_call_close_z20",
+        "vvix_close_mom5d",
+        "vix_spx_open_plus_30_high_mom5d"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_close_z20",
+          "threshold": -0.5883,
+          "direction": "below",
+          "prec_is": 43.9,
+          "percentile": 40
+        },
+        {
+          "feature": "vvix_close_mom5d",
+          "threshold": 8.3498,
+          "direction": "below",
+          "prec_is": 43.7,
+          "percentile": 70
+        },
+        {
+          "feature": "vix_spx_open_plus_30_high_mom5d",
+          "threshold": 8.63,
+          "direction": "below",
+          "prec_is": 39.4,
+          "percentile": 70
+        }
+      ],
+      "n_is": 21,
+      "n_oos": 8,
+      "precision_is": 61.9,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 65.6,
+      "std_precision_wf": 31.6,
+      "precisions_by_window": [
+        0.0,
+        75.0,
+        75.0,
+        75.0,
+        33.3,
+        100.0,
+        66.7,
+        100.0
+      ],
+      "occs_by_window": [
+        2,
+        4,
+        4,
+        4,
+        3,
+        2,
+        3,
+        3
+      ],
+      "per_quarter_oos": 8.0
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "advance_decline_ratio_net_ratio_put_call_close_z20",
+        "vvix_close_mom5d",
+        "advance_decline_ratio_net_ratio_put_call_high"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_close_z20",
+          "threshold": -0.5883,
+          "direction": "below",
+          "prec_is": 43.9,
+          "percentile": 40
+        },
+        {
+          "feature": "vvix_close_mom5d",
+          "threshold": 8.3498,
+          "direction": "below",
+          "prec_is": 43.7,
+          "percentile": 70
+        },
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_high",
+          "threshold": 1.45,
+          "direction": "below",
+          "prec_is": 46.3,
+          "percentile": 40
+        }
+      ],
+      "n_is": 20,
+      "n_oos": 8,
+      "precision_is": 60.0,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 65.6,
+      "std_precision_wf": 31.6,
+      "precisions_by_window": [
+        0.0,
+        75.0,
+        75.0,
+        75.0,
+        33.3,
+        100.0,
+        66.7,
+        100.0
+      ],
+      "occs_by_window": [
+        2,
+        4,
+        4,
+        4,
+        3,
+        2,
+        3,
+        3
+      ],
+      "per_quarter_oos": 8.0
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "vix9d_low_mom1d",
+        "vix_spx_open_plus_30_close_accel5"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "vix9d_low_mom1d",
+          "threshold": 0.2336,
+          "direction": "above",
+          "prec_is": 39.2,
+          "percentile": 50
+        },
+        {
+          "feature": "vix_spx_open_plus_30_close_accel5",
+          "threshold": 10.7457,
+          "direction": "below",
+          "prec_is": 40.8,
+          "percentile": 70
+        }
+      ],
+      "n_is": 33,
+      "n_oos": 12,
+      "precision_is": 54.5,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 8,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 65.9,
+      "std_precision_wf": 24.2,
+      "precisions_by_window": [
+        37.5,
+        40.0,
+        60.0,
+        100.0,
+        40.0,
+        75.0,
+        75.0,
+        100.0
+      ],
+      "occs_by_window": [
+        8,
+        5,
+        5,
+        2,
+        5,
+        4,
+        4,
+        5
+      ],
+      "per_quarter_oos": 12.0
+    },
+    {
+      "type": "combo2_AND",
+      "features": [
+        "advance_decline_ratio_net_ratio_put_call_close_z20",
+        "vix_spx_open_plus_30_close_accel5"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_close_z20",
+          "threshold": -0.5883,
+          "direction": "below",
+          "prec_is": 43.9,
+          "percentile": 40
+        },
+        {
+          "feature": "vix_spx_open_plus_30_close_accel5",
+          "threshold": 10.7457,
+          "direction": "below",
+          "prec_is": 40.8,
+          "percentile": 70
+        }
+      ],
+      "n_is": 22,
+      "n_oos": 8,
+      "precision_is": 63.6,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 62.6,
+      "std_precision_wf": 31.5,
+      "precisions_by_window": [
+        33.3,
+        75.0,
+        75.0,
+        75.0,
+        0.0,
+        100.0,
+        null,
+        80.0
+      ],
+      "occs_by_window": [
+        3,
+        4,
+        4,
+        4,
+        2,
+        2,
+        1,
+        5
+      ],
+      "per_quarter_oos": 8.0
+    },
+    {
+      "type": "combo3_AND",
+      "features": [
+        "advance_decline_ratio_net_ratio_put_call_close_z20",
+        "vix_spx_open_plus_30_close_accel5",
+        "advance_decline_ratio_net_ratio_put_call_low"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_close_z20",
+          "threshold": -0.5883,
+          "direction": "below",
+          "prec_is": 43.9,
+          "percentile": 40
+        },
+        {
+          "feature": "vix_spx_open_plus_30_close_accel5",
+          "threshold": 10.7457,
+          "direction": "below",
+          "prec_is": 40.8,
+          "percentile": 70
+        },
+        {
+          "feature": "advance_decline_ratio_net_ratio_put_call_low",
+          "threshold": 0.61,
+          "direction": "below",
+          "prec_is": 42.6,
+          "percentile": 60
+        }
+      ],
+      "n_is": 21,
+      "n_oos": 8,
+      "precision_is": 61.9,
+      "precision_oos": 87.5,
+      "leakage_suspect": false,
+      "n_windows_tested": 7,
+      "n_windows_valid": 1,
+      "is_robust": false,
+      "mean_precision_wf": 62.6,
+      "std_precision_wf": 31.5,
+      "precisions_by_window": [
+        33.3,
+        75.0,
+        75.0,
+        75.0,
+        0.0,
+        100.0,
+        null,
+        80.0
+      ],
+      "occs_by_window": [
+        3,
+        4,
+        4,
+        4,
+        2,
+        2,
+        1,
+        5
+      ],
+      "per_quarter_oos": 8.0
+    }
+  ],
+  "robust_patterns": []
+}

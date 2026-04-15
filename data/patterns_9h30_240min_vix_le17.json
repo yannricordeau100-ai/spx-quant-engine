@@ -1,0 +1,83 @@
+{
+  "ok": true,
+  "entry_point": "9h30",
+  "target": "240min",
+  "filter": {
+    "vix_open_max": 17.0,
+    "vix_open_min": null,
+    "label": "_vix_le17"
+  },
+  "n_sessions": 442,
+  "n_sessions_is": 309,
+  "n_sessions_oos": 133,
+  "n_features": 2746,
+  "n_actionable": 0,
+  "n_robust": 0,
+  "all_patterns": [
+    {
+      "type": "combo2_AND",
+      "features": [
+        "vix6m_open_z20",
+        "vix9d_high_pct252"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "vix6m_open_z20",
+          "threshold": 0.6775,
+          "direction": "above",
+          "prec_is": 40.3,
+          "percentile": 80
+        },
+        {
+          "feature": "vix9d_high_pct252",
+          "threshold": 41.5873,
+          "direction": "above",
+          "prec_is": 47.3,
+          "percentile": 70
+        }
+      ],
+      "n_is": 35,
+      "n_oos": 6,
+      "precision_is": 54.3,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 66.0,
+      "std_precision_wf": 25.1,
+      "precisions_by_window": [
+        60.0,
+        null,
+        35.7,
+        100.0,
+        50.0,
+        null,
+        100.0,
+        50.0
+      ],
+      "occs_by_window": [
+        5,
+        0,
+        14,
+        6,
+        10,
+        1,
+        2,
+        2
+      ],
+      "per_quarter_oos": 2.8,
+      "oos_dates": [
+        "2024-12-24",
+        "2025-08-07",
+        "2025-08-22",
+        "2026-01-22",
+        "2026-01-29",
+        "2026-02-03"
+      ]
+    }
+  ],
+  "actionable_patterns": [],
+  "robust_patterns": []
+}

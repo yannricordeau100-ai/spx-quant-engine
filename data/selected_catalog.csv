@@ -1,29 +1,3 @@
-asset,doc_type,file_name,relative_path,local_file_name,size_bytes,freq_guess,tz_guess,vix_snapshot
-SPX,standard,SPX_1min.csv,SPX/SPX_1min.csv,SPX__SPX__SPX_1min.csv,1961758,1min,unknown,
-SPX,standard,SPX_5min.csv,SPX/SPX_5min.csv,SPX__SPX__SPX_5min.csv,3307463,5min,unknown,
-SPX,standard,SPX_30min.csv,SPX/SPX_30min.csv,SPX__SPX__SPX_30min.csv,1630503,30min,unknown,
-SPX,standard,SPX_daily.csv,SPX/SPX_daily.csv,SPX__SPX__SPX_daily.csv,230086,daily,unknown,
-SPX,standard,SPX_5_days_average_range_daily.csv,5j et 20 j Move Average/SPX_5_days_average_range_daily.csv,SPX__5j_et_20_j_Move_Average__SPX_5_days_average_range_daily.csv,117568,daily,America/New_York,
-SPX,standard,SPX_20_days_average_range_daily.csv,5j et 20 j Move Average/SPX_20_days_average_range_daily.csv,SPX__5j_et_20_j_Move_Average__SPX_20_days_average_range_daily.csv,117095,daily,America/New_York,
-SPY,standard,SPY_1min.csv,SPY/SPY_1min.csv,SPY__SPY__SPY_1min.csv,3054173,1min,unknown,
-SPY,standard,SPY_30min.csv,SPY/SPY_30min.csv,SPY__SPY__SPY_30min.csv,4180757,30min,unknown,
-SPY,standard,SPY_daily.csv,SPY/SPY_daily.csv,SPY__SPY__SPY_daily.csv,240785,daily,unknown,
-VIX,standard,VIX_daily.csv,VIX/VIX_daily.csv,VIX__VIX__VIX_daily.csv,47468,daily,unknown,
-VIX,standard,VIX3M_daily.csv,VIX/VIX3M_daily.csv,VIX__VIX__VIX3M_daily.csv,107962,daily,unknown,
-VIX,standard,VIX6M_daily.csv,VIX/VIX6M_daily.csv,VIX__VIX__VIX6M_daily.csv,103557,daily,unknown,
-VIX,standard,VIX9D_daily.csv,VIX/VIX9D_daily.csv,VIX__VIX__VIX9D_daily.csv,217577,daily,unknown,
-VIX,standard,VIX_9H30_CET_SPX_OPENING_daily.csv,VIX/VIX_9H30_CET_SPX_OPENING_daily.csv,VIX__VIX__VIX_9H30_CET_SPX_OPENING_daily.csv,80048,daily,Europe/Paris,
-VIX1D,standard,VIX1D_1min.csv,VIX/VIX1D/VIX1D_1min.csv,VIX1D__VIX__VIX1D__VIX1D_1min.csv,3109487,1min,unknown,
-VIX1D,standard,VIX1D_30min.csv,VIX/VIX1D/VIX1D_30min.csv,VIX1D__VIX__VIX1D__VIX1D_30min.csv,535499,30min,unknown,
-Or+pétrole,standard,Gold_daily.csv,Or+pétrole/Gold_daily.csv,Or+pétrole__Or+pétrole__Gold_daily.csv,210045,daily,unknown,
-Or+pétrole,standard,Gold_1hour.csv,Or+pétrole/Gold_1hour.csv,Or+pétrole__Or+pétrole__Gold_1hour.csv,3777019,1h,unknown,
-Or+pétrole,standard,oil_5min.csv,Or+pétrole/oil_5min.csv,Or+pétrole__Or+pétrole__oil_5min.csv,2970404,5min,unknown,
-CALENDAR,calendar,calendar_events_daily.csv,Calendar/calendar_events_daily.csv,CALENDAR__Calendar__calendar_events_daily.csv,93278,daily,America/New_York,
-OPTIONS_SPX,options,VIX_17.16_SPOT_6936_2026_01_14.csv,Data brut option SPX pour RIC/VIX_17.16_SPOT_6936_2026_01_14.csv,OPTIONS_SPX__Data_brut_option_SPX_pour_RIC__VIX_17.16_SPOT_6936_2026_01_14.csv,1473,snapshot,America/New_York,17.16
-OPTIONS_SPX,options,VIX_14.30_Spot_6903_2025_12_30.csv,Data brut option SPX pour RIC/VIX_14.30_Spot_6903_2025_12_30.csv,OPTIONS_SPX__Data_brut_option_SPX_pour_RIC__VIX_14.30_Spot_6903_2025_12_30.csv,1581,snapshot,America/New_York,14.3
-OPTIONS_SPX,options,VIX_15.90_SPOT_6920_2026_01_22.csv,Data brut option SPX pour RIC/VIX_15.90_SPOT_6920_2026_01_22.csv,OPTIONS_SPX__Data_brut_option_SPX_pour_RIC__VIX_15.90_SPOT_6920_2026_01_22.csv,2033,snapshot,America/New_York,15.9
-OPTIONS_SPX,options,VIX_25.91_SPOT_6777_2026_03_03.csv,Data brut option SPX pour RIC/VIX_25.91_SPOT_6777_2026_03_03.csv,OPTIONS_SPX__Data_brut_option_SPX_pour_RIC__VIX_25.91_SPOT_6777_2026_03_03.csv,2324,snapshot,America/New_York,25.91
-OPTIONS_SPX,options,VIX_20.50_SPOT_6855_2026_02_19.csv,Data brut option SPX pour RIC/VIX_20.50_SPOT_6855_2026_02_19.csv,OPTIONS_SPX__Data_brut_option_SPX_pour_RIC__VIX_20.50_SPOT_6855_2026_02_19.csv,2105,snapshot,America/New_York,20.5
-OPTIONS_SPX,options,VIX_19.04_SPOT_6821_2026_01_21.csv,Data brut option SPX pour RIC/VIX_19.04_SPOT_6821_2026_01_21.csv,OPTIONS_SPX__Data_brut_option_SPX_pour_RIC__VIX_19.04_SPOT_6821_2026_01_21.csv,1817,snapshot,America/New_York,19.04
-OPTIONS_SPX,options,VIX_16.02 _Spot_6910_2026_01_23.csv,Data brut option SPX pour RIC/VIX_16.02 _Spot_6910_2026_01_23.csv,OPTIONS_SPX__Data_brut_option_SPX_pour_RIC__VIX_16.02__Spot_6910_2026_01_23.csv,1859,snapshot,America/New_York,16.02
-OPTIONS_SPX,options,VIX_18.8_SPOT_6908_2026_02_09.csv,Data brut option SPX pour RIC/VIX_18.8_SPOT_6908_2026_02_09.csv,OPTIONS_SPX__Data_brut_option_SPX_pour_RIC__VIX_18.8_SPOT_6908_2026_02_09.csv,2065,snapshot,America/New_York,18.8
+version https://git-lfs.github.com/spec/v1
+oid sha256:4dc8d1d9edbe70f68e2496f7be5a2662e7e601ace3d802ce46711d560d20032d
+size 4340

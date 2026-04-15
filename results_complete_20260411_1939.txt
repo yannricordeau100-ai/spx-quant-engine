@@ -1,0 +1,397 @@
+
+============================================================
+RECHERCHE PATTERNS 9h30 / 180min
+============================================================
+
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2755 → 2731 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2731 | Horizon: abs_ret_180min_pct
+[pattern_search/9h30] FORT≥0.45%: 274 | FAIBLE≤0.23%: 298 | INCERT: 219
+[pattern_search] Sélection top 30 features...
+[pattern_search] Top 10: ['spy_close_z60', 'spy_open_z60', 'spx_close_distma50', 'vix_close', 'vix6m_open_mom20d', 'qqq_high_mom5d', 'spx_close_z20', 'spx_williams_vix_fix', 'spy_open_z20', 'spx_open_z60']
+[pattern_search] Recherche règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Recherche règles combinatoires...
+[pattern_search] Combos testés: 1060 | Patterns actionnables: 42
+
+[pattern_search] RÉSULTATS FINAUX:
+  Patterns actionnables: 5
+  Patterns robustes (walk-forward): 0
+
+TOP 10 PATTERNS:
+  #1 [combo2_AND] spy_open_z60 + qqq_open_z20 AND
+       IS=66.7% (27 occ) | OOS=88.9% (9 occ) | ~2.4/trim | WF=2/4 
+         spy_open_z60 ≤ -0.6466 (P10)
+         qqq_open_z20 ≤ -1.3708 (P10)
+  #2 [combo3_AND] spy_open_z60 + qqq_open_z20 + vix9d_close_lag3 AND
+       IS=72.0% (25 occ) | OOS=88.9% (9 occ) | ~2.4/trim | WF=2/4 
+         spy_open_z60 ≤ -0.6466 (P10)
+         qqq_open_z20 ≤ -1.3708 (P10)
+         vix9d_close_lag3 ≥ 15.656 (P60)
+  #3 [combo4_AND] spy_open_z60 + qqq_open_z20 + vix9d_close_lag3 + spx_open_z60 AND
+       IS=70.8% (24 occ) | OOS=88.9% (9 occ) | ~2.4/trim | WF=2/4 
+         spy_open_z60 ≤ -0.6466 (P10)
+         qqq_open_z20 ≤ -1.3708 (P10)
+         vix9d_close_lag3 ≥ 15.656 (P60)
+         spx_open_z60 ≤ -0.7396 (P10)
+  #4 [combo2_AND] spy_close_z60 + qqq_open_z20 AND
+       IS=60.0% (25 occ) | OOS=87.5% (8 occ) | ~2.1/trim | WF=2/4 
+         spy_close_z60 ≤ -0.719 (P10)
+         qqq_open_z20 ≤ -1.3708 (P10)
+  #5 [combo2_AND] spx_close_distma50 + qqq_open_z20 AND
+       IS=62.1% (29 occ) | OOS=87.5% (8 occ) | ~2.1/trim | WF=2/5 
+         spx_close_distma50 ≤ -1.8683 (P10)
+         qqq_open_z20 ≤ -1.3708 (P10)
+  #6 [combo3_AND] spy_open_z60 + qqq_open_z20 + qqq_high_pct252 AND
+       IS=62.5% (24 occ) | OOS=87.5% (8 occ) | ~2.1/trim | WF=2/4 
+         spy_open_z60 ≤ -0.6466 (P10)
+         qqq_open_z20 ≤ -1.3708 (P10)
+         qqq_high_pct252 ≤ 77.4327 (P10)
+  #7 [combo3_AND] spy_close_z60 + qqq_open_z20 + spx_close_distma50 AND
+       IS=60.0% (25 occ) | OOS=87.5% (8 occ) | ~2.1/trim | WF=2/4 
+         spy_close_z60 ≤ -0.719 (P10)
+         qqq_open_z20 ≤ -1.3708 (P10)
+         spx_close_distma50 ≤ -1.8683 (P10)
+  #8 [combo3_AND] spy_close_z60 + qqq_open_z20 + vix9d_close_lag3 AND
+       IS=65.2% (23 occ) | OOS=87.5% (8 occ) | ~2.1/trim | WF=2/4 
+         spy_close_z60 ≤ -0.719 (P10)
+         qqq_open_z20 ≤ -1.3708 (P10)
+         vix9d_close_lag3 ≥ 15.656 (P60)
+  #9 [combo3_AND] spx_close_distma50 + qqq_open_z20 + spy_close_z60 AND
+       IS=60.0% (25 occ) | OOS=87.5% (8 occ) | ~2.1/trim | WF=2/4 
+         spx_close_distma50 ≤ -1.8683 (P10)
+         qqq_open_z20 ≤ -1.3708 (P10)
+         spy_close_z60 ≤ -0.719 (P10)
+  #10 [combo3_AND] spx_close_distma50 + qqq_open_z20 + vix9d_close_lag3 AND
+       IS=66.7% (27 occ) | OOS=87.5% (8 occ) | ~2.1/trim | WF=2/5 
+         spx_close_distma50 ≤ -1.8683 (P10)
+         qqq_open_z20 ≤ -1.3708 (P10)
+         vix9d_close_lag3 ≥ 15.656 (P60)
+[pattern_search] Résultats sauvegardés: /Users/yann/spx-quant-engine/data/patterns_9h30_180min.json
+
+============================================================
+RECHERCHE PATTERNS 10h00 / 180min
+============================================================
+
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2755 → 2731 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2731 | Horizon: abs_ret_180min_pct
+[pattern_search/10h00] FORT≥0.45%: 233 | FAIBLE≤0.23%: 340 | INCERT: 218
+[pattern_search] Sélection top 30 features...
+[pattern_search] Top 10: ['vix_close', 'vix_high', 'spy_open_z60', 'vix_low', 'spx_williams_vix_fix_level', 'vix9d_high', 'spx_open_z60', 'spx_low_mom5d', 'skew_close_vol10', 'vix3m_close_diff_5_10']
+[pattern_search] Recherche règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Recherche règles combinatoires...
+[pattern_search] Combos testés: 1064 | Patterns actionnables: 82
+
+[pattern_search] RÉSULTATS FINAUX:
+  Patterns actionnables: 37
+  Patterns robustes (walk-forward): 6
+
+TOP 10 PATTERNS:
+  #1 [combo3_AND] spx_low_mom5d + vix3m_low_mom10d + vix_high AND
+       IS=83.3% (18 occ) | OOS=100.0% (9 occ) | ~2.4/trim | WF=3/4 [ROBUSTE]
+         spx_low_mom5d ≤ -2.1183 (P10)
+         vix3m_low_mom10d ≥ 12.9728 (P90)
+         vix_high ≥ 22.036 (P90)
+  #2 [combo3_AND] spx_low_mom5d + vix3m_low_mom10d + vix_close AND
+       IS=82.4% (17 occ) | OOS=100.0% (9 occ) | ~2.4/trim | WF=2/3 [ROBUSTE]
+         spx_low_mom5d ≤ -2.1183 (P10)
+         vix3m_low_mom10d ≥ 12.9728 (P90)
+         vix_close ≥ 20.718 (P90)
+  #3 [combo3_AND] spx_low_mom5d + vix3m_low_mom10d + vix9d_high AND
+       IS=82.4% (17 occ) | OOS=100.0% (9 occ) | ~2.4/trim | WF=2/3 [ROBUSTE]
+         spx_low_mom5d ≤ -2.1183 (P10)
+         vix3m_low_mom10d ≥ 12.9728 (P90)
+         vix9d_high ≥ 22.668 (P90)
+  #4 [combo4_AND] spx_low_mom5d + vix3m_low_mom10d + vix_close + spx_micro_atr5 AND
+       IS=81.2% (16 occ) | OOS=100.0% (9 occ) | ~2.4/trim | WF=2/3 [ROBUSTE]
+         spx_low_mom5d ≤ -2.1183 (P10)
+         vix3m_low_mom10d ≥ 12.9728 (P90)
+         vix_close ≥ 20.718 (P90)
+         spx_micro_atr5 ≥ 1.3831 (P80)
+  #5 [combo4_AND] spx_low_mom5d + vix3m_low_mom10d + vix_close + vix9d_open AND
+       IS=80.0% (15 occ) | OOS=100.0% (9 occ) | ~2.4/trim | WF=2/3 [ROBUSTE]
+         spx_low_mom5d ≤ -2.1183 (P10)
+         vix3m_low_mom10d ≥ 12.9728 (P90)
+         vix_close ≥ 20.718 (P90)
+         vix9d_open ≥ 21.716 (P90)
+  #6 [combo4_AND] spx_low_mom5d + vix3m_low_mom10d + vix_high + spx_micro_atr5 AND
+       IS=82.4% (17 occ) | OOS=100.0% (9 occ) | ~2.4/trim | WF=2/3 [ROBUSTE]
+         spx_low_mom5d ≤ -2.1183 (P10)
+         vix3m_low_mom10d ≥ 12.9728 (P90)
+         vix_high ≥ 22.036 (P90)
+         spx_micro_atr5 ≥ 1.3831 (P80)
+  #7 [combo4_AND] spx_low_mom5d + vix3m_low_mom10d + vix_high + vix9d_open AND
+       IS=81.2% (16 occ) | OOS=100.0% (9 occ) | ~2.4/trim | WF=2/3 [ROBUSTE]
+         spx_low_mom5d ≤ -2.1183 (P10)
+         vix3m_low_mom10d ≥ 12.9728 (P90)
+         vix_high ≥ 22.036 (P90)
+         vix9d_open ≥ 21.716 (P90)
+  #8 [combo4_AND] spx_low_mom5d + vix3m_low_mom10d + vix9d_high + spx_micro_atr5 AND
+       IS=81.2% (16 occ) | OOS=100.0% (9 occ) | ~2.4/trim | WF=2/3 [ROBUSTE]
+         spx_low_mom5d ≤ -2.1183 (P10)
+         vix3m_low_mom10d ≥ 12.9728 (P90)
+         vix9d_high ≥ 22.668 (P90)
+         spx_micro_atr5 ≥ 1.3831 (P80)
+  #9 [combo4_AND] spx_low_mom5d + vix3m_low_mom10d + vix9d_high + vix9d_open AND
+       IS=80.0% (15 occ) | OOS=100.0% (9 occ) | ~2.4/trim | WF=2/3 [ROBUSTE]
+         spx_low_mom5d ≤ -2.1183 (P10)
+         vix3m_low_mom10d ≥ 12.9728 (P90)
+         vix9d_high ≥ 22.668 (P90)
+         vix9d_open ≥ 21.716 (P90)
+  #10 [combo5_AND] spx_low_mom5d + vix3m_low_mom10d + vix_close + spx_micro_atr5 + vix_high AND
+       IS=81.2% (16 occ) | OOS=100.0% (9 occ) | ~2.4/trim | WF=2/3 [ROBUSTE]
+         spx_low_mom5d ≤ -2.1183 (P10)
+         vix3m_low_mom10d ≥ 12.9728 (P90)
+         vix_close ≥ 20.718 (P90)
+         spx_micro_atr5 ≥ 1.3831 (P80)
+         vix_high ≥ 22.036 (P90)
+[pattern_search] Résultats sauvegardés: /Users/yann/spx-quant-engine/data/patterns_10h00_180min.json
+
+============================================================
+RECHERCHE IC 10h00 / 360min
+CIBLE: amplitude ≤ 0.23% (marché calme)
+CONDITION: VIX open ≤ 19.0
+============================================================
+
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2755 → 2731 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2731 | Horizon: abs_ret_360min_pct
+[pattern_search/10h00] FORT≥0.45%: 312 | FAIBLE≤0.23%: 268 | INCERT: 211
+[filtered/10h00] Filtre: VIX_open ≤ 19.0
+[filtered/10h00] Sessions: 791 → 577 (214 exclues)
+[filtered/10h00] FORT: 182 | FAIBLE: 222 | INCERT: 173
+[ic_search] Sessions IC (calme ≤0.23%): 222/577 (38.5%)
+[ic_search] IS: 147/403 IC
+[ic_search] OOS: 75/174 IC
+[ic_search] Top 10 features IC: ['spy_high_mom5d', 'spx_high_mom5d', 'spx_put_call_ratio_rsi_mom3d', 'vix_ts_spread_accel', 'qqq_close_lag10', 'spx_low_mom5d', 'vvix_high_z20', 'spx_put_call_ratio_rsi_lag3', 'interact_vvix_vix9d_z', 'skew_open_mom3d']
+[pattern_search] Règles univariées: 0 passent le filtre
+[pattern_search] Combos testés: 2531 | Patterns actionnables: 7
+
+[ic_search] RÉSULTATS IC:
+  Patterns actionnables: 3
+  Patterns robustes: 0
+
+TOP 10 PATTERNS IC (amplitude ≤ 0.23%):
+  #1 [combo2_AND] spx_put_call_ratio_rsi_mom3d + interact_vvix_vix9d_z [ROBUSTE]
+       IS=81.8% (22 occ) | OOS=87.5% (8 occ) | ~2.9/trim | WF=4/6
+         spx_put_call_ratio_rsi_mom3d ≤ -5.2412 (P30)
+         interact_vvix_vix9d_z ≤ -1.0393 (P20)
+  #2 [combo2_AND] spx_low_mom5d + vix9d_close_z20 
+       IS=60.0% (20 occ) | OOS=87.5% (8 occ) | ~2.9/trim | WF=3/6
+         spx_low_mom5d ≥ 2.1174 (P80)
+         vix9d_close_z20 ≤ -1.3491 (P10)
+  #3 [combo3_AND] spx_low_mom5d + vix9d_close_z20 + spx_high_mom5d 
+       IS=60.0% (20 occ) | OOS=87.5% (8 occ) | ~2.9/trim | WF=3/6
+         spx_low_mom5d ≥ 2.1174 (P80)
+         vix9d_close_z20 ≤ -1.3491 (P10)
+         spx_high_mom5d ≥ 0.2465 (P40)
+  #4 [combo4_AND] spx_low_mom5d + vix9d_close_z20 + spx_high_mom5d + interact_vvix_vix9d_z 
+       IS=60.0% (20 occ) | OOS=87.5% (8 occ) | ~2.9/trim | WF=3/6
+         spx_low_mom5d ≥ 2.1174 (P80)
+         vix9d_close_z20 ≤ -1.3491 (P10)
+         spx_high_mom5d ≥ 0.2465 (P40)
+         interact_vvix_vix9d_z ≤ -1.0393 (P20)
+  #5 [combo2_AND] spy_high_mom5d + vix9d_close_z20 
+       IS=54.1% (37 occ) | OOS=83.3% (12 occ) | ~4.3/trim | WF=2/7
+         spy_high_mom5d ≥ 0.2909 (P40)
+         vix9d_close_z20 ≤ -1.3491 (P10)
+  #6 [combo3_AND] spy_high_mom5d + vix9d_close_z20 + spx_high_mom5d 
+       IS=54.1% (37 occ) | OOS=83.3% (12 occ) | ~4.3/trim | WF=2/7
+         spy_high_mom5d ≥ 0.2909 (P40)
+         vix9d_close_z20 ≤ -1.3491 (P10)
+         spx_high_mom5d ≥ 0.2465 (P40)
+  #7 [combo4_AND] spy_high_mom5d + vix9d_close_z20 + spx_high_mom5d + interact_vvix_vix9d_z 
+       IS=54.1% (37 occ) | OOS=83.3% (12 occ) | ~4.3/trim | WF=2/7
+         spy_high_mom5d ≥ 0.2909 (P40)
+         vix9d_close_z20 ≤ -1.3491 (P10)
+         spx_high_mom5d ≥ 0.2465 (P40)
+         interact_vvix_vix9d_z ≤ -1.0393 (P20)
+[ic_search] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_10h00_360min_ic_23bps_vix_le19.json
+
+============================================================
+RECHERCHE FILTRÉE 9h30 / 240min
+CONDITION: VIX open ≤ 22.0
+CONDITION: VIX open ≥ 19.0
+============================================================
+
+
+[feat_eng] Construction features pour 9h30...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2755 → 2731 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/9h30] Sessions: 791 | Features: 2731 | Horizon: abs_ret_240min_pct
+[pattern_search/9h30] FORT≥0.45%: 298 | FAIBLE≤0.23%: 288 | INCERT: 205
+[filtered/9h30] Filtre: VIX_open ≤ 22.0 & VIX_open ≥ 19.0
+[filtered/9h30] Sessions: 791 → 145 (646 exclues)
+[filtered/9h30] FORT: 67 | FAIBLE: 41 | INCERT: 37
+[filtered] Sélection top 50 features...
+[filtered] Top 10: ['vix_spx_open_plus_30_low', 'qqq_close_vol10', 'us_bonds_30_days_contract_low_mom1d', 'iwm_close_breakout_up5', 'vix_spx_open_plus_30_high_mom20d', 'qqq_micro_atr5', 'qqq_close_mom10d', 'vix6m_close_lag5', 'qqq_open_accel5', 'spy_volume_mom20d']
+[filtered] Règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[filtered] Règles combinatoires...
+[pattern_search] Combos testés: 2465 | Patterns actionnables: 1
+
+[filtered] RÉSULTATS:
+  Patterns actionnables: 1
+  Patterns robustes: 0
+
+TOP 10 PATTERNS (VIX open ≤22.0≥19.0):
+  #1 [combo2_AND] qqq_put_call_ratio_close_accel5 + gold_volume_mom1d 
+       IS=66.7% (15 occ) | OOS=87.5% (8 occ) | ~8.0/trim | WF=3/6
+         qqq_put_call_ratio_close_accel5 ≥ 14.7536 (P80)
+         gold_volume_mom1d ≥ -11.3229 (P30)
+[filtered] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_9h30_240min_vix_le22_vix_ge19.json
+
+============================================================
+RECHERCHE FILTRÉE 10h00 / 240min
+CONDITION: VIX open ≤ 22.0
+CONDITION: VIX open ≥ 19.0
+============================================================
+
+
+[feat_eng] Construction features pour 10h00...
+[feat_eng] 29 CSV daily chargés
+[feat_eng] Features brutes: 174
+[feat_eng] OR30: 255 jours calculés
+[feat_eng] Features intraday J: 13
+[feat_eng] Features dérivées intra-CSV: 1154
+[feat_eng] Features cross-asset: 44
+
+[cross_feat] Construction features cross-asset...
+[cross_feat] Vol term structure: 52 features
+[cross_feat] Momentum divergences: 41 features
+[cross_feat] Options flow composite: 46 features
+[cross_feat] Triangle refuge: 14 features
+[cross_feat] Cross-frequency momentum: 22 features
+[cross_feat] Régimes composites: 12 features
+[cross_feat] Total: 180 features cross-asset
+[cross_feat] Priorité 3 (forte): 80 | Priorité 2 (moyenne): 100 | Priorité 1 (faible): 0
+[feat_eng] Features temporelles/régimes: 39
+[feat_eng] Features lags/temporel intra-CSV: 636
+[feat_eng] Features microstructure: 380
+[feat_eng] Features transitions de régime: 40
+[feat_eng] Features sentiment options: 57
+[feat_eng] Features inter-marchés: 41
+[feat_eng] Total: 2755 → 2731 features (après filtre NaN 40%)
+[feat_eng] Sessions: 791 | Couverture: 2023-01-03 → 2026-02-27
+[pattern_search/10h00] Sessions: 791 | Features: 2731 | Horizon: abs_ret_240min_pct
+[pattern_search/10h00] FORT≥0.45%: 283 | FAIBLE≤0.23%: 301 | INCERT: 207
+[filtered/10h00] Filtre: VIX_open ≤ 22.0 & VIX_open ≥ 19.0
+[filtered/10h00] Sessions: 791 → 145 (646 exclues)
+[filtered/10h00] FORT: 65 | FAIBLE: 39 | INCERT: 41
+[filtered] Sélection top 50 features...
+[filtered] Top 10: ['vix_put_call_ratio_high_pct252', 'vvix_close_lag2', 'vix_put_call_ratio_micro_atr14', 'spx_put_call_ratio_close_z60', 'advance_decline_ratio_net_ratio_put_call_open_mom3d', 'qqq_open_mom10d', 'vix_spx_open_plus_30_close_mom10d', 'qqq_micro_lower_shadow', 'skew_low_accel5', 'iwm_put_call_ratio_micro_atr5']
+[filtered] Règles univariées...
+[pattern_search] Règles univariées: 0 passent le filtre
+[filtered] Règles combinatoires...
+[pattern_search] Combos testés: 2480 | Patterns actionnables: 2
+
+[filtered] RÉSULTATS:
+  Patterns actionnables: 2
+  Patterns robustes: 0
+
+TOP 10 PATTERNS (VIX open ≤22.0≥19.0):
+  #1 [combo2_OR] div_spx_dax_1d_z20 + vvix_micro_upper_shadow 
+       IS=53.5% (43 occ) | OOS=82.4% (17 occ) | ~17.0/trim | WF=2/8
+         div_spx_dax_1d_z20 ≥ 0.7475 (P80)
+         vvix_micro_upper_shadow ≤ 0.6337 (P30)
+  #2 [combo2_OR] pcf_iwm_accel + vvix_micro_upper_shadow 
+       IS=56.5% (46 occ) | OOS=83.3% (12 occ) | ~12.0/trim | WF=1/8
+         pcf_iwm_accel ≤ -0.5612 (P20)
+         vvix_micro_upper_shadow ≤ 0.6337 (P30)
+[filtered] Sauvegardé: /Users/yann/spx-quant-engine/data/patterns_10h00_240min_vix_le22_vix_ge19.json

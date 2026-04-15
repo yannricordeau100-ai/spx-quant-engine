@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.token_warning
+data/history.json
+data/validation_2025_*.json
+data/grid_results.json
+data/sensitivity_*.json
+*.log
+.DS_Store

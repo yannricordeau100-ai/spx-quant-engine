@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "type": "IC",
+  "entry_point": "9h30",
+  "target": "240min",
+  "ic_threshold": 0.23,
+  "filter_vix_max": null,
+  "n_sessions": 791,
+  "n_sessions_ic": 288,
+  "n_actionable": 0,
+  "n_robust": 0,
+  "all_patterns": [],
+  "actionable_patterns": [],
+  "robust_patterns": []
+}

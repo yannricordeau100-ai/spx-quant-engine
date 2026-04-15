@@ -1,0 +1,885 @@
+{
+  "generated_at": "2026-04-05T23:55:25.711288",
+  "assets": [
+    "VIX",
+    "VVIX",
+    "SKEW"
+  ],
+  "target": "SPX",
+  "max_combos": 1000,
+  "n_combos_tested": 48,
+  "n_patterns": 33,
+  "elapsed_sec": 0.5,
+  "base_rate": 0.5367,
+  "patterns": [
+    {
+      "asset": "VIX",
+      "file": "VIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": "<",
+      "threshold": 13.58,
+      "horizon": "close",
+      "is": {
+        "n": 126,
+        "bull": 86,
+        "pct_bull": 68.25,
+        "mean_ret": 0.1657,
+        "p_value": 0.001211
+      },
+      "oos": {
+        "n": 38,
+        "bull": 27,
+        "pct_bull": 71.05,
+        "mean_ret": 0.1703,
+        "p_value": 0.034418
+      },
+      "invalidated_by": null,
+      "condition_str": "VIX < 13.58"
+    },
+    {
+      "asset": "VIX",
+      "file": "VIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 17.33,
+      "horizon": "close",
+      "is": {
+        "n": 723,
+        "bull": 338,
+        "pct_bull": 46.75,
+        "mean_ret": -0.0476,
+        "p_value": 0.000218
+      },
+      "oos": {
+        "n": 217,
+        "bull": 99,
+        "pct_bull": 45.62,
+        "mean_ret": -0.101,
+        "p_value": 0.020442
+      },
+      "invalidated_by": {
+        "condition": "VIX <= 17.33",
+        "pct_bull": 61.12,
+        "p_value": 0.000355
+      },
+      "condition_str": "VIX > 17.33"
+    },
+    {
+      "asset": "VIX",
+      "file": "VIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 18.71,
+      "horizon": "close",
+      "is": {
+        "n": 576,
+        "bull": 263,
+        "pct_bull": 45.66,
+        "mean_ret": -0.0824,
+        "p_value": 0.000139
+      },
+      "oos": {
+        "n": 173,
+        "bull": 78,
+        "pct_bull": 45.09,
+        "mean_ret": -0.1503,
+        "p_value": 0.026818
+      },
+      "invalidated_by": {
+        "condition": "VIX <= 18.71",
+        "pct_bull": 59.05,
+        "p_value": 0.003935
+      },
+      "condition_str": "VIX > 18.71"
+    },
+    {
+      "asset": "VIX",
+      "file": "VIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": "<",
+      "threshold": 18.71,
+      "horizon": "open_next",
+      "is": {
+        "n": 715,
+        "bull": 425,
+        "pct_bull": 59.44,
+        "mean_ret": 0.0388,
+        "p_value": 0.002085
+      },
+      "oos": {
+        "n": 215,
+        "bull": 134,
+        "pct_bull": 62.33,
+        "mean_ret": 0.036,
+        "p_value": 0.011316
+      },
+      "invalidated_by": null,
+      "condition_str": "VIX < 18.71"
+    },
+    {
+      "asset": "VIX",
+      "file": "VIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 20.48,
+      "horizon": "close",
+      "is": {
+        "n": 428,
+        "bull": 188,
+        "pct_bull": 43.93,
+        "mean_ret": -0.1152,
+        "p_value": 5.6e-05
+      },
+      "oos": {
+        "n": 127,
+        "bull": 52,
+        "pct_bull": 40.94,
+        "mean_ret": -0.1936,
+        "p_value": 0.004327
+      },
+      "invalidated_by": {
+        "condition": "VIX <= 20.48",
+        "pct_bull": 57.62,
+        "p_value": 0.020466
+      },
+      "condition_str": "VIX > 20.48"
+    },
+    {
+      "asset": "VIX",
+      "file": "VIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": "<",
+      "threshold": 20.48,
+      "horizon": "open_next",
+      "is": {
+        "n": 865,
+        "bull": 509,
+        "pct_bull": 58.84,
+        "mean_ret": 0.0332,
+        "p_value": 0.002393
+      },
+      "oos": {
+        "n": 259,
+        "bull": 158,
+        "pct_bull": 61.0,
+        "mean_ret": 0.0338,
+        "p_value": 0.017926
+      },
+      "invalidated_by": null,
+      "condition_str": "VIX < 20.48"
+    },
+    {
+      "asset": "VIX",
+      "file": "VIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 22.56,
+      "horizon": "close",
+      "is": {
+        "n": 280,
+        "bull": 115,
+        "pct_bull": 41.07,
+        "mean_ret": -0.175,
+        "p_value": 2.5e-05
+      },
+      "oos": {
+        "n": 86,
+        "bull": 35,
+        "pct_bull": 40.7,
+        "mean_ret": -0.1194,
+        "p_value": 0.017237
+      },
+      "invalidated_by": null,
+      "condition_str": "VIX > 22.56"
+    },
+    {
+      "asset": "VIX",
+      "file": "VIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": "<",
+      "threshold": 22.56,
+      "horizon": "open_next",
+      "is": {
+        "n": 1011,
+        "bull": 580,
+        "pct_bull": 57.37,
+        "mean_ret": 0.0266,
+        "p_value": 0.019572
+      },
+      "oos": {
+        "n": 301,
+        "bull": 180,
+        "pct_bull": 59.8,
+        "mean_ret": 0.0359,
+        "p_value": 0.037292
+      },
+      "invalidated_by": null,
+      "condition_str": "VIX < 22.56"
+    },
+    {
+      "asset": "VIX",
+      "file": "VIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": "<",
+      "threshold": 26.73,
+      "horizon": "open_next",
+      "is": {
+        "n": 1161,
+        "bull": 657,
+        "pct_bull": 56.59,
+        "mean_ret": 0.024,
+        "p_value": 0.048604
+      },
+      "oos": {
+        "n": 347,
+        "bull": 207,
+        "pct_bull": 59.65,
+        "mean_ret": 0.042,
+        "p_value": 0.027209
+      },
+      "invalidated_by": null,
+      "condition_str": "VIX < 26.73"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": "<",
+      "threshold": 81.96,
+      "horizon": "close",
+      "is": {
+        "n": 130,
+        "bull": 86,
+        "pct_bull": 66.15,
+        "mean_ret": 0.2744,
+        "p_value": 0.004726
+      },
+      "oos": {
+        "n": 39,
+        "bull": 29,
+        "pct_bull": 74.36,
+        "mean_ret": 0.2278,
+        "p_value": 0.009849
+      },
+      "invalidated_by": null,
+      "condition_str": "VVIX < 81.96"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": "<",
+      "threshold": 91.11,
+      "horizon": "close",
+      "is": {
+        "n": 425,
+        "bull": 260,
+        "pct_bull": 61.18,
+        "mean_ret": 0.1747,
+        "p_value": 0.002146
+      },
+      "oos": {
+        "n": 128,
+        "bull": 83,
+        "pct_bull": 64.84,
+        "mean_ret": 0.1231,
+        "p_value": 0.012805
+      },
+      "invalidated_by": {
+        "condition": "VVIX >= 91.11",
+        "pct_bull": 49.14,
+        "p_value": 0.007944
+      },
+      "condition_str": "VVIX < 91.11"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 95.61,
+      "horizon": "30min",
+      "is": {
+        "n": 720,
+        "bull": 357,
+        "pct_bull": 49.58,
+        "mean_ret": -0.0117,
+        "p_value": 0.030142
+      },
+      "oos": {
+        "n": 216,
+        "bull": 97,
+        "pct_bull": 44.91,
+        "mean_ret": -0.0347,
+        "p_value": 0.011429
+      },
+      "invalidated_by": null,
+      "condition_str": "VVIX > 95.61"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 95.61,
+      "horizon": "close",
+      "is": {
+        "n": 721,
+        "bull": 351,
+        "pct_bull": 48.68,
+        "mean_ret": -0.0509,
+        "p_value": 0.007976
+      },
+      "oos": {
+        "n": 217,
+        "bull": 100,
+        "pct_bull": 46.08,
+        "mean_ret": -0.0518,
+        "p_value": 0.029164
+      },
+      "invalidated_by": {
+        "condition": "VVIX <= 95.61",
+        "pct_bull": 58.64,
+        "p_value": 0.016969
+      },
+      "condition_str": "VVIX > 95.61"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": "<",
+      "threshold": 95.61,
+      "horizon": "120min",
+      "is": {
+        "n": 573,
+        "bull": 340,
+        "pct_bull": 59.34,
+        "mean_ret": 0.0634,
+        "p_value": 0.006463
+      },
+      "oos": {
+        "n": 172,
+        "bull": 107,
+        "pct_bull": 62.21,
+        "mean_ret": 0.0845,
+        "p_value": 0.02646
+      },
+      "invalidated_by": null,
+      "condition_str": "VVIX < 95.61"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": "<",
+      "threshold": 95.61,
+      "horizon": "close",
+      "is": {
+        "n": 573,
+        "bull": 336,
+        "pct_bull": 58.64,
+        "mean_ret": 0.1212,
+        "p_value": 0.016969
+      },
+      "oos": {
+        "n": 172,
+        "bull": 111,
+        "pct_bull": 64.53,
+        "mean_ret": 0.1426,
+        "p_value": 0.004559
+      },
+      "invalidated_by": {
+        "condition": "VVIX >= 95.61",
+        "pct_bull": 48.68,
+        "p_value": 0.007976
+      },
+      "condition_str": "VVIX < 95.61"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 100.89,
+      "horizon": "30min",
+      "is": {
+        "n": 572,
+        "bull": 275,
+        "pct_bull": 48.08,
+        "mean_ret": -0.029,
+        "p_value": 0.008204
+      },
+      "oos": {
+        "n": 171,
+        "bull": 78,
+        "pct_bull": 45.61,
+        "mean_ret": -0.0485,
+        "p_value": 0.038246
+      },
+      "invalidated_by": null,
+      "condition_str": "VVIX > 100.89"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 100.89,
+      "horizon": "120min",
+      "is": {
+        "n": 572,
+        "bull": 278,
+        "pct_bull": 48.6,
+        "mean_ret": -0.0389,
+        "p_value": 0.016786
+      },
+      "oos": {
+        "n": 171,
+        "bull": 75,
+        "pct_bull": 43.86,
+        "mean_ret": -0.1217,
+        "p_value": 0.011246
+      },
+      "invalidated_by": {
+        "condition": "VVIX <= 100.89",
+        "pct_bull": 58.53,
+        "p_value": 0.008932
+      },
+      "condition_str": "VVIX > 100.89"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 100.89,
+      "horizon": "close",
+      "is": {
+        "n": 573,
+        "bull": 269,
+        "pct_bull": 46.95,
+        "mean_ret": -0.0869,
+        "p_value": 0.001434
+      },
+      "oos": {
+        "n": 172,
+        "bull": 74,
+        "pct_bull": 43.02,
+        "mean_ret": -0.1369,
+        "p_value": 0.005792
+      },
+      "invalidated_by": {
+        "condition": "VVIX <= 100.89",
+        "pct_bull": 57.98,
+        "p_value": 0.020594
+      },
+      "condition_str": "VVIX > 100.89"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": "<",
+      "threshold": 100.89,
+      "horizon": "120min",
+      "is": {
+        "n": 721,
+        "bull": 422,
+        "pct_bull": 58.53,
+        "mean_ret": 0.0626,
+        "p_value": 0.008932
+      },
+      "oos": {
+        "n": 217,
+        "bull": 133,
+        "pct_bull": 61.29,
+        "mean_ret": 0.0829,
+        "p_value": 0.024712
+      },
+      "invalidated_by": {
+        "condition": "VVIX >= 100.89",
+        "pct_bull": 48.6,
+        "p_value": 0.016786
+      },
+      "condition_str": "VVIX < 100.89"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": "<",
+      "threshold": 100.89,
+      "horizon": "close",
+      "is": {
+        "n": 721,
+        "bull": 418,
+        "pct_bull": 57.98,
+        "mean_ret": 0.1145,
+        "p_value": 0.020594
+      },
+      "oos": {
+        "n": 217,
+        "bull": 135,
+        "pct_bull": 62.21,
+        "mean_ret": 0.1489,
+        "p_value": 0.011746
+      },
+      "invalidated_by": {
+        "condition": "VVIX >= 100.89",
+        "pct_bull": 46.95,
+        "p_value": 0.001434
+      },
+      "condition_str": "VVIX < 100.89"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 106.73,
+      "horizon": "120min",
+      "is": {
+        "n": 424,
+        "bull": 201,
+        "pct_bull": 47.41,
+        "mean_ret": -0.0523,
+        "p_value": 0.00986
+      },
+      "oos": {
+        "n": 127,
+        "bull": 53,
+        "pct_bull": 41.73,
+        "mean_ret": -0.1658,
+        "p_value": 0.007505
+      },
+      "invalidated_by": {
+        "condition": "VVIX <= 106.73",
+        "pct_bull": 57.42,
+        "p_value": 0.027024
+      },
+      "condition_str": "VVIX > 106.73"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 106.73,
+      "horizon": "close",
+      "is": {
+        "n": 425,
+        "bull": 196,
+        "pct_bull": 46.12,
+        "mean_ret": -0.1297,
+        "p_value": 0.001842
+      },
+      "oos": {
+        "n": 128,
+        "bull": 52,
+        "pct_bull": 40.62,
+        "mean_ret": -0.295,
+        "p_value": 0.003358
+      },
+      "invalidated_by": null,
+      "condition_str": "VVIX > 106.73"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 113.02,
+      "horizon": "120min",
+      "is": {
+        "n": 277,
+        "bull": 124,
+        "pct_bull": 44.77,
+        "mean_ret": -0.1081,
+        "p_value": 0.003123
+      },
+      "oos": {
+        "n": 84,
+        "bull": 35,
+        "pct_bull": 41.67,
+        "mean_ret": -0.2395,
+        "p_value": 0.028805
+      },
+      "invalidated_by": null,
+      "condition_str": "VVIX > 113.02"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 113.02,
+      "horizon": "close",
+      "is": {
+        "n": 277,
+        "bull": 112,
+        "pct_bull": 40.43,
+        "mean_ret": -0.2384,
+        "p_value": 1.3e-05
+      },
+      "oos": {
+        "n": 84,
+        "bull": 31,
+        "pct_bull": 36.9,
+        "mean_ret": -0.4308,
+        "p_value": 0.002905
+      },
+      "invalidated_by": null,
+      "condition_str": "VVIX > 113.02"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 120.71,
+      "horizon": "120min",
+      "is": {
+        "n": 129,
+        "bull": 45,
+        "pct_bull": 34.88,
+        "mean_ret": -0.2482,
+        "p_value": 1.9e-05
+      },
+      "oos": {
+        "n": 39,
+        "bull": 12,
+        "pct_bull": 30.77,
+        "mean_ret": -0.4388,
+        "p_value": 0.005645
+      },
+      "invalidated_by": null,
+      "condition_str": "VVIX > 120.71"
+    },
+    {
+      "asset": "VVIX",
+      "file": "VVIX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 120.71,
+      "horizon": "close",
+      "is": {
+        "n": 129,
+        "bull": 38,
+        "pct_bull": 29.46,
+        "mean_ret": -0.4622,
+        "p_value": 0.0
+      },
+      "oos": {
+        "n": 39,
+        "bull": 10,
+        "pct_bull": 25.64,
+        "mean_ret": -0.6393,
+        "p_value": 0.000562
+      },
+      "invalidated_by": null,
+      "condition_str": "VVIX > 120.71"
+    },
+    {
+      "asset": "SKEW",
+      "file": "SKEW_INDEX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 121.04,
+      "horizon": "open_next",
+      "is": {
+        "n": 1343,
+        "bull": 776,
+        "pct_bull": 57.78,
+        "mean_ret": 0.0351,
+        "p_value": 0.002603
+      },
+      "oos": {
+        "n": 404,
+        "bull": 245,
+        "pct_bull": 60.64,
+        "mean_ret": 0.0441,
+        "p_value": 0.005163
+      },
+      "invalidated_by": null,
+      "condition_str": "SKEW > 121.04"
+    },
+    {
+      "asset": "SKEW",
+      "file": "SKEW_INDEX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 128.66,
+      "horizon": "open_next",
+      "is": {
+        "n": 1177,
+        "bull": 699,
+        "pct_bull": 59.39,
+        "mean_ret": 0.0411,
+        "p_value": 8.8e-05
+      },
+      "oos": {
+        "n": 353,
+        "bull": 208,
+        "pct_bull": 58.92,
+        "mean_ret": 0.0219,
+        "p_value": 0.048394
+      },
+      "invalidated_by": null,
+      "condition_str": "SKEW > 128.66"
+    },
+    {
+      "asset": "SKEW",
+      "file": "SKEW_INDEX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 138.06,
+      "horizon": "open_next",
+      "is": {
+        "n": 834,
+        "bull": 510,
+        "pct_bull": 61.15,
+        "mean_ret": 0.0422,
+        "p_value": 1.4e-05
+      },
+      "oos": {
+        "n": 250,
+        "bull": 150,
+        "pct_bull": 60.0,
+        "mean_ret": 0.0084,
+        "p_value": 0.049134
+      },
+      "invalidated_by": null,
+      "condition_str": "SKEW > 138.06"
+    },
+    {
+      "asset": "SKEW",
+      "file": "SKEW_INDEX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 141.33,
+      "horizon": "open_next",
+      "is": {
+        "n": 663,
+        "bull": 417,
+        "pct_bull": 62.9,
+        "mean_ret": 0.057,
+        "p_value": 2e-06
+      },
+      "oos": {
+        "n": 199,
+        "bull": 123,
+        "pct_bull": 61.81,
+        "mean_ret": 0.0243,
+        "p_value": 0.022792
+      },
+      "invalidated_by": null,
+      "condition_str": "SKEW > 141.33"
+    },
+    {
+      "asset": "SKEW",
+      "file": "SKEW_INDEX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 144.87,
+      "horizon": "open_next",
+      "is": {
+        "n": 492,
+        "bull": 316,
+        "pct_bull": 64.23,
+        "mean_ret": 0.0734,
+        "p_value": 2e-06
+      },
+      "oos": {
+        "n": 147,
+        "bull": 95,
+        "pct_bull": 64.63,
+        "mean_ret": 0.0595,
+        "p_value": 0.008016
+      },
+      "invalidated_by": null,
+      "condition_str": "SKEW > 144.87"
+    },
+    {
+      "asset": "SKEW",
+      "file": "SKEW_INDEX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": ">",
+      "threshold": 149.17,
+      "horizon": "open_next",
+      "is": {
+        "n": 322,
+        "bull": 213,
+        "pct_bull": 66.15,
+        "mean_ret": 0.0734,
+        "p_value": 7e-06
+      },
+      "oos": {
+        "n": 97,
+        "bull": 64,
+        "pct_bull": 65.98,
+        "mean_ret": 0.075,
+        "p_value": 0.018731
+      },
+      "invalidated_by": null,
+      "condition_str": "SKEW > 149.17"
+    },
+    {
+      "asset": "SKEW",
+      "file": "SKEW_INDEX_daily.csv",
+      "freq": "daily",
+      "col": "close",
+      "op": "<",
+      "threshold": 154.96,
+      "horizon": "open_next",
+      "is": {
+        "n": 1343,
+        "bull": 758,
+        "pct_bull": 56.44,
+        "mean_ret": 0.0383,
+        "p_value": 0.042872
+      },
+      "oos": {
+        "n": 404,
+        "bull": 247,
+        "pct_bull": 61.14,
+        "mean_ret": 0.0491,
+        "p_value": 0.002724
+      },
+      "invalidated_by": null,
+      "condition_str": "SKEW < 154.96"
+    }
+  ]
+}

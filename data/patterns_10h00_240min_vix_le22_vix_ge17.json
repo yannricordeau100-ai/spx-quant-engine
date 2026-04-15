@@ -1,0 +1,147 @@
+{
+  "ok": true,
+  "entry_point": "10h00",
+  "target": "240min",
+  "filter": {
+    "vix_open_max": 22.0,
+    "vix_open_min": 17.0,
+    "label": "_vix_le22_vix_ge17"
+  },
+  "n_sessions": 279,
+  "n_sessions_is": 195,
+  "n_sessions_oos": 84,
+  "n_features": 2746,
+  "n_actionable": 1,
+  "n_robust": 0,
+  "all_patterns": [
+    {
+      "type": "combo2_AND",
+      "features": [
+        "spy_micro_body_pct",
+        "vix3m_micro_gap_pct"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "spy_micro_body_pct",
+          "threshold": 0.0826,
+          "direction": "below",
+          "prec_is": 65.0,
+          "percentile": 10
+        },
+        {
+          "feature": "vix3m_micro_gap_pct",
+          "threshold": -1.4468,
+          "direction": "above",
+          "prec_is": 46.2,
+          "percentile": 20
+        }
+      ],
+      "n_is": 18,
+      "n_oos": 6,
+      "precision_is": 61.1,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 67.2,
+      "std_precision_wf": 27.4,
+      "precisions_by_window": [
+        33.3,
+        50.0,
+        null,
+        40.0,
+        100.0,
+        80.0,
+        null,
+        100.0
+      ],
+      "occs_by_window": [
+        3,
+        4,
+        0,
+        5,
+        3,
+        5,
+        1,
+        2
+      ],
+      "per_quarter_oos": 4.5,
+      "oos_dates": [
+        "2025-05-23",
+        "2025-06-02",
+        "2025-06-10",
+        "2025-10-22",
+        "2026-02-02",
+        "2026-02-17"
+      ]
+    }
+  ],
+  "actionable_patterns": [
+    {
+      "type": "combo2_AND",
+      "features": [
+        "spy_micro_body_pct",
+        "vix3m_micro_gap_pct"
+      ],
+      "operator": "AND",
+      "conditions": [
+        {
+          "feature": "spy_micro_body_pct",
+          "threshold": 0.0826,
+          "direction": "below",
+          "prec_is": 65.0,
+          "percentile": 10
+        },
+        {
+          "feature": "vix3m_micro_gap_pct",
+          "threshold": -1.4468,
+          "direction": "above",
+          "prec_is": 46.2,
+          "percentile": 20
+        }
+      ],
+      "n_is": 18,
+      "n_oos": 6,
+      "precision_is": 61.1,
+      "precision_oos": 83.3,
+      "leakage_suspect": false,
+      "n_windows_tested": 6,
+      "n_windows_valid": 2,
+      "is_robust": false,
+      "mean_precision_wf": 67.2,
+      "std_precision_wf": 27.4,
+      "precisions_by_window": [
+        33.3,
+        50.0,
+        null,
+        40.0,
+        100.0,
+        80.0,
+        null,
+        100.0
+      ],
+      "occs_by_window": [
+        3,
+        4,
+        0,
+        5,
+        3,
+        5,
+        1,
+        2
+      ],
+      "per_quarter_oos": 4.5,
+      "oos_dates": [
+        "2025-05-23",
+        "2025-06-02",
+        "2025-06-10",
+        "2025-10-22",
+        "2026-02-02",
+        "2026-02-17"
+      ]
+    }
+  ],
+  "robust_patterns": []
+}
