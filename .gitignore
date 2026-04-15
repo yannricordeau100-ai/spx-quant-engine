@@ -9,3 +9,4 @@ data/grid_results.json
 data/sensitivity_*.json
 *.log
 .DS_Store
+*.zip
