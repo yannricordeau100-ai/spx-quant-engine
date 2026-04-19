@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d5d3bbd681d33cd2987d4a41ca5513914c6e5bed716dcaaddf0eb31292d338c6
-size 628
+date;quarter;type
+2021-01-27;Q1-2021;earnings
+2021-04-28;Q2-2021;earnings
+2021-07-27;Q3-2021;earnings
+2021-10-28;Q4-2021;earnings
+2022-01-27;Q1-2022;earnings
+2022-04-28;Q2-2022;earnings
+2022-07-28;Q3-2022;earnings
+2022-10-27;Q4-2022;earnings
+2023-02-02;Q1-2023;earnings
+2023-05-04;Q2-2023;earnings
+2023-08-03;Q3-2023;earnings
+2023-11-02;Q4-2023;earnings
+2024-02-01;Q1-2024;earnings
+2024-05-02;Q2-2024;earnings
+2024-08-01;Q3-2024;earnings
+2024-10-31;Q4-2024;earnings
+2025-01-30;Q1-2025;earnings
+2025-05-01;Q2-2025;earnings
+2025-07-31;Q3-2025;earnings
+2025-10-30;Q4-2025;earnings
+2026-01-29;Q1-2026;earnings
