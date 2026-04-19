@@ -689,26 +689,14 @@ def _result_from_serializable(result: dict) -> dict:
 
 
 def _save_history(history: list) -> None:
-    try:
-        data = [{"q": item["q"], "result": _result_to_serializable(item["result"])}
-                for item in history[-20:]
-                if item.get("result", {}).get("type") != "PATTERNS_LAUNCHED"]
-        HISTORY_FILE.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-    except Exception as e:
-        print(f"[history] Erreur sauvegarde : {e}", flush=True)
+    # Cloud multi-user : pas de persistance fichier partagée entre sessions.
+    # L'historique vit uniquement dans st.session_state (par onglet navigateur).
+    return
 
 
 def _load_history() -> list:
-    try:
-        if not HISTORY_FILE.exists():
-            return []
-        data = json.loads(HISTORY_FILE.read_text(encoding="utf-8"))
-        return [{"q": item["q"], "result": _result_from_serializable(item["result"])}
-                for item in data
-                if item.get("result", {}).get("type") != "PATTERNS_LAUNCHED"]
-    except Exception as e:
-        print(f"[history] Erreur chargement : {e}", flush=True)
-        return []
+    # Cloud multi-user : toujours partir d'un historique vide par session.
+    return []
 
 
 # ─── Alerte tokens ────────────────────────────────────────────────────────
