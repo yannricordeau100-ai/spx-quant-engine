@@ -4890,6 +4890,12 @@ div[data-testid="stSlider"] > div > div > div > div > div {
                                     _success = False
                                     _best_perf = None
 
+                                    # Seuils sidebar (valeurs positives : 2.0 = -2% bearish, +2% bullish)
+                                    _be_seuil_pct = float(st.session_state.get("be_seuil", 2.0))
+                                    _bull_seuil_pct = float(st.session_state.get("bull_seuil", 2.0))
+                                    _bear_target = _close_j * (1 - _be_seuil_pct / 100.0)
+                                    _bull_target = _close_j * (1 + _bull_seuil_pct / 100.0)
+
                                     if _pat == "bearish":
                                         for _jj in range(1, _bbe_jend + 1):
                                             _fidx = _idx + _jj
@@ -4905,7 +4911,7 @@ div[data-testid="stSlider"] > div > div > div > div > div {
                                             _perf = (_candidate - _close_j) / _close_j * 100
                                             if _best_perf is None or _perf < _best_perf:
                                                 _best_perf = _perf
-                                            if _candidate < _close_j:
+                                            if _candidate <= _bear_target:
                                                 _success = True
                                     else:  # bullish
                                         for _jj in range(1, _bbe_jend + 1):
@@ -4922,7 +4928,7 @@ div[data-testid="stSlider"] > div > div > div > div > div {
                                             _perf = (_candidate - _close_j) / _close_j * 100
                                             if _best_perf is None or _perf > _best_perf:
                                                 _best_perf = _perf
-                                            if _candidate > _close_j:
+                                            if _candidate >= _bull_target:
                                                 _success = True
 
                                     _sig["perf_jend"] = round(_best_perf, 2) if _best_perf is not None else None
