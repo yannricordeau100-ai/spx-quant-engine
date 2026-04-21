@@ -1,0 +1,12 @@
+{
+  "total_tickers": 164,
+  "ohlcv_ok": 164,
+  "ohlcv_issues": [],
+  "earnings_min": 0,
+  "earnings_max": 27,
+  "earnings_avg": 19.4,
+  "earnings_zero": [
+    "NNNN"
+  ],
+  "dest_dir": "/Users/yann/spx-quant-engine/data/live_selected/tickers"
+}

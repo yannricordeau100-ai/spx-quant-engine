@@ -1,0 +1,165 @@
+Ticker,Company,Sector,MCap_USD
+CVNA,Carvana Co,Consumer Cyclical,84910000000.0
+HOOD,Robinhood Markets Inc,Financial,81700000000.0
+COHR,Coherent Corp,Technology,67370000000.00001
+CRWV,CoreWeave Inc,Technology,61430000000.0
+BE,Bloom Energy Corp,Industrials,58700000000.0
+MSTR,Strategy Inc,Technology,57550000000.0
+COIN,Coinbase Global Inc,Financial,54490000000.0
+RKLB,Rocket Lab Corp,Industrials,48830000000.0
+RKT,Rocket Companies Inc,Financial,46890000000.0
+CLS,Celestica Inc,Technology,45530000000.0
+XYZ,Block Inc,Technology,42690000000.0
+CCL,Carnival Corp,Consumer Cyclical,40520000000.0
+NBIS,Nebius Group NV,Technology,39550000000.0
+SYM,Symbotic Inc,Industrials,38040000000.0
+ASTS,AST SpaceMobile Inc,Technology,32670000000.0
+RDDT,Reddit Inc,Communication Services,31290000000.0
+CRDO,Credo Technology Group Holding Ltd,Technology,29640000000.0
+ALAB,Astera Labs Inc,Technology,29630000000.0
+SOFI,SoFi Technologies Inc,Financial,24780000000.0
+AFRM,Affirm Holdings Inc,Financial,21490000000.0
+AS,Amer Sports Inc,Consumer Cyclical,21460000000.0
+QXO,QXO Inc,Industrials,17750000000.0
+CAR,Avis Budget Group Inc,Industrials,17450000000.0
+ROKU,Roku Inc,Communication Services,17129999999.999998
+IONQ,IonQ Inc,Technology,16899999999.999998
+AMKR,AMKOR Technology Inc,Technology,16700000000.0
+LTM,LATAM Airlines Group SA ADR,Industrials,15980000000.0
+IREN,IREN Ltd,Financial,15960000000.0
+RGC,Regencell Bioscience Holdings Ltd,Healthcare,14180000000.0
+SITM,SiTime Corp,Technology,13250000000.0
+ONON,On Holding AG,Consumer Cyclical,12230000000.0
+AAOI,Applied Optoelectronics Inc,Technology,11990000000.0
+SAIA,Saia Inc,Industrials,11580000000.0
+U,Unity Software Inc,Technology,11310000000.0
+Z,Zillow Group Inc,Communication Services,10740000000.0
+ZG,Zillow Group Inc,Communication Services,10740000000.0
+W,Wayfair Inc,Consumer Cyclical,10630000000.0
+AUR,Aurora Innovation Inc,Technology,10330000000.0
+GLXY,Galaxy Digital Inc,Financial,10050000000.0
+TEM,Tempus AI Inc,Healthcare,10020000000.0
+SMTC,Semtech Corp,Technology,10010000000.0
+VICR,Vicor Corp,Technology,9890000000.0
+GAP,Gap Inc,Consumer Cyclical,9870000000.0
+NCLH,Norwegian Cruise Line Holdings Ltd,Consumer Cyclical,9560000000.0
+PRAX,Praxis Precision Medicines Inc,Healthcare,9540000000.0
+JOBY,Joby Aviation Inc,Industrials,9030000000.0
+APLD,Applied Digital Corp,Technology,9010000000.0
+WULF,TeraWulf Inc,Financial,8990000000.0
+BROS,Dutch Bros Inc,Consumer Cyclical,8810000000.0
+HUT,Hut 8 Corp,Financial,8310000000.000001
+CIFR,Cipher Digital Inc,Technology,7850000000.0
+KYMR,Kymera Therapeutics Inc,Healthcare,7160000000.0
+RIOT,Riot Platforms Inc,Financial,6870000000.0
+HIMS,Hims & Hers Health Inc,Healthcare,6570000000.0
+ECG,Everus Construction Group,Industrials,6570000000.0
+CORZ,Core Scientific Inc,Technology,6260000000.0
+CENX,Century Aluminum Co,Basic Materials,6160000000.0
+COMP,Compass Inc,Real Estate,6120000000.0
+RYTM,Rhythm Pharmaceuticals Inc,Healthcare,6060000000.0
+MAC,Macerich Co,Real Estate,5960000000.0
+SYRE,Spyre Therapeutics Inc,Healthcare,5730000000.0
+LMND,Lemonade Inc,Financial,5420000000.0
+KC,Kingsoft Cloud Holdings Ltd ADR,Technology,5390000000.0
+WING,Wingstop Inc,Consumer Cyclical,5360000000.0
+OPEN,Opendoor Technologies Inc,Real Estate,5070000000.0
+OSCR,Oscar Health Inc,Healthcare,4700000000.0
+ONDS,Ondas Inc,Technology,4670000000.0
+ACHR,Archer Aviation Inc,Industrials,4550000000.0
+TPC,Tutor Perini Corp,Industrials,4450000000.0
+MARA,MARA Holdings Inc,Financial,4410000000.0
+VSCO,Victoria's Secret & Co,Consumer Cyclical,4400000000.0
+QS,QuantumScape Corp,Consumer Cyclical,4350000000.0
+SMR,NuScale Power Corp,Industrials,4340000000.0
+VISN,Vistance Networks Inc,Technology,4300000000.0
+CUK,Carnival plc ADR,Consumer Cyclical,4260000000.0
+PONY,Pony AI Inc ADR,Technology,4120000000.0
+HYMC,Hycroft Mining Holding Corp,Basic Materials,4019999999.999999
+TMDX,Transmedics Group Inc,Healthcare,3970000000.0
+LASR,nLIGHT Inc,Technology,3930000000.0
+NNNN,Anbio Biotechnology,Healthcare,3910000000.0
+LIF,Life360 Inc,Technology,3910000000.0
+TWST,Twist Bioscience Corp,Healthcare,3670000000.0
+SOUN,SoundHound AI Inc,Technology,3420000000.0
+DAVE,Dave Inc,Technology,3400000000.0
+UPST,Upstart Holdings Inc,Financial,3390000000.0
+TXG,10x Genomics Inc,Healthcare,3330000000.0
+ADEA,Adeia Inc,Technology,3200000000.0
+BEAM,Beam Therapeutics Inc,Healthcare,3200000000.0
+BTDR,Bitdeer Technologies Group,Technology,3110000000.0
+CLSK,Cleanspark Inc,Financial,3060000000.0
+WRBY,Warby Parker Inc,Healthcare,3040000000.0
+RUN,Sunrun Inc,Technology,2910000000.0
+DJT,Trump Media & Technology Group Corp,Communication Services,2840000000.0
+NVTS,Navitas Semiconductor Corp,Technology,2840000000.0
+IMNM,Immunome Inc,Healthcare,2790000000.0
+KOD,Kodiak Sciences Inc,Healthcare,2780000000.0
+SEZL,Sezzle Inc,Financial,2730000000.0
+AEHR,Aehr Test Systems,Technology,2640000000.0
+WRD,WeRide Inc ADR,Technology,2610000000.0
+AMPX,Amprius Technologies Inc,Industrials,2560000000.0
+AMBA,Ambarella Inc,Technology,2550000000.0
+FLNC,Fluence Energy Inc,Utilities,2490000000.0
+EOSE,Eos Energy Enterprises Inc,Industrials,2430000000.0
+HTZ,Hertz Global Holdings Inc,Industrials,2320000000.0
+TMC,TMC the metals company Inc,Basic Materials,2300000000.0
+DFTX,Definium Therapeutics Inc,Healthcare,2260000000.0
+ADPT,Adaptive Biotechnologies Corp,Healthcare,2230000000.0
+PTON,Peloton Interactive Inc,Consumer Cyclical,2170000000.0
+QUBT,Quantum Computing Inc,Technology,2150000000.0
+MESO,Mesoblast Ltd ADR,Healthcare,2120000000.0
+GRAL,GRAIL Inc,Healthcare,2120000000.0
+LC,LendingClub Corp,Financial,2010000000.0
+RDW,Redwire Corp,Industrials,1990000000.0
+MGNI,Magnite Inc,Communication Services,1980000000.0
+SION,Sionna Therapeutics Inc,Healthcare,1960000000.0
+WGS,GeneDx Holdings Corp,Healthcare,1930000000.0
+GCT,GigaCloud Technology Inc,Technology,1900000000.0
+AMSC,American Superconductor Corp,Industrials,1890000000.0
+HIMX,Himax Technologies ADR,Technology,1890000000.0
+TIC,TIC Solutions Inc,Industrials,1880000000.0
+LWLG,Lightwave Logic Inc,Basic Materials,1870000000.0
+BBAI,BigBear.ai Holdings Inc,Technology,1830000000.0
+PSIX,Power Solutions International Inc,Industrials,1830000000.0
+DHC,Diversified Healthcare Trust,Real Estate,1790000000.0
+NTLA,Intellia Therapeutics Inc,Healthcare,1770000000.0
+BHVN,Biohaven Ltd,Healthcare,1650000000.0
+KEEL,Keel Infrastructure Corp,Technology,1630000000.0
+WBTN,Webtoon Entertainment Inc,Communication Services,1630000000.0
+SKYT,SkyWater Technology Inc,Technology,1620000000.0
+SBET,Sharplink Inc,Financial,1580000000.0
+INOD,Innodata Inc,Technology,1530000000.0
+OUST,Ouster Inc,Technology,1520000000.0
+OLMA,Olema Pharmaceuticals Inc,Healthcare,1470000000.0
+AVAH,Aveanna Healthcare Holdings Inc,Healthcare,1470000000.0
+ENVX,Enovix Corp,Industrials,1440000000.0
+NVAX,Novavax Inc,Healthcare,1440000000.0
+REAL,Therealreal Inc,Consumer Cyclical,1440000000.0
+FUBO,fuboTV Inc,Communication Services,1420000000.0
+MAZE,Maze Therapeutics Inc,Healthcare,1400000000.0
+BFLY,Butterfly Network Inc,Healthcare,1390000000.0
+BKSY,BlackSky Technology Inc,Industrials,1390000000.0
+ABTC,American Bitcoin Corp,Financial,1380000000.0
+LIND,Lindblad Expeditions Holdings Inc,Consumer Cyclical,1370000000.0
+AMRC,Ameresco Inc,Industrials,1370000000.0
+PENG,Penguin Solutions Inc,Technology,1360000000.0
+NNE,Nano Nuclear Energy Inc,Industrials,1350000000.0
+AI,C3.ai Inc,Technology,1340000000.0
+LSPD,Lightspeed Commerce Inc,Technology,1330000000.0
+PGY,Pagaya Technologies Ltd,Technology,1240000000.0
+PCT,PureCycle Technologies Inc,Industrials,1220000000.0
+CCO,Clear Channel Outdoor Holdings Inc,Communication Services,1210000000.0
+SEPN,Septerna Inc,Healthcare,1170000000.0
+CLOV,Clover Health Investments Corp,Healthcare,1150000000.0
+ARHS,Arhaus Inc,Consumer Cyclical,1100000000.0
+CDNA,Caredx Inc,Healthcare,1100000000.0
+ASST,Strive Inc,Financial,1080000000.0
+AMC,AMC Entertainment Holdings Inc,Communication Services,1080000000.0
+EXPI,eXp World Holdings Inc,Real Estate,1060000000.0
+ULCC,Frontier Group Holdings Inc,Industrials,1050000000.0
+CTMX,CytomX Therapeutics Inc,Healthcare,1040000000.0
+BLFS,Biolife Solutions Inc,Healthcare,1040000000.0
+TDOC,Teladoc Health Inc,Healthcare,1020000000.0
+JMIA,Jumia Technologies Ag ADR,Consumer Cyclical,1010000000.0
+AOSL,Alpha & Omega Semiconductor Ltd,Technology,1010000000.0

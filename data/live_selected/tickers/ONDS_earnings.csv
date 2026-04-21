@@ -1,4 +1,5 @@
 date;quarter;type
+2026-05-14;Q2-2026;earnings
 2026-03-23;Q1-2026;earnings
 2025-11-13;Q4-2025;earnings
 2025-08-12;Q3-2025;earnings
@@ -19,3 +20,4 @@ date;quarter;type
 2021-11-15;Q4-2021;earnings
 2021-08-16;Q3-2021;earnings
 2021-05-17;Q2-2021;earnings
+2021-03-08;Q1-2021;earnings

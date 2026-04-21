@@ -1,0 +1,165 @@
+#,Ticker,MktCap,Company,N,J+1 μ%,Hit%
+1,CLSK,3.1B,Cleanspark Inc,23,-3.288,78.3
+2,OSCR,4.7B,Oscar Health Inc,21,-2.878,61.9
+3,SBET,1.6B,Sharplink Inc,15,-2.715,73.3
+4,QUBT,2.1B,Quantum Computing Inc,34,-2.432,73.5
+5,ASST,1.1B,Strive Inc,13,-2.319,53.8
+6,DAVE,3.4B,Dave Inc,23,-2.228,73.9
+7,WRD,2.6B,WeRide Inc ADR,10,-2.225,70.0
+8,LIF,3.9B,Life360 Inc,6,-1.92,100.0
+9,PSIX,1.8B,Power Solutions International Inc,14,-1.742,71.4
+10,NNNN,3.9B,Anbio Biotechnology,6,-1.677,83.3
+11,ABTC,1.4B,American Bitcoin Corp,37,-1.557,56.8
+12,MGNI,2.0B,Magnite Inc,31,-1.516,67.7
+13,CORZ,6.3B,Core Scientific Inc,10,-1.347,70.0
+14,UPST,3.4B,Upstart Holdings Inc,28,-1.323,67.9
+15,ASTS,32.7B,AST SpaceMobile Inc,35,-1.312,62.9
+16,BHVN,1.6B,Biohaven Ltd,22,-1.201,63.6
+17,ONON,12.2B,On Holding AG,23,-1.18,52.2
+18,EXPI,1.1B,eXp World Holdings Inc,22,-1.18,68.2
+19,ONDS,4.7B,Ondas Inc,30,-1.157,66.7
+20,ACHR,4.5B,Archer Aviation Inc,26,-1.134,53.8
+21,PENG,1.4B,Penguin Solutions Inc,28,-1.114,67.9
+22,SOUN,3.4B,SoundHound AI Inc,16,-1.088,62.5
+23,AVAH,1.5B,Aveanna Healthcare Holdings Inc,24,-0.998,70.8
+24,VSCO,4.4B,Victoria's Secret & Co,30,-0.931,66.7
+25,ARHS,1.1B,Arhaus Inc,19,-0.889,57.9
+26,RDW,2.0B,Redwire Corp,23,-0.886,52.2
+27,XYZ,42.7B,Block Inc,32,-0.866,65.6
+28,AMPX,2.6B,Amprius Technologies Inc,24,-0.822,45.8
+29,CRDO,29.6B,Credo Technology Group Holding Ltd,21,-0.819,52.4
+30,SOFI,24.8B,SoFi Technologies Inc,32,-0.81,56.2
+31,QS,4.3B,QuantumScape Corp,28,-0.799,50.0
+32,BE,58.7B,Bloom Energy Corp,22,-0.762,63.6
+33,ADEA,3.2B,Adeia Inc,27,-0.748,66.7
+34,GCT,1.9B,GigaCloud Technology Inc,25,-0.725,56.0
+35,MARA,4.4B,MARA Holdings Inc,23,-0.706,56.5
+36,FUBO,1.4B,fuboTV Inc,22,-0.705,54.5
+37,AI,1.3B,C3.ai Inc,24,-0.7,58.3
+38,BKSY,1.4B,BlackSky Technology Inc,31,-0.674,48.4
+39,IONQ,16.9B,IonQ Inc,35,-0.661,54.3
+40,GRAL,2.1B,GRAIL Inc,13,-0.653,61.5
+41,AAOI,12.0B,Applied Optoelectronics Inc,35,-0.646,62.9
+42,PTON,2.2B,Peloton Interactive Inc,34,-0.645,61.8
+43,JOBY,9.0B,Joby Aviation Inc,25,-0.615,56.0
+44,LMND,5.4B,Lemonade Inc,35,-0.607,65.7
+45,NVAX,1.4B,Novavax Inc,29,-0.585,51.7
+46,TWST,3.7B,Twist Bioscience Corp,38,-0.572,52.6
+47,HTZ,2.3B,Hertz Global Holdings Inc,30,-0.56,56.7
+48,SION,2.0B,Sionna Therapeutics Inc,11,-0.55,45.5
+49,BROS,8.8B,Dutch Bros Inc,30,-0.544,53.3
+50,AFRM,21.5B,Affirm Holdings Inc,33,-0.534,48.5
+51,RKLB,48.8B,Rocket Lab Corp,26,-0.52,57.7
+52,Z,10.7B,Zillow Group Inc,28,-0.496,64.3
+53,PGY,1.2B,Pagaya Technologies Ltd,30,-0.454,46.7
+54,LC,2.0B,LendingClub Corp,23,-0.393,47.8
+55,TDOC,1.0B,Teladoc Health Inc,28,-0.376,60.7
+56,MSTR,57.5B,Strategy Inc,28,-0.366,57.1
+57,BFLY,1.4B,Butterfly Network Inc,37,-0.332,54.1
+58,WING,5.4B,Wingstop Inc,39,-0.33,53.8
+59,ROKU,17.1B,Roku Inc,36,-0.314,58.3
+60,GAP,9.9B,Gap Inc,31,-0.314,58.1
+61,SITM,13.2B,SiTime Corp,35,-0.302,51.4
+62,TMDX,4.0B,Transmedics Group Inc,36,-0.293,58.3
+63,BLFS,1.0B,Biolife Solutions Inc,34,-0.238,50.0
+64,LSPD,1.3B,Lightspeed Commerce Inc,32,-0.238,53.1
+65,HYMC,4.0B,Hycroft Mining Holding Corp,30,-0.228,56.7
+66,WBTN,1.6B,Webtoon Entertainment Inc,10,-0.206,60.0
+67,KC,5.4B,Kingsoft Cloud Holdings Ltd ADR,22,-0.201,54.5
+68,AMKR,16.7B,AMKOR Technology Inc,29,-0.191,55.2
+69,LASR,3.9B,nLIGHT Inc,30,-0.188,53.3
+70,ALAB,29.6B,Astera Labs Inc,16,-0.181,56.2
+71,AEHR,2.6B,Aehr Test Systems,25,-0.168,36.0
+72,TMC,2.3B,TMC the metals company Inc,35,-0.156,48.6
+73,NVTS,2.8B,Navitas Semiconductor Corp,23,-0.153,60.9
+74,NTLA,1.8B,Intellia Therapeutics Inc,35,-0.102,48.6
+75,NNE,1.4B,Nano Nuclear Energy Inc,11,-0.076,45.5
+76,CUK,4.3B,Carnival plc ADR,38,-0.064,50.0
+77,LTM,16.0B,LATAM Airlines Group SA ADR,8,-0.046,25.0
+78,REAL,1.4B,Therealreal Inc,25,-0.036,40.0
+79,COHR,67.4B,Coherent Corp,30,-0.009,53.3
+80,ZG,10.7B,Zillow Group Inc,37,0.0,51.4
+81,WULF,9.0B,TeraWulf Inc,30,0.017,53.3
+82,WRBY,3.0B,Warby Parker Inc,30,0.022,50.0
+83,MAZE,1.4B,Maze Therapeutics Inc,7,0.023,57.1
+84,RIOT,6.9B,Riot Platforms Inc,30,0.058,53.3
+85,AMBA,2.5B,Ambarella Inc,25,0.059,56.0
+86,TPC,4.5B,Tutor Perini Corp,35,0.06,42.9
+87,WGS,1.9B,GeneDx Holdings Corp,34,0.07,50.0
+88,FLNC,2.5B,Fluence Energy Inc,30,0.085,56.7
+89,DHC,1.8B,Diversified Healthcare Trust,18,0.09,33.3
+90,W,10.6B,Wayfair Inc,29,0.096,48.3
+91,CVNA,84.9B,Carvana Co,30,0.098,43.3
+92,PRAX,9.5B,Praxis Precision Medicines Inc,27,0.1,55.6
+93,HIMX,1.9B,Himax Technologies ADR,36,0.113,55.6
+94,HIMS,6.6B,Hims & Hers Health Inc,20,0.121,50.0
+95,PCT,1.2B,PureCycle Technologies Inc,30,0.132,46.7
+96,RUN,2.9B,Sunrun Inc,32,0.143,56.2
+97,RKT,46.9B,Rocket Companies Inc,29,0.172,48.3
+98,BEAM,3.2B,Beam Therapeutics Inc,36,0.175,44.4
+99,SKYT,1.6B,SkyWater Technology Inc,30,0.206,50.0
+100,MESO,2.1B,Mesoblast Ltd ADR,16,0.22,56.2
+101,INOD,1.5B,Innodata Inc,31,0.222,45.2
+102,NCLH,9.6B,Norwegian Cruise Line Holdings Ltd,24,0.223,37.5
+103,LWLG,1.9B,Lightwave Logic Inc,33,0.238,45.5
+104,MAC,6.0B,Macerich Co,21,0.274,52.4
+105,SMR,4.3B,NuScale Power Corp,28,0.281,57.1
+106,AMC,1.1B,AMC Entertainment Holdings Inc,24,0.288,45.8
+107,CENX,6.2B,Century Aluminum Co,28,0.335,46.4
+108,CCO,1.2B,Clear Channel Outdoor Holdings Inc,25,0.379,36.0
+109,CTMX,1.0B,CytomX Therapeutics Inc,26,0.411,53.8
+110,SEZL,2.7B,Sezzle Inc,14,0.439,64.3
+111,BTDR,3.1B,Bitdeer Technologies Group,13,0.453,53.8
+112,COIN,54.5B,Coinbase Global Inc,29,0.461,48.3
+113,IMNM,2.8B,Immunome Inc,36,0.477,44.4
+114,CLOV,1.1B,Clover Health Investments Corp,34,0.48,44.1
+115,SAIA,11.6B,Saia Inc,28,0.493,46.4
+116,CCL,40.5B,Carnival Corp,28,0.496,46.4
+117,COMP,6.1B,Compass Inc,17,0.501,41.2
+118,RYTM,6.1B,Rhythm Pharmaceuticals Inc,25,0.52,32.0
+119,TIC,1.9B,TIC Solutions Inc,7,0.523,71.4
+120,CIFR,7.8B,Cipher Digital Inc,31,0.571,54.8
+121,ENVX,1.4B,Enovix Corp,30,0.571,50.0
+122,OLMA,1.5B,Olema Pharmaceuticals Inc,42,0.584,38.1
+123,VICR,9.9B,Vicor Corp,26,0.587,42.3
+124,VISN,4.3B,Vistance Networks Inc,26,0.637,42.3
+125,AMSC,1.9B,American Superconductor Corp,28,0.641,53.6
+126,SYRE,5.7B,Spyre Therapeutics Inc,32,0.663,43.8
+127,AOSL,1.0B,Alpha & Omega Semiconductor Ltd,15,0.669,53.3
+128,CLS,45.5B,Celestica Inc,28,0.702,53.6
+129,IREN,16.0B,IREN Ltd,34,0.706,50.0
+130,QXO,17.8B,QXO Inc,30,0.711,53.3
+131,HOOD,81.7B,Robinhood Markets Inc,25,0.759,52.0
+132,AMRC,1.4B,Ameresco Inc,31,0.77,51.6
+133,DFTX,2.3B,Definium Therapeutics Inc,40,0.811,35.0
+134,U,11.3B,Unity Software Inc,31,0.825,29.0
+135,GLXY,10.1B,Galaxy Digital Inc,8,0.941,25.0
+136,CAR,17.4B,Avis Budget Group Inc,28,0.948,57.1
+137,SEPN,1.2B,Septerna Inc,14,0.951,35.7
+138,JMIA,1.0B,Jumia Technologies Ag ADR,38,0.954,42.1
+139,ULCC,1.1B,Frontier Group Holdings Inc,31,0.98,41.9
+140,ECG,6.6B,Everus Construction Group,5,0.988,20.0
+141,NBIS,39.5B,Nebius Group NV,9,0.99,33.3
+142,RDDT,31.3B,Reddit Inc,6,1.016,33.3
+143,BBAI,1.8B,BigBear.ai Holdings Inc,18,1.072,44.4
+144,OPEN,5.1B,Opendoor Technologies Inc,32,1.075,65.6
+145,LIND,1.4B,Lindblad Expeditions Holdings Inc,28,1.182,42.9
+146,OUST,1.5B,Ouster Inc,30,1.19,53.3
+147,AUR,10.3B,Aurora Innovation Inc,22,1.229,40.9
+148,CDNA,1.1B,Caredx Inc,27,1.255,48.1
+149,HUT,8.3B,Hut 8 Corp,35,1.277,48.6
+150,EOSE,2.4B,Eos Energy Enterprises Inc,34,1.297,47.1
+151,AS,21.5B,Amer Sports Inc,12,1.353,50.0
+152,KYMR,7.2B,Kymera Therapeutics Inc,30,1.421,30.0
+153,APLD,9.0B,Applied Digital Corp,24,1.432,41.7
+154,TXG,3.3B,10x Genomics Inc,23,1.535,34.8
+155,ADPT,2.2B,Adaptive Biotechnologies Corp,19,1.723,42.1
+156,KEEL,1.6B,Keel Infrastructure Corp,18,1.928,38.9
+157,SYM,38.0B,Symbotic Inc,30,1.982,40.0
+158,PONY,4.1B,Pony AI Inc ADR,13,1.988,53.8
+159,SMTC,10.0B,Semtech Corp,26,2.215,38.5
+160,TEM,10.0B,Tempus AI Inc,12,2.284,50.0
+161,KOD,2.8B,Kodiak Sciences Inc,18,2.648,22.2
+162,RGC,14.2B,Regencell Bioscience Holdings Ltd,13,3.068,30.8
+163,CRWV,61.4B,CoreWeave Inc,4,5.475,0.0
+164,DJT,2.8B,Trump Media & Technology Group Corp,20,17.157,50.0

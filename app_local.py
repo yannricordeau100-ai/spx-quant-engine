@@ -5169,6 +5169,21 @@ div[data-testid="stSlider"] > div > div > div > div > div {
         st.session_state["_pending_result"] = _result_to_serializable(result)
         st.rerun()
 
+    # ── BBE Ranking interactif (univers Beta>2) ────────────────────────────
+    # Composant isolé dans beta2_engulfing/ — ne touche pas au reste de l'app.
+    with st.expander("📉 BBE Ranking — Univers Beta>2 (164 tickers)", expanded=False):
+        try:
+            import sys as _sys_bbe
+            _bbe_rank_dir = str(BASE_DIR / "beta2_engulfing")
+            if _bbe_rank_dir not in _sys_bbe.path:
+                _sys_bbe.path.insert(0, _bbe_rank_dir)
+            from bbe_ranking_tab import render_bbe_ranking
+            render_bbe_ranking(key_prefix="bbe_rank_applocal")
+        except FileNotFoundError as _e_bbe:
+            st.error(f"Données BBE manquantes : {_e_bbe}")
+        except Exception as _e_bbe:
+            st.error(f"Erreur chargement BBE ranking : {_e_bbe}")
+
     # ── Affichage du résultat actif ────────────────────────────────────────
     # Priorité 1 : résultat frais stocké au submit (bypasse active_idx)
     if st.session_state.get("_pending_result") is not None:
