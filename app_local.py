@@ -4873,10 +4873,9 @@ div[data-testid="stSlider"] > div > div > div > div > div {
                         value=30, step=5, key="bbe_body_pct"
                     )
                 with _bbe_adv2:
-                    _bbe_require_gap = st.checkbox(
-                        "⬆️ Bearish : gap up/neutre à l'open",
-                        value=True, key="bbe_gap"
-                    )
+                    # Règle gap (open J2 ≥ close J1 ± 0.1%) intégrée dans la
+                    # détection de base (toujours active, symétrique bullish).
+                    # Cf. lignes 4978 bearish / 4994 bullish.
                     _bbe_vol_ma = st.checkbox(
                         "📊 Volume J > moyenne 20j",
                         value=False, key="bbe_vol_ma"
@@ -4975,7 +4974,8 @@ div[data-testid="stSlider"] > div > div > div > div > div {
                                     if _pat == "bearish":
                                         if not (_p["is_green"] and _c["is_red"]):
                                             continue
-                                        if _bbe_require_gap and _c["open"] < _p["close"] * 0.999:
+                                        # Règle de base : J2 ouvre ≥ close J1 (tol. 0.1% = "neutre")
+                                        if _c["open"] < _p["close"] * 0.999:
                                             continue
                                         if _c["close"] >= _p["open"]:
                                             continue
