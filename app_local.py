@@ -56,6 +56,15 @@ try:
 except Exception:
     _SPX_PATTERNS_AVAILABLE = False
 
+# Import Gemini cloud LLM (C3 — remplace Ollama C2 pour questions complexes
+# et ajoute l'accès web via Google Search grounding). Guard BBE/ticker inside.
+try:
+    from cloud_llm import answer_question as _gemini_answer
+    _GEMINI_AVAILABLE = True
+except ImportError as _gem_err:
+    _GEMINI_AVAILABLE = False
+    print(f"[cloud_llm] non dispo: {_gem_err}", flush=True)
+
 VERSION_LOCAL   = "v2.21.3"
 _MAX_FOLLOWUP_TURNS = 5
 HISTORY_FILE      = BASE_DIR / "data" / "history.json"
@@ -1284,13 +1293,28 @@ def _compute_result(query: str, session_state=None) -> dict:
     if result is not None:
         print(f"[routing] C1 | {query[:60]}", flush=True)
         return result
-    # Couche 2 : sqlcoder + DuckDB — SEULEMENT pour les indices/macro
-    # Si un ticker individuel est détecté, ne jamais appeler Ollama
+    # Ticker individuel : court-circuit (pas d'appel LLM)
     _c2_ticker = _detect_individual_ticker(query)
     if _c2_ticker is not None:
         return {"type": "ERROR", "ok": False,
                 "error": f"Question sur {_c2_ticker.upper()} non reconnue — reformulez plus simplement."}
-    print(f"[routing] C2 | {query[:60]}", flush=True)
+
+    # Couche 3 : Gemini 2.5 Flash + DuckDB SQL + Google Search grounding.
+    # Gère tout ce que C1 n'a pas catch : questions macro, mixtes, web.
+    # Guard BBE/ticker intégré côté cloud_llm.
+    if _GEMINI_AVAILABLE:
+        try:
+            print(f"[routing] C3/Gemini | {query[:60]}", flush=True)
+            gem_r = _gemini_answer(query)
+            if gem_r.get("ok"):
+                return gem_r
+            # Gemini a échoué → tente Ollama en fallback
+            print(f"[routing] C3 échec, fallback C2/Ollama | {gem_r.get('answer','')[:80]}", flush=True)
+        except Exception as e:
+            print(f"[routing] C3 exception: {e} — fallback C2", flush=True)
+
+    # Couche 2 : sqlcoder + DuckDB (fallback si Gemini indisponible)
+    print(f"[routing] C2/Ollama | {query[:60]}", flush=True)
     return layer2_structured(query)
 
 
@@ -1816,6 +1840,47 @@ def _render_result(result: dict) -> None:
     import streamlit as st
 
     rtype = result.get("type", "")
+
+    # ── REDIRECT (question BBE ou ticker → message orienteur) ───────────────
+    if rtype == "REDIRECT":
+        st.info(result.get("answer", ""))
+        return
+
+    # ── LLM_CLOUD (réponse Gemini avec SQL et/ou sources web) ───────────────
+    if rtype == "LLM_CLOUD":
+        if not result.get("ok"):
+            st.error(result.get("answer", "Erreur LLM cloud."))
+            return
+        st.markdown(result.get("answer", ""))
+        # Tableau de données si SQL a ramené un df non trivial
+        df = result.get("df")
+        if df is not None and not df.empty and len(df) > 1:
+            with st.expander(f"📊 Données ({len(df)} lignes)", expanded=False):
+                st.dataframe(df, use_container_width=True)
+                csv = df.to_csv(index=False).encode("utf-8")
+                st.download_button("Télécharger CSV", data=csv,
+                                   file_name="gemini_result.csv", mime="text/csv")
+        # SQL exécuté (trace debug)
+        sql_runs = result.get("sql") or []
+        if sql_runs:
+            with st.expander(f"🔎 SQL exécuté ({len(sql_runs)})", expanded=False):
+                for s in sql_runs:
+                    if "error" in s:
+                        st.code(s["sql"], language="sql")
+                        st.caption(f"❌ {s['error']}")
+                    else:
+                        st.code(s["sql"], language="sql")
+                        st.caption(f"✓ {s.get('rows','?')} lignes")
+        # Sources web (grounding)
+        sources = result.get("sources") or []
+        if sources:
+            with st.expander(f"🌐 Sources web ({len(sources)})", expanded=False):
+                for s in sources:
+                    title = s.get("title", "(sans titre)")
+                    uri = s.get("uri", "#")
+                    st.markdown(f"- [{title}]({uri})")
+        st.caption("Réponse générée par Gemini 2.5 Flash.")
+        return
 
     if rtype == "PATTERNS_RESULTS":
         data = result.get("data", {})
@@ -4842,7 +4907,7 @@ div[data-testid="stSlider"] > div > div > div > div > div {
                 )
             with _bbe_col3:
                 _bbe_n_months = st.slider(
-                    "Mois d'historique", min_value=3, max_value=36,
+                    "Mois d'historique", min_value=3, max_value=60,
                     value=12, step=3, key="bbe_months"
                 )
 
@@ -4859,6 +4924,32 @@ div[data-testid="stSlider"] > div > div > div > div > div {
                     "🌡️ VIX min (bearish)", min_value=0.0, max_value=30.0,
                     value=0.0, step=0.5, key="bbe_vix_min",
                     help="0 = pas de filtre VIX"
+                )
+
+            # ── Seuils LOCAUX (bypass sidebar + bouton Appliquer buggés) ──
+            # Ces seuils pilotent directement le calcul du win rate ici.
+            # Streamlit rerun à chaque changement → pas besoin d'"Appliquer".
+            _bbe_seuil_col1, _bbe_seuil_col2 = st.columns(2)
+            with _bbe_seuil_col1:
+                _bbe_local_bear_seuil = st.number_input(
+                    "🎯 Seuil bearish (%) — utilisé ICI (ignore la sidebar)",
+                    min_value=0.1, max_value=10.0, value=2.0, step=0.1,
+                    key="bbe_local_bear_seuil",
+                    help=(
+                        "Pourcentage de baisse requis pour valider un BBE "
+                        "bearish. Indépendant de la sidebar (qui a un bug "
+                        "connu via 'Appliquer'). Rerun auto à chaque changement."
+                    ),
+                )
+            with _bbe_seuil_col2:
+                _bbe_local_bull_seuil = st.number_input(
+                    "🎯 Seuil bullish (%) — utilisé ICI (ignore la sidebar)",
+                    min_value=0.1, max_value=10.0, value=2.0, step=0.1,
+                    key="bbe_local_bull_seuil",
+                    help=(
+                        "Pourcentage de hausse requis pour valider un BBE "
+                        "bullish. Indépendant de la sidebar."
+                    ),
                 )
 
             with st.expander("⚙️ Filtres avancés", expanded=False):
@@ -4889,6 +4980,37 @@ div[data-testid="stSlider"] > div > div > div > div > div {
 
             # Charger VIX (cached)
             _df_vix = _cached_load_csv(str(DATA_DIR / "VIX_daily.csv"))
+
+            # Charger SPX pour contexte des échecs (perf J-1, J0, J+1 close-to-close)
+            _df_spx_bbe = _cached_load_csv(str(DATA_DIR / "SPX_daily.csv"))
+            _spx_ret_by_date = {}
+            if _df_spx_bbe is not None and "close" in _df_spx_bbe.columns:
+                _df_spx_bbe = _df_spx_bbe.sort_values("time").reset_index(drop=True)
+                _df_spx_bbe["spx_ret"] = _df_spx_bbe["close"].pct_change() * 100
+                for _i, _r in _df_spx_bbe.iterrows():
+                    _spx_ret_by_date[pd.Timestamp(_r["time"]).normalize()] = float(_r["spx_ret"]) if pd.notna(_r["spx_ret"]) else None
+                _spx_dates_sorted = sorted(_spx_ret_by_date.keys())
+
+            def _spx_context(sig_date_str: str) -> str | None:
+                """Retourne HTML avec SPX returns J-1, J0, J+1 ou None si data manquante."""
+                if not _spx_ret_by_date:
+                    return None
+                try:
+                    _d0 = pd.Timestamp(sig_date_str).normalize()
+                except Exception:
+                    return None
+                if _d0 not in _spx_ret_by_date:
+                    return None
+                _idx = _spx_dates_sorted.index(_d0)
+                _r0 = _spx_ret_by_date.get(_d0)
+                _rm1 = _spx_ret_by_date.get(_spx_dates_sorted[_idx-1]) if _idx >= 1 else None
+                _rp1 = _spx_ret_by_date.get(_spx_dates_sorted[_idx+1]) if _idx+1 < len(_spx_dates_sorted) else None
+                def _fmt(v):
+                    if v is None: return "—"
+                    _c = "#26a269" if v >= 0 else "#e01b24"
+                    return f"<b style='color:{_c};'>{v:+.2f}%</b>"
+                return (f"SPX J-1 {_fmt(_rm1)} &nbsp;|&nbsp; "
+                        f"J0 {_fmt(_r0)} &nbsp;|&nbsp; J+1 {_fmt(_rp1)}")
 
             if _bbe_selected:
                 patterns_to_run = []
@@ -5053,9 +5175,11 @@ div[data-testid="stSlider"] > div > div > div > div > div {
                                     _success = False
                                     _best_perf = None
 
-                                    # Seuils sidebar (valeurs positives : 2.0 = -2% bearish, +2% bullish)
-                                    _be_seuil_pct = float(st.session_state.get("be_seuil", 2.0))
-                                    _bull_seuil_pct = float(st.session_state.get("bull_seuil", 2.0))
+                                    # Seuils LOCAUX du panneau (bypass sidebar buggée).
+                                    # Lus directement des number_input ci-dessus —
+                                    # Streamlit rerun auto à chaque changement.
+                                    _be_seuil_pct = float(_bbe_local_bear_seuil)
+                                    _bull_seuil_pct = float(_bbe_local_bull_seuil)
                                     _bear_target = _close_j * (1 - _be_seuil_pct / 100.0)
                                     _bull_target = _close_j * (1 + _bull_seuil_pct / 100.0)
 
@@ -5140,6 +5264,7 @@ div[data-testid="stSlider"] > div > div > div > div > div {
   <div style="font-size:11px;color:#666;margin-top:4px;">
     Vol×{_sig['vol_ratio']} &nbsp;|&nbsp; Corps×{_sig['body_ratio']}
   </div>
+  {f'<div style="font-size:11px;color:#aaa;margin-top:6px;border-top:1px solid #333;padding-top:4px;">{_spx_context(_sig["date"])}</div>' if (_perf_val is not None and not _succ and _spx_context(_sig["date"])) else ''}
 </div>""", unsafe_allow_html=True)
                                 else:
                                     st.info("Aucun BBE strict sur la période")
@@ -5183,6 +5308,30 @@ div[data-testid="stSlider"] > div > div > div > div > div {
             st.error(f"Données BBE manquantes : {_e_bbe}")
         except Exception as _e_bbe:
             st.error(f"Erreur chargement BBE ranking : {_e_bbe}")
+
+    # ── Conditions custom (J0 + J+1 ranges) ────────────────────────────────
+    with st.expander("🎯 Conditions custom — variation J0 × J+1 (par ticker)", expanded=False):
+        try:
+            import sys as _sys_cc
+            _cc_dir = str(BASE_DIR / "beta2_engulfing")
+            if _cc_dir not in _sys_cc.path:
+                _sys_cc.path.insert(0, _cc_dir)
+            from conditions_custom_tab import render_conditions_custom
+            render_conditions_custom(key_prefix="ccust_applocal")
+        except Exception as _e_cc:
+            st.error(f"Erreur chargement Conditions custom : {_e_cc}")
+
+    # ── Historique BBE — cette semaine (45 tickers gardés) ─────────────────
+    with st.expander("📅 Historique BBE — cette semaine (45 tickers gardés)", expanded=False):
+        try:
+            import sys as _sys_wh
+            _wh_dir = str(BASE_DIR / "beta2_engulfing")
+            if _wh_dir not in _sys_wh.path:
+                _sys_wh.path.insert(0, _wh_dir)
+            from weekly_history_tab import render_weekly_history
+            render_weekly_history(key_prefix="wkhist_applocal")
+        except Exception as _e_wh:
+            st.error(f"Erreur Historique semaine : {_e_wh}")
 
     # ── Affichage du résultat actif ────────────────────────────────────────
     # Priorité 1 : résultat frais stocké au submit (bypasse active_idx)
