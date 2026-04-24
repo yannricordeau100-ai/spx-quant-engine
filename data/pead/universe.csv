@@ -1,324 +1,646 @@
-ticker,status,name,sector,industry,market_cap,n_analysts,beta,avg_volume_3m,Sector,Weight (%),sector_final
-FOX,ok,Fox Corporation,Communication Services,Entertainment,24562368512.0,0.0,0.505,1827927.0,Communication,0.01,Communication Services
-UI,ok,Ubiquiti Inc.,Technology,Communication Equipment,62812712960.0,2.0,1.322,106043.0,Information Technology,0.01,Technology
-TPL,ok,Texas Pacific Land Corporation,Energy,Oil & Gas E&P,30275682304.0,2.0,0.773,552075.0,Energy,0.04,Energy
-VRSN,ok,"VeriSign, Inc.",Technology,Software - Infrastructure,25234495488.0,4.0,0.695,866354.0,Information Technology,0.03,Technology
-FIX,ok,"Comfort Systems USA, Inc.",Industrials,Engineering & Construction,62413193216.0,4.0,1.598,420191.0,Industrials,0.09,Industrials
-EME,ok,"EMCOR Group, Inc.",Industrials,Engineering & Construction,38881828864.0,6.0,1.112,373745.0,Industrials,0.06,Industrials
-STE,ok,STERIS plc (Ireland),Healthcare,Medical Devices,21937819648.0,7.0,1.07,867122.0,Health Care,0.03,Healthcare
-GRMN,ok,Garmin Ltd.,Technology,Scientific & Technical Instruments,50303979520.0,7.0,0.968,928817.0,Consumer Discretionary,0.07,Technology
-CW,ok,Curtiss-Wright Corporation,Industrials,Aerospace & Defense,26776154112.0,7.0,0.915,311087.0,Industrials,0.04,Industrials
-AU,ok,AngloGold Ashanti PLC,Basic Materials,Gold,48865230848.0,7.0,0.68,3129930.0,Materials,0.08,Basic Materials
-ASTS,ok,"AST SpaceMobile, Inc.",Technology,Communication Equipment,23045165056.0,8.0,2.8,14704646.0,Communication,0.03,Technology
-SNA,ok,Snap-On Incorporated,Industrials,Tools & Accessories,20341407744.0,8.0,0.761,407564.0,Industrials,0.03,Industrials
-Q,ok,"Qnity Electronics, Inc.",Technology,Semiconductor Equipment & Materials,29379504128.0,8.0,,2201906.0,Information Technology,0.04,Technology
-ATI,ok,ATI Inc.,Industrials,Metal Fabrication,21095038976.0,9.0,1.003,2166864.0,Industrials,0.03,Industrials
-JBL,ok,Jabil Inc.,Technology,Electronic Components,35715805184.0,9.0,1.159,1143772.0,Information Technology,0.05,Technology
-FLEX,ok,Flex Ltd.,Technology,Electronic Components,31950864384.0,9.0,1.201,3722512.0,Information Technology,0.05,Technology
-CPRT,ok,"Copart, Inc.",Industrials,Specialty Business Services,32636891136.0,9.0,1.142,9265166.0,Industrials,0.05,Industrials
-RPRX,ok,Royalty Pharma plc,Healthcare,Biotechnology,29427445760.0,9.0,0.388,3404464.0,Health Care,0.03,Healthcare
-CRS,ok,Carpenter Technology Corporatio,Industrials,Metal Fabrication,21255700480.0,9.0,1.239,813032.0,Industrials,0.03,Industrials
-OMC,ok,Omnicom Group Inc.,Communication Services,Advertising Agencies,23840038912.0,10.0,0.751,5213087.0,Communication,0.04,Communication Services
-BG,ok,Bunge Limited,Consumer Defensive,Farm Products,24501512192.0,10.0,0.696,1727061.0,Consumer Staples,0.03,Consumer Defensive
-ENTG,ok,"Entegris, Inc.",Technology,Semiconductor Equipment & Materials,22735327232.0,10.0,1.318,2707143.0,Information Technology,0.03,Technology
-WWD,ok,"Woodward, Inc.",Industrials,Aerospace & Defense,21910022144.0,10.0,0.984,687388.0,Industrials,0.03,Industrials
-FTAI,ok,FTAI Aviation Ltd.,Industrials,Rental & Leasing Services,24161847296.0,10.0,1.649,1586861.0,Industrials,0.04,Industrials
-ADM,ok,Archer-Daniels-Midland Company,Consumer Defensive,Farm Products,33747113984.0,11.0,0.636,3879311.0,Consumer Staples,0.05,Consumer Defensive
-APG,ok,APi Group Corporation,Industrials,Engineering & Construction,21115461632.0,11.0,1.686,2886816.0,Industrials,0.03,Industrials
-MSI,ok,"Motorola Solutions, Inc.",Technology,Communication Equipment,73656459264.0,11.0,0.992,1075217.0,Information Technology,0.11,Technology
-WAB,ok,Westinghouse Air Brake Technolo,Industrials,Railroads,45719564288.0,11.0,0.987,986730.0,Industrials,0.07,Industrials
-BWXT,ok,"BWX Technologies, Inc.",Industrials,Aerospace & Defense,20659402752.0,11.0,0.794,1006083.0,Industrials,0.03,Industrials
-STLD,ok,"Steel Dynamics, Inc.",Basic Materials,Steel,32605784064.0,11.0,1.4,1306687.0,Materials,0.05,Basic Materials
-COR,ok,"Cencora, Inc.",Healthcare,Medical Distribution,60574912512.0,12.0,0.718,1384341.0,Health Care,0.09,Healthcare
-FAST,ok,Fastenal Company,Industrials,Industrial Distribution,52178194432.0,12.0,0.837,8199398.0,Industrials,0.08,Industrials
-WST,ok,"West Pharmaceutical Services, I",Healthcare,Medical Instruments & Supplies,21957730304.0,12.0,1.151,972543.0,Health Care,0.03,Healthcare
-RGLD,ok,"Royal Gold, Inc.",Basic Materials,Gold,21315825664.0,12.0,0.554,1072229.0,Materials,0.03,Basic Materials
-MO,ok,"Altria Group, Inc.",Consumer Defensive,Tobacco,112267960320.0,12.0,0.447,9715251.0,Consumer Staples,0.17,Consumer Defensive
-ROIV,ok,Roivant Sciences Ltd.,Healthcare,Biotechnology,20139829248.0,12.0,1.206,6032035.0,Health Care,0.02,Healthcare
-KVUE,ok,Kenvue Inc.,Consumer Defensive,Household & Personal Products,33579335680.0,12.0,0.57,33888817.0,Consumer Staples,0.05,Consumer Defensive
-TDY,ok,Teledyne Technologies Incorpora,Technology,Scientific & Technical Instruments,30187290624.0,13.0,,348209.0,Information Technology,0.05,Technology
-HUBB,ok,Hubbell Inc,Industrials,Electrical Equipment & Parts,29656197120.0,13.0,0.997,545782.0,Industrials,0.05,Industrials
-NVT,ok,nVent Electric plc,Industrials,Electrical Equipment & Parts,23084048384.0,13.0,1.276,2376524.0,Industrials,0.03,Industrials
-BDX,ok,"Becton, Dickinson and Company",Healthcare,Medical Instruments & Supplies,44049661952.0,13.0,0.352,2894842.0,Health Care,0.07,Healthcare
-TSN,ok,"Tyson Foods, Inc.",Consumer Defensive,Farm Products,22966112256.0,13.0,0.434,2966616.0,Consumer Staples,0.03,Consumer Defensive
-MTD,ok,"Mettler-Toledo International, I",Healthcare,Diagnostics & Research,25601398784.0,13.0,1.435,157438.0,Health Care,0.04,Healthcare
-KEYS,ok,Keysight Technologies Inc.,Technology,Scientific & Technical Instruments,59430760448.0,13.0,1.152,1473785.0,Information Technology,0.09,Technology
-CPAY,ok,"Corpay, Inc.",Technology,Software - Infrastructure,20730394624.0,13.0,0.851,682932.0,Financials,0.03,Technology
-WBD,ok,"Warner Bros. Discovery, Inc. - ",Communication Services,Entertainment,67432067072.0,13.0,1.637,25260187.0,Communication,0.1,Communication Services
-UTHR,ok,United Therapeutics Corporation,Healthcare,Drug Manufacturers - Specialty & Generic,25106690048.0,13.0,0.75,523787.0,Health Care,0.04,Healthcare
-NUE,ok,Nucor Corporation,Basic Materials,Steel,48496304128.0,13.0,1.745,1664035.0,Materials,0.08,Basic Materials
-IDXX,ok,"IDEXX Laboratories, Inc.",Healthcare,Diagnostics & Research,44663508992.0,14.0,1.722,526987.0,Health Care,0.07,Healthcare
-MPWR,ok,"Monolithic Power Systems, Inc.",Technology,Semiconductors,78204207104.0,14.0,1.478,605495.0,Information Technology,0.11,Technology
-MSTR,ok,Strategy Inc,Technology,Software - Application,60180860928.0,14.0,3.56,22078838.0,Information Technology,0.09,Technology
-PHM,ok,"PulteGroup, Inc.",Consumer Cyclical,Residential Construction,25101373440.0,14.0,1.341,1926046.0,Consumer Discretionary,0.04,Consumer Cyclical
-LEN,ok,Lennar Corporation,Consumer Cyclical,Residential Construction,23196375040.0,14.0,1.487,2980274.0,Consumer Discretionary,0.03,Consumer Cyclical
-GLW,ok,Corning Incorporated,Technology,Electronic Components,145603018752.0,14.0,1.053,12475050.0,Information Technology,0.2,Technology
-KMB,ok,Kimberly-Clark Corporation,Consumer Defensive,Household & Personal Products,32505489408.0,14.0,0.296,5360195.0,Consumer Staples,0.05,Consumer Defensive
-SW,ok,Smurfit WestRock plc,Consumer Cyclical,Packaging & Containers,21242769408.0,14.0,1.054,6201983.0,Materials,0.03,Consumer Cyclical
-OTIS,ok,Otis Worldwide Corporation,Industrials,Specialty Industrial Machinery,30660136960.0,14.0,,4006369.0,Industrials,0.05,Industrials
-BURL,ok,"Burlington Stores, Inc.",Consumer Cyclical,Apparel Retail,20710113280.0,14.0,1.621,789790.0,Consumer Discretionary,0.03,Consumer Cyclical
-DHI,ok,"D.R. Horton, Inc.",Consumer Cyclical,Residential Construction,46792994816.0,14.0,1.445,2850446.0,Consumer Discretionary,0.06,Consumer Cyclical
-MCK,ok,McKesson Corporation,Healthcare,Medical Distribution,102411755520.0,15.0,0.423,796277.0,Health Care,0.16,Healthcare
-IR,ok,Ingersoll Rand Inc.,Industrials,Specialty Industrial Machinery,33564626944.0,15.0,1.333,3970930.0,Industrials,0.05,Industrials
-SCCO,ok,Southern Copper Corporation,Basic Materials,Copper,150550429696.0,15.0,1.166,1972212.0,Materials,0.02,Basic Materials
-RKLB,ok,Rocket Lab Corporation,Industrials,Aerospace & Defense,48902545408.0,15.0,2.205,21353335.0,Industrials,0.07,Industrials
-CAH,ok,"Cardinal Health, Inc.",Healthcare,Medical Distribution,48173895680.0,15.0,0.65,1725825.0,Health Care,0.07,Healthcare
-GWW,ok,"W.W. Grainger, Inc.",Industrials,Industrial Distribution,55135174656.0,15.0,1.092,279638.0,Industrials,0.08,Industrials
-ADP,ok,"Automatic Data Processing, Inc.",Technology,Software - Application,79936978944.0,15.0,0.856,3786190.0,Industrials,0.12,Technology
-SYY,ok,Sysco Corporation,Consumer Defensive,Food Distribution,36307730432.0,15.0,0.693,4886738.0,Consumer Staples,0.06,Consumer Defensive
-PAYX,ok,"Paychex, Inc.",Technology,Software - Application,32586555392.0,15.0,,4211287.0,Industrials,0.05,Technology
-RMD,ok,ResMed Inc.,Healthcare,Medical Instruments & Supplies,31977865216.0,15.0,0.928,1116256.0,Health Care,0.05,Healthcare
-MTSI,ok,MACOM Technology Solutions Hold,Technology,Semiconductors,21333403648.0,15.0,1.481,1203708.0,Information Technology,0.03,Technology
-DOW,ok,Dow Inc.,Basic Materials,Chemicals,27770167296.0,15.0,0.495,15270375.0,Materials,0.04,Basic Materials
-CHTR,ok,"Charter Communications, Inc.",Communication Services,Telecom Services,30616977408.0,15.0,1.026,1954804.0,Communication,0.03,Communication Services
-USFD,ok,US Foods Holding Corp.,Consumer Defensive,Food Distribution,20472909824.0,15.0,0.98,2732438.0,Consumer Staples,0.03,Consumer Defensive
-NTAP,ok,"NetApp, Inc.",Technology,Software - Infrastructure,21469743104.0,15.0,1.292,2365459.0,Information Technology,0.03,Technology
-PM,ok,Philip Morris International Inc,Consumer Defensive,Tobacco,263687749632.0,15.0,,5284706.0,Consumer Staples,0.39,Consumer Defensive
-EA,ok,Electronic Arts Inc.,Communication Services,Electronic Gaming & Multimedia,50678878208.0,16.0,0.725,2515466.0,Communication,0.08,Communication Services
-CASY,ok,"Caseys General Stores, Inc.",Consumer Cyclical,Specialty Retail,29276205056.0,16.0,0.605,576419.0,Consumer Staples,0.04,Consumer Cyclical
-ROL,ok,"Rollins, Inc.",Consumer Cyclical,Personal Services,27438520320.0,16.0,0.84,3250790.0,Industrials,0.03,Consumer Cyclical
-ROP,ok,"Roper Technologies, Inc.",Technology,Software - Application,37440913408.0,16.0,0.89,1697379.0,Information Technology,0.06,Technology
-ITW,ok,Illinois Tool Works Inc.,Industrials,Specialty Industrial Machinery,78716067840.0,16.0,1.145,1410064.0,Industrials,0.12,Industrials
-A,ok,"Agilent Technologies, Inc.",Healthcare,Diagnostics & Research,32335355904.0,16.0,1.303,2217190.0,Health Care,0.05,Healthcare
-KDP,ok,Keurig Dr Pepper Inc.,Consumer Defensive,Beverages - Non-Alcoholic,38813204480.0,16.0,0.361,10909566.0,Consumer Staples,0.05,Consumer Defensive
-DGX,ok,Quest Diagnostics Incorporated,Healthcare,Diagnostics & Research,22087258112.0,16.0,0.654,997196.0,Health Care,0.03,Healthcare
-ROST,ok,"Ross Stores, Inc.",Consumer Cyclical,Apparel Retail,73396125696.0,16.0,0.927,2581919.0,Consumer Discretionary,0.11,Consumer Cyclical
-FWONK,ok,Liberty Media Corporation - Ser,Communication Services,Entertainment,22209599488.0,16.0,0.739,2151525.0,Communication,0.03,Communication Services
-RL,ok,Ralph Lauren Corporation,Consumer Cyclical,Apparel Manufacturing,22506174464.0,16.0,1.479,656266.0,Consumer Discretionary,0.02,Consumer Cyclical
-PCAR,ok,PACCAR Inc.,Industrials,Farm & Heavy Construction Machinery,66772815872.0,17.0,1.064,3095559.0,Industrials,0.1,Industrials
-MPC,ok,Marathon Petroleum Corporation,Energy,Oil & Gas Refining & Marketing,65113260032.0,17.0,0.577,2599751.0,Energy,0.1,Energy
-TER,ok,"Teradyne, Inc.",Technology,Semiconductor Equipment & Materials,62778761216.0,17.0,1.794,3434062.0,Information Technology,0.09,Technology
-LYB,ok,LyondellBasell Industries NV,Basic Materials,Specialty Chemicals,22826244096.0,17.0,0.437,8417750.0,Materials,0.03,Basic Materials
-CTAS,ok,Cintas Corporation,Industrials,Specialty Business Services,71063470080.0,17.0,1.006,2227659.0,Industrials,0.09,Industrials
-XYL,ok,Xylem Inc.,Industrials,Specialty Industrial Machinery,29587877888.0,17.0,1.174,2184546.0,Industrials,0.05,Industrials
-CNC,ok,Centene Corporation,Healthcare,Healthcare Plans,20206931968.0,17.0,0.587,6389388.0,Health Care,0.03,Healthcare
-LH,ok,Labcorp Holdings Inc.,Healthcare,Diagnostics & Research,21829408768.0,17.0,0.985,638522.0,Health Care,0.03,Healthcare
-VRSK,ok,"Verisk Analytics, Inc.",Industrials,Consulting Services,23205435392.0,17.0,0.819,2171309.0,Industrials,0.04,Industrials
-CPNG,ok,"Coupang, Inc.",Consumer Cyclical,Internet Retail,37624184832.0,17.0,1.163,24402701.0,Consumer Discretionary,0.04,Consumer Cyclical
-ZTS,ok,Zoetis Inc.,Healthcare,Drug Manufacturers - Specialty & Generic,48992141312.0,17.0,0.974,4130311.0,Health Care,0.08,Healthcare
-VLTO,ok,Veralto Corp,Industrials,Pollution & Treatment Controls,21803726848.0,17.0,1.153,2102291.0,Industrials,0.03,Industrials
-FOXA,ok,Fox Corporation,Communication Services,Entertainment,27450808320.0,17.0,0.505,4106733.0,Communication,0.02,Communication Services
-MMM,ok,3M Company,Industrials,Conglomerates,75543797760.0,17.0,1.158,4007293.0,Industrials,0.12,Industrials
-TJX,ok,"TJX Companies, Inc. (The)",Consumer Cyclical,Apparel Retail,175842459648.0,18.0,0.727,4948962.0,Consumer Discretionary,0.27,Consumer Cyclical
-APH,ok,Amphenol Corporation,Technology,Electronic Components,184635883520.0,18.0,1.26,9985577.0,Information Technology,0.28,Technology
-AXON,ok,"Axon Enterprise, Inc.",Industrials,Aerospace & Defense,31635869696.0,18.0,1.605,1133104.0,Industrials,0.05,Industrials
-NSC,ok,Norfolk Southern Corporation,Industrials,Railroads,72186437632.0,18.0,1.31,1354454.0,Industrials,0.1,Industrials
-NTRA,ok,"Natera, Inc.",Healthcare,Diagnostics & Research,28507824128.0,18.0,1.68,1215270.0,Health Care,0.04,Healthcare
-CIEN,ok,Ciena Corporation,Technology,Communication Equipment,72940380160.0,18.0,1.017,3487201.0,Information Technology,0.11,Technology
-AME,ok,"AMETEK, Inc.",Industrials,Specialty Industrial Machinery,53830373376.0,18.0,1.041,1321974.0,Industrials,0.08,Industrials
-MTZ,ok,"MasTec, Inc.",Industrials,Engineering & Construction,30181588992.0,18.0,1.8,920959.0,Industrials,0.04,Industrials
-VLO,ok,Valero Energy Corporation,Energy,Oil & Gas Refining & Marketing,69921308672.0,18.0,0.612,3727195.0,Energy,0.11,Energy
-GEHC,ok,GE HealthCare Technologies Inc.,Healthcare,Medical Devices,31890118656.0,19.0,1.305,3473012.0,Health Care,0.05,Healthcare
-P,ok,"Everpure, Inc.",Technology,Computer Hardware,23125657600.0,19.0,1.343,3147214.0,Information Technology,0.03,Technology
-LHX,ok,"L3Harris Technologies, Inc.",Industrials,Aerospace & Defense,61680435200.0,19.0,0.746,1374256.0,Industrials,0.1,Industrials
-WSM,ok,"Williams-Sonoma, Inc.",Consumer Cyclical,Specialty Retail,22897498112.0,19.0,1.578,1177246.0,Consumer Discretionary,0.04,Consumer Cyclical
-PSX,ok,Phillips 66,Energy,Oil & Gas Refining & Marketing,63968751616.0,19.0,0.755,3121229.0,Energy,0.1,Energy
-VIK,ok,Viking Holdings Ltd,Consumer Cyclical,Travel Services,36122841088.0,19.0,,2827025.0,Consumer Discretionary,0.02,Consumer Cyclical
-HEI,ok,Heico Corporation,Industrials,Aerospace & Defense,37494173696.0,19.0,1.077,637353.0,Industrials,0.02,Industrials
-TPR,ok,"Tapestry, Inc.",Consumer Cyclical,Luxury Goods,29970956288.0,19.0,1.61,2154019.0,Consumer Discretionary,0.05,Consumer Cyclical
-CHD,ok,"Church & Dwight Company, Inc.",Consumer Defensive,Household & Personal Products,22403645440.0,19.0,0.473,2157617.0,Consumer Staples,0.03,Consumer Defensive
-CL,ok,Colgate-Palmolive Company,Consumer Defensive,Household & Personal Products,67168714752.0,19.0,0.331,6529862.0,Consumer Staples,0.1,Consumer Defensive
-HPE,ok,Hewlett Packard Enterprise Comp,Technology,Communication Equipment,37059035136.0,19.0,1.215,17994220.0,Information Technology,0.06,Technology
-LVS,ok,Las Vegas Sands Corp.,Consumer Cyclical,Resorts & Casinos,34474967040.0,19.0,0.887,4702227.0,Consumer Discretionary,0.03,Consumer Cyclical
-KHC,ok,The Kraft Heinz Company,Consumer Defensive,Packaged Foods,26006872064.0,19.0,0.051,16040711.0,Consumer Staples,0.03,Consumer Defensive
-NEM,ok,Newmont Corporation,Basic Materials,Gold,119937376256.0,20.0,0.475,10426648.0,Materials,0.19,Basic Materials
-URI,ok,"United Rentals, Inc.",Industrials,Rental & Leasing Services,61818372096.0,20.0,1.681,672291.0,Industrials,0.08,Industrials
-PPG,ok,"PPG Industries, Inc.",Basic Materials,Specialty Chemicals,24682754048.0,20.0,1.155,2299840.0,Materials,0.04,Basic Materials
-F,ok,Ford Motor Company,Consumer Cyclical,Auto Manufacturers,50058305536.0,20.0,1.71,58728569.0,Consumer Discretionary,0.08,Consumer Cyclical
-LMT,ok,Lockheed Martin Corporation,Industrials,Aerospace & Defense,122096517120.0,20.0,0.24,1629943.0,Industrials,0.18,Industrials
-FICO,ok,Fair Isaac Corporation,Technology,Software - Application,23241998336.0,20.0,1.376,380680.0,Information Technology,0.03,Technology
-GFS,ok,GlobalFoundries Inc.,Technology,Semiconductors,33789915136.0,20.0,1.461,3955004.0,Information Technology,0.01,Technology
-IBM,ok,International Business Machines,Technology,Information Technology Services,217188696064.0,20.0,0.685,6336019.0,Information Technology,0.36,Technology
-GE,ok,GE Aerospace,Industrials,Aerospace & Defense,294997196800.0,20.0,1.428,5878482.0,Industrials,0.44,Industrials
-COHR,ok,Coherent Corp.,Technology,Scientific & Technical Instruments,63308873728.0,20.0,1.905,7405869.0,Information Technology,0.09,Technology
-RVMD,ok,"Revolution Medicines, Inc.",Healthcare,Biotechnology,28440459264.0,20.0,1.012,2898625.0,Health Care,0.04,Healthcare
-SNDK,ok,Sandisk Corporation,Technology,Computer Hardware,137627582464.0,20.0,,19441417.0,Information Technology,0.21,Technology
-INSM,ok,Insmed Incorporated,Healthcare,Biotechnology,31046014976.0,20.0,1.101,2305419.0,Health Care,0.05,Healthcare
-CMI,ok,Cummins Inc.,Industrials,Specialty Industrial Machinery,90825449472.0,20.0,1.14,946777.0,Industrials,0.13,Industrials
-MRNA,ok,"Moderna, Inc.",Healthcare,Biotechnology,20959614976.0,20.0,1.336,8648032.0,Health Care,0.03,Healthcare
-IQV,ok,"IQVIA Holdings, Inc.",Healthcare,Diagnostics & Research,26972762112.0,20.0,1.391,2133085.0,Health Care,0.05,Healthcare
-HWM,ok,Howmet Aerospace Inc.,Industrials,Aerospace & Defense,98695405568.0,21.0,1.235,2555998.0,Industrials,0.15,Industrials
-ECL,ok,Ecolab Inc.,Basic Materials,Specialty Chemicals,76663939072.0,21.0,1.024,1467069.0,Materials,0.1,Basic Materials
-ALAB,ok,"Astera Labs, Inc.",Technology,Semiconductors,33624170496.0,21.0,1.793,5358970.0,Information Technology,0.04,Technology
-TRGP,ok,"Targa Resources, Inc.",Energy,Oil & Gas Midstream,51569086464.0,21.0,0.811,1495898.0,Energy,0.08,Energy
-FCX,ok,"Freeport-McMoRan, Inc.",Basic Materials,Copper,88359157760.0,21.0,1.473,19518382.0,Materials,0.15,Basic Materials
-JCI,ok,Johnson Controls International ,Industrials,Building Products & Equipment,86748135424.0,21.0,1.402,4351974.0,Industrials,0.13,Industrials
-FIS,ok,Fidelity National Information S,Technology,Information Technology Services,23686494208.0,21.0,0.914,6154841.0,Financials,0.04,Technology
-PEP,ok,"Pepsico, Inc.",Consumer Defensive,Beverages - Non-Alcoholic,212832698368.0,21.0,0.41,7456693.0,Consumer Staples,0.32,Consumer Defensive
-ELV,ok,"Elevance Health, Inc.",Healthcare,Healthcare Plans,75201167360.0,21.0,,2026187.0,Health Care,0.11,Healthcare
-HCA,ok,"HCA Healthcare, Inc.",Healthcare,Medical Care Facilities,105978396672.0,21.0,1.366,1097538.0,Health Care,0.12,Healthcare
-DOV,ok,Dover Corporation,Industrials,Specialty Industrial Machinery,30723000320.0,21.0,1.254,1273095.0,Industrials,0.05,Industrials
-SHW,ok,Sherwin-Williams Company (The),Basic Materials,Specialty Chemicals,83663626240.0,21.0,1.269,1754208.0,Materials,0.12,Basic Materials
-FTI,ok,TechnipFMC plc,Energy,Oil & Gas Equipment & Services,28973195264.0,21.0,0.711,4070469.0,Energy,0.04,Energy
-CTRA,ok,Coterra Energy Inc.,Energy,Oil & Gas E&P,25552218112.0,21.0,0.27,10465896.0,Energy,0.04,Energy
-BKR,ok,Baker Hughes Company,Energy,Oil & Gas Equipment & Services,63958429696.0,21.0,0.898,9750982.0,Energy,0.09,Energy
-EFX,ok,"Equifax, Inc.",Industrials,Consulting Services,21102610432.0,21.0,1.559,1875343.0,Industrials,0.03,Industrials
-GD,ok,General Dynamics Corporation,Industrials,Aerospace & Defense,86321283072.0,21.0,0.387,1370014.0,Industrials,0.12,Industrials
-OKE,ok,"ONEOK, Inc.",Energy,Oil & Gas Midstream,54944968704.0,21.0,0.809,5077291.0,Energy,0.08,Energy
-KMI,ok,"Kinder Morgan, Inc.",Energy,Oil & Gas Midstream,70593503232.0,21.0,0.63,13909656.0,Energy,0.09,Energy
-APD,ok,"Air Products and Chemicals, Inc",Basic Materials,Specialty Chemicals,67609493504.0,21.0,0.808,1416288.0,Materials,0.1,Basic Materials
-TDG,ok,Transdigm Group Incorporated,Industrials,Aerospace & Defense,65834622976.0,21.0,0.955,403048.0,Industrials,0.1,Industrials
-CTVA,ok,"Corteva, Inc.",Basic Materials,Agricultural Inputs,53460115456.0,21.0,0.68,4137354.0,Materials,0.08,Basic Materials
-KR,ok,Kroger Company (The),Consumer Defensive,Grocery Stores,43729874944.0,22.0,0.546,6502096.0,Consumer Staples,0.06,Consumer Defensive
-PG,ok,Procter & Gamble Company (The),Consumer Defensive,Household & Personal Products,340485439488.0,22.0,0.403,10652856.0,Consumer Staples,0.51,Consumer Defensive
-DHR,ok,Danaher Corporation,Healthcare,Diagnostics & Research,126386601984.0,22.0,0.986,4406764.0,Health Care,0.18,Healthcare
-DKS,ok,Dick's Sporting Goods Inc,Consumer Cyclical,Specialty Retail,20194420736.0,22.0,1.238,1178166.0,Consumer Discretionary,0.02,Consumer Cyclical
-CMCSA,ok,Comcast Corporation,Communication Services,Telecom Services,115292823552.0,22.0,0.79,32693296.0,Communication,0.16,Communication Services
-CCL,ok,Carnival Corporation,Consumer Cyclical,Travel Services,36913971200.0,22.0,2.482,26145603.0,Consumer Discretionary,0.05,Consumer Cyclical
-VZ,ok,Verizon Communications Inc.,Communication Services,Telecom Services,197379604480.0,22.0,0.27,31102479.0,Communication,0.3,Communication Services
-CRH,ok,CRH PLC,Basic Materials,Building Materials,78286348288.0,22.0,1.241,5143125.0,Materials,0.12,Basic Materials
-WAT,ok,Waters Corporation,Healthcare,Diagnostics & Research,30549100544.0,22.0,1.203,1179530.0,Health Care,0.05,Healthcare
-CSCO,ok,"Cisco Systems, Inc.",Technology,Communication Equipment,349921017856.0,22.0,0.819,23881082.0,Information Technology,0.55,Technology
-VMC,ok,Vulcan Materials Company (Holdi,Basic Materials,Building Materials,38222184448.0,22.0,1.095,1259359.0,Materials,0.06,Basic Materials
-EL,ok,"Estee Lauder Companies, Inc. (T",Consumer Defensive,Household & Personal Products,27635945472.0,22.0,1.252,4853937.0,Consumer Staples,0.03,Consumer Defensive
-NOC,ok,Northrop Grumman Corporation,Industrials,Aerospace & Defense,83467386880.0,22.0,0.046,887091.0,Industrials,0.12,Industrials
-FERG,ok,Ferguson Enterprises Inc.,Industrials,Industrial Distribution,52879749120.0,22.0,1.178,1422933.0,Industrials,0.08,Industrials
-STZ,ok,"Constellation Brands, Inc.",Consumer Defensive,Beverages - Brewers,27432937472.0,22.0,0.432,2142704.0,Consumer Staples,0.03,Consumer Defensive
-CVNA,ok,Carvana Co.,Consumer Cyclical,Auto & Truck Dealerships,57629351936.0,22.0,3.614,3848072.0,Consumer Discretionary,0.09,Consumer Cyclical
-ALB,ok,Albemarle Corporation,Basic Materials,Specialty Chemicals,22768672768.0,22.0,1.433,2419427.0,Materials,0.03,Basic Materials
-LNG,ok,"Cheniere Energy, Inc.",Energy,Oil & Gas Midstream,54045114368.0,22.0,0.134,2971359.0,Energy,0.08,Energy
-RTX,ok,RTX Corporation,Industrials,Aerospace & Defense,241460330496.0,22.0,0.428,6007453.0,Industrials,0.37,Industrials
-CVX,ok,Chevron Corporation,Energy,Oil & Gas Integrated,373680209920.0,23.0,0.587,12723845.0,Energy,0.53,Energy
-TT,ok,Trane Technologies plc,Industrials,Building Products & Equipment,107361402880.0,23.0,1.212,1449429.0,Industrials,0.16,Industrials
-KO,ok,Coca-Cola Company (The),Consumer Defensive,Beverages - Non-Alcoholic,328320778240.0,23.0,0.361,16960517.0,Consumer Staples,0.44,Consumer Defensive
-XPO,ok,"XPO, Inc.",Industrials,Trucking,26388692992.0,23.0,1.717,1771477.0,Industrials,0.04,Industrials
-JBHT,ok,"J.B. Hunt Transport Services, I",Industrials,Integrated Freight & Logistics,24002000896.0,23.0,1.221,1033433.0,Industrials,0.03,Industrials
-DLTR,ok,"Dollar Tree, Inc.",Consumer Defensive,Discount Stores,20173744128.0,23.0,0.744,3174519.0,Consumer Staples,0.03,Consumer Defensive
-WDC,ok,Western Digital Corporation,Technology,Computer Hardware,137826435072.0,23.0,1.829,9410833.0,Information Technology,0.2,Technology
-MLM,ok,"Martin Marietta Materials, Inc.",Basic Materials,Building Materials,37326524416.0,23.0,1.188,524319.0,Materials,0.06,Basic Materials
-HSY,ok,The Hershey Company,Consumer Defensive,Confectioners,38936936448.0,23.0,0.175,2005803.0,Consumer Staples,0.04,Consumer Defensive
-LYV,ok,"Live Nation Entertainment, Inc.",Communication Services,Entertainment,35974004736.0,23.0,1.147,3036975.0,Communication,0.04,Communication Services
-DE,ok,Deere & Company,Industrials,Farm & Heavy Construction Machinery,159890014208.0,23.0,0.992,1542166.0,Industrials,0.22,Industrials
-MNST,ok,Monster Beverage Corporation,Consumer Defensive,Beverages - Non-Alcoholic,75846393856.0,23.0,0.509,5937179.0,Consumer Staples,0.08,Consumer Defensive
-WMB,ok,"Williams Companies, Inc. (The)",Energy,Oil & Gas Midstream,87617699840.0,23.0,0.653,6988756.0,Energy,0.13,Energy
-UNP,ok,Union Pacific Corporation,Industrials,Railroads,161041170432.0,23.0,0.968,3419135.0,Industrials,0.23,Industrials
-CARR,ok,Carrier Global Corporation,Industrials,Building Products & Equipment,51412570112.0,23.0,1.319,7326746.0,Industrials,0.07,Industrials
-AZO,ok,"AutoZone, Inc.",Consumer Cyclical,Auto Parts,59597766656.0,23.0,0.406,152112.0,Consumer Discretionary,0.09,Consumer Cyclical
-T,ok,AT&T Inc.,Communication Services,Telecom Services,185794904064.0,23.0,,45061030.0,Communication,0.27,Communication Services
-LITE,ok,Lumentum Holdings Inc.,Technology,Communication Equipment,60467945472.0,23.0,1.391,6271832.0,Information Technology,0.09,Technology
-CSX,ok,CSX Corporation,Industrials,Railroads,85808857088.0,23.0,1.246,13060764.0,Industrials,0.12,Industrials
-AS,ok,"Amer Sports, Inc.",Consumer Cyclical,Leisure,20869955584.0,23.0,2.803,4888430.0,Consumer Discretionary,0.01,Consumer Cyclical
-DELL,ok,Dell Technologies Inc.,Technology,Computer Hardware,137931030528.0,23.0,0.954,8618296.0,Information Technology,0.1,Technology
-UAL,ok,"United Airlines Holdings, Inc.",Industrials,Airlines,29616988160.0,24.0,1.286,7865106.0,Industrials,0.05,Industrials
-YUM,ok,"Yum! Brands, Inc.",Consumer Cyclical,Restaurants,44430614528.0,24.0,0.662,1803250.0,Consumer Discretionary,0.07,Consumer Cyclical
-MCHP,ok,Microchip Technology Incorporat,Technology,Semiconductors,49048518656.0,24.0,1.474,9288833.0,Information Technology,0.07,Technology
-PWR,ok,"Quanta Services, Inc.",Industrials,Engineering & Construction,95051931648.0,24.0,1.106,1099014.0,Industrials,0.14,Industrials
-PH,ok,Parker-Hannifin Corporation,Industrials,Specialty Industrial Machinery,122919755776.0,24.0,1.25,737550.0,Industrials,0.18,Industrials
-HUM,ok,Humana Inc.,Healthcare,Healthcare Plans,25805707264.0,24.0,0.445,2242862.0,Health Care,0.04,Healthcare
-RSG,ok,"Republic Services, Inc.",Industrials,Waste Management,66128982016.0,24.0,0.535,1486246.0,Industrials,0.06,Industrials
-ULTA,ok,"Ulta Beauty, Inc.",Consumer Cyclical,Specialty Retail,24686704640.0,24.0,0.953,693503.0,Consumer Discretionary,0.04,Consumer Cyclical
-DXCM,ok,"DexCom, Inc.",Healthcare,Medical Devices,24194236416.0,24.0,1.556,4506156.0,Health Care,0.04,Healthcare
-CI,ok,The Cigna Group,Healthcare,Healthcare Plans,73751191552.0,24.0,0.272,1733800.0,Health Care,0.11,Healthcare
-MAR,ok,Marriott International,Consumer Cyclical,Lodging,97577910272.0,24.0,1.097,1623951.0,Consumer Discretionary,0.12,Consumer Cyclical
-HLT,ok,Hilton Worldwide Holdings Inc.,Consumer Cyclical,Lodging,76647604224.0,24.0,1.11,1862411.0,Consumer Discretionary,0.12,Consumer Cyclical
-TMO,ok,Thermo Fisher Scientific Inc,Healthcare,Diagnostics & Research,173435699200.0,24.0,0.972,2224733.0,Health Care,0.3,Healthcare
-ORLY,ok,"O'Reilly Automotive, Inc.",Consumer Cyclical,Auto Parts,78180532224.0,24.0,0.598,5834151.0,Consumer Discretionary,0.12,Consumer Cyclical
-OXY,ok,Occidental Petroleum Corporatio,Energy,Oil & Gas E&P,57349734400.0,24.0,0.23,16967266.0,Energy,0.06,Energy
-ODFL,ok,"Old Dominion Freight Line, Inc.",Industrials,Trucking,46433058816.0,24.0,1.205,2283837.0,Industrials,0.06,Industrials
-RCL,ok,Royal Caribbean Cruises Ltd.,Consumer Cyclical,Travel Services,70453690368.0,24.0,1.941,2599814.0,Consumer Discretionary,0.1,Consumer Cyclical
-WM,ok,"Waste Management, Inc.",Industrials,Waste Management,93896572928.0,25.0,0.547,2240267.0,Industrials,0.13,Industrials
-VRT,ok,"Vertiv Holdings, LLC",Industrials,Electrical Equipment & Parts,123587002368.0,25.0,2.048,7870633.0,Industrials,0.18,Industrials
-RIVN,ok,"Rivian Automotive, Inc.",Consumer Cyclical,Auto Manufacturers,21034778624.0,25.0,1.691,28775503.0,Consumer Discretionary,0.02,Consumer Cyclical
-MDLZ,ok,"Mondelez International, Inc.",Consumer Defensive,Confectioners,74068279296.0,25.0,0.389,10149266.0,Consumer Staples,0.11,Consumer Defensive
-ROK,ok,"Rockwell Automation, Inc.",Industrials,Specialty Industrial Machinery,45975052288.0,25.0,1.541,999045.0,Industrials,0.07,Industrials
-CHRW,ok,"C.H. Robinson Worldwide, Inc.",Industrials,Integrated Freight & Logistics,21795391488.0,25.0,0.935,2312291.0,Industrials,0.03,Industrials
-LIN,ok,Linde plc,Basic Materials,Specialty Chemicals,235432034304.0,25.0,0.79,2597150.0,Materials,0.36,Basic Materials
-ABT,ok,Abbott Laboratories,Healthcare,Medical Devices,160700923904.0,25.0,0.782,11879485.0,Health Care,0.24,Healthcare
-BA,ok,Boeing Company (The),Industrials,Aerospace & Defense,184580980736.0,25.0,,7089122.0,Industrials,0.27,Industrials
-ALNY,ok,"Alnylam Pharmaceuticals, Inc.",Healthcare,Biotechnology,41868345344.0,25.0,0.383,1258532.0,Health Care,0.06,Healthcare
-HON,ok,Honeywell International Inc.,Industrials,Conglomerates,135817207808.0,25.0,0.915,4030848.0,Industrials,0.21,Industrials
-BMY,ok,Bristol-Myers Squibb Company,Healthcare,Drug Manufacturers - General,120503222272.0,25.0,0.273,12529598.0,Health Care,0.18,Healthcare
-PLTR,ok,Palantir Technologies Inc.,Technology,Software - Infrastructure,338589548544.0,25.0,1.674,53182109.0,Information Technology,0.51,Technology
-HAL,ok,Halliburton Company,Energy,Oil & Gas Equipment & Services,33113993216.0,25.0,0.693,15284383.0,Energy,0.05,Energy
-MDT,ok,Medtronic plc.,Healthcare,Medical Devices,107576721408.0,25.0,0.764,8618287.0,Health Care,0.16,Healthcare
-EQT,ok,EQT Corporation,Energy,Oil & Gas E&P,36859420672.0,25.0,0.693,9007490.0,Energy,0.05,Energy
-DAL,ok,"Delta Air Lines, Inc.",Industrials,Airlines,44918689792.0,25.0,1.306,11851908.0,Industrials,0.07,Industrials
-DVN,ok,Devon Energy Corporation,Energy,Oil & Gas E&P,29922353152.0,25.0,0.526,14517617.0,Energy,0.04,Energy
-TMUS,ok,"T-Mobile US, Inc.",Communication Services,Telecom Services,213838512128.0,26.0,0.422,6331682.0,Communication,0.14,Communication Services
-UNH,ok,UnitedHealth Group Incorporated,Healthcare,Healthcare Plans,322016051200.0,26.0,0.408,10333625.0,Health Care,0.49,Healthcare
-ANET,ok,"Arista Networks, Inc.",Technology,Computer Hardware,217269682176.0,26.0,1.475,7732795.0,Information Technology,0.28,Technology
-CAT,ok,"Caterpillar, Inc.",Industrials,Farm & Heavy Construction Machinery,388626579456.0,26.0,1.519,2800353.0,Industrials,0.57,Industrials
-GM,ok,General Motors Company,Consumer Cyclical,Auto Manufacturers,70798073856.0,26.0,1.345,7776050.0,Consumer Discretionary,0.11,Consumer Cyclical
-EXE,ok,Expand Energy Corporation,Energy,Oil & Gas E&P,23150352384.0,26.0,0.459,3953669.0,Energy,0.03,Energy
-CVS,ok,CVS Health Corporation,Healthcare,Healthcare Plans,101067317248.0,26.0,0.505,8775679.0,Health Care,0.15,Healthcare
-CTSH,ok,Cognizant Technology Solutions ,Technology,Information Technology Services,26351405056.0,26.0,0.976,6857951.0,Information Technology,0.04,Technology
-COP,ok,ConocoPhillips,Energy,Oil & Gas E&P,151588749312.0,26.0,0.192,9645003.0,Energy,0.23,Energy
-SNPS,ok,"Synopsys, Inc.",Technology,Software - Infrastructure,87515111424.0,26.0,1.148,2167064.0,Information Technology,0.14,Technology
-PFE,ok,"Pfizer, Inc.",Healthcare,Drug Manufacturers - General,151708467200.0,27.0,0.388,41789620.0,Health Care,0.23,Healthcare
-ACN,ok,Accenture plc,Technology,Information Technology Services,109719773184.0,27.0,1.236,6881916.0,Information Technology,0.18,Technology
-MDLN,ok,Medline Inc.,Healthcare,Medical Instruments & Supplies,39092617216.0,27.0,,5750408.0,Health Care,0.02,Healthcare
-EMR,ok,Emerson Electric Company,Industrials,Specialty Industrial Machinery,80051281920.0,27.0,1.278,3410903.0,Industrials,0.12,Industrials
-DRI,ok,"Darden Restaurants, Inc.",Consumer Cyclical,Restaurants,23175012352.0,27.0,0.627,1426716.0,Consumer Discretionary,0.04,Consumer Cyclical
-MRK,ok,"Merck & Company, Inc.",Healthcare,Drug Manufacturers - General,283097563136.0,27.0,0.275,11112919.0,Health Care,0.43,Healthcare
-TSCO,ok,Tractor Supply Company,Consumer Cyclical,Specialty Retail,20090828800.0,27.0,0.747,7167296.0,Consumer Discretionary,0.03,Consumer Cyclical
-FDX,ok,FedEx Corporation,Industrials,Integrated Freight & Logistics,93698482176.0,27.0,1.286,1910012.0,Industrials,0.13,Industrials
-EW,ok,Edwards Lifesciences Corporatio,Healthcare,Medical Devices,45961904128.0,27.0,0.945,4889145.0,Health Care,0.07,Healthcare
-CDNS,ok,"Cadence Design Systems, Inc.",Technology,Software - Application,86784016384.0,27.0,1.041,2625572.0,Information Technology,0.14,Technology
-ZM,ok,"Zoom Communications, Inc.",Technology,Software - Application,26522966016.0,27.0,0.883,4488411.0,Information Technology,0.04,Technology
-UPS,ok,"United Parcel Service, Inc.",Industrials,Integrated Freight & Logistics,91526766592.0,27.0,1.098,6519714.0,Industrials,0.12,Industrials
-SYK,ok,Stryker Corporation,Healthcare,Medical Devices,126250754048.0,27.0,0.926,2069411.0,Health Care,0.17,Healthcare
-GILD,ok,"Gilead Sciences, Inc.",Healthcare,Drug Manufacturers - General,165874466816.0,28.0,0.404,6697564.0,Health Care,0.25,Healthcare
-TTWO,ok,"Take-Two Interactive Software, ",Communication Services,Electronic Gaming & Multimedia,38868328448.0,28.0,0.965,2330820.0,Communication,0.06,Communication Services
-TWLO,ok,Twilio Inc.,Technology,Software - Infrastructure,21466857472.0,28.0,1.284,2452335.0,Information Technology,0.03,Technology
-DG,ok,Dollar General Corporation,Consumer Defensive,Discount Stores,26880823296.0,28.0,0.34,3122195.0,Consumer Staples,0.04,Consumer Defensive
-FISV,ok,"Fiserv, Inc.",,,32915554304.0,28.0,,7583975.0,Financials,0.05,Financials
-QSR,ok,Restaurant Brands International,Consumer Cyclical,Restaurants,28209793024.0,28.0,0.527,3456848.0,Consumer Discretionary,0.04,Consumer Cyclical
-REGN,ok,"Regeneron Pharmaceuticals, Inc.",Healthcare,Biotechnology,80983490560.0,28.0,0.397,691282.0,Health Care,0.12,Healthcare
-APP,ok,Applovin Corporation,Communication Services,Advertising Agencies,152719622144.0,28.0,2.502,5870832.0,Information Technology,0.18,Communication Services
-SLB,ok,SLB Limited,Energy,Oil & Gas Equipment & Services,82172043264.0,28.0,0.695,18831859.0,Energy,0.12,Energy
-ETN,ok,"Eaton Corporation, PLC",Industrials,Specialty Industrial Machinery,164699783168.0,28.0,1.164,2743056.0,Industrials,0.25,Industrials
-FSLR,ok,"First Solar, Inc.",Technology,Solar,21080764416.0,29.0,1.607,2316279.0,Information Technology,0.03,Technology
-ON,ok,ON Semiconductor Corporation,Technology,Semiconductors,38459547648.0,29.0,1.524,8978146.0,Information Technology,0.06,Technology
-DIS,ok,Walt Disney Company (The),Communication Services,Entertainment,183618043904.0,29.0,1.441,11342806.0,Communication,0.29,Communication Services
-KLAC,ok,KLA Corporation,Technology,Semiconductor Equipment & Materials,238533591040.0,29.0,1.435,1037116.0,Information Technology,0.37,Technology
-EOG,ok,"EOG Resources, Inc.",Energy,Oil & Gas E&P,71716274176.0,29.0,0.333,5387582.0,Energy,0.11,Energy
-VRTX,ok,Vertex Pharmaceuticals Incorpor,Healthcare,Biotechnology,110671921152.0,29.0,0.367,1390750.0,Health Care,0.17,Healthcare
-VEEV,ok,Veeva Systems Inc.,Healthcare,Health Information Services,25668225024.0,29.0,1.103,2288259.0,Health Care,0.04,Healthcare
-QCOM,ok,QUALCOMM Incorporated,Technology,Semiconductors,143064645632.0,29.0,1.279,11377458.0,Information Technology,0.22,Technology
-ISRG,ok,"Intuitive Surgical, Inc.",Healthcare,Medical Instruments & Supplies,169580265472.0,30.0,1.679,1969445.0,Health Care,0.26,Healthcare
-BIIB,ok,Biogen Inc.,Healthcare,Drug Manufacturers - General,27572992000.0,30.0,0.162,1237367.0,Health Care,0.04,Healthcare
-FANG,ok,"Diamondback Energy, Inc.",Energy,Oil & Gas E&P,55021764608.0,30.0,0.488,3217990.0,Energy,0.06,Energy
-EBAY,ok,eBay Inc.,Consumer Cyclical,Internet Retail,46323200000.0,30.0,1.33,5349691.0,Consumer Discretionary,0.07,Consumer Cyclical
-AMGN,ok,Amgen Inc.,Healthcare,Drug Manufacturers - General,187929755648.0,30.0,0.465,2744370.0,Health Care,0.28,Healthcare
-ABBV,ok,AbbVie Inc.,Healthcare,Drug Manufacturers - General,355432792064.0,30.0,0.364,7059398.0,Health Care,0.54,Healthcare
-RDDT,ok,"Reddit, Inc.",Communication Services,Internet Content & Information,29220833280.0,31.0,2.407,5416187.0,Communication,0.03,Communication Services
-BSX,ok,Boston Scientific Corporation,Healthcare,Medical Devices,97626849280.0,31.0,0.782,17326548.0,Health Care,0.15,Healthcare
-NET,ok,"Cloudflare, Inc.",Technology,Software - Infrastructure,72155955200.0,31.0,1.875,5083374.0,Information Technology,0.1,Technology
-LRCX,ok,Lam Research Corporation,Technology,Semiconductor Equipment & Materials,323339354112.0,31.0,1.79,10655704.0,Information Technology,0.51,Technology
-AMAT,ok,"Applied Materials, Inc.",Technology,Semiconductor Equipment & Materials,320546963456.0,32.0,1.637,7108358.0,Information Technology,0.49,Technology
-ADSK,ok,"Autodesk, Inc.",Technology,Software - Application,48947777536.0,32.0,1.433,2233274.0,Information Technology,0.08,Technology
-ADI,ok,"Analog Devices, Inc.",Technology,Semiconductors,197175902208.0,32.0,1.053,3967622.0,Information Technology,0.29,Technology
-GEV,ok,GE Vernova Inc.,Industrials,Specialty Industrial Machinery,308901707776.0,32.0,,2684143.0,Industrials,0.47,Industrials
-COST,ok,Costco Wholesale Corporation,Consumer Defensive,Discount Stores,450032271360.0,32.0,0.978,1952330.0,Consumer Staples,0.68,Consumer Defensive
-TXN,ok,Texas Instruments Incorporated,Technology,Semiconductors,256829308928.0,32.0,0.994,7735974.0,Information Technology,0.33,Technology
-TGT,ok,Target Corporation,Consumer Defensive,Discount Stores,58948210688.0,32.0,1.032,6035082.0,Consumer Staples,0.09,Consumer Defensive
-INTU,ok,Intuit Inc.,Technology,Software - Application,106662453248.0,32.0,1.213,4160791.0,Information Technology,0.17,Technology
-HD,ok,"Home Depot, Inc. (The)",Consumer Cyclical,Home Improvement Retail,338808766464.0,33.0,1.085,3990190.0,Consumer Discretionary,0.52,Consumer Cyclical
-MCD,ok,McDonald's Corporation,Consumer Cyclical,Restaurants,215046684672.0,33.0,0.532,3246146.0,Consumer Discretionary,0.33,Consumer Cyclical
-NKE,ok,"Nike, Inc.",Consumer Cyclical,Footwear & Accessories,66314121216.0,33.0,1.319,20115156.0,Consumer Discretionary,0.08,Consumer Cyclical
-LOW,ok,"Lowe's Companies, Inc.",Consumer Cyclical,Home Improvement Retail,138077913088.0,33.0,0.965,2716374.0,Consumer Discretionary,0.21,Consumer Cyclical
-ADBE,ok,Adobe Inc.,Technology,Software - Application,96595714048.0,34.0,1.518,6008651.0,Information Technology,0.16,Technology
-SBUX,ok,Starbucks Corporation,Consumer Cyclical,Restaurants,113405919232.0,34.0,0.944,8340169.0,Consumer Discretionary,0.17,Consumer Cyclical
-FTNT,ok,"Fortinet, Inc.",Technology,Software - Infrastructure,61236076544.0,34.0,0.998,6576459.0,Information Technology,0.08,Technology
-EXPE,ok,"Expedia Group, Inc.",Consumer Cyclical,Travel Services,30679054336.0,34.0,1.332,2684151.0,Consumer Discretionary,0.05,Consumer Cyclical
-RBLX,ok,Roblox Corporation,Communication Services,Electronic Gaming & Multimedia,39690842112.0,35.0,1.673,10691483.0,Communication,0.06,Communication Services
-CMG,ok,"Chipotle Mexican Grill, Inc.",Consumer Cyclical,Restaurants,44152143872.0,35.0,1.064,16495993.0,Consumer Discretionary,0.07,Consumer Cyclical
-MDB,ok,"MongoDB, Inc.",Technology,Software - Infrastructure,20744177664.0,36.0,1.605,1941220.0,Information Technology,0.03,Technology
-ABNB,ok,"Airbnb, Inc.",Consumer Cyclical,Travel Services,85053046784.0,36.0,1.16,4357443.0,Consumer Discretionary,0.09,Consumer Cyclical
-BKNG,ok,Booking Holdings Inc. Common St,Consumer Cyclical,Travel Services,137542107136.0,36.0,1.198,10509554.0,Consumer Discretionary,0.22,Consumer Cyclical
-WDAY,ok,"Workday, Inc.",Technology,Software - Application,29475807232.0,38.0,1.141,5664688.0,Information Technology,0.04,Technology
-MRVL,ok,"Marvell Technology, Inc.",Technology,Semiconductors,144775299072.0,39.0,1.822,21618182.0,Information Technology,0.2,Technology
-SPOT,ok,Spotify Technology S.A.,Communication Services,Internet Content & Information,106222936064.0,39.0,1.702,2576858.0,Communication,0.12,Communication Services
-XYZ,ok,"Block, Inc.",Technology,Software - Infrastructure,42494013440.0,40.0,2.613,8226530.0,Financials,0.06,Technology
-INTC,ok,Intel Corporation,Technology,Semiconductors,335303081984.0,41.0,1.349,99721317.0,Information Technology,0.44,Technology
-DASH,ok,"DoorDash, Inc.",Consumer Cyclical,Internet Retail,77127114752.0,42.0,1.925,5036011.0,Consumer Discretionary,0.1,Consumer Cyclical
-NOW,ok,"ServiceNow, Inc.",Technology,Software - Application,87845363712.0,44.0,1.005,22900087.0,Information Technology,0.17,Technology
-NFLX,ok,"Netflix, Inc.",Communication Services,Entertainment,390846316544.0,44.0,1.669,46851877.0,Communication,0.6,Communication Services
-ZS,ok,"Zscaler, Inc.",Technology,Software - Infrastructure,21380339712.0,45.0,1.115,3056201.0,Information Technology,0.02,Technology
-DDOG,ok,"Datadog, Inc.",Technology,Software - Application,45243432960.0,45.0,1.294,5652770.0,Information Technology,0.06,Technology
-AMD,ok,"Advanced Micro Devices, Inc.",Technology,Semiconductors,497813323776.0,46.0,1.963,37160669.0,Information Technology,0.75,Technology
-SNOW,ok,Snowflake Inc.,Technology,Software - Application,50610479104.0,47.0,1.228,7057500.0,Information Technology,0.08,Technology
-PANW,ok,"Palo Alto Networks, Inc.",Technology,Software - Infrastructure,140473319424.0,50.0,0.766,10880309.0,Information Technology,0.22,Technology
-CRWD,ok,"CrowdStrike Holdings, Inc.",Technology,Software - Infrastructure,112957186048.0,51.0,1.072,4184661.0,Information Technology,0.18,Technology
-CRM,ok,"Salesforce, Inc.",Technology,Software - Application,141768720384.0,52.0,1.288,14189293.0,Information Technology,0.27,Technology
-UBER,ok,"Uber Technologies, Inc.",Technology,Software - Application,153741262848.0,52.0,1.206,19288616.0,Industrials,0.23,Technology
+ticker,name,sector,industry,market_cap,n_analysts,beta,avg_volume_3m,status,Sector,Weight (%),sector_final
+COKE,"Coca-Cola Consolidated, Inc.",Consumer Defensive,Beverages - Non-Alcoholic,12824942592.0,0.0,0.605,491120.0,ok,Consumer Staples,0.02,Consumer Defensive
+NWS,News Corporation,Communication Services,Entertainment,16667814912.0,0.0,0.924,1595290.0,ok,Communication,0.01,Communication Services
+LBRDK,Liberty Broadband Corporation,Communication Services,Telecom Services,8103316992.0,0.0,0.964,1211843.0,ok,Communication,0.01,Communication Services
+FOX,Fox Corporation,Communication Services,Entertainment,24562368512.0,0.0,0.505,1827927.0,ok,Communication,0.01,Communication Services
+GME,GameStop Corporation,Consumer Cyclical,Specialty Retail,11213862912.0,0.0,1.85,7570587.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+LLYVK,"Liberty Live Holdings, Inc. - S",Communication Services,Entertainment,8492647424.0,1.0,1.289,363314.0,ok,Consumer Discretionary,0.01,Communication Services
+FCN,"FTI Consulting, Inc.",Industrials,Consulting Services,5577944064.0,2.0,-0.012,420527.0,ok,Industrials,0.01,Industrials
+MLI,"Mueller Industries, Inc.",Industrials,Metal Fabrication,15008856064.0,2.0,1.076,859550.0,ok,Industrials,0.02,Industrials
+UI,Ubiquiti Inc.,Technology,Communication Equipment,62812712960.0,2.0,1.322,106043.0,ok,Information Technology,0.01,Technology
+LOPE,"Grand Canyon Education, Inc.",Consumer Defensive,Education & Training Services,4479755264.0,2.0,0.671,278001.0,ok,Consumer Discretionary,0.01,Consumer Defensive
+HRB,"H&R Block, Inc.",Consumer Cyclical,Personal Services,3930819328.0,2.0,0.329,2579696.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+TPL,Texas Pacific Land Corporation,Energy,Oil & Gas E&P,30275682304.0,2.0,0.773,552075.0,ok,Energy,0.04,Energy
+DLB,Dolby Laboratories,Industrials,Specialty Business Services,6015186944.0,3.0,0.862,741650.0,ok,Information Technology,0.01,Industrials
+VMI,"Valmont Industries, Inc.",Industrials,Conglomerates,9664923648.0,3.0,1.244,189816.0,ok,Industrials,0.01,Industrials
+NFG,National Fuel Gas Company,Energy,Oil & Gas Integrated,8471605760.0,3.0,0.534,768911.0,ok,Utilities,0.01,Energy
+CHE,Chemed Corp,Healthcare,Medical Care Facilities,5137127936.0,4.0,0.484,247311.0,ok,Health Care,0.01,Healthcare
+ECG,"Everus Construction Group, Inc.",Industrials,Engineering & Construction,6958502400.0,4.0,,616730.0,ok,Industrials,0.01,Industrials
+ARW,"Arrow Electronics, Inc.",Technology,Electronics & Computer Distribution,9578263552.0,4.0,0.997,642604.0,ok,Information Technology,0.01,Technology
+VRSN,"VeriSign, Inc.",Technology,Software - Infrastructure,25234495488.0,4.0,0.695,866354.0,ok,Information Technology,0.03,Technology
+TTC,Toro Company (The),Industrials,Tools & Accessories,9383486464.0,4.0,0.806,877746.0,ok,Industrials,0.01,Industrials
+MASI,Masimo Corporation,Healthcare,Medical Devices,9357757440.0,4.0,1.202,1624341.0,ok,Health Care,0.01,Healthcare
+AVT,"Avnet, Inc.",Technology,Electronics & Computer Distribution,6394316288.0,4.0,0.921,1176114.0,ok,Information Technology,0.01,Technology
+DOX,Amdocs Limited,Technology,Software - Infrastructure,6968449024.0,4.0,0.474,1328011.0,ok,Information Technology,0.01,Technology
+LFUS,"Littelfuse, Inc.",Technology,Electronic Components,10107116544.0,4.0,1.393,277891.0,ok,Information Technology,0.01,Technology
+BIO,"Bio-Rad Laboratories, Inc.",Healthcare,Medical Devices,7599012352.0,4.0,1.158,294748.0,ok,Health Care,0.01,Healthcare
+FIX,"Comfort Systems USA, Inc.",Industrials,Engineering & Construction,62413193216.0,4.0,1.598,420191.0,ok,Industrials,0.09,Industrials
+AAON,"AAON, Inc.",Industrials,Building Products & Equipment,8078792704.0,4.0,1.201,868430.0,ok,Industrials,0.01,Industrials
+CORT,Corcept Therapeutics Incorporat,Healthcare,Biotechnology,4839639552.0,5.0,0.247,1772285.0,ok,Health Care,0.01,Healthcare
+VSNT,"Versant Media Group, Inc.",Communication Services,Entertainment,5851930624.0,5.0,,2715474.0,ok,Communication,0.01,Communication Services
+DCI,"Donaldson Company, Inc.",Industrials,Specialty Industrial Machinery,10188178432.0,5.0,1.06,748937.0,ok,Industrials,0.02,Industrials
+MSM,"MSC Industrial Direct Company, ",Industrials,Industrial Distribution,5475112448.0,5.0,0.775,646759.0,ok,Industrials,0.01,Industrials
+AIT,Applied Industrial Technologies,Industrials,Industrial Distribution,10981837824.0,5.0,0.82,338340.0,ok,Industrials,0.02,Industrials
+SSD,"Simpson Manufacturing Company, ",Basic Materials,Lumber & Wood Production,7673039360.0,5.0,1.369,265087.0,ok,Industrials,0.01,Basic Materials
+Z,"Zillow Group, Inc.",Communication Services,Internet Content & Information,10665546752.0,6.0,2.107,4538717.0,ok,Real Estate,0.01,Communication Services
+TTEK,"Tetra Tech, Inc.",Industrials,Engineering & Construction,8171101184.0,6.0,0.979,3015025.0,ok,Industrials,0.01,Industrials
+MSGS,Madison Square Garden Sports Co,Communication Services,Entertainment,7984519680.0,6.0,0.564,247893.0,ok,Communication,0.01,Communication Services
+KEX,Kirby Corporation,Industrials,Marine Shipping,8088728064.0,6.0,0.827,740782.0,ok,Industrials,0.01,Industrials
+SOLS,Solstice Advanced Materials Inc,Basic Materials,Specialty Chemicals,12866489344.0,6.0,,2965559.0,ok,Materials,0.02,Basic Materials
+DBX,"Dropbox, Inc.",Technology,Software - Infrastructure,5703460864.0,6.0,0.616,4075654.0,ok,Information Technology,0.01,Technology
+NVR,"NVR, Inc.",Consumer Cyclical,Residential Construction,18218579968.0,6.0,,26066.0,ok,Consumer Discretionary,0.03,Consumer Cyclical
+CRUS,"Cirrus Logic, Inc.",Technology,Semiconductors,8814586880.0,6.0,1.082,679562.0,ok,Information Technology,0.01,Technology
+SCI,Service Corporation Internation,Consumer Cyclical,Personal Services,12024748032.0,6.0,0.98,1193329.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+EME,"EMCOR Group, Inc.",Industrials,Engineering & Construction,38881828864.0,6.0,1.112,373745.0,ok,Industrials,0.06,Industrials
+AM,Antero Midstream Corporation,Energy,Oil & Gas Midstream,10114470912.0,7.0,0.724,2912912.0,ok,Energy,0.01,Energy
+CAR,"Avis Budget Group, Inc.",Industrials,Rental & Leasing Services,8094298112.0,7.0,1.928,2363691.0,ok,Industrials,0.01,Industrials
+CW,Curtiss-Wright Corporation,Industrials,Aerospace & Defense,26776154112.0,7.0,0.915,311087.0,ok,Industrials,0.04,Industrials
+ATR,"AptarGroup, Inc.",Healthcare,Medical Instruments & Supplies,8043604480.0,7.0,0.488,523798.0,ok,Materials,0.01,Healthcare
+MSA,MSA Safety Incorporated,Industrials,Security & Protection Services,6681269760.0,7.0,1.041,221367.0,ok,Industrials,0.01,Industrials
+INGR,Ingredion Incorporated,Consumer Defensive,Packaged Foods,7118184960.0,7.0,0.692,679780.0,ok,Consumer Staples,0.01,Consumer Defensive
+STE,STERIS plc (Ireland),Healthcare,Medical Devices,21937819648.0,7.0,1.07,867122.0,ok,Health Care,0.03,Healthcare
+CSL,Carlisle Companies Incorporated,Industrials,Building Products & Equipment,14867429376.0,7.0,0.951,453587.0,ok,Industrials,0.02,Industrials
+GPC,Genuine Parts Company,Consumer Cyclical,Auto Parts,15274216448.0,7.0,0.772,1920998.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+ONTO,Onto Innovation Inc.,Technology,Semiconductor Equipment & Materials,14540541952.0,7.0,1.468,902037.0,ok,Information Technology,0.02,Technology
+EXLS,"ExlService Holdings, Inc.",Technology,Information Technology Services,4779086336.0,7.0,0.895,2369351.0,ok,Industrials,0.01,Technology
+POST,"Post Holdings, Inc.",Consumer Defensive,Packaged Foods,5018191360.0,7.0,0.367,828908.0,ok,Consumer Staples,0.01,Consumer Defensive
+DVA,DaVita Inc.,Healthcare,Medical Care Facilities,10223351808.0,7.0,0.915,1013488.0,ok,Health Care,0.01,Healthcare
+RBC,RBC Bearings Incorporated,Industrials,Tools & Accessories,19015327744.0,7.0,1.491,200888.0,ok,Industrials,0.03,Industrials
+GRMN,Garmin Ltd.,Technology,Scientific & Technical Instruments,50303979520.0,7.0,0.968,928817.0,ok,Consumer Discretionary,0.07,Technology
+AU,AngloGold Ashanti PLC,Basic Materials,Gold,48865230848.0,7.0,0.68,3129930.0,ok,Materials,0.08,Basic Materials
+NDSN,Nordson Corporation,Industrials,Specialty Industrial Machinery,15833058304.0,7.0,1.012,394291.0,ok,Industrials,0.02,Industrials
+MIDD,The Middleby Corporation,Industrials,Specialty Industrial Machinery,6777883136.0,8.0,1.418,565275.0,ok,Industrials,0.01,Industrials
+GGG,Graco Inc.,Industrials,Specialty Industrial Machinery,13639264256.0,8.0,1.089,1112566.0,ok,Industrials,0.02,Industrials
+SNA,Snap-On Incorporated,Industrials,Tools & Accessories,20341407744.0,8.0,0.761,407564.0,ok,Industrials,0.03,Industrials
+RS,"Reliance, Inc.",Basic Materials,Steel,17609564160.0,8.0,0.874,368508.0,ok,Materials,0.03,Basic Materials
+SGI,Somnigroup International Inc.,Consumer Cyclical,"Furnishings, Fixtures & Appliances",16709459968.0,8.0,1.329,2551256.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+BR,"Broadridge Financial Solutions,",Technology,Information Technology Services,18206961664.0,8.0,1.015,1595246.0,ok,Industrials,0.03,Technology
+SHC,Sotera Health Company,Healthcare,Diagnostics & Research,4371448320.0,8.0,1.881,2604769.0,ok,Health Care,0.01,Healthcare
+LKQ,LKQ Corporation,Consumer Cyclical,Auto Parts,8005910528.0,8.0,0.902,2561395.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+ASTS,"AST SpaceMobile, Inc.",Technology,Communication Equipment,23045165056.0,8.0,2.8,14704646.0,ok,Communication,0.03,Technology
+AYI,Acuity Inc.,Industrials,Electrical Equipment & Parts,8773816320.0,8.0,1.426,456706.0,ok,Industrials,0.01,Industrials
+TIGO,Millicom International Cellular,Communication Services,Telecom Services,14112016384.0,8.0,0.863,1404687.0,ok,Communication,0.01,Communication Services
+AMKR,"Amkor Technology, Inc.",Technology,Semiconductor Equipment & Materials,18067918848.0,8.0,1.95,4157543.0,ok,Information Technology,0.01,Technology
+Q,"Qnity Electronics, Inc.",Technology,Semiconductor Equipment & Materials,29379504128.0,8.0,,2201906.0,ok,Information Technology,0.04,Technology
+IRDM,Iridium Communications Inc,Communication Services,Telecom Services,4327436800.0,8.0,0.482,2417967.0,ok,Communication,0.01,Communication Services
+NWSA,News Corporation,Communication Services,Entertainment,14425335808.0,8.0,0.924,4478856.0,ok,Communication,0.02,Communication Services
+AUR,"Aurora Innovation, Inc.",Technology,Information Technology Services,9448011776.0,8.0,2.451,18301048.0,ok,Information Technology,0.01,Technology
+HRL,Hormel Foods Corporation,Consumer Defensive,Packaged Foods,11974184960.0,8.0,0.358,4835516.0,ok,Consumer Staples,0.01,Consumer Defensive
+KBR,"KBR, Inc.",Industrials,Engineering & Construction,4466791936.0,8.0,0.499,1436185.0,ok,Industrials,0.01,Industrials
+NXST,"Nexstar Media Group, Inc.",Communication Services,Broadcasting,6211780608.0,8.0,0.915,424761.0,ok,Communication,0.01,Communication Services
+OLED,Universal Display Corporation,Technology,Electronic Components,4605270016.0,8.0,1.651,781890.0,ok,Information Technology,0.01,Technology
+CPRT,"Copart, Inc.",Industrials,Specialty Business Services,32636891136.0,9.0,1.142,9265166.0,ok,Industrials,0.05,Industrials
+CR,Crane Company,Industrials,Specialty Industrial Machinery,10418148352.0,9.0,1.181,526224.0,ok,Industrials,0.01,Industrials
+MUSA,Murphy USA Inc.,Consumer Cyclical,Specialty Retail,9856145408.0,9.0,0.225,371616.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+ATI,ATI Inc.,Industrials,Metal Fabrication,21095038976.0,9.0,1.003,2166864.0,ok,Industrials,0.03,Industrials
+R,"Ryder System, Inc.",Industrials,Rental & Leasing Services,9564645376.0,9.0,0.928,395520.0,ok,Industrials,0.01,Industrials
+CLF,Cleveland-Cliffs Inc.,Basic Materials,Steel,5185069056.0,9.0,1.919,18435098.0,ok,Materials,0.01,Basic Materials
+GNTX,Gentex Corporation,Consumer Cyclical,Auto Parts,4960716800.0,9.0,0.768,2149535.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+LECO,"Lincoln Electric Holdings, Inc.",Industrials,Tools & Accessories,14427969536.0,9.0,1.295,388711.0,ok,Industrials,0.02,Industrials
+RRX,Regal Rexnord Corporation,Industrials,Specialty Industrial Machinery,14209732608.0,9.0,1.088,1208059.0,ok,Industrials,0.02,Industrials
+BFAM,Bright Horizons Family Solution,Consumer Cyclical,Personal Services,4315831808.0,9.0,1.308,946372.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+ESAB,ESAB Corporation,Industrials,Metal Fabrication,6265926144.0,9.0,1.31,632154.0,ok,Industrials,0.01,Industrials
+SON,Sonoco Products Company,Consumer Cyclical,Packaging & Containers,4851798528.0,9.0,0.49,1140209.0,ok,Materials,0.01,Consumer Cyclical
+RPRX,Royalty Pharma plc,Healthcare,Biotechnology,29427445760.0,9.0,0.388,3404464.0,ok,Health Care,0.03,Healthcare
+JBL,Jabil Inc.,Technology,Electronic Components,35715805184.0,9.0,1.159,1143772.0,ok,Information Technology,0.05,Technology
+SAIC,Science Applications Internatio,Technology,Information Technology Services,4106364416.0,9.0,0.298,674704.0,ok,Industrials,0.01,Technology
+VTRS,Viatris Inc.,Healthcare,Drug Manufacturers - Specialty & Generic,17175207936.0,9.0,0.822,10277008.0,ok,Health Care,0.03,Healthcare
+FLEX,Flex Ltd.,Technology,Electronic Components,31950864384.0,9.0,1.201,3722512.0,ok,Information Technology,0.05,Technology
+CRS,Carpenter Technology Corporatio,Industrials,Metal Fabrication,21255700480.0,9.0,1.239,813032.0,ok,Industrials,0.03,Industrials
+SSNC,"SS&C Technologies Holdings, Inc",Technology,Software - Application,16919860224.0,9.0,1.191,2719027.0,ok,Industrials,0.02,Technology
+NYT,New York Times Company (The),Communication Services,Publishing,13022981120.0,9.0,1.051,2515230.0,ok,Communication,0.02,Communication Services
+WEX,WEX Inc.,Technology,Software - Infrastructure,5364998656.0,9.0,0.932,522433.0,ok,Financials,0.01,Technology
+TFX,Teleflex Incorporated,Healthcare,Medical Instruments & Supplies,6048864256.0,9.0,0.835,963514.0,ok,Health Care,0.01,Healthcare
+HALO,"Halozyme Therapeutics, Inc.",Healthcare,Biotechnology,7889203712.0,9.0,1.031,1761651.0,ok,Health Care,0.01,Healthcare
+EXP,Eagle Materials Inc,Basic Materials,Building Materials,6550457344.0,10.0,1.392,487783.0,ok,Materials,0.01,Basic Materials
+FLS,Flowserve Corporation,Industrials,Specialty Industrial Machinery,10467723264.0,10.0,1.34,1767538.0,ok,Industrials,0.02,Industrials
+POOL,Pool Corporation,Industrials,Industrial Distribution,8392689152.0,10.0,1.262,805516.0,ok,Consumer Discretionary,0.01,Industrials
+OMC,Omnicom Group Inc.,Communication Services,Advertising Agencies,23840038912.0,10.0,0.751,5213087.0,ok,Communication,0.04,Communication Services
+ALSN,"Allison Transmission Holdings, ",Consumer Cyclical,Auto Parts,11305601024.0,10.0,0.965,861224.0,ok,Industrials,0.02,Consumer Cyclical
+KRMN,Karman Holdings Inc.,Industrials,Aerospace & Defense,10151514112.0,10.0,,2053580.0,ok,Industrials,0.01,Industrials
+CDW,CDW Corporation,Technology,Information Technology Services,17603753984.0,10.0,1.018,1726945.0,ok,Information Technology,0.03,Technology
+AVY,Avery Dennison Corporation,Consumer Cyclical,Packaging & Containers,12878218240.0,10.0,1.003,639890.0,ok,Materials,0.02,Consumer Cyclical
+M,Macy's Inc,Consumer Cyclical,Department Stores,5322707456.0,10.0,1.525,7256861.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+WMS,"Advanced Drainage Systems, Inc.",Industrials,Building Products & Equipment,11919582208.0,10.0,1.375,875838.0,ok,Industrials,0.02,Industrials
+PKG,Packaging Corporation of Americ,Consumer Cyclical,Packaging & Containers,19182663680.0,10.0,0.918,1096529.0,ok,Materials,0.03,Consumer Cyclical
+AOS,A.O. Smith Corporation,Industrials,Specialty Industrial Machinery,8998028288.0,10.0,1.346,1491132.0,ok,Industrials,0.01,Industrials
+AWI,Armstrong World Industries Inc,Industrials,Building Products & Equipment,7683571712.0,10.0,1.322,536216.0,ok,Industrials,0.01,Industrials
+FTAI,FTAI Aviation Ltd.,Industrials,Rental & Leasing Services,24161847296.0,10.0,1.649,1586861.0,ok,Industrials,0.04,Industrials
+BG,Bunge Limited,Consumer Defensive,Farm Products,24501512192.0,10.0,0.696,1727061.0,ok,Consumer Staples,0.03,Consumer Defensive
+FFIV,"F5, Inc.",Technology,Software - Infrastructure,16949565440.0,10.0,0.93,788877.0,ok,Information Technology,0.03,Technology
+WWD,"Woodward, Inc.",Industrials,Aerospace & Defense,21910022144.0,10.0,0.984,687388.0,ok,Industrials,0.03,Industrials
+ESI,Element Solutions Inc.,Basic Materials,Specialty Chemicals,9251752960.0,10.0,1.231,2939317.0,ok,Materials,0.01,Basic Materials
+ENTG,"Entegris, Inc.",Technology,Semiconductor Equipment & Materials,22735327232.0,10.0,1.318,2707143.0,ok,Information Technology,0.03,Technology
+IP,International Paper Company,Consumer Cyclical,Packaging & Containers,17758967808.0,10.0,1.099,7286361.0,ok,Materials,0.03,Consumer Cyclical
+GEN,Gen Digital Inc.,Technology,Software - Infrastructure,11392534528.0,11.0,1.149,7317062.0,ok,Information Technology,0.02,Technology
+ADM,Archer-Daniels-Midland Company,Consumer Defensive,Farm Products,33747113984.0,11.0,0.636,3879311.0,ok,Consumer Staples,0.05,Consumer Defensive
+WCC,"WESCO International, Inc.",Industrials,Industrial Distribution,15509914624.0,11.0,1.446,598838.0,ok,Industrials,0.02,Industrials
+BWXT,"BWX Technologies, Inc.",Industrials,Aerospace & Defense,20659402752.0,11.0,0.794,1006083.0,ok,Industrials,0.03,Industrials
+SNX,TD SYNNEX Corporation,Technology,Electronics & Computer Distribution,17965979648.0,11.0,1.225,768440.0,ok,Information Technology,0.03,Technology
+RAL,Ralliant Corporation,Technology,Electronic Components,5079365632.0,11.0,,1803454.0,ok,Information Technology,0.01,Technology
+HII,"Huntington Ingalls Industries, ",Industrials,Aerospace & Defense,14575067136.0,11.0,0.356,505461.0,ok,Industrials,0.02,Industrials
+BLD,TopBuild Corp.,Industrials,Engineering & Construction,13037109248.0,11.0,1.79,483767.0,ok,Consumer Discretionary,0.02,Industrials
+RBA,"RB Global, Inc.",Industrials,Specialty Business Services,19748945920.0,11.0,0.569,1385875.0,ok,Industrials,0.03,Industrials
+WAB,Westinghouse Air Brake Technolo,Industrials,Railroads,45719564288.0,11.0,0.987,986730.0,ok,Industrials,0.07,Industrials
+AMTM,"Amentum Holdings, Inc.",Industrials,Specialty Business Services,6554537984.0,11.0,,2072269.0,ok,Industrials,0.01,Industrials
+LW,"Lamb Weston Holdings, Inc.",Consumer Defensive,Packaged Foods,6066918400.0,11.0,0.477,3122562.0,ok,Consumer Staples,0.01,Consumer Defensive
+AMCR,Amcor plc,Consumer Cyclical,Packaging & Containers,18315491328.0,11.0,0.708,6052509.0,ok,Materials,0.03,Consumer Cyclical
+SITE,"SiteOne Landscape Supply, Inc.",Industrials,Industrial Distribution,6419924992.0,11.0,1.573,637930.0,ok,Industrials,0.01,Industrials
+APG,APi Group Corporation,Industrials,Engineering & Construction,21115461632.0,11.0,1.686,2886816.0,ok,Industrials,0.03,Industrials
+TKR,Timken Company (The),Industrials,Tools & Accessories,7584873472.0,11.0,1.185,810293.0,ok,Industrials,0.01,Industrials
+STLD,"Steel Dynamics, Inc.",Basic Materials,Steel,32605784064.0,11.0,1.4,1306687.0,ok,Materials,0.05,Basic Materials
+MSI,"Motorola Solutions, Inc.",Technology,Communication Equipment,73656459264.0,11.0,0.992,1075217.0,ok,Information Technology,0.11,Technology
+SN,"SharkNinja, Inc.",Consumer Cyclical,"Furnishings, Fixtures & Appliances",16199144448.0,11.0,1.491,1796317.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+G,Genpact Limited,Technology,Information Technology Services,5856813056.0,11.0,0.752,2506362.0,ok,Industrials,0.01,Technology
+VNT,Vontier Corporation,Technology,Scientific & Technical Instruments,5215128064.0,11.0,1.324,1136125.0,ok,Information Technology,0.01,Technology
+MANH,"Manhattan Associates, Inc.",Technology,Software - Application,8183632896.0,11.0,1.047,844070.0,ok,Information Technology,0.01,Technology
+TECH,Bio-Techne Corp,Healthcare,Biotechnology,8166862336.0,11.0,1.486,2338958.0,ok,Health Care,0.01,Healthcare
+AN,"AutoNation, Inc.",Consumer Cyclical,Auto & Truck Dealerships,6967044096.0,11.0,0.812,462141.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+EHC,Encompass Health Corporation,Healthcare,Medical Care Facilities,10126530560.0,11.0,0.6,1148746.0,ok,Health Care,0.02,Healthcare
+DAR,Darling Ingredients Inc.,Consumer Defensive,Packaged Foods,9672957952.0,12.0,1.085,3059954.0,ok,Consumer Staples,0.01,Consumer Defensive
+RGLD,"Royal Gold, Inc.",Basic Materials,Gold,21315825664.0,12.0,0.554,1072229.0,ok,Materials,0.03,Basic Materials
+ACM,AECOM,Industrials,Engineering & Construction,10402563072.0,12.0,1.085,1423041.0,ok,Industrials,0.02,Industrials
+BAH,Booz Allen Hamilton Holding Cor,Industrials,Consulting Services,9528163328.0,12.0,0.355,2267361.0,ok,Industrials,0.01,Industrials
+ITT,ITT Inc.,Industrials,Specialty Industrial Machinery,19683905536.0,12.0,1.324,1019014.0,ok,Industrials,0.03,Industrials
+PVH,PVH Corp.,Consumer Cyclical,Apparel Manufacturing,4368129024.0,12.0,1.609,1106295.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+GMED,"Globus Medical, Inc.",Healthcare,Medical Devices,12765182976.0,12.0,1.092,1104851.0,ok,Health Care,0.02,Healthcare
+MO,"Altria Group, Inc.",Consumer Defensive,Tobacco,112267960320.0,12.0,0.447,9715251.0,ok,Consumer Staples,0.17,Consumer Defensive
+WFRD,Weatherford International plc,Energy,Oil & Gas Equipment & Services,7403274240.0,12.0,0.794,1378901.0,ok,Energy,0.01,Energy
+LPX,Louisiana-Pacific Corporation,Industrials,Building Products & Equipment,5217678336.0,12.0,1.773,1089935.0,ok,Materials,0.01,Industrials
+CHDN,"Churchill Downs, Incorporated",Consumer Cyclical,Gambling,6824025088.0,12.0,0.65,993069.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+WSO,"Watsco, Inc.",Industrials,Industrial Distribution,17763356672.0,12.0,1.053,466754.0,ok,Industrials,0.02,Industrials
+MTN,"Vail Resorts, Inc.",Consumer Cyclical,Resorts & Casinos,4403176448.0,12.0,0.8,879470.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+ST,Sensata Technologies Holding pl,Technology,Scientific & Technical Instruments,6103169536.0,12.0,1.131,2039795.0,ok,Industrials,0.01,Technology
+KVUE,Kenvue Inc.,Consumer Defensive,Household & Personal Products,33579335680.0,12.0,0.57,33888817.0,ok,Consumer Staples,0.05,Consumer Defensive
+GTES,Gates Industrial Corporation pl,Industrials,Specialty Industrial Machinery,6491936256.0,12.0,1.288,2563377.0,ok,Industrials,0.01,Industrials
+TRMB,Trimble Inc.,Technology,Scientific & Technical Instruments,15559229440.0,12.0,1.536,2010970.0,ok,Information Technology,0.03,Technology
+PFGC,Performance Food Group Company,Consumer Defensive,Food Distribution,14173469696.0,12.0,0.943,2215743.0,ok,Consumer Staples,0.02,Consumer Defensive
+PRMB,Primo Brands Corporation,Consumer Defensive,Beverages - Non-Alcoholic,7342877696.0,12.0,0.631,5060298.0,ok,Consumer Staples,0.01,Consumer Defensive
+ALGM,"Allegro MicroSystems, Inc.",Technology,Semiconductors,8080534528.0,12.0,1.695,2374983.0,ok,Information Technology,0.01,Technology
+WST,"West Pharmaceutical Services, I",Healthcare,Medical Instruments & Supplies,21957730304.0,12.0,1.151,972543.0,ok,Health Care,0.03,Healthcare
+MEDP,"Medpace Holdings, Inc.",Healthcare,Diagnostics & Research,11235952640.0,12.0,1.391,395432.0,ok,Health Care,0.02,Healthcare
+SOLV,Solventum Corporation,Healthcare,Medical Instruments & Supplies,11964078080.0,12.0,0.774,1273490.0,ok,Health Care,0.02,Healthcare
+FAST,Fastenal Company,Industrials,Industrial Distribution,52178194432.0,12.0,0.837,8199398.0,ok,Industrials,0.08,Industrials
+THO,"Thor Industries, Inc.",Consumer Cyclical,Recreational Vehicles,4145085184.0,12.0,1.445,736300.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+COR,"Cencora, Inc.",Healthcare,Medical Distribution,60574912512.0,12.0,0.718,1384341.0,ok,Health Care,0.09,Healthcare
+TNL,Travel   Leisure Co.,Consumer Cyclical,Travel Services,4066333696.0,12.0,,725285.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+MKSI,MKS Inc.,Technology,Scientific & Technical Instruments,18887774208.0,12.0,1.896,1459451.0,ok,Information Technology,0.03,Technology
+ROIV,Roivant Sciences Ltd.,Healthcare,Biotechnology,20139829248.0,12.0,1.206,6032035.0,ok,Health Care,0.02,Healthcare
+CROX,"Crocs, Inc.",Consumer Cyclical,Footwear & Accessories,5235345408.0,12.0,1.539,1364962.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+ALLE,Allegion plc,Industrials,Security & Protection Services,12668648448.0,12.0,1.03,901783.0,ok,Industrials,0.02,Industrials
+KEYS,Keysight Technologies Inc.,Technology,Scientific & Technical Instruments,59430760448.0,13.0,1.152,1473785.0,ok,Information Technology,0.09,Technology
+TDY,Teledyne Technologies Incorpora,Technology,Scientific & Technical Instruments,30187290624.0,13.0,,348209.0,ok,Information Technology,0.05,Technology
+IT,"Gartner, Inc.",Technology,Information Technology Services,10032015360.0,13.0,1.045,1713717.0,ok,Information Technology,0.02,Technology
+CPAY,"Corpay, Inc.",Technology,Software - Infrastructure,20730394624.0,13.0,0.851,682932.0,ok,Financials,0.03,Technology
+CLH,"Clean Harbors, Inc.",Industrials,Waste Management,16544234496.0,13.0,0.94,519790.0,ok,Industrials,0.02,Industrials
+NVST,Envista Holdings Corporation,Healthcare,Medical Instruments & Supplies,4407002112.0,13.0,0.985,2797056.0,ok,Health Care,0.01,Healthcare
+WBD,"Warner Bros. Discovery, Inc. - ",Communication Services,Entertainment,67432067072.0,13.0,1.637,25260187.0,ok,Communication,0.1,Communication Services
+SIRI,SiriusXM Holdings Inc.,Communication Services,Entertainment,9423409152.0,13.0,0.86,5114996.0,ok,Communication,0.01,Communication Services
+CACI,"CACI International, Inc.",Technology,Information Technology Services,11627938816.0,13.0,0.629,270243.0,ok,Industrials,0.02,Technology
+NVT,nVent Electric plc,Industrials,Electrical Equipment & Parts,23084048384.0,13.0,1.276,2376524.0,ok,Industrials,0.03,Industrials
+AA,Alcoa Corporation,Basic Materials,Aluminum,17248698368.0,13.0,1.697,6729720.0,ok,Materials,0.03,Basic Materials
+BAX,Baxter International Inc.,Healthcare,Medical Instruments & Supplies,9504208896.0,13.0,0.617,9288511.0,ok,Health Care,0.01,Healthcare
+UTHR,United Therapeutics Corporation,Healthcare,Drug Manufacturers - Specialty & Generic,25106690048.0,13.0,0.75,523787.0,ok,Health Care,0.04,Healthcare
+HUBB,Hubbell Inc,Industrials,Electrical Equipment & Parts,29656197120.0,13.0,0.997,545782.0,ok,Industrials,0.05,Industrials
+TSN,"Tyson Foods, Inc.",Consumer Defensive,Farm Products,22966112256.0,13.0,0.434,2966616.0,ok,Consumer Staples,0.03,Consumer Defensive
+NUE,Nucor Corporation,Basic Materials,Steel,48496304128.0,13.0,1.745,1664035.0,ok,Materials,0.08,Basic Materials
+KMX,CarMax Inc,Consumer Cyclical,Auto & Truck Dealerships,5467188736.0,13.0,1.299,3475041.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+AVTR,"Avantor, Inc.",Healthcare,Medical Instruments & Supplies,5292754432.0,13.0,0.997,11046764.0,ok,Health Care,0.01,Healthcare
+CCK,"Crown Holdings, Inc.",Consumer Cyclical,Packaging & Containers,11547452416.0,13.0,0.752,1145611.0,ok,Materials,0.02,Consumer Cyclical
+BBWI,"Bath & Body Works, Inc.",Consumer Cyclical,Specialty Retail,4123252480.0,13.0,1.463,5716848.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+MTD,"Mettler-Toledo International, I",Healthcare,Diagnostics & Research,25601398784.0,13.0,1.435,157438.0,ok,Health Care,0.04,Healthcare
+MKC,"McCormick & Company, Incorporat",Consumer Defensive,Packaged Foods,13950273536.0,13.0,0.706,4252167.0,ok,Consumer Staples,0.02,Consumer Defensive
+BDX,"Becton, Dickinson and Company",Healthcare,Medical Instruments & Supplies,44049661952.0,13.0,0.352,2894842.0,ok,Health Care,0.07,Healthcare
+EXPD,Expeditors International of Was,Industrials,Integrated Freight & Logistics,19914354688.0,14.0,1.081,1479850.0,ok,Industrials,0.03,Industrials
+LDOS,"Leidos Holdings, Inc.",Technology,Information Technology Services,18655561728.0,14.0,0.663,1093400.0,ok,Industrials,0.03,Technology
+OTIS,Otis Worldwide Corporation,Industrials,Specialty Industrial Machinery,30660136960.0,14.0,,4006369.0,ok,Industrials,0.05,Industrials
+LEN,Lennar Corporation,Consumer Cyclical,Residential Construction,23196375040.0,14.0,1.487,2980274.0,ok,Consumer Discretionary,0.03,Consumer Cyclical
+BRKR,Bruker Corporation,Healthcare,Medical Devices,5513522176.0,14.0,1.201,2229683.0,ok,Health Care,0.01,Healthcare
+LEA,Lear Corporation,Consumer Cyclical,Auto Parts,6567329280.0,14.0,1.254,579533.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+BURL,"Burlington Stores, Inc.",Consumer Cyclical,Apparel Retail,20710113280.0,14.0,1.621,789790.0,ok,Consumer Discretionary,0.03,Consumer Cyclical
+PHM,"PulteGroup, Inc.",Consumer Cyclical,Residential Construction,25101373440.0,14.0,1.341,1926046.0,ok,Consumer Discretionary,0.04,Consumer Cyclical
+BALL,Ball Corporation,Consumer Cyclical,Packaging & Containers,16799580160.0,14.0,1.142,2262774.0,ok,Materials,0.03,Consumer Cyclical
+SW,Smurfit WestRock plc,Consumer Cyclical,Packaging & Containers,21242769408.0,14.0,1.054,6201983.0,ok,Materials,0.03,Consumer Cyclical
+QGEN,Qiagen N.V.,Healthcare,Diagnostics & Research,7824658432.0,14.0,0.789,1977706.0,ok,Health Care,0.01,Healthcare
+KMB,Kimberly-Clark Corporation,Consumer Defensive,Household & Personal Products,32505489408.0,14.0,0.296,5360195.0,ok,Consumer Staples,0.05,Consumer Defensive
+DTM,"DT Midstream, Inc.",Energy,Oil & Gas Midstream,13632147456.0,14.0,0.782,837391.0,ok,Energy,0.02,Energy
+PEN,"Penumbra, Inc.",Healthcare,Medical Devices,13067936768.0,14.0,0.839,718866.0,ok,Health Care,0.02,Healthcare
+GWRE,"Guidewire Software, Inc.",Technology,Software - Application,11158766592.0,14.0,1.05,1681366.0,ok,Information Technology,0.02,Technology
+SWK,"Stanley Black & Decker, Inc.",Industrials,Tools & Accessories,11803322368.0,14.0,1.201,2076801.0,ok,Industrials,0.02,Industrials
+JKHY,"Jack Henry & Associates, Inc.",Technology,Information Technology Services,10899996672.0,14.0,0.718,1053567.0,ok,Financials,0.02,Technology
+RVTY,"Revvity, Inc.",Healthcare,Diagnostics & Research,9743660032.0,14.0,1.129,1203545.0,ok,Health Care,0.02,Healthcare
+IDXX,"IDEXX Laboratories, Inc.",Healthcare,Diagnostics & Research,44663508992.0,14.0,1.722,526987.0,ok,Health Care,0.07,Healthcare
+MSTR,Strategy Inc,Technology,Software - Application,60180860928.0,14.0,3.56,22078838.0,ok,Information Technology,0.09,Technology
+MP,MP Materials Corp.,Basic Materials,Other Industrial Metals & Mining,11249903616.0,14.0,1.679,6402127.0,ok,Materials,0.02,Basic Materials
+DINO,HF Sinclair Corporation,Energy,Oil & Gas Refining & Marketing,10733481984.0,14.0,0.691,2883727.0,ok,Energy,0.01,Energy
+MPWR,"Monolithic Power Systems, Inc.",Technology,Semiconductors,78204207104.0,14.0,1.478,605495.0,ok,Information Technology,0.11,Technology
+BSY,"Bentley Systems, Incorporated",Technology,Software - Application,9901004800.0,14.0,1.161,3154737.0,ok,Information Technology,0.01,Technology
+SARO,"StandardAero, Inc.",Industrials,Aerospace & Defense,8096818176.0,14.0,,4488567.0,ok,Industrials,0.01,Industrials
+HSIC,"Henry Schein, Inc.",Healthcare,Medical Distribution,8975592448.0,14.0,0.882,1294558.0,ok,Health Care,0.01,Healthcare
+ELAN,Elanco Animal Health Incorporat,Healthcare,Drug Manufacturers - Specialty & Generic,11181105152.0,14.0,1.877,4828180.0,ok,Health Care,0.02,Healthcare
+RPM,RPM International Inc.,Basic Materials,Specialty Chemicals,13537599488.0,14.0,1.093,1022145.0,ok,Materials,0.02,Basic Materials
+AGCO,AGCO Corporation,Industrials,Farm & Heavy Construction Machinery,8655152128.0,14.0,1.156,774074.0,ok,Industrials,0.01,Industrials
+FBIN,"Fortune Brands Innovations, Inc",Industrials,Building Products & Equipment,4961560576.0,14.0,1.567,3013267.0,ok,Industrials,0.01,Industrials
+AXTA,Axalta Coating Systems Ltd.,Basic Materials,Specialty Chemicals,6279310848.0,14.0,1.33,2894024.0,ok,Materials,0.01,Basic Materials
+LSCC,Lattice Semiconductor Corporati,Technology,Semiconductors,16151960576.0,14.0,1.653,1888669.0,ok,Information Technology,0.02,Technology
+IEX,IDEX Corporation,Industrials,Specialty Industrial Machinery,15363234816.0,14.0,0.98,871238.0,ok,Industrials,0.02,Industrials
+SFM,"Sprouts Farmers Market, Inc.",Consumer Defensive,Grocery Stores,6861517312.0,14.0,0.666,2614003.0,ok,Consumer Staples,0.01,Consumer Defensive
+MAT,"Mattel, Inc.",Consumer Cyclical,Leisure,4460472320.0,14.0,0.782,5576019.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+LSTR,"Landstar System, Inc.",Industrials,Integrated Freight & Logistics,6110683136.0,14.0,0.795,549987.0,ok,Industrials,0.01,Industrials
+ALGN,"Align Technology, Inc.",Healthcare,Medical Instruments & Supplies,13655265280.0,14.0,1.811,1259846.0,ok,Health Care,0.02,Healthcare
+DHI,"D.R. Horton, Inc.",Consumer Cyclical,Residential Construction,46792994816.0,14.0,1.445,2850446.0,ok,Consumer Discretionary,0.06,Consumer Cyclical
+GLW,Corning Incorporated,Technology,Electronic Components,145603018752.0,14.0,1.053,12475050.0,ok,Information Technology,0.2,Technology
+HAS,"Hasbro, Inc.",Consumer Cyclical,Leisure,13668150272.0,15.0,0.544,1943880.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+COO,"The Cooper Companies, Inc.",Healthcare,Medical Instruments & Supplies,12672679936.0,15.0,1.074,1963322.0,ok,Health Care,0.02,Healthcare
+EMN,Eastman Chemical Company,Basic Materials,Specialty Chemicals,8224045568.0,15.0,1.174,1702304.0,ok,Materials,0.01,Basic Materials
+NTAP,"NetApp, Inc.",Technology,Software - Infrastructure,21469743104.0,15.0,1.292,2365459.0,ok,Information Technology,0.03,Technology
+MHK,"Mohawk Industries, Inc.",Consumer Cyclical,"Furnishings, Fixtures & Appliances",6625869824.0,15.0,1.247,959691.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+CRL,Charles River Laboratories Inte,Healthcare,Diagnostics & Research,8276620800.0,15.0,1.616,998337.0,ok,Health Care,0.01,Healthcare
+VVV,Valvoline Inc.,Consumer Cyclical,Auto & Truck Dealerships,4116120832.0,15.0,1.192,1929967.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+SCCO,Southern Copper Corporation,Basic Materials,Copper,150550429696.0,15.0,1.166,1972212.0,ok,Materials,0.02,Basic Materials
+QRVO,"Qorvo, Inc.",Technology,Semiconductors,7847536128.0,15.0,1.336,1338030.0,ok,Information Technology,0.01,Technology
+USFD,US Foods Holding Corp.,Consumer Defensive,Food Distribution,20472909824.0,15.0,0.98,2732438.0,ok,Consumer Staples,0.03,Consumer Defensive
+LAD,"Lithia Motors, Inc.",Consumer Cyclical,Auto & Truck Dealerships,6439764480.0,15.0,1.216,340916.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+OLLI,Ollie's Bargain Outlet Holdings,Consumer Defensive,Discount Stores,5379385856.0,15.0,0.591,1289866.0,ok,Consumer Discretionary,0.01,Consumer Defensive
+CHTR,"Charter Communications, Inc.",Communication Services,Telecom Services,30616977408.0,15.0,1.026,1954804.0,ok,Communication,0.03,Communication Services
+TEM,"Tempus AI, Inc.",Healthcare,Health Information Services,9228573696.0,15.0,,5458119.0,ok,Health Care,0.01,Healthcare
+NTNX,"Nutanix, Inc.",Technology,Software - Infrastructure,10383053824.0,15.0,0.523,4597966.0,ok,Information Technology,0.02,Technology
+QXO,"QXO, Inc.",Industrials,Industrial Distribution,16020908032.0,15.0,2.466,9170440.0,ok,Industrials,0.02,Industrials
+SMCI,"Super Micro Computer, Inc.",Technology,Computer Hardware,16062891008.0,15.0,1.629,36371098.0,ok,Information Technology,0.02,Technology
+APLS,"Apellis Pharmaceuticals, Inc.",Healthcare,Biotechnology,5233836032.0,15.0,-0.197,5141804.0,ok,Health Care,0.01,Healthcare
+TOL,"Toll Brothers, Inc.",Consumer Cyclical,Residential Construction,14135019520.0,15.0,1.485,1257158.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+BYD,Boyd Gaming Corporation,Consumer Cyclical,Resorts & Casinos,6713389568.0,15.0,1.192,942991.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+GDDY,GoDaddy Inc.,Technology,Software - Infrastructure,11304428544.0,15.0,0.977,2281724.0,ok,Information Technology,0.02,Technology
+BWA,BorgWarner Inc.,Consumer Cyclical,Auto Parts,11623717888.0,15.0,1.026,2938619.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+FTV,Fortive Corporation,Technology,Scientific & Technical Instruments,18813276160.0,15.0,1.001,3710790.0,ok,Industrials,0.03,Technology
+HXL,Hexcel Corporation,Industrials,Aerospace & Defense,6888010240.0,15.0,1.048,1349222.0,ok,Industrials,0.01,Industrials
+GNRC,Generac Holdlings Inc.,Industrials,Specialty Industrial Machinery,12813627392.0,15.0,1.786,1086359.0,ok,Industrials,0.02,Industrials
+J,Jacobs Solutions Inc.,Industrials,Engineering & Construction,14983852032.0,15.0,0.752,949195.0,ok,Industrials,0.02,Industrials
+DD,"DuPont de Nemours, Inc.",Basic Materials,Specialty Chemicals,19006005248.0,15.0,1.122,4134564.0,ok,Materials,0.03,Basic Materials
+MTSI,MACOM Technology Solutions Hold,Technology,Semiconductors,21333403648.0,15.0,1.481,1203708.0,ok,Information Technology,0.03,Technology
+PAYX,"Paychex, Inc.",Technology,Software - Application,32586555392.0,15.0,,4211287.0,ok,Industrials,0.05,Technology
+DOW,Dow Inc.,Basic Materials,Chemicals,27770167296.0,15.0,0.495,15270375.0,ok,Materials,0.04,Basic Materials
+RKLB,Rocket Lab Corporation,Industrials,Aerospace & Defense,48902545408.0,15.0,2.205,21353335.0,ok,Industrials,0.07,Industrials
+RMD,ResMed Inc.,Healthcare,Medical Instruments & Supplies,31977865216.0,15.0,0.928,1116256.0,ok,Health Care,0.05,Healthcare
+PM,Philip Morris International Inc,Consumer Defensive,Tobacco,263687749632.0,15.0,,5284706.0,ok,Consumer Staples,0.39,Consumer Defensive
+SYY,Sysco Corporation,Consumer Defensive,Food Distribution,36307730432.0,15.0,0.693,4886738.0,ok,Consumer Staples,0.06,Consumer Defensive
+ADP,"Automatic Data Processing, Inc.",Technology,Software - Application,79936978944.0,15.0,0.856,3786190.0,ok,Industrials,0.12,Technology
+IR,Ingersoll Rand Inc.,Industrials,Specialty Industrial Machinery,33564626944.0,15.0,1.333,3970930.0,ok,Industrials,0.05,Industrials
+MCK,McKesson Corporation,Healthcare,Medical Distribution,102411755520.0,15.0,0.423,796277.0,ok,Health Care,0.16,Healthcare
+CAH,"Cardinal Health, Inc.",Healthcare,Medical Distribution,48173895680.0,15.0,0.65,1725825.0,ok,Health Care,0.07,Healthcare
+GWW,"W.W. Grainger, Inc.",Industrials,Industrial Distribution,55135174656.0,15.0,1.092,279638.0,ok,Industrials,0.08,Industrials
+KDP,Keurig Dr Pepper Inc.,Consumer Defensive,Beverages - Non-Alcoholic,38813204480.0,16.0,0.361,10909566.0,ok,Consumer Staples,0.05,Consumer Defensive
+PATH,"UiPath, Inc.",Technology,Software - Infrastructure,5286371840.0,16.0,1.025,32076595.0,ok,Information Technology,0.01,Technology
+ITW,Illinois Tool Works Inc.,Industrials,Specialty Industrial Machinery,78716067840.0,16.0,1.145,1410064.0,ok,Industrials,0.12,Industrials
+TXT,Textron Inc.,Industrials,Aerospace & Defense,15733317632.0,16.0,0.971,1669446.0,ok,Industrials,0.02,Industrials
+A,"Agilent Technologies, Inc.",Healthcare,Diagnostics & Research,32335355904.0,16.0,1.303,2217190.0,ok,Health Care,0.05,Healthcare
+ROP,"Roper Technologies, Inc.",Technology,Software - Application,37440913408.0,16.0,0.89,1697379.0,ok,Information Technology,0.06,Technology
+CE,Celanese Corporation,Basic Materials,Chemicals,7300722176.0,16.0,0.848,2626748.0,ok,Materials,0.01,Basic Materials
+ROL,"Rollins, Inc.",Consumer Cyclical,Personal Services,27438520320.0,16.0,0.84,3250790.0,ok,Industrials,0.03,Consumer Cyclical
+MOH,Molina Healthcare Inc,Healthcare,Healthcare Plans,9100310528.0,16.0,0.554,1920679.0,ok,Health Care,0.01,Healthcare
+FWONK,Liberty Media Corporation - Ser,Communication Services,Entertainment,22209599488.0,16.0,0.739,2151525.0,ok,Communication,0.03,Communication Services
+HPQ,HP Inc.,Technology,Computer Hardware,18488207360.0,16.0,1.131,19724587.0,ok,Information Technology,0.03,Technology
+GXO,"GXO Logistics, Inc.",Industrials,Integrated Freight & Logistics,6518575616.0,16.0,1.739,1345077.0,ok,Industrials,0.01,Industrials
+ROST,"Ross Stores, Inc.",Consumer Cyclical,Apparel Retail,73396125696.0,16.0,0.927,2581919.0,ok,Consumer Discretionary,0.11,Consumer Cyclical
+CASY,"Caseys General Stores, Inc.",Consumer Cyclical,Specialty Retail,29276205056.0,16.0,0.605,576419.0,ok,Consumer Staples,0.04,Consumer Cyclical
+CNM,"Core & Main, Inc.",Industrials,Industrial Distribution,9570327552.0,16.0,1.003,2551245.0,ok,Industrials,0.01,Industrials
+OC,Owens Corning Inc,Industrials,Building Products & Equipment,10100948992.0,16.0,1.341,1470885.0,ok,Industrials,0.02,Industrials
+DGX,Quest Diagnostics Incorporated,Healthcare,Diagnostics & Research,22087258112.0,16.0,0.654,997196.0,ok,Health Care,0.03,Healthcare
+SJM,The J.M. Smucker Company,Consumer Defensive,Packaged Foods,10258502656.0,16.0,0.259,2145777.0,ok,Consumer Staples,0.01,Consumer Defensive
+ZBRA,Zebra Technologies Corporation,Technology,Communication Equipment,11160121344.0,16.0,1.655,801217.0,ok,Information Technology,0.02,Technology
+ACI,"Albertsons Companies, Inc.",Consumer Defensive,Grocery Stores,8541497344.0,16.0,0.273,6691406.0,ok,Consumer Staples,0.01,Consumer Defensive
+ARMK,Aramark,Industrials,Specialty Business Services,12135137280.0,16.0,1.136,3063117.0,ok,Consumer Discretionary,0.02,Industrials
+ALK,"Alaska Air Group, Inc.",Industrials,Airlines,4663846400.0,16.0,1.275,4592625.0,ok,Industrials,0.01,Industrials
+EA,Electronic Arts Inc.,Communication Services,Electronic Gaming & Multimedia,50678878208.0,16.0,0.725,2515466.0,ok,Communication,0.08,Communication Services
+RL,Ralph Lauren Corporation,Consumer Cyclical,Apparel Manufacturing,22506174464.0,16.0,1.479,656266.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+IFF,International Flavors & Fragran,Basic Materials,Specialty Chemicals,18120759296.0,17.0,1.032,1776167.0,ok,Materials,0.03,Basic Materials
+CTAS,Cintas Corporation,Industrials,Specialty Business Services,71063470080.0,17.0,1.006,2227659.0,ok,Industrials,0.09,Industrials
+XYL,Xylem Inc.,Industrials,Specialty Industrial Machinery,29587877888.0,17.0,1.174,2184546.0,ok,Industrials,0.05,Industrials
+PCAR,PACCAR Inc.,Industrials,Farm & Heavy Construction Machinery,66772815872.0,17.0,1.064,3095559.0,ok,Industrials,0.1,Industrials
+CHRD,Chord Energy Corporation,Energy,Oil & Gas E&P,7775065600.0,17.0,0.532,1067101.0,ok,Energy,0.01,Energy
+FOXA,Fox Corporation,Communication Services,Entertainment,27450808320.0,17.0,0.505,4106733.0,ok,Communication,0.02,Communication Services
+JAZZ,Jazz Pharmaceuticals plc,Healthcare,Biotechnology,12309608448.0,17.0,0.233,943670.0,ok,Health Care,0.02,Healthcare
+LII,"Lennox International, Inc.",Industrials,Building Products & Equipment,17188544512.0,17.0,1.21,491698.0,ok,Industrials,0.02,Industrials
+UHS,"Universal Health Services, Inc.",Healthcare,Medical Care Facilities,11057366016.0,17.0,1.295,726188.0,ok,Health Care,0.02,Healthcare
+TER,"Teradyne, Inc.",Technology,Semiconductor Equipment & Materials,62778761216.0,17.0,1.794,3434062.0,ok,Information Technology,0.09,Technology
+OSK,Oshkosh Corporation (Holding Co,Industrials,Farm & Heavy Construction Machinery,9590336512.0,17.0,1.386,762843.0,ok,Industrials,0.01,Industrials
+MMM,3M Company,Industrials,Conglomerates,75543797760.0,17.0,1.158,4007293.0,ok,Industrials,0.12,Industrials
+MPC,Marathon Petroleum Corporation,Energy,Oil & Gas Refining & Marketing,65113260032.0,17.0,0.577,2599751.0,ok,Energy,0.1,Energy
+VNOM,"Viper Energy, Inc.",Energy,Oil & Gas Midstream,17912817664.0,17.0,0.297,3267335.0,ok,Energy,0.01,Energy
+LYB,LyondellBasell Industries NV,Basic Materials,Specialty Chemicals,22826244096.0,17.0,0.437,8417750.0,ok,Materials,0.03,Basic Materials
+MTCH,"Match Group, Inc.",Communication Services,Internet Content & Information,8418263040.0,17.0,1.303,5374716.0,ok,Communication,0.01,Communication Services
+ZTS,Zoetis Inc.,Healthcare,Drug Manufacturers - Specialty & Generic,48992141312.0,17.0,0.974,4130311.0,ok,Health Care,0.08,Healthcare
+CLX,Clorox Company (The),Consumer Defensive,Household & Personal Products,11808252928.0,17.0,0.645,2233266.0,ok,Consumer Staples,0.02,Consumer Defensive
+BC,Brunswick Corporation,Consumer Cyclical,Recreational Vehicles,5207732224.0,17.0,1.378,980917.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+VLTO,Veralto Corp,Industrials,Pollution & Treatment Controls,21803726848.0,17.0,1.153,2102291.0,ok,Industrials,0.03,Industrials
+VRSK,"Verisk Analytics, Inc.",Industrials,Consulting Services,23205435392.0,17.0,0.819,2171309.0,ok,Industrials,0.04,Industrials
+WH,"Wyndham Hotels & Resorts, Inc.",Consumer Cyclical,Lodging,6495866368.0,17.0,0.706,1385582.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+CNC,Centene Corporation,Healthcare,Healthcare Plans,20206931968.0,17.0,0.587,6389388.0,ok,Health Care,0.03,Healthcare
+GAP,"Gap, Inc. (The)",Consumer Cyclical,Apparel Retail,9210225664.0,17.0,2.245,7682561.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+EPAM,"EPAM Systems, Inc.",Technology,Information Technology Services,6371444224.0,17.0,1.73,1361417.0,ok,Information Technology,0.01,Technology
+CPB,The Campbell's Company,Consumer Defensive,Packaged Foods,6249150464.0,17.0,0.025,8788782.0,ok,Consumer Staples,0.01,Consumer Defensive
+CAG,"ConAgra Brands, Inc.",Consumer Defensive,Packaged Foods,6894279168.0,17.0,0.033,14867067.0,ok,Consumer Staples,0.01,Consumer Defensive
+LH,Labcorp Holdings Inc.,Healthcare,Diagnostics & Research,21829408768.0,17.0,0.985,638522.0,ok,Health Care,0.03,Healthcare
+DUOL,"Duolingo, Inc.",Technology,Software - Application,4691769856.0,17.0,0.883,2615814.0,ok,Consumer Discretionary,0.01,Technology
+CPNG,"Coupang, Inc.",Consumer Cyclical,Internet Retail,37624184832.0,17.0,1.163,24402701.0,ok,Consumer Discretionary,0.04,Consumer Cyclical
+PAYC,"Paycom Software, Inc.",Technology,Software - Application,6811524608.0,17.0,0.796,1919606.0,ok,Industrials,0.01,Technology
+DOCU,"DocuSign, Inc.",Technology,Software - Application,8746998784.0,18.0,0.993,5020638.0,ok,Information Technology,0.01,Technology
+CZR,"Caesars Entertainment, Inc.",Consumer Cyclical,Resorts & Casinos,5684342272.0,18.0,1.878,5993861.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+PCOR,"Procore Technologies, Inc.",Technology,Software - Application,8302090752.0,18.0,0.849,2668787.0,ok,Information Technology,0.01,Technology
+PLNT,"Planet Fitness, Inc.",Consumer Cyclical,Leisure,5530569216.0,18.0,1.307,1690709.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+WYNN,"Wynn Resorts, Limited",Consumer Cyclical,Resorts & Casinos,11013358592.0,18.0,1.034,1746200.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+MGM,MGM Resorts International,Consumer Cyclical,Resorts & Casinos,9961961472.0,18.0,1.351,4773188.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+RGEN,Repligen Corporation,Healthcare,Medical Instruments & Supplies,6432900608.0,18.0,1.189,890614.0,ok,Health Care,0.01,Healthcare
+NTRA,"Natera, Inc.",Healthcare,Diagnostics & Research,28507824128.0,18.0,1.68,1215270.0,ok,Health Care,0.04,Healthcare
+EXEL,"Exelixis, Inc.",Healthcare,Biotechnology,11697076224.0,18.0,0.418,2780840.0,ok,Health Care,0.02,Healthcare
+APH,Amphenol Corporation,Technology,Electronic Components,184635883520.0,18.0,1.26,9985577.0,ok,Information Technology,0.28,Technology
+NSC,Norfolk Southern Corporation,Industrials,Railroads,72186437632.0,18.0,1.31,1354454.0,ok,Industrials,0.1,Industrials
+MTZ,"MasTec, Inc.",Industrials,Engineering & Construction,30181588992.0,18.0,1.8,920959.0,ok,Industrials,0.04,Industrials
+CNH,CNH Industrial N.V.,Industrials,Farm & Heavy Construction Machinery,13027066880.0,18.0,1.331,15546430.0,ok,Industrials,0.01,Industrials
+VLO,Valero Energy Corporation,Energy,Oil & Gas Refining & Marketing,69921308672.0,18.0,0.612,3727195.0,ok,Energy,0.11,Energy
+KNX,Knight-Swift Transportation Hol,Industrials,Trucking,10684852224.0,18.0,1.115,3101887.0,ok,Industrials,0.02,Industrials
+AXON,"Axon Enterprise, Inc.",Industrials,Aerospace & Defense,31635869696.0,18.0,1.605,1133104.0,ok,Industrials,0.05,Industrials
+TKO,"TKO Group Holdings, Inc.",Communication Services,Entertainment,14522009600.0,18.0,0.406,1227775.0,ok,Communication,0.02,Communication Services
+TJX,"TJX Companies, Inc. (The)",Consumer Cyclical,Apparel Retail,175842459648.0,18.0,0.727,4948962.0,ok,Consumer Discretionary,0.27,Consumer Cyclical
+ILMN,"Illumina, Inc.",Healthcare,Diagnostics & Research,19055204352.0,18.0,1.493,1885298.0,ok,Health Care,0.03,Healthcare
+CIEN,Ciena Corporation,Technology,Communication Equipment,72940380160.0,18.0,1.017,3487201.0,ok,Information Technology,0.11,Technology
+AME,"AMETEK, Inc.",Industrials,Specialty Industrial Machinery,53830373376.0,18.0,1.041,1321974.0,ok,Industrials,0.08,Industrials
+PNR,Pentair plc.,Industrials,Specialty Industrial Machinery,14769567744.0,19.0,1.242,1706175.0,ok,Industrials,0.02,Industrials
+VIK,Viking Holdings Ltd,Consumer Cyclical,Travel Services,36122841088.0,19.0,,2827025.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+P,"Everpure, Inc.",Technology,Computer Hardware,23125657600.0,19.0,1.343,3147214.0,ok,Information Technology,0.03,Technology
+WSM,"Williams-Sonoma, Inc.",Consumer Cyclical,Specialty Retail,22897498112.0,19.0,1.578,1177246.0,ok,Consumer Discretionary,0.04,Consumer Cyclical
+HPE,Hewlett Packard Enterprise Comp,Technology,Communication Equipment,37059035136.0,19.0,1.215,17994220.0,ok,Information Technology,0.06,Technology
+LHX,"L3Harris Technologies, Inc.",Industrials,Aerospace & Defense,61680435200.0,19.0,0.746,1374256.0,ok,Industrials,0.1,Industrials
+CHD,"Church & Dwight Company, Inc.",Consumer Defensive,Household & Personal Products,22403645440.0,19.0,0.473,2157617.0,ok,Consumer Staples,0.03,Consumer Defensive
+APTV,Aptiv PLC,Consumer Cyclical,Auto Parts,15171734528.0,19.0,1.511,2478896.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+KHC,The Kraft Heinz Company,Consumer Defensive,Packaged Foods,26006872064.0,19.0,0.051,16040711.0,ok,Consumer Staples,0.03,Consumer Defensive
+TPR,"Tapestry, Inc.",Consumer Cyclical,Luxury Goods,29970956288.0,19.0,1.61,2154019.0,ok,Consumer Discretionary,0.05,Consumer Cyclical
+BBY,"Best Buy Co., Inc.",Consumer Cyclical,Specialty Retail,12886409216.0,19.0,1.374,4589945.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+LVS,Las Vegas Sands Corp.,Consumer Cyclical,Resorts & Casinos,34474967040.0,19.0,0.887,4702227.0,ok,Consumer Discretionary,0.03,Consumer Cyclical
+GIS,"General Mills, Inc.",Consumer Defensive,Packaged Foods,18929674240.0,19.0,0.0,8913848.0,ok,Consumer Staples,0.03,Consumer Defensive
+CL,Colgate-Palmolive Company,Consumer Defensive,Household & Personal Products,67168714752.0,19.0,0.331,6529862.0,ok,Consumer Staples,0.1,Consumer Defensive
+MOS,Mosaic Company (The),Basic Materials,Agricultural Inputs,7717317120.0,19.0,0.962,9116174.0,ok,Materials,0.01,Basic Materials
+GEHC,GE HealthCare Technologies Inc.,Healthcare,Medical Devices,31890118656.0,19.0,1.305,3473012.0,ok,Health Care,0.05,Healthcare
+PTC,PTC Inc.,Technology,Software - Application,16163241984.0,19.0,1.058,1201477.0,ok,Information Technology,0.03,Technology
+PSX,Phillips 66,Energy,Oil & Gas Refining & Marketing,63968751616.0,19.0,0.755,3121229.0,ok,Energy,0.1,Energy
+CF,"CF Industries Holdings, Inc.",Basic Materials,Agricultural Inputs,19292686336.0,19.0,0.516,4533803.0,ok,Materials,0.03,Basic Materials
+SWKS,"Skyworks Solutions, Inc.",Technology,Semiconductors,9257487360.0,19.0,1.3,3484122.0,ok,Information Technology,0.01,Technology
+MAS,Masco Corporation,Industrials,Building Products & Equipment,15210776576.0,19.0,,2955498.0,ok,Industrials,0.02,Industrials
+HEI,Heico Corporation,Industrials,Aerospace & Defense,37494173696.0,19.0,1.077,637353.0,ok,Industrials,0.02,Industrials
+MTDR,Matador Resources Company,Energy,Oil & Gas E&P,7587943936.0,19.0,0.906,1943533.0,ok,Energy,0.01,Energy
+URI,"United Rentals, Inc.",Industrials,Rental & Leasing Services,61818372096.0,20.0,1.681,672291.0,ok,Industrials,0.08,Industrials
+TREX,"Trex Company, Inc.",Industrials,Building Products & Equipment,4401778176.0,20.0,1.609,1827512.0,ok,Industrials,0.01,Industrials
+GE,GE Aerospace,Industrials,Aerospace & Defense,294997196800.0,20.0,1.428,5878482.0,ok,Industrials,0.44,Industrials
+LMT,Lockheed Martin Corporation,Industrials,Aerospace & Defense,122096517120.0,20.0,0.24,1629943.0,ok,Industrials,0.18,Industrials
+RVMD,"Revolution Medicines, Inc.",Healthcare,Biotechnology,28440459264.0,20.0,1.012,2898625.0,ok,Health Care,0.04,Healthcare
+BJ,"BJ's Wholesale Club Holdings, I",Consumer Defensive,Discount Stores,12573442048.0,20.0,0.331,1995527.0,ok,Consumer Staples,0.02,Consumer Defensive
+F,Ford Motor Company,Consumer Cyclical,Auto Manufacturers,50058305536.0,20.0,1.71,58728569.0,ok,Consumer Discretionary,0.08,Consumer Cyclical
+NEM,Newmont Corporation,Basic Materials,Gold,119937376256.0,20.0,0.475,10426648.0,ok,Materials,0.19,Basic Materials
+IBM,International Business Machines,Technology,Information Technology Services,217188696064.0,20.0,0.685,6336019.0,ok,Information Technology,0.36,Technology
+CGNX,Cognex Corporation,Technology,Scientific & Technical Instruments,9035449344.0,20.0,1.474,2176403.0,ok,Information Technology,0.01,Technology
+SNDK,Sandisk Corporation,Technology,Computer Hardware,137627582464.0,20.0,,19441417.0,ok,Information Technology,0.21,Technology
+IQV,"IQVIA Holdings, Inc.",Healthcare,Diagnostics & Research,26972762112.0,20.0,1.391,2133085.0,ok,Health Care,0.05,Healthcare
+GFS,GlobalFoundries Inc.,Technology,Semiconductors,33789915136.0,20.0,1.461,3955004.0,ok,Information Technology,0.01,Technology
+COHR,Coherent Corp.,Technology,Scientific & Technical Instruments,63308873728.0,20.0,1.905,7405869.0,ok,Information Technology,0.09,Technology
+CMI,Cummins Inc.,Industrials,Specialty Industrial Machinery,90825449472.0,20.0,1.14,946777.0,ok,Industrials,0.13,Industrials
+INSM,Insmed Incorporated,Healthcare,Biotechnology,31046014976.0,20.0,1.101,2305419.0,ok,Health Care,0.05,Healthcare
+VFC,V.F. Corporation,Consumer Cyclical,Apparel Manufacturing,7833092096.0,20.0,0.974,6928766.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+NOV,NOV Inc.,Energy,Oil & Gas Equipment & Services,7291956736.0,20.0,0.943,4976595.0,ok,Energy,0.01,Energy
+CELH,"Celsius Holdings, Inc.",Consumer Defensive,Beverages - Non-Alcoholic,8716483584.0,20.0,1.123,6182072.0,ok,Consumer Staples,0.01,Consumer Defensive
+SAIA,"Saia, Inc.",Industrials,Trucking,11760726016.0,20.0,2.04,570422.0,ok,Industrials,0.02,Industrials
+PPG,"PPG Industries, Inc.",Basic Materials,Specialty Chemicals,24682754048.0,20.0,1.155,2299840.0,ok,Materials,0.04,Basic Materials
+FICO,Fair Isaac Corporation,Technology,Software - Application,23241998336.0,20.0,1.376,380680.0,ok,Information Technology,0.03,Technology
+PR,Permian Resources Corporation,Energy,Oil & Gas E&P,18311981056.0,20.0,0.552,13471698.0,ok,Energy,0.02,Energy
+MRNA,"Moderna, Inc.",Healthcare,Biotechnology,20959614976.0,20.0,1.336,8648032.0,ok,Health Care,0.03,Healthcare
+BKR,Baker Hughes Company,Energy,Oil & Gas Equipment & Services,63958429696.0,21.0,0.898,9750982.0,ok,Energy,0.09,Energy
+KMI,"Kinder Morgan, Inc.",Energy,Oil & Gas Midstream,70593503232.0,21.0,0.63,13909656.0,ok,Energy,0.09,Energy
+CTVA,"Corteva, Inc.",Basic Materials,Agricultural Inputs,53460115456.0,21.0,0.68,4137354.0,ok,Materials,0.08,Basic Materials
+EFX,"Equifax, Inc.",Industrials,Consulting Services,21102610432.0,21.0,1.559,1875343.0,ok,Industrials,0.03,Industrials
+PEP,"Pepsico, Inc.",Consumer Defensive,Beverages - Non-Alcoholic,212832698368.0,21.0,0.41,7456693.0,ok,Consumer Staples,0.32,Consumer Defensive
+AR,Antero Resources Corporation,Energy,Oil & Gas E&P,11785655296.0,21.0,0.42,6072795.0,ok,Energy,0.02,Energy
+OKE,"ONEOK, Inc.",Energy,Oil & Gas Midstream,54944968704.0,21.0,0.809,5077291.0,ok,Energy,0.08,Energy
+TAP,Molson Coors Beverage Company,Consumer Defensive,Beverages - Brewers,8071791104.0,21.0,0.499,3072117.0,ok,Consumer Staples,0.01,Consumer Defensive
+IOT,Samsara Inc.,Technology,Software - Infrastructure,17003373568.0,21.0,1.497,8384877.0,ok,Information Technology,0.02,Technology
+FTI,TechnipFMC plc,Energy,Oil & Gas Equipment & Services,28973195264.0,21.0,0.711,4070469.0,ok,Energy,0.04,Energy
+ZBH,"Zimmer Biomet Holdings, Inc.",Healthcare,Medical Devices,17893527552.0,21.0,0.612,2099848.0,ok,Health Care,0.03,Healthcare
+DOV,Dover Corporation,Industrials,Specialty Industrial Machinery,30723000320.0,21.0,1.254,1273095.0,ok,Industrials,0.05,Industrials
+JCI,Johnson Controls International ,Industrials,Building Products & Equipment,86748135424.0,21.0,1.402,4351974.0,ok,Industrials,0.13,Industrials
+THC,Tenet Healthcare Corporation,Healthcare,Medical Care Facilities,16499283968.0,21.0,1.495,1127888.0,ok,Health Care,0.03,Healthcare
+GD,General Dynamics Corporation,Industrials,Aerospace & Defense,86321283072.0,21.0,0.387,1370014.0,ok,Industrials,0.12,Industrials
+DECK,Deckers Outdoor Corporation,Consumer Cyclical,Footwear & Accessories,15289431040.0,21.0,1.211,2391051.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+HWM,Howmet Aerospace Inc.,Industrials,Aerospace & Defense,98695405568.0,21.0,1.235,2555998.0,ok,Industrials,0.15,Industrials
+FCX,"Freeport-McMoRan, Inc.",Basic Materials,Copper,88359157760.0,21.0,1.473,19518382.0,ok,Materials,0.15,Basic Materials
+TRGP,"Targa Resources, Inc.",Energy,Oil & Gas Midstream,51569086464.0,21.0,0.811,1495898.0,ok,Energy,0.08,Energy
+TYL,"Tyler Technologies, Inc.",Technology,Software - Application,14431897600.0,21.0,0.921,677345.0,ok,Information Technology,0.02,Technology
+SHW,Sherwin-Williams Company (The),Basic Materials,Specialty Chemicals,83663626240.0,21.0,1.269,1754208.0,ok,Materials,0.12,Basic Materials
+CTRA,Coterra Energy Inc.,Energy,Oil & Gas E&P,25552218112.0,21.0,0.27,10465896.0,ok,Energy,0.04,Energy
+ELV,"Elevance Health, Inc.",Healthcare,Healthcare Plans,75201167360.0,21.0,,2026187.0,ok,Health Care,0.11,Healthcare
+ALAB,"Astera Labs, Inc.",Technology,Semiconductors,33624170496.0,21.0,1.793,5358970.0,ok,Information Technology,0.04,Technology
+CHWY,"Chewy, Inc.",Consumer Cyclical,Internet Retail,10687763456.0,21.0,1.612,8296759.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+FIS,Fidelity National Information S,Technology,Information Technology Services,23686494208.0,21.0,0.914,6154841.0,ok,Financials,0.04,Technology
+TDG,Transdigm Group Incorporated,Industrials,Aerospace & Defense,65834622976.0,21.0,0.955,403048.0,ok,Industrials,0.1,Industrials
+ECL,Ecolab Inc.,Basic Materials,Specialty Chemicals,76663939072.0,21.0,1.024,1467069.0,ok,Materials,0.1,Basic Materials
+HCA,"HCA Healthcare, Inc.",Healthcare,Medical Care Facilities,105978396672.0,21.0,1.366,1097538.0,ok,Health Care,0.12,Healthcare
+PCTY,Paylocity Holding Corporation,Technology,Software - Application,5442511360.0,21.0,0.573,898580.0,ok,Industrials,0.01,Technology
+APD,"Air Products and Chemicals, Inc",Basic Materials,Specialty Chemicals,67609493504.0,21.0,0.808,1416288.0,ok,Materials,0.1,Basic Materials
+BLDR,"Builders FirstSource, Inc.",Industrials,Building Products & Equipment,9691436032.0,21.0,1.636,2315190.0,ok,Industrials,0.01,Industrials
+VZ,Verizon Communications Inc.,Communication Services,Telecom Services,197379604480.0,22.0,0.27,31102479.0,ok,Communication,0.3,Communication Services
+CMCSA,Comcast Corporation,Communication Services,Telecom Services,115292823552.0,22.0,0.79,32693296.0,ok,Communication,0.16,Communication Services
+NOC,Northrop Grumman Corporation,Industrials,Aerospace & Defense,83467386880.0,22.0,0.046,887091.0,ok,Industrials,0.12,Industrials
+CRH,CRH PLC,Basic Materials,Building Materials,78286348288.0,22.0,1.241,5143125.0,ok,Materials,0.12,Basic Materials
+NCLH,Norwegian Cruise Line Holdings ,Consumer Cyclical,Travel Services,8391150592.0,22.0,2.113,22581783.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+DHR,Danaher Corporation,Healthcare,Diagnostics & Research,126386601984.0,22.0,0.986,4406764.0,ok,Health Care,0.18,Healthcare
+FND,"Floor & Decor Holdings, Inc.",Consumer Cyclical,Home Improvement Retail,5507397120.0,22.0,1.825,2686940.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+RTX,RTX Corporation,Industrials,Aerospace & Defense,241460330496.0,22.0,0.428,6007453.0,ok,Industrials,0.37,Industrials
+CSCO,"Cisco Systems, Inc.",Technology,Communication Equipment,349921017856.0,22.0,0.819,23881082.0,ok,Information Technology,0.55,Technology
+EL,"Estee Lauder Companies, Inc. (T",Consumer Defensive,Household & Personal Products,27635945472.0,22.0,1.252,4853937.0,ok,Consumer Staples,0.03,Consumer Defensive
+CCL,Carnival Corporation,Consumer Cyclical,Travel Services,36913971200.0,22.0,2.482,26145603.0,ok,Consumer Discretionary,0.05,Consumer Cyclical
+KR,Kroger Company (The),Consumer Defensive,Grocery Stores,43729874944.0,22.0,0.546,6502096.0,ok,Consumer Staples,0.06,Consumer Defensive
+WAT,Waters Corporation,Healthcare,Diagnostics & Research,30549100544.0,22.0,1.203,1179530.0,ok,Health Care,0.05,Healthcare
+FERG,Ferguson Enterprises Inc.,Industrials,Industrial Distribution,52879749120.0,22.0,1.178,1422933.0,ok,Industrials,0.08,Industrials
+INCY,Incyte Corporation,Healthcare,Biotechnology,18999912448.0,22.0,0.857,1646954.0,ok,Health Care,0.02,Healthcare
+PG,Procter & Gamble Company (The),Consumer Defensive,Household & Personal Products,340485439488.0,22.0,0.403,10652856.0,ok,Consumer Staples,0.51,Consumer Defensive
+FIVE,"Five Below, Inc.",Consumer Cyclical,Specialty Retail,13157794816.0,22.0,1.066,1115593.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+XOM,Exxon Mobil Corporation,Energy,Oil & Gas Integrated,625686872064.0,22.0,0.288,22917838.0,ok,Energy,0.97,Energy
+STZ,"Constellation Brands, Inc.",Consumer Defensive,Beverages - Brewers,27432937472.0,22.0,0.432,2142704.0,ok,Consumer Staples,0.03,Consumer Defensive
+LNG,"Cheniere Energy, Inc.",Energy,Oil & Gas Midstream,54045114368.0,22.0,0.134,2971359.0,ok,Energy,0.08,Energy
+VMC,Vulcan Materials Company (Holdi,Basic Materials,Building Materials,38222184448.0,22.0,1.095,1259359.0,ok,Materials,0.06,Basic Materials
+DKS,Dick's Sporting Goods Inc,Consumer Cyclical,Specialty Retail,20194420736.0,22.0,1.238,1178166.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+CVNA,Carvana Co.,Consumer Cyclical,Auto & Truck Dealerships,57629351936.0,22.0,3.614,3848072.0,ok,Consumer Discretionary,0.09,Consumer Cyclical
+ALB,Albemarle Corporation,Basic Materials,Specialty Chemicals,22768672768.0,22.0,1.433,2419427.0,ok,Materials,0.03,Basic Materials
+WMB,"Williams Companies, Inc. (The)",Energy,Oil & Gas Midstream,87617699840.0,23.0,0.653,6988756.0,ok,Energy,0.13,Energy
+CSX,CSX Corporation,Industrials,Railroads,85808857088.0,23.0,1.246,13060764.0,ok,Industrials,0.12,Industrials
+CVX,Chevron Corporation,Energy,Oil & Gas Integrated,373680209920.0,23.0,0.587,12723845.0,ok,Energy,0.53,Energy
+MLM,"Martin Marietta Materials, Inc.",Basic Materials,Building Materials,37326524416.0,23.0,1.188,524319.0,ok,Materials,0.06,Basic Materials
+T,AT&T Inc.,Communication Services,Telecom Services,185794904064.0,23.0,,45061030.0,ok,Communication,0.27,Communication Services
+AZO,"AutoZone, Inc.",Consumer Cyclical,Auto Parts,59597766656.0,23.0,0.406,152112.0,ok,Consumer Discretionary,0.09,Consumer Cyclical
+HSY,The Hershey Company,Consumer Defensive,Confectioners,38936936448.0,23.0,0.175,2005803.0,ok,Consumer Staples,0.04,Consumer Defensive
+JBHT,"J.B. Hunt Transport Services, I",Industrials,Integrated Freight & Logistics,24002000896.0,23.0,1.221,1033433.0,ok,Industrials,0.03,Industrials
+H,Hyatt Hotels Corporation,Consumer Cyclical,Lodging,15536169984.0,23.0,1.281,886964.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+DLTR,"Dollar Tree, Inc.",Consumer Defensive,Discount Stores,20173744128.0,23.0,0.744,3174519.0,ok,Consumer Staples,0.03,Consumer Defensive
+XPO,"XPO, Inc.",Industrials,Trucking,26388692992.0,23.0,1.717,1771477.0,ok,Industrials,0.04,Industrials
+TT,Trane Technologies plc,Industrials,Building Products & Equipment,107361402880.0,23.0,1.212,1449429.0,ok,Industrials,0.16,Industrials
+AS,"Amer Sports, Inc.",Consumer Cyclical,Leisure,20869955584.0,23.0,2.803,4888430.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+LYV,"Live Nation Entertainment, Inc.",Communication Services,Entertainment,35974004736.0,23.0,1.147,3036975.0,ok,Communication,0.04,Communication Services
+WDC,Western Digital Corporation,Technology,Computer Hardware,137826435072.0,23.0,1.829,9410833.0,ok,Information Technology,0.2,Technology
+DE,Deere & Company,Industrials,Farm & Heavy Construction Machinery,159890014208.0,23.0,0.992,1542166.0,ok,Industrials,0.22,Industrials
+LUV,Southwest Airlines Company,Industrials,Airlines,18538108928.0,23.0,1.184,9985303.0,ok,Industrials,0.03,Industrials
+KO,Coca-Cola Company (The),Consumer Defensive,Beverages - Non-Alcoholic,328320778240.0,23.0,0.361,16960517.0,ok,Consumer Staples,0.44,Consumer Defensive
+OVV,Ovintiv Inc. (DE),Energy,Oil & Gas E&P,16031120384.0,23.0,0.599,4915587.0,ok,Energy,0.02,Energy
+UNP,Union Pacific Corporation,Industrials,Railroads,161041170432.0,23.0,0.968,3419135.0,ok,Industrials,0.23,Industrials
+CARR,Carrier Global Corporation,Industrials,Building Products & Equipment,51412570112.0,23.0,1.319,7326746.0,ok,Industrials,0.07,Industrials
+LITE,Lumentum Holdings Inc.,Technology,Communication Equipment,60467945472.0,23.0,1.391,6271832.0,ok,Information Technology,0.09,Technology
+RRC,Range Resources Corporation,Energy,Oil & Gas E&P,10046932992.0,23.0,0.517,3669730.0,ok,Energy,0.02,Energy
+BMRN,BioMarin Pharmaceutical Inc.,Healthcare,Biotechnology,10432715776.0,23.0,0.291,2013079.0,ok,Health Care,0.02,Healthcare
+IONS,"Ionis Pharmaceuticals, Inc.",Healthcare,Biotechnology,12239076352.0,23.0,0.4,2089706.0,ok,Health Care,0.02,Healthcare
+PODD,Insulet Corporation,Healthcare,Medical Devices,13313178624.0,23.0,1.47,1014553.0,ok,Health Care,0.02,Healthcare
+MNST,Monster Beverage Corporation,Consumer Defensive,Beverages - Non-Alcoholic,75846393856.0,23.0,0.509,5937179.0,ok,Consumer Staples,0.08,Consumer Defensive
+DELL,Dell Technologies Inc.,Technology,Computer Hardware,137931030528.0,23.0,0.954,8618296.0,ok,Information Technology,0.1,Technology
+AKAM,"Akamai Technologies, Inc.",Technology,Software - Infrastructure,14159911936.0,23.0,0.594,4966556.0,ok,Information Technology,0.02,Technology
+MAR,Marriott International,Consumer Cyclical,Lodging,97577910272.0,24.0,1.097,1623951.0,ok,Consumer Discretionary,0.12,Consumer Cyclical
+BROS,Dutch Bros Inc.,Consumer Cyclical,Restaurants,6942539776.0,24.0,2.506,5268885.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+TMO,Thermo Fisher Scientific Inc,Healthcare,Diagnostics & Research,173435699200.0,24.0,0.972,2224733.0,ok,Health Care,0.3,Healthcare
+FLUT,Flutter Entertainment plc,Consumer Cyclical,Gambling,18445152256.0,24.0,1.157,4002690.0,ok,Consumer Discretionary,0.03,Consumer Cyclical
+MCHP,Microchip Technology Incorporat,Technology,Semiconductors,49048518656.0,24.0,1.474,9288833.0,ok,Information Technology,0.07,Technology
+AAL,"American Airlines Group, Inc.",Industrials,Airlines,7791116800.0,24.0,1.248,66747961.0,ok,Industrials,0.01,Industrials
+LULU,lululemon athletica inc.,Consumer Cyclical,Apparel Retail,16618293248.0,24.0,1.07,2656962.0,ok,Consumer Discretionary,0.03,Consumer Cyclical
+YUM,"Yum! Brands, Inc.",Consumer Cyclical,Restaurants,44430614528.0,24.0,0.662,1803250.0,ok,Consumer Discretionary,0.07,Consumer Cyclical
+UAL,"United Airlines Holdings, Inc.",Industrials,Airlines,29616988160.0,24.0,1.286,7865106.0,ok,Industrials,0.05,Industrials
+PWR,"Quanta Services, Inc.",Industrials,Engineering & Construction,95051931648.0,24.0,1.106,1099014.0,ok,Industrials,0.14,Industrials
+OXY,Occidental Petroleum Corporatio,Energy,Oil & Gas E&P,57349734400.0,24.0,0.23,16967266.0,ok,Energy,0.06,Energy
+ULTA,"Ulta Beauty, Inc.",Consumer Cyclical,Specialty Retail,24686704640.0,24.0,0.953,693503.0,ok,Consumer Discretionary,0.04,Consumer Cyclical
+HUM,Humana Inc.,Healthcare,Healthcare Plans,25805707264.0,24.0,0.445,2242862.0,ok,Health Care,0.04,Healthcare
+DXCM,"DexCom, Inc.",Healthcare,Medical Devices,24194236416.0,24.0,1.556,4506156.0,ok,Health Care,0.04,Healthcare
+RSG,"Republic Services, Inc.",Industrials,Waste Management,66128982016.0,24.0,0.535,1486246.0,ok,Industrials,0.06,Industrials
+JNJ,Johnson & Johnson,Healthcare,Drug Manufacturers - General,555224530944.0,24.0,0.329,8391125.0,ok,Health Care,0.83,Healthcare
+U,Unity Software Inc.,Technology,Software - Application,10607182848.0,24.0,1.998,19402191.0,ok,Information Technology,0.01,Technology
+ODFL,"Old Dominion Freight Line, Inc.",Industrials,Trucking,46433058816.0,24.0,1.205,2283837.0,ok,Industrials,0.06,Industrials
+RCL,Royal Caribbean Cruises Ltd.,Consumer Cyclical,Travel Services,70453690368.0,24.0,1.941,2599814.0,ok,Consumer Discretionary,0.1,Consumer Cyclical
+ORLY,"O'Reilly Automotive, Inc.",Consumer Cyclical,Auto Parts,78180532224.0,24.0,0.598,5834151.0,ok,Consumer Discretionary,0.12,Consumer Cyclical
+CI,The Cigna Group,Healthcare,Healthcare Plans,73751191552.0,24.0,0.272,1733800.0,ok,Health Care,0.11,Healthcare
+PH,Parker-Hannifin Corporation,Industrials,Specialty Industrial Machinery,122919755776.0,24.0,1.25,737550.0,ok,Industrials,0.18,Industrials
+HLT,Hilton Worldwide Holdings Inc.,Consumer Cyclical,Lodging,76647604224.0,24.0,1.11,1862411.0,ok,Consumer Discretionary,0.12,Consumer Cyclical
+BA,Boeing Company (The),Industrials,Aerospace & Defense,184580980736.0,25.0,,7089122.0,ok,Industrials,0.27,Industrials
+ALNY,"Alnylam Pharmaceuticals, Inc.",Healthcare,Biotechnology,41868345344.0,25.0,0.383,1258532.0,ok,Health Care,0.06,Healthcare
+HON,Honeywell International Inc.,Industrials,Conglomerates,135817207808.0,25.0,0.915,4030848.0,ok,Industrials,0.21,Industrials
+MDLZ,"Mondelez International, Inc.",Consumer Defensive,Confectioners,74068279296.0,25.0,0.389,10149266.0,ok,Consumer Staples,0.11,Consumer Defensive
+DVN,Devon Energy Corporation,Energy,Oil & Gas E&P,29922353152.0,25.0,0.526,14517617.0,ok,Energy,0.04,Energy
+DAL,"Delta Air Lines, Inc.",Industrials,Airlines,44918689792.0,25.0,1.306,11851908.0,ok,Industrials,0.07,Industrials
+PLTR,Palantir Technologies Inc.,Technology,Software - Infrastructure,338589548544.0,25.0,1.674,53182109.0,ok,Information Technology,0.51,Technology
+MDT,Medtronic plc.,Healthcare,Medical Devices,107576721408.0,25.0,0.764,8618287.0,ok,Health Care,0.16,Healthcare
+TXRH,"Texas Roadhouse, Inc.",Consumer Cyclical,Restaurants,10577030144.0,25.0,0.896,1006720.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+WM,"Waste Management, Inc.",Industrials,Waste Management,93896572928.0,25.0,0.547,2240267.0,ok,Industrials,0.13,Industrials
+RIVN,"Rivian Automotive, Inc.",Consumer Cyclical,Auto Manufacturers,21034778624.0,25.0,1.691,28775503.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+ABT,Abbott Laboratories,Healthcare,Medical Devices,160700923904.0,25.0,0.782,11879485.0,ok,Health Care,0.24,Healthcare
+CHRW,"C.H. Robinson Worldwide, Inc.",Industrials,Integrated Freight & Logistics,21795391488.0,25.0,0.935,2312291.0,ok,Industrials,0.03,Industrials
+BMY,Bristol-Myers Squibb Company,Healthcare,Drug Manufacturers - General,120503222272.0,25.0,0.273,12529598.0,ok,Health Care,0.18,Healthcare
+EQT,EQT Corporation,Energy,Oil & Gas E&P,36859420672.0,25.0,0.693,9007490.0,ok,Energy,0.05,Energy
+HAL,Halliburton Company,Energy,Oil & Gas Equipment & Services,33113993216.0,25.0,0.693,15284383.0,ok,Energy,0.05,Energy
+RBRK,"Rubrik, Inc.",Technology,Software - Infrastructure,10502475776.0,25.0,,4271438.0,ok,Information Technology,0.01,Technology
+VRT,"Vertiv Holdings, LLC",Industrials,Electrical Equipment & Parts,123587002368.0,25.0,2.048,7870633.0,ok,Industrials,0.18,Industrials
+LIN,Linde plc,Basic Materials,Specialty Chemicals,235432034304.0,25.0,0.79,2597150.0,ok,Materials,0.36,Basic Materials
+TOST,"Toast, Inc.",Technology,Software - Infrastructure,16444879872.0,25.0,1.901,11702048.0,ok,Financials,0.02,Technology
+ROK,"Rockwell Automation, Inc.",Industrials,Specialty Industrial Machinery,45975052288.0,25.0,1.541,999045.0,ok,Industrials,0.07,Industrials
+EXE,Expand Energy Corporation,Energy,Oil & Gas E&P,23150352384.0,26.0,0.459,3953669.0,ok,Energy,0.03,Energy
+COP,ConocoPhillips,Energy,Oil & Gas E&P,151588749312.0,26.0,0.192,9645003.0,ok,Energy,0.23,Energy
+ETSY,"Etsy, Inc.",Consumer Cyclical,Internet Retail,6037638144.0,26.0,1.768,3496127.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+TMUS,"T-Mobile US, Inc.",Communication Services,Telecom Services,213838512128.0,26.0,0.422,6331682.0,ok,Communication,0.14,Communication Services
+GM,General Motors Company,Consumer Cyclical,Auto Manufacturers,70798073856.0,26.0,1.345,7776050.0,ok,Consumer Discretionary,0.11,Consumer Cyclical
+UNH,UnitedHealth Group Incorporated,Healthcare,Healthcare Plans,322016051200.0,26.0,0.408,10333625.0,ok,Health Care,0.49,Healthcare
+CAT,"Caterpillar, Inc.",Industrials,Farm & Heavy Construction Machinery,388626579456.0,26.0,1.519,2800353.0,ok,Industrials,0.57,Industrials
+SNPS,"Synopsys, Inc.",Technology,Software - Infrastructure,87515111424.0,26.0,1.148,2167064.0,ok,Information Technology,0.14,Technology
+ANET,"Arista Networks, Inc.",Technology,Computer Hardware,217269682176.0,26.0,1.475,7732795.0,ok,Information Technology,0.28,Technology
+CTSH,Cognizant Technology Solutions ,Technology,Information Technology Services,26351405056.0,26.0,0.976,6857951.0,ok,Information Technology,0.04,Technology
+CVS,CVS Health Corporation,Healthcare,Healthcare Plans,101067317248.0,26.0,0.505,8775679.0,ok,Health Care,0.15,Healthcare
+ONON,On Holding AG,Consumer Cyclical,Footwear & Accessories,11988730880.0,26.0,2.231,6376669.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+ESTC,Elastic N.V.,Technology,Software - Application,4735171072.0,26.0,1.029,2239572.0,ok,Information Technology,0.01,Technology
+CAVA,"CAVA Group, Inc.",Consumer Cyclical,Restaurants,10835934208.0,26.0,2.042,3364479.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+EW,Edwards Lifesciences Corporatio,Healthcare,Medical Devices,45961904128.0,27.0,0.945,4889145.0,ok,Health Care,0.07,Healthcare
+EMR,Emerson Electric Company,Industrials,Specialty Industrial Machinery,80051281920.0,27.0,1.278,3410903.0,ok,Industrials,0.12,Industrials
+ACN,Accenture plc,Technology,Information Technology Services,109719773184.0,27.0,1.236,6881916.0,ok,Information Technology,0.18,Technology
+DRI,"Darden Restaurants, Inc.",Consumer Cyclical,Restaurants,23175012352.0,27.0,0.627,1426716.0,ok,Consumer Discretionary,0.04,Consumer Cyclical
+ROKU,"Roku, Inc.",Communication Services,Entertainment,16948296704.0,27.0,1.996,3352045.0,ok,Communication,0.02,Communication Services
+UPS,"United Parcel Service, Inc.",Industrials,Integrated Freight & Logistics,91526766592.0,27.0,1.098,6519714.0,ok,Industrials,0.12,Industrials
+PFE,"Pfizer, Inc.",Healthcare,Drug Manufacturers - General,151708467200.0,27.0,0.388,41789620.0,ok,Health Care,0.23,Healthcare
+MDLN,Medline Inc.,Healthcare,Medical Instruments & Supplies,39092617216.0,27.0,,5750408.0,ok,Health Care,0.02,Healthcare
+MRK,"Merck & Company, Inc.",Healthcare,Drug Manufacturers - General,283097563136.0,27.0,0.275,11112919.0,ok,Health Care,0.43,Healthcare
+APA,APA Corporation,Energy,Oil & Gas E&P,13662459904.0,27.0,0.484,8655093.0,ok,Energy,0.02,Energy
+ZM,"Zoom Communications, Inc.",Technology,Software - Application,26522966016.0,27.0,0.883,4488411.0,ok,Information Technology,0.04,Technology
+NBIX,"Neurocrine Biosciences, Inc.",Healthcare,Drug Manufacturers - Specialty & Generic,13094769664.0,27.0,0.35,1131754.0,ok,Health Care,0.02,Healthcare
+TSCO,Tractor Supply Company,Consumer Cyclical,Specialty Retail,20090828800.0,27.0,0.747,7167296.0,ok,Consumer Discretionary,0.03,Consumer Cyclical
+GPN,Global Payments Inc.,Industrials,Specialty Business Services,18677991424.0,27.0,0.765,3589520.0,ok,Financials,0.03,Industrials
+FDX,FedEx Corporation,Industrials,Integrated Freight & Logistics,93698482176.0,27.0,1.286,1910012.0,ok,Industrials,0.13,Industrials
+CDNS,"Cadence Design Systems, Inc.",Technology,Software - Application,86784016384.0,27.0,1.041,2625572.0,ok,Information Technology,0.14,Technology
+SYK,Stryker Corporation,Healthcare,Medical Devices,126250754048.0,27.0,0.926,2069411.0,ok,Health Care,0.17,Healthcare
+FISV,"Fiserv, Inc.",,,32915554304.0,28.0,,7583975.0,ok,Financials,0.05,Financials
+TWLO,Twilio Inc.,Technology,Software - Infrastructure,21466857472.0,28.0,1.284,2452335.0,ok,Information Technology,0.03,Technology
+GILD,"Gilead Sciences, Inc.",Healthcare,Drug Manufacturers - General,165874466816.0,28.0,0.404,6697564.0,ok,Health Care,0.25,Healthcare
+CART,Maplebear Inc.,Consumer Cyclical,Internet Retail,10100423680.0,28.0,0.888,4622904.0,ok,Consumer Staples,0.01,Consumer Cyclical
+APP,Applovin Corporation,Communication Services,Advertising Agencies,152719622144.0,28.0,2.502,5870832.0,ok,Information Technology,0.18,Communication Services
+ENPH,"Enphase Energy, Inc.",Technology,Solar,4765307392.0,28.0,1.381,6777887.0,ok,Information Technology,0.01,Technology
+REGN,"Regeneron Pharmaceuticals, Inc.",Healthcare,Biotechnology,80983490560.0,28.0,0.397,691282.0,ok,Health Care,0.12,Healthcare
+ETN,"Eaton Corporation, PLC",Industrials,Specialty Industrial Machinery,164699783168.0,28.0,1.164,2743056.0,ok,Industrials,0.25,Industrials
+QSR,Restaurant Brands International,Consumer Cyclical,Restaurants,28209793024.0,28.0,0.527,3456848.0,ok,Consumer Discretionary,0.04,Consumer Cyclical
+DG,Dollar General Corporation,Consumer Defensive,Discount Stores,26880823296.0,28.0,0.34,3122195.0,ok,Consumer Staples,0.04,Consumer Defensive
+SLB,SLB Limited,Energy,Oil & Gas Equipment & Services,82172043264.0,28.0,0.695,18831859.0,ok,Energy,0.12,Energy
+TTWO,"Take-Two Interactive Software, ",Communication Services,Electronic Gaming & Multimedia,38868328448.0,28.0,0.965,2330820.0,ok,Communication,0.06,Communication Services
+KLAC,KLA Corporation,Technology,Semiconductor Equipment & Materials,238533591040.0,29.0,1.435,1037116.0,ok,Information Technology,0.37,Technology
+DIS,Walt Disney Company (The),Communication Services,Entertainment,183618043904.0,29.0,1.441,11342806.0,ok,Communication,0.29,Communication Services
+LLY,Eli Lilly and Company,Healthcare,Drug Manufacturers - General,819789496320.0,29.0,0.504,3123140.0,ok,Health Care,1.13,Healthcare
+QCOM,QUALCOMM Incorporated,Technology,Semiconductors,143064645632.0,29.0,1.279,11377458.0,ok,Information Technology,0.22,Technology
+W,Wayfair Inc.,Consumer Cyclical,Internet Retail,10060329984.0,29.0,3.307,3770611.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+VRTX,Vertex Pharmaceuticals Incorpor,Healthcare,Biotechnology,110671921152.0,29.0,0.367,1390750.0,ok,Health Care,0.17,Healthcare
+ON,ON Semiconductor Corporation,Technology,Semiconductors,38459547648.0,29.0,1.524,8978146.0,ok,Information Technology,0.06,Technology
+EOG,"EOG Resources, Inc.",Energy,Oil & Gas E&P,71716274176.0,29.0,0.333,5387582.0,ok,Energy,0.11,Energy
+FSLR,"First Solar, Inc.",Technology,Solar,21080764416.0,29.0,1.607,2316279.0,ok,Information Technology,0.03,Technology
+VEEV,Veeva Systems Inc.,Healthcare,Health Information Services,25668225024.0,29.0,1.103,2288259.0,ok,Health Care,0.04,Healthcare
+ABBV,AbbVie Inc.,Healthcare,Drug Manufacturers - General,355432792064.0,30.0,0.364,7059398.0,ok,Health Care,0.54,Healthcare
+AMGN,Amgen Inc.,Healthcare,Drug Manufacturers - General,187929755648.0,30.0,0.465,2744370.0,ok,Health Care,0.28,Healthcare
+EBAY,eBay Inc.,Consumer Cyclical,Internet Retail,46323200000.0,30.0,1.33,5349691.0,ok,Consumer Discretionary,0.07,Consumer Cyclical
+ISRG,"Intuitive Surgical, Inc.",Healthcare,Medical Instruments & Supplies,169580265472.0,30.0,1.679,1969445.0,ok,Health Care,0.26,Healthcare
+WING,Wingstop Inc.,Consumer Cyclical,Restaurants,5132469248.0,30.0,2.025,1121237.0,ok,Consumer Discretionary,0.01,Consumer Cyclical
+BIIB,Biogen Inc.,Healthcare,Drug Manufacturers - General,27572992000.0,30.0,0.162,1237367.0,ok,Health Care,0.04,Healthcare
+FANG,"Diamondback Energy, Inc.",Energy,Oil & Gas E&P,55021764608.0,30.0,0.488,3217990.0,ok,Energy,0.06,Energy
+LRCX,Lam Research Corporation,Technology,Semiconductor Equipment & Materials,323339354112.0,31.0,1.79,10655704.0,ok,Information Technology,0.51,Technology
+TEAM,Atlassian Corporation,Technology,Software - Application,17834375168.0,31.0,0.994,7328130.0,ok,Information Technology,0.02,Technology
+DPZ,Domino's Pizza Inc,Consumer Cyclical,Restaurants,12521874432.0,31.0,1.185,945301.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+RDDT,"Reddit, Inc.",Communication Services,Internet Content & Information,29220833280.0,31.0,2.407,5416187.0,ok,Communication,0.03,Communication Services
+NET,"Cloudflare, Inc.",Technology,Software - Infrastructure,72155955200.0,31.0,1.875,5083374.0,ok,Information Technology,0.1,Technology
+BSX,Boston Scientific Corporation,Healthcare,Medical Devices,97626849280.0,31.0,0.782,17326548.0,ok,Health Care,0.15,Healthcare
+ADSK,"Autodesk, Inc.",Technology,Software - Application,48947777536.0,32.0,1.433,2233274.0,ok,Information Technology,0.08,Technology
+INTU,Intuit Inc.,Technology,Software - Application,106662453248.0,32.0,1.213,4160791.0,ok,Information Technology,0.17,Technology
+COST,Costco Wholesale Corporation,Consumer Defensive,Discount Stores,450032271360.0,32.0,0.978,1952330.0,ok,Consumer Staples,0.68,Consumer Defensive
+AMAT,"Applied Materials, Inc.",Technology,Semiconductor Equipment & Materials,320546963456.0,32.0,1.637,7108358.0,ok,Information Technology,0.49,Technology
+TGT,Target Corporation,Consumer Defensive,Discount Stores,58948210688.0,32.0,1.032,6035082.0,ok,Consumer Staples,0.09,Consumer Defensive
+TXN,Texas Instruments Incorporated,Technology,Semiconductors,256829308928.0,32.0,0.994,7735974.0,ok,Information Technology,0.33,Technology
+GEV,GE Vernova Inc.,Industrials,Specialty Industrial Machinery,308901707776.0,32.0,,2684143.0,ok,Industrials,0.47,Industrials
+ADI,"Analog Devices, Inc.",Technology,Semiconductors,197175902208.0,32.0,1.053,3967622.0,ok,Information Technology,0.29,Technology
+HD,"Home Depot, Inc. (The)",Consumer Cyclical,Home Improvement Retail,338808766464.0,33.0,1.085,3990190.0,ok,Consumer Discretionary,0.52,Consumer Cyclical
+NKE,"Nike, Inc.",Consumer Cyclical,Footwear & Accessories,66314121216.0,33.0,1.319,20115156.0,ok,Consumer Discretionary,0.08,Consumer Cyclical
+TTD,"The Trade Desk, Inc.",Communication Services,Advertising Agencies,10766601216.0,33.0,1.174,19806990.0,ok,Communication,0.02,Communication Services
+MCD,McDonald's Corporation,Consumer Cyclical,Restaurants,215046684672.0,33.0,0.532,3246146.0,ok,Consumer Discretionary,0.33,Consumer Cyclical
+LOW,"Lowe's Companies, Inc.",Consumer Cyclical,Home Improvement Retail,138077913088.0,33.0,0.965,2716374.0,ok,Consumer Discretionary,0.21,Consumer Cyclical
+DKNG,DraftKings Inc.,Consumer Cyclical,Gambling,10990618624.0,34.0,1.674,15312009.0,ok,Consumer Discretionary,0.02,Consumer Cyclical
+SBUX,Starbucks Corporation,Consumer Cyclical,Restaurants,113405919232.0,34.0,0.944,8340169.0,ok,Consumer Discretionary,0.17,Consumer Cyclical
+S,"SentinelOne, Inc.",Technology,Software - Infrastructure,4736648704.0,34.0,0.756,8619874.0,ok,Information Technology,0.01,Technology
+ADBE,Adobe Inc.,Technology,Software - Application,96595714048.0,34.0,1.518,6008651.0,ok,Information Technology,0.16,Technology
+EXPE,"Expedia Group, Inc.",Consumer Cyclical,Travel Services,30679054336.0,34.0,1.332,2684151.0,ok,Consumer Discretionary,0.05,Consumer Cyclical
+HUBS,"HubSpot, Inc.",Technology,Software - Application,11322865664.0,34.0,1.439,1844798.0,ok,Information Technology,0.02,Technology
+DT,"Dynatrace, Inc.",Technology,Software - Application,10338032640.0,34.0,0.791,7459441.0,ok,Information Technology,0.02,Technology
+FTNT,"Fortinet, Inc.",Technology,Software - Infrastructure,61236076544.0,34.0,0.998,6576459.0,ok,Information Technology,0.08,Technology
+CMG,"Chipotle Mexican Grill, Inc.",Consumer Cyclical,Restaurants,44152143872.0,35.0,1.064,16495993.0,ok,Consumer Discretionary,0.07,Consumer Cyclical
+RBLX,Roblox Corporation,Communication Services,Electronic Gaming & Multimedia,39690842112.0,35.0,1.673,10691483.0,ok,Communication,0.06,Communication Services
+ABNB,"Airbnb, Inc.",Consumer Cyclical,Travel Services,85053046784.0,36.0,1.16,4357443.0,ok,Consumer Discretionary,0.09,Consumer Cyclical
+BKNG,Booking Holdings Inc. Common St,Consumer Cyclical,Travel Services,137542107136.0,36.0,1.198,10509554.0,ok,Consumer Discretionary,0.22,Consumer Cyclical
+MDB,"MongoDB, Inc.",Technology,Software - Infrastructure,20744177664.0,36.0,1.605,1941220.0,ok,Information Technology,0.03,Technology
+LYFT,"Lyft, Inc.",Technology,Software - Application,5361198080.0,37.0,1.859,17809475.0,ok,Industrials,0.01,Technology
+PINS,"Pinterest, Inc.",Communication Services,Internet Content & Information,12681829376.0,37.0,0.876,20071651.0,ok,Communication,0.02,Communication Services
+WDAY,"Workday, Inc.",Technology,Software - Application,29475807232.0,38.0,1.141,5664688.0,ok,Information Technology,0.04,Technology
+ORCL,Oracle Corporation,Technology,Software - Infrastructure,506989412352.0,38.0,1.597,30156604.0,ok,Information Technology,0.48,Technology
+MRVL,"Marvell Technology, Inc.",Technology,Semiconductors,144775299072.0,39.0,1.822,21618182.0,ok,Information Technology,0.2,Technology
+SPOT,Spotify Technology S.A.,Communication Services,Internet Content & Information,106222936064.0,39.0,1.702,2576858.0,ok,Communication,0.12,Communication Services
+XYZ,"Block, Inc.",Technology,Software - Infrastructure,42494013440.0,40.0,2.613,8226530.0,ok,Financials,0.06,Technology
+MU,"Micron Technology, Inc.",Technology,Semiconductors,543252021248.0,40.0,1.606,41512362.0,ok,Information Technology,0.83,Technology
+INTC,Intel Corporation,Technology,Semiconductors,335303081984.0,41.0,1.349,99721317.0,ok,Information Technology,0.44,Technology
+DASH,"DoorDash, Inc.",Consumer Cyclical,Internet Retail,77127114752.0,42.0,1.925,5036011.0,ok,Consumer Discretionary,0.1,Consumer Cyclical
+OKTA,"Okta, Inc.",Technology,Software - Infrastructure,13450558464.0,43.0,0.762,3763845.0,ok,Information Technology,0.02,Technology
+NFLX,"Netflix, Inc.",Communication Services,Entertainment,390846316544.0,44.0,1.669,46851877.0,ok,Communication,0.6,Communication Services
+NOW,"ServiceNow, Inc.",Technology,Software - Application,87845363712.0,44.0,1.005,22900087.0,ok,Information Technology,0.17,Technology
+ZS,"Zscaler, Inc.",Technology,Software - Infrastructure,21380339712.0,45.0,1.115,3056201.0,ok,Information Technology,0.02,Technology
+DDOG,"Datadog, Inc.",Technology,Software - Application,45243432960.0,45.0,1.294,5652770.0,ok,Information Technology,0.06,Technology
+AMD,"Advanced Micro Devices, Inc.",Technology,Semiconductors,497813323776.0,46.0,1.963,37160669.0,ok,Information Technology,0.75,Technology
+SNOW,Snowflake Inc.,Technology,Software - Application,50610479104.0,47.0,1.228,7057500.0,ok,Information Technology,0.08,Technology
+PANW,"Palo Alto Networks, Inc.",Technology,Software - Infrastructure,140473319424.0,50.0,0.766,10880309.0,ok,Information Technology,0.22,Technology
+CRWD,"CrowdStrike Holdings, Inc.",Technology,Software - Infrastructure,112957186048.0,51.0,1.072,4184661.0,ok,Information Technology,0.18,Technology
+CRM,"Salesforce, Inc.",Technology,Software - Application,141768720384.0,52.0,1.288,14189293.0,ok,Information Technology,0.27,Technology
+UBER,"Uber Technologies, Inc.",Technology,Software - Application,153741262848.0,52.0,1.206,19288616.0,ok,Industrials,0.23,Technology

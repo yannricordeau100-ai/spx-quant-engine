@@ -1,0 +1,5384 @@
+{
+  "universe": {
+    "n_tickers": 645,
+    "market_cap_median_b": 20.34,
+    "sectors": {
+      "Industrials": 146,
+      "Technology": 139,
+      "Consumer Cyclical": 109,
+      "Healthcare": 95,
+      "Consumer Defensive": 47,
+      "Energy": 37,
+      "Communication Services": 36,
+      "Basic Materials": 35,
+      "Financials": 1
+    }
+  },
+  "variations": {
+    "V1_current": {
+      "params": {
+        "compression_mode": "avg",
+        "compression_thr": 0.7,
+        "surprise_thr": 0.1
+      },
+      "n_long": 38,
+      "summary": {
+        "n_signals": 38,
+        "n_long": 38,
+        "n_short": 0,
+        "win_rate_pct": 60.5,
+        "avg_pnl_pct": 2.93,
+        "median_pnl_pct": 1.76,
+        "best_pnl_pct": 25.65,
+        "worst_pnl_pct": -11.54,
+        "best_trade": {
+          "ticker": "ALGM",
+          "earnings_date": "2025-05-08",
+          "pnl_pct": 25.65
+        },
+        "worst_trade": {
+          "ticker": "LVS",
+          "earnings_date": "2025-01-29",
+          "pnl_pct": -11.54
+        },
+        "long_win_rate_pct": 60.5,
+        "short_win_rate_pct": null,
+        "long_avg_pnl_pct": 2.93,
+        "short_avg_pnl_pct": null
+      }
+    },
+    "V2_stricter": {
+      "params": {
+        "compression_mode": "avg",
+        "compression_thr": 0.6,
+        "surprise_thr": 0.1
+      },
+      "n_long": 6,
+      "summary": {
+        "n_signals": 6,
+        "n_long": 6,
+        "n_short": 0,
+        "win_rate_pct": 50.0,
+        "avg_pnl_pct": 5.07,
+        "median_pnl_pct": 1.42,
+        "best_pnl_pct": 25.65,
+        "worst_pnl_pct": -3.45,
+        "best_trade": {
+          "ticker": "ALGM",
+          "earnings_date": "2025-05-08",
+          "pnl_pct": 25.65
+        },
+        "worst_trade": {
+          "ticker": "REGN",
+          "earnings_date": "2025-10-28",
+          "pnl_pct": -3.45
+        },
+        "long_win_rate_pct": 50.0,
+        "short_win_rate_pct": null,
+        "long_avg_pnl_pct": 5.07,
+        "short_avg_pnl_pct": null
+      }
+    },
+    "V3_looser": {
+      "params": {
+        "compression_mode": "avg",
+        "compression_thr": 0.8,
+        "surprise_thr": 0.07
+      },
+      "n_long": 211,
+      "summary": {
+        "n_signals": 211,
+        "n_long": 211,
+        "n_short": 0,
+        "win_rate_pct": 58.3,
+        "avg_pnl_pct": 1.1,
+        "median_pnl_pct": 1.12,
+        "best_pnl_pct": 25.82,
+        "worst_pnl_pct": -31.41,
+        "best_trade": {
+          "ticker": "LAD",
+          "earnings_date": "2020-04-22",
+          "pnl_pct": 25.82
+        },
+        "worst_trade": {
+          "ticker": "HALO",
+          "earnings_date": "2025-05-06",
+          "pnl_pct": -31.41
+        },
+        "long_win_rate_pct": 58.3,
+        "short_win_rate_pct": null,
+        "long_avg_pnl_pct": 1.1,
+        "short_avg_pnl_pct": null
+      }
+    }
+  },
+  "univariate": {
+    "V1_current": {
+      "cap_bucket": [
+        {
+          "cap_bucket": "[0-10B]",
+          "n": 9,
+          "wr": 66.7,
+          "avg_pnl": 5.76,
+          "median_pnl": 2.29
+        },
+        {
+          "cap_bucket": "[20-30B]",
+          "n": 9,
+          "wr": 66.7,
+          "avg_pnl": 2.11,
+          "median_pnl": 2.29
+        },
+        {
+          "cap_bucket": "[30-40B]",
+          "n": 3,
+          "wr": 66.7,
+          "avg_pnl": -0.38,
+          "median_pnl": 3.9
+        },
+        {
+          "cap_bucket": "[10-20B]",
+          "n": 10,
+          "wr": 50.0,
+          "avg_pnl": 2.57,
+          "median_pnl": -0.24
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Industrials",
+          "n": 8,
+          "wr": 100.0,
+          "avg_pnl": 6.24,
+          "median_pnl": 5.8
+        },
+        {
+          "sector": "Technology",
+          "n": 9,
+          "wr": 77.8,
+          "avg_pnl": 6.08,
+          "median_pnl": 2.29
+        },
+        {
+          "sector": "Healthcare",
+          "n": 10,
+          "wr": 60.0,
+          "avg_pnl": 2.52,
+          "median_pnl": 1.95
+        },
+        {
+          "sector": "Communication Services",
+          "n": 4,
+          "wr": 25.0,
+          "avg_pnl": 0.46,
+          "median_pnl": -0.49
+        },
+        {
+          "sector": "Consumer Cyclical",
+          "n": 4,
+          "wr": 25.0,
+          "avg_pnl": -2.72,
+          "median_pnl": -1.62
+        }
+      ],
+      "month": [
+        {
+          "month": 5,
+          "n": 13,
+          "wr": 92.3,
+          "avg_pnl": 7.2,
+          "median_pnl": 6.49
+        },
+        {
+          "month": 8,
+          "n": 3,
+          "wr": 66.7,
+          "avg_pnl": -1.58,
+          "median_pnl": 0.2
+        },
+        {
+          "month": 10,
+          "n": 5,
+          "wr": 40.0,
+          "avg_pnl": -0.4,
+          "median_pnl": -3.45
+        },
+        {
+          "month": 4,
+          "n": 8,
+          "wr": 37.5,
+          "avg_pnl": 3.4,
+          "median_pnl": -0.35
+        }
+      ],
+      "weekday": [
+        {
+          "weekday": "Friday",
+          "n": 7,
+          "wr": 71.4,
+          "avg_pnl": 2.12,
+          "median_pnl": 3.7
+        },
+        {
+          "weekday": "Thursday",
+          "n": 14,
+          "wr": 64.3,
+          "avg_pnl": 2.39,
+          "median_pnl": 0.72
+        },
+        {
+          "weekday": "Tuesday",
+          "n": 5,
+          "wr": 60.0,
+          "avg_pnl": 4.55,
+          "median_pnl": 2.29
+        },
+        {
+          "weekday": "Wednesday",
+          "n": 12,
+          "wr": 50.0,
+          "avg_pnl": 3.36,
+          "median_pnl": 1.8
+        }
+      ],
+      "year": [
+        {
+          "year": 2023,
+          "n": 4,
+          "wr": 75.0,
+          "avg_pnl": 4.22,
+          "median_pnl": 5.64
+        },
+        {
+          "year": 2024,
+          "n": 4,
+          "wr": 75.0,
+          "avg_pnl": 2.02,
+          "median_pnl": 0.72
+        },
+        {
+          "year": 2025,
+          "n": 22,
+          "wr": 63.6,
+          "avg_pnl": 3.28,
+          "median_pnl": 2.62
+        },
+        {
+          "year": 2020,
+          "n": 6,
+          "wr": 33.3,
+          "avg_pnl": 2.88,
+          "median_pnl": -0.35
+        }
+      ],
+      "analyst_bucket": [
+        {
+          "analyst_bucket": "6-10",
+          "n": 4,
+          "wr": 75.0,
+          "avg_pnl": 8.47,
+          "median_pnl": 10.23
+        },
+        {
+          "analyst_bucket": "21-30",
+          "n": 9,
+          "wr": 66.7,
+          "avg_pnl": 2.98,
+          "median_pnl": 3.7
+        },
+        {
+          "analyst_bucket": "16-20",
+          "n": 5,
+          "wr": 60.0,
+          "avg_pnl": -1.01,
+          "median_pnl": 2.29
+        },
+        {
+          "analyst_bucket": "31+",
+          "n": 5,
+          "wr": 60.0,
+          "avg_pnl": 0.97,
+          "median_pnl": 1.23
+        },
+        {
+          "analyst_bucket": "11-15",
+          "n": 13,
+          "wr": 46.2,
+          "avg_pnl": 3.47,
+          "median_pnl": -0.39
+        }
+      ],
+      "surprise_bucket": [
+        {
+          "surprise_bucket": "12-15%",
+          "n": 12,
+          "wr": 66.7,
+          "avg_pnl": 5.54,
+          "median_pnl": 3.7
+        },
+        {
+          "surprise_bucket": "10-12%",
+          "n": 18,
+          "wr": 61.1,
+          "avg_pnl": 2.48,
+          "median_pnl": 0.72
+        },
+        {
+          "surprise_bucket": "15-20%",
+          "n": 6,
+          "wr": 33.3,
+          "avg_pnl": -1.45,
+          "median_pnl": -1.68
+        }
+      ],
+      "vix_regime": [
+        {
+          "vix_regime": "elevated_20-25",
+          "n": 20,
+          "wr": 85.0,
+          "avg_pnl": 6.03,
+          "median_pnl": 5.8
+        },
+        {
+          "vix_regime": "normal_15-20",
+          "n": 9,
+          "wr": 44.4,
+          "avg_pnl": -2.4,
+          "median_pnl": -3.45
+        },
+        {
+          "vix_regime": "stressed_25-30",
+          "n": 7,
+          "wr": 28.6,
+          "avg_pnl": 2.21,
+          "median_pnl": -0.39
+        }
+      ],
+      "beta_bucket": [
+        {
+          "beta_bucket": "high_1.2-1.6",
+          "n": 11,
+          "wr": 72.7,
+          "avg_pnl": 2.83,
+          "median_pnl": 3.7
+        },
+        {
+          "beta_bucket": "very_high_1.6+",
+          "n": 10,
+          "wr": 70.0,
+          "avg_pnl": 4.63,
+          "median_pnl": 2.66
+        },
+        {
+          "beta_bucket": "normal_0.8-1.2",
+          "n": 14,
+          "wr": 57.1,
+          "avg_pnl": 2.95,
+          "median_pnl": 0.72
+        },
+        {
+          "beta_bucket": "low_<0.8",
+          "n": 3,
+          "wr": 0.0,
+          "avg_pnl": -2.47,
+          "median_pnl": -2.13
+        }
+      ],
+      "pre_trend_bucket": [
+        {
+          "pre_trend_bucket": "flat_-3_to_+3%",
+          "n": 5,
+          "wr": 80.0,
+          "avg_pnl": 5.13,
+          "median_pnl": 0.71
+        },
+        {
+          "pre_trend_bucket": "down_-10_to_-3%",
+          "n": 4,
+          "wr": 75.0,
+          "avg_pnl": 2.47,
+          "median_pnl": 2.62
+        },
+        {
+          "pre_trend_bucket": "strong_up_+10%+",
+          "n": 12,
+          "wr": 66.7,
+          "avg_pnl": 4.92,
+          "median_pnl": 3.1
+        },
+        {
+          "pre_trend_bucket": "up_+3_to_+10%",
+          "n": 6,
+          "wr": 50.0,
+          "avg_pnl": 1.32,
+          "median_pnl": 0.12
+        },
+        {
+          "pre_trend_bucket": "strong_down_<-10%",
+          "n": 11,
+          "wr": 45.5,
+          "avg_pnl": 0.8,
+          "median_pnl": -0.67
+        }
+      ]
+    },
+    "V2_stricter": {
+      "cap_bucket": [
+        {
+          "cap_bucket": "[0-10B]",
+          "n": 3,
+          "wr": 33.3,
+          "avg_pnl": 7.85,
+          "median_pnl": -0.86
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Healthcare",
+          "n": 4,
+          "wr": 50.0,
+          "avg_pnl": 1.41,
+          "median_pnl": 1.23
+        }
+      ],
+      "month": [
+        {
+          "month": 5,
+          "n": 4,
+          "wr": 75.0,
+          "avg_pnl": 8.68,
+          "median_pnl": 5.16
+        }
+      ],
+      "weekday": [
+        {
+          "weekday": "Wednesday",
+          "n": 3,
+          "wr": 33.3,
+          "avg_pnl": 1.51,
+          "median_pnl": -0.86
+        }
+      ],
+      "year": [
+        {
+          "year": 2025,
+          "n": 6,
+          "wr": 50.0,
+          "avg_pnl": 5.07,
+          "median_pnl": 1.42
+        }
+      ],
+      "analyst_bucket": [
+        {
+          "analyst_bucket": "11-15",
+          "n": 4,
+          "wr": 50.0,
+          "avg_pnl": 7.54,
+          "median_pnl": 2.88
+        }
+      ],
+      "vix_regime": [
+        {
+          "vix_regime": "elevated_20-25",
+          "n": 5,
+          "wr": 60.0,
+          "avg_pnl": 6.77,
+          "median_pnl": 3.7
+        }
+      ],
+      "beta_bucket": [
+        {
+          "beta_bucket": "very_high_1.6+",
+          "n": 3,
+          "wr": 66.7,
+          "avg_pnl": 10.34,
+          "median_pnl": 6.62
+        }
+      ],
+      "pre_trend_bucket": [
+        {
+          "pre_trend_bucket": "up_+3_to_+10%",
+          "n": 3,
+          "wr": 66.7,
+          "avg_pnl": 2.29,
+          "median_pnl": 3.7
+        }
+      ]
+    },
+    "V3_looser": {
+      "cap_bucket": [
+        {
+          "cap_bucket": "[80-90B]",
+          "n": 4,
+          "wr": 75.0,
+          "avg_pnl": 0.11,
+          "median_pnl": 1.11
+        },
+        {
+          "cap_bucket": "[0-10B]",
+          "n": 42,
+          "wr": 64.3,
+          "avg_pnl": 1.69,
+          "median_pnl": 1.55
+        },
+        {
+          "cap_bucket": "[10-20B]",
+          "n": 52,
+          "wr": 59.6,
+          "avg_pnl": 1.13,
+          "median_pnl": 1.26
+        },
+        {
+          "cap_bucket": "[20-30B]",
+          "n": 36,
+          "wr": 58.3,
+          "avg_pnl": 2.14,
+          "median_pnl": 1.26
+        },
+        {
+          "cap_bucket": "[50-60B]",
+          "n": 9,
+          "wr": 55.6,
+          "avg_pnl": -0.8,
+          "median_pnl": 0.71
+        },
+        {
+          "cap_bucket": "[60-70B]",
+          "n": 9,
+          "wr": 55.6,
+          "avg_pnl": 0.55,
+          "median_pnl": 2.85
+        },
+        {
+          "cap_bucket": "[30-40B]",
+          "n": 20,
+          "wr": 55.0,
+          "avg_pnl": -0.32,
+          "median_pnl": 1.23
+        },
+        {
+          "cap_bucket": "[40-50B]",
+          "n": 11,
+          "wr": 54.5,
+          "avg_pnl": 0.47,
+          "median_pnl": 0.68
+        },
+        {
+          "cap_bucket": "[100-200B]",
+          "n": 17,
+          "wr": 52.9,
+          "avg_pnl": 2.31,
+          "median_pnl": 0.35
+        },
+        {
+          "cap_bucket": "[70-80B]",
+          "n": 6,
+          "wr": 50.0,
+          "avg_pnl": -0.3,
+          "median_pnl": -0.12
+        },
+        {
+          "cap_bucket": "[300-400B]",
+          "n": 3,
+          "wr": 33.3,
+          "avg_pnl": -0.38,
+          "median_pnl": -1.01
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Industrials",
+          "n": 42,
+          "wr": 69.0,
+          "avg_pnl": 1.22,
+          "median_pnl": 1.48
+        },
+        {
+          "sector": "Healthcare",
+          "n": 30,
+          "wr": 66.7,
+          "avg_pnl": 2.6,
+          "median_pnl": 2.47
+        },
+        {
+          "sector": "Technology",
+          "n": 68,
+          "wr": 58.8,
+          "avg_pnl": 1.26,
+          "median_pnl": 1.12
+        },
+        {
+          "sector": "Consumer Cyclical",
+          "n": 34,
+          "wr": 52.9,
+          "avg_pnl": 0.71,
+          "median_pnl": 0.5
+        },
+        {
+          "sector": "Communication Services",
+          "n": 14,
+          "wr": 50.0,
+          "avg_pnl": 1.24,
+          "median_pnl": 0.4
+        },
+        {
+          "sector": "Energy",
+          "n": 6,
+          "wr": 50.0,
+          "avg_pnl": 0.31,
+          "median_pnl": 1.18
+        },
+        {
+          "sector": "Basic Materials",
+          "n": 13,
+          "wr": 38.5,
+          "avg_pnl": -2.43,
+          "median_pnl": -0.74
+        },
+        {
+          "sector": "Consumer Defensive",
+          "n": 4,
+          "wr": 25.0,
+          "avg_pnl": 1.44,
+          "median_pnl": -0.51
+        }
+      ],
+      "month": [
+        {
+          "month": 5,
+          "n": 53,
+          "wr": 77.4,
+          "avg_pnl": 2.71,
+          "median_pnl": 2.91
+        },
+        {
+          "month": 7,
+          "n": 8,
+          "wr": 75.0,
+          "avg_pnl": 2.06,
+          "median_pnl": 1.2
+        },
+        {
+          "month": 6,
+          "n": 6,
+          "wr": 66.7,
+          "avg_pnl": 2.63,
+          "median_pnl": 1.75
+        },
+        {
+          "month": 11,
+          "n": 21,
+          "wr": 66.7,
+          "avg_pnl": 1.19,
+          "median_pnl": 1.11
+        },
+        {
+          "month": 4,
+          "n": 43,
+          "wr": 53.5,
+          "avg_pnl": 1.09,
+          "median_pnl": 0.41
+        },
+        {
+          "month": 2,
+          "n": 21,
+          "wr": 47.6,
+          "avg_pnl": 0.16,
+          "median_pnl": -0.67
+        },
+        {
+          "month": 10,
+          "n": 19,
+          "wr": 47.4,
+          "avg_pnl": -0.08,
+          "median_pnl": -0.05
+        },
+        {
+          "month": 8,
+          "n": 20,
+          "wr": 45.0,
+          "avg_pnl": 0.18,
+          "median_pnl": -0.34
+        },
+        {
+          "month": 3,
+          "n": 10,
+          "wr": 40.0,
+          "avg_pnl": -1.44,
+          "median_pnl": -0.46
+        },
+        {
+          "month": 12,
+          "n": 7,
+          "wr": 28.6,
+          "avg_pnl": 0.58,
+          "median_pnl": -0.66
+        }
+      ],
+      "weekday": [
+        {
+          "weekday": "Thursday",
+          "n": 76,
+          "wr": 72.4,
+          "avg_pnl": 2.39,
+          "median_pnl": 1.75
+        },
+        {
+          "weekday": "Friday",
+          "n": 35,
+          "wr": 65.7,
+          "avg_pnl": 0.32,
+          "median_pnl": 1.29
+        },
+        {
+          "weekday": "Wednesday",
+          "n": 62,
+          "wr": 48.4,
+          "avg_pnl": 0.97,
+          "median_pnl": -0.16
+        },
+        {
+          "weekday": "Tuesday",
+          "n": 37,
+          "wr": 37.8,
+          "avg_pnl": -0.79,
+          "median_pnl": -0.72
+        }
+      ],
+      "year": [
+        {
+          "year": 2023,
+          "n": 23,
+          "wr": 73.9,
+          "avg_pnl": 1.84,
+          "median_pnl": 1.39
+        },
+        {
+          "year": 2021,
+          "n": 15,
+          "wr": 66.7,
+          "avg_pnl": 0.73,
+          "median_pnl": 2.42
+        },
+        {
+          "year": 2025,
+          "n": 87,
+          "wr": 63.2,
+          "avg_pnl": 1.16,
+          "median_pnl": 2.03
+        },
+        {
+          "year": 2024,
+          "n": 18,
+          "wr": 61.1,
+          "avg_pnl": 1.57,
+          "median_pnl": 1.28
+        },
+        {
+          "year": 2022,
+          "n": 28,
+          "wr": 50.0,
+          "avg_pnl": 1.82,
+          "median_pnl": 0.34
+        },
+        {
+          "year": 2020,
+          "n": 35,
+          "wr": 42.9,
+          "avg_pnl": 0.06,
+          "median_pnl": -0.31
+        },
+        {
+          "year": 2026,
+          "n": 5,
+          "wr": 20.0,
+          "avg_pnl": -0.73,
+          "median_pnl": -1.31
+        }
+      ],
+      "analyst_bucket": [
+        {
+          "analyst_bucket": "21-30",
+          "n": 53,
+          "wr": 67.9,
+          "avg_pnl": 2.35,
+          "median_pnl": 2.03
+        },
+        {
+          "analyst_bucket": "16-20",
+          "n": 36,
+          "wr": 63.9,
+          "avg_pnl": 1.67,
+          "median_pnl": 2.62
+        },
+        {
+          "analyst_bucket": "1-5",
+          "n": 12,
+          "wr": 58.3,
+          "avg_pnl": 1.19,
+          "median_pnl": 0.92
+        },
+        {
+          "analyst_bucket": "11-15",
+          "n": 49,
+          "wr": 53.1,
+          "avg_pnl": 0.59,
+          "median_pnl": 0.2
+        },
+        {
+          "analyst_bucket": "6-10",
+          "n": 23,
+          "wr": 52.2,
+          "avg_pnl": -0.19,
+          "median_pnl": 0.42
+        },
+        {
+          "analyst_bucket": "31+",
+          "n": 37,
+          "wr": 48.6,
+          "avg_pnl": 0.01,
+          "median_pnl": -0.31
+        }
+      ],
+      "surprise_bucket": [
+        {
+          "surprise_bucket": "30%+",
+          "n": 3,
+          "wr": 100.0,
+          "avg_pnl": 3.86,
+          "median_pnl": 2.95
+        },
+        {
+          "surprise_bucket": "20-30%",
+          "n": 8,
+          "wr": 75.0,
+          "avg_pnl": 2.76,
+          "median_pnl": 2.57
+        },
+        {
+          "surprise_bucket": "10-12%",
+          "n": 132,
+          "wr": 59.8,
+          "avg_pnl": 1.43,
+          "median_pnl": 1.12
+        },
+        {
+          "surprise_bucket": "12-15%",
+          "n": 37,
+          "wr": 54.1,
+          "avg_pnl": 0.94,
+          "median_pnl": 0.69
+        },
+        {
+          "surprise_bucket": "15-20%",
+          "n": 31,
+          "wr": 48.4,
+          "avg_pnl": -0.81,
+          "median_pnl": -0.54
+        }
+      ],
+      "vix_regime": [
+        {
+          "vix_regime": "elevated_20-25",
+          "n": 79,
+          "wr": 77.2,
+          "avg_pnl": 2.84,
+          "median_pnl": 3.34
+        },
+        {
+          "vix_regime": "calm_<15",
+          "n": 17,
+          "wr": 58.8,
+          "avg_pnl": 0.02,
+          "median_pnl": 0.42
+        },
+        {
+          "vix_regime": "crisis_30+",
+          "n": 4,
+          "wr": 50.0,
+          "avg_pnl": 0.69,
+          "median_pnl": 0.35
+        },
+        {
+          "vix_regime": "stressed_25-30",
+          "n": 49,
+          "wr": 46.9,
+          "avg_pnl": 0.77,
+          "median_pnl": -0.05
+        },
+        {
+          "vix_regime": "normal_15-20",
+          "n": 59,
+          "wr": 45.8,
+          "avg_pnl": -0.49,
+          "median_pnl": -0.66
+        },
+        {
+          "vix_regime": "unknown",
+          "n": 3,
+          "wr": 0.0,
+          "avg_pnl": -1.29,
+          "median_pnl": -1.31
+        }
+      ],
+      "beta_bucket": [
+        {
+          "beta_bucket": "high_1.2-1.6",
+          "n": 58,
+          "wr": 67.2,
+          "avg_pnl": 2.38,
+          "median_pnl": 1.75
+        },
+        {
+          "beta_bucket": "very_high_1.6+",
+          "n": 53,
+          "wr": 60.4,
+          "avg_pnl": 0.94,
+          "median_pnl": 2.29
+        },
+        {
+          "beta_bucket": "normal_0.8-1.2",
+          "n": 64,
+          "wr": 59.4,
+          "avg_pnl": 0.71,
+          "median_pnl": 0.82
+        },
+        {
+          "beta_bucket": "low_<0.8",
+          "n": 34,
+          "wr": 41.2,
+          "avg_pnl": 0.44,
+          "median_pnl": -0.34
+        }
+      ],
+      "pre_trend_bucket": [
+        {
+          "pre_trend_bucket": "up_+3_to_+10%",
+          "n": 39,
+          "wr": 66.7,
+          "avg_pnl": 1.22,
+          "median_pnl": 1.8
+        },
+        {
+          "pre_trend_bucket": "strong_up_+10%+",
+          "n": 47,
+          "wr": 63.8,
+          "avg_pnl": 3.04,
+          "median_pnl": 1.21
+        },
+        {
+          "pre_trend_bucket": "strong_down_<-10%",
+          "n": 38,
+          "wr": 57.9,
+          "avg_pnl": 1.33,
+          "median_pnl": 2.49
+        },
+        {
+          "pre_trend_bucket": "flat_-3_to_+3%",
+          "n": 37,
+          "wr": 54.1,
+          "avg_pnl": -0.21,
+          "median_pnl": 0.31
+        },
+        {
+          "pre_trend_bucket": "down_-10_to_-3%",
+          "n": 50,
+          "wr": 50.0,
+          "avg_pnl": -0.01,
+          "median_pnl": 0.16
+        }
+      ]
+    }
+  },
+  "best_per_criterion": {
+    "cap_bucket": [
+      {
+        "cap_bucket": "[0-10B]",
+        "n": 9,
+        "wr": 66.7,
+        "avg_pnl": 5.76,
+        "median_pnl": 2.29
+      },
+      {
+        "cap_bucket": "[20-30B]",
+        "n": 9,
+        "wr": 66.7,
+        "avg_pnl": 2.11,
+        "median_pnl": 2.29
+      },
+      {
+        "cap_bucket": "[30-40B]",
+        "n": 3,
+        "wr": 66.7,
+        "avg_pnl": -0.38,
+        "median_pnl": 3.9
+      }
+    ],
+    "sector": [
+      {
+        "sector": "Industrials",
+        "n": 8,
+        "wr": 100.0,
+        "avg_pnl": 6.24,
+        "median_pnl": 5.8
+      },
+      {
+        "sector": "Technology",
+        "n": 9,
+        "wr": 77.8,
+        "avg_pnl": 6.08,
+        "median_pnl": 2.29
+      },
+      {
+        "sector": "Healthcare",
+        "n": 10,
+        "wr": 60.0,
+        "avg_pnl": 2.52,
+        "median_pnl": 1.95
+      }
+    ],
+    "month": [
+      {
+        "month": 5,
+        "n": 13,
+        "wr": 92.3,
+        "avg_pnl": 7.2,
+        "median_pnl": 6.49
+      },
+      {
+        "month": 8,
+        "n": 3,
+        "wr": 66.7,
+        "avg_pnl": -1.58,
+        "median_pnl": 0.2
+      },
+      {
+        "month": 10,
+        "n": 5,
+        "wr": 40.0,
+        "avg_pnl": -0.4,
+        "median_pnl": -3.45
+      }
+    ],
+    "weekday": [
+      {
+        "weekday": "Friday",
+        "n": 7,
+        "wr": 71.4,
+        "avg_pnl": 2.12,
+        "median_pnl": 3.7
+      },
+      {
+        "weekday": "Thursday",
+        "n": 14,
+        "wr": 64.3,
+        "avg_pnl": 2.39,
+        "median_pnl": 0.72
+      },
+      {
+        "weekday": "Tuesday",
+        "n": 5,
+        "wr": 60.0,
+        "avg_pnl": 4.55,
+        "median_pnl": 2.29
+      }
+    ],
+    "year": [
+      {
+        "year": 2023,
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 4.22,
+        "median_pnl": 5.64
+      },
+      {
+        "year": 2024,
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 2.02,
+        "median_pnl": 0.72
+      },
+      {
+        "year": 2025,
+        "n": 22,
+        "wr": 63.6,
+        "avg_pnl": 3.28,
+        "median_pnl": 2.62
+      }
+    ],
+    "analyst_bucket": [
+      {
+        "analyst_bucket": "6-10",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 8.47,
+        "median_pnl": 10.23
+      },
+      {
+        "analyst_bucket": "21-30",
+        "n": 9,
+        "wr": 66.7,
+        "avg_pnl": 2.98,
+        "median_pnl": 3.7
+      },
+      {
+        "analyst_bucket": "16-20",
+        "n": 5,
+        "wr": 60.0,
+        "avg_pnl": -1.01,
+        "median_pnl": 2.29
+      }
+    ],
+    "surprise_bucket": [
+      {
+        "surprise_bucket": "12-15%",
+        "n": 12,
+        "wr": 66.7,
+        "avg_pnl": 5.54,
+        "median_pnl": 3.7
+      },
+      {
+        "surprise_bucket": "10-12%",
+        "n": 18,
+        "wr": 61.1,
+        "avg_pnl": 2.48,
+        "median_pnl": 0.72
+      },
+      {
+        "surprise_bucket": "15-20%",
+        "n": 6,
+        "wr": 33.3,
+        "avg_pnl": -1.45,
+        "median_pnl": -1.68
+      }
+    ],
+    "vix_regime": [
+      {
+        "vix_regime": "elevated_20-25",
+        "n": 20,
+        "wr": 85.0,
+        "avg_pnl": 6.03,
+        "median_pnl": 5.8
+      },
+      {
+        "vix_regime": "normal_15-20",
+        "n": 9,
+        "wr": 44.4,
+        "avg_pnl": -2.4,
+        "median_pnl": -3.45
+      },
+      {
+        "vix_regime": "stressed_25-30",
+        "n": 7,
+        "wr": 28.6,
+        "avg_pnl": 2.21,
+        "median_pnl": -0.39
+      }
+    ],
+    "beta_bucket": [
+      {
+        "beta_bucket": "high_1.2-1.6",
+        "n": 11,
+        "wr": 72.7,
+        "avg_pnl": 2.83,
+        "median_pnl": 3.7
+      },
+      {
+        "beta_bucket": "very_high_1.6+",
+        "n": 10,
+        "wr": 70.0,
+        "avg_pnl": 4.63,
+        "median_pnl": 2.66
+      },
+      {
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 14,
+        "wr": 57.1,
+        "avg_pnl": 2.95,
+        "median_pnl": 0.72
+      }
+    ],
+    "pre_trend_bucket": [
+      {
+        "pre_trend_bucket": "flat_-3_to_+3%",
+        "n": 5,
+        "wr": 80.0,
+        "avg_pnl": 5.13,
+        "median_pnl": 0.71
+      },
+      {
+        "pre_trend_bucket": "down_-10_to_-3%",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 2.47,
+        "median_pnl": 2.62
+      },
+      {
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 12,
+        "wr": 66.7,
+        "avg_pnl": 4.92,
+        "median_pnl": 3.1
+      }
+    ]
+  },
+  "crosses": {
+    "two_way": [
+      {
+        "cols": [
+          "cap_bucket",
+          "sector"
+        ],
+        "cap_bucket": "[10-20B]",
+        "sector": "Healthcare",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 5.76
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "sector"
+        ],
+        "cap_bucket": "[0-10B]",
+        "sector": "Technology",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 11.97
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "sector"
+        ],
+        "cap_bucket": "[20-30B]",
+        "sector": "Technology",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 0.16
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "month"
+        ],
+        "cap_bucket": "[0-10B]",
+        "month": 5,
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 7.41
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "weekday"
+        ],
+        "cap_bucket": "[0-10B]",
+        "weekday": "Thursday",
+        "n": 5,
+        "wr": 80.0,
+        "avg_pnl": 5.16
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "weekday"
+        ],
+        "cap_bucket": "[20-30B]",
+        "weekday": "Friday",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 1.78
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "year"
+        ],
+        "cap_bucket": "[20-30B]",
+        "year": 2025,
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 3.31
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "analyst_bucket"
+        ],
+        "cap_bucket": "[20-30B]",
+        "analyst_bucket": "31+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 2.19
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "surprise_bucket"
+        ],
+        "cap_bucket": "[0-10B]",
+        "surprise_bucket": "12-15%",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 8.6
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "surprise_bucket"
+        ],
+        "cap_bucket": "[0-10B]",
+        "surprise_bucket": "10-12%",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 4.66
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "vix_regime"
+        ],
+        "cap_bucket": "[10-20B]",
+        "vix_regime": "elevated_20-25",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 10.4
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "vix_regime"
+        ],
+        "cap_bucket": "[20-30B]",
+        "vix_regime": "elevated_20-25",
+        "n": 5,
+        "wr": 80.0,
+        "avg_pnl": 4.36
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "beta_bucket"
+        ],
+        "cap_bucket": "[0-10B]",
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 6.32
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "pre_trend_bucket"
+        ],
+        "cap_bucket": "[0-10B]",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 7.94
+      },
+      {
+        "cols": [
+          "sector",
+          "month"
+        ],
+        "sector": "Industrials",
+        "month": 5,
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 7.35
+      },
+      {
+        "cols": [
+          "sector",
+          "weekday"
+        ],
+        "sector": "Technology",
+        "weekday": "Thursday",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 10.33
+      },
+      {
+        "cols": [
+          "sector",
+          "weekday"
+        ],
+        "sector": "Healthcare",
+        "weekday": "Friday",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 6.37
+      },
+      {
+        "cols": [
+          "sector",
+          "weekday"
+        ],
+        "sector": "Industrials",
+        "weekday": "Thursday",
+        "n": 5,
+        "wr": 100.0,
+        "avg_pnl": 4.8
+      },
+      {
+        "cols": [
+          "sector",
+          "year"
+        ],
+        "sector": "Industrials",
+        "year": 2025,
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 7.35
+      },
+      {
+        "cols": [
+          "sector",
+          "analyst_bucket"
+        ],
+        "sector": "Technology",
+        "analyst_bucket": "31+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 2.19
+      },
+      {
+        "cols": [
+          "sector",
+          "analyst_bucket"
+        ],
+        "sector": "Technology",
+        "analyst_bucket": "11-15",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 12.94
+      },
+      {
+        "cols": [
+          "sector",
+          "analyst_bucket"
+        ],
+        "sector": "Healthcare",
+        "analyst_bucket": "21-30",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 4.7
+      },
+      {
+        "cols": [
+          "sector",
+          "surprise_bucket"
+        ],
+        "sector": "Industrials",
+        "surprise_bucket": "12-15%",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 9.7
+      },
+      {
+        "cols": [
+          "sector",
+          "surprise_bucket"
+        ],
+        "sector": "Industrials",
+        "surprise_bucket": "10-12%",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 2.77
+      },
+      {
+        "cols": [
+          "sector",
+          "surprise_bucket"
+        ],
+        "sector": "Technology",
+        "surprise_bucket": "12-15%",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 7.08
+      },
+      {
+        "cols": [
+          "sector",
+          "vix_regime"
+        ],
+        "sector": "Industrials",
+        "vix_regime": "elevated_20-25",
+        "n": 7,
+        "wr": 100.0,
+        "avg_pnl": 7.03
+      },
+      {
+        "cols": [
+          "sector",
+          "vix_regime"
+        ],
+        "sector": "Technology",
+        "vix_regime": "elevated_20-25",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 7.53
+      },
+      {
+        "cols": [
+          "sector",
+          "vix_regime"
+        ],
+        "sector": "Technology",
+        "vix_regime": "normal_15-20",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 0.95
+      },
+      {
+        "cols": [
+          "sector",
+          "beta_bucket"
+        ],
+        "sector": "Industrials",
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 10.06
+      },
+      {
+        "cols": [
+          "sector",
+          "beta_bucket"
+        ],
+        "sector": "Technology",
+        "beta_bucket": "very_high_1.6+",
+        "n": 5,
+        "wr": 100.0,
+        "avg_pnl": 7.89
+      },
+      {
+        "cols": [
+          "sector",
+          "beta_bucket"
+        ],
+        "sector": "Industrials",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 3.3
+      },
+      {
+        "cols": [
+          "sector",
+          "beta_bucket"
+        ],
+        "sector": "Healthcare",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 4.02
+      },
+      {
+        "cols": [
+          "sector",
+          "pre_trend_bucket"
+        ],
+        "sector": "Industrials",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 7.0
+      },
+      {
+        "cols": [
+          "month",
+          "weekday"
+        ],
+        "month": 5,
+        "weekday": "Thursday",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 8.54
+      },
+      {
+        "cols": [
+          "month",
+          "weekday"
+        ],
+        "month": 5,
+        "weekday": "Wednesday",
+        "n": 5,
+        "wr": 80.0,
+        "avg_pnl": 4.92
+      },
+      {
+        "cols": [
+          "month",
+          "year"
+        ],
+        "month": 5.0,
+        "year": 2025.0,
+        "n": 13.0,
+        "wr": 92.3,
+        "avg_pnl": 7.2
+      },
+      {
+        "cols": [
+          "month",
+          "analyst_bucket"
+        ],
+        "month": 5,
+        "analyst_bucket": "21-30",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 4.93
+      },
+      {
+        "cols": [
+          "month",
+          "analyst_bucket"
+        ],
+        "month": 5,
+        "analyst_bucket": "16-20",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 4.23
+      },
+      {
+        "cols": [
+          "month",
+          "analyst_bucket"
+        ],
+        "month": 5,
+        "analyst_bucket": "11-15",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 8.5
+      },
+      {
+        "cols": [
+          "month",
+          "surprise_bucket"
+        ],
+        "month": 5,
+        "surprise_bucket": "12-15%",
+        "n": 5,
+        "wr": 100.0,
+        "avg_pnl": 12.33
+      },
+      {
+        "cols": [
+          "month",
+          "surprise_bucket"
+        ],
+        "month": 5,
+        "surprise_bucket": "10-12%",
+        "n": 5,
+        "wr": 100.0,
+        "avg_pnl": 4.58
+      },
+      {
+        "cols": [
+          "month",
+          "vix_regime"
+        ],
+        "month": 5,
+        "vix_regime": "elevated_20-25",
+        "n": 13,
+        "wr": 92.3,
+        "avg_pnl": 7.2
+      },
+      {
+        "cols": [
+          "month",
+          "beta_bucket"
+        ],
+        "month": 5,
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 8.52
+      },
+      {
+        "cols": [
+          "month",
+          "beta_bucket"
+        ],
+        "month": 5,
+        "beta_bucket": "high_1.2-1.6",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 4.93
+      },
+      {
+        "cols": [
+          "month",
+          "beta_bucket"
+        ],
+        "month": 5,
+        "beta_bucket": "very_high_1.6+",
+        "n": 5,
+        "wr": 80.0,
+        "avg_pnl": 7.96
+      },
+      {
+        "cols": [
+          "month",
+          "pre_trend_bucket"
+        ],
+        "month": 5,
+        "pre_trend_bucket": "up_+3_to_+10%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 7.82
+      },
+      {
+        "cols": [
+          "month",
+          "pre_trend_bucket"
+        ],
+        "month": 5,
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 7.02
+      },
+      {
+        "cols": [
+          "weekday",
+          "year"
+        ],
+        "weekday": "Tuesday",
+        "year": 2025,
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 5.85
+      },
+      {
+        "cols": [
+          "weekday",
+          "surprise_bucket"
+        ],
+        "weekday": "Thursday",
+        "surprise_bucket": "12-15%",
+        "n": 5,
+        "wr": 80.0,
+        "avg_pnl": 9.14
+      },
+      {
+        "cols": [
+          "weekday",
+          "surprise_bucket"
+        ],
+        "weekday": "Friday",
+        "surprise_bucket": "12-15%",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 2.23
+      },
+      {
+        "cols": [
+          "weekday",
+          "vix_regime"
+        ],
+        "weekday": "Thursday",
+        "vix_regime": "elevated_20-25",
+        "n": 7,
+        "wr": 100.0,
+        "avg_pnl": 7.75
+      },
+      {
+        "cols": [
+          "weekday",
+          "vix_regime"
+        ],
+        "weekday": "Friday",
+        "vix_regime": "elevated_20-25",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 6.06
+      },
+      {
+        "cols": [
+          "weekday",
+          "beta_bucket"
+        ],
+        "weekday": "Thursday",
+        "beta_bucket": "very_high_1.6+",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 9.37
+      },
+      {
+        "cols": [
+          "weekday",
+          "beta_bucket"
+        ],
+        "weekday": "Friday",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 2.75
+      },
+      {
+        "cols": [
+          "weekday",
+          "pre_trend_bucket"
+        ],
+        "weekday": "Thursday",
+        "pre_trend_bucket": "flat_-3_to_+3%",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 6.11
+      },
+      {
+        "cols": [
+          "weekday",
+          "pre_trend_bucket"
+        ],
+        "weekday": "Friday",
+        "pre_trend_bucket": "strong_down_<-10%",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 3.95
+      },
+      {
+        "cols": [
+          "weekday",
+          "pre_trend_bucket"
+        ],
+        "weekday": "Thursday",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 2.28
+      },
+      {
+        "cols": [
+          "year",
+          "analyst_bucket"
+        ],
+        "year": 2025,
+        "analyst_bucket": "16-20",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 0.29
+      },
+      {
+        "cols": [
+          "year",
+          "vix_regime"
+        ],
+        "year": 2025,
+        "vix_regime": "elevated_20-25",
+        "n": 15,
+        "wr": 86.7,
+        "avg_pnl": 6.88
+      },
+      {
+        "cols": [
+          "year",
+          "beta_bucket"
+        ],
+        "year": 2024,
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 2.02
+      },
+      {
+        "cols": [
+          "year",
+          "pre_trend_bucket"
+        ],
+        "year": 2025,
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 7.02
+      },
+      {
+        "cols": [
+          "year",
+          "pre_trend_bucket"
+        ],
+        "year": 2023,
+        "pre_trend_bucket": "strong_down_<-10%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 6.46
+      },
+      {
+        "cols": [
+          "year",
+          "pre_trend_bucket"
+        ],
+        "year": 2025,
+        "pre_trend_bucket": "down_-10_to_-3%",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 2.47
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "surprise_bucket"
+        ],
+        "analyst_bucket": "6-10",
+        "surprise_bucket": "12-15%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 11.52
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "surprise_bucket"
+        ],
+        "analyst_bucket": "21-30",
+        "surprise_bucket": "10-12%",
+        "n": 6,
+        "wr": 83.3,
+        "avg_pnl": 5.19
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "vix_regime"
+        ],
+        "analyst_bucket": "6-10",
+        "vix_regime": "elevated_20-25",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 11.52
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "vix_regime"
+        ],
+        "analyst_bucket": "21-30",
+        "vix_regime": "elevated_20-25",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 6.38
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "vix_regime"
+        ],
+        "analyst_bucket": "16-20",
+        "vix_regime": "elevated_20-25",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 1.63
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "beta_bucket"
+        ],
+        "analyst_bucket": "21-30",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 7,
+        "wr": 85.7,
+        "avg_pnl": 4.63
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "beta_bucket"
+        ],
+        "analyst_bucket": "6-10",
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 8.47
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "pre_trend_bucket"
+        ],
+        "analyst_bucket": "16-20",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 4.23
+      },
+      {
+        "cols": [
+          "surprise_bucket",
+          "vix_regime"
+        ],
+        "surprise_bucket": "10-12%",
+        "vix_regime": "elevated_20-25",
+        "n": 7,
+        "wr": 100.0,
+        "avg_pnl": 5.92
+      },
+      {
+        "cols": [
+          "surprise_bucket",
+          "vix_regime"
+        ],
+        "surprise_bucket": "12-15%",
+        "vix_regime": "elevated_20-25",
+        "n": 8,
+        "wr": 87.5,
+        "avg_pnl": 9.15
+      },
+      {
+        "cols": [
+          "surprise_bucket",
+          "beta_bucket"
+        ],
+        "surprise_bucket": "10-12%",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 5.89
+      },
+      {
+        "cols": [
+          "surprise_bucket",
+          "beta_bucket"
+        ],
+        "surprise_bucket": "12-15%",
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 5,
+        "wr": 80.0,
+        "avg_pnl": 6.87
+      },
+      {
+        "cols": [
+          "surprise_bucket",
+          "beta_bucket"
+        ],
+        "surprise_bucket": "12-15%",
+        "beta_bucket": "very_high_1.6+",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 7.42
+      },
+      {
+        "cols": [
+          "surprise_bucket",
+          "pre_trend_bucket"
+        ],
+        "surprise_bucket": "12-15%",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 5.37
+      },
+      {
+        "cols": [
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 5,
+        "wr": 100.0,
+        "avg_pnl": 8.28
+      },
+      {
+        "cols": [
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "very_high_1.6+",
+        "n": 6,
+        "wr": 83.3,
+        "avg_pnl": 7.14
+      },
+      {
+        "cols": [
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 9,
+        "wr": 77.8,
+        "avg_pnl": 4.04
+      },
+      {
+        "cols": [
+          "vix_regime",
+          "pre_trend_bucket"
+        ],
+        "vix_regime": "elevated_20-25",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 7.02
+      },
+      {
+        "cols": [
+          "vix_regime",
+          "pre_trend_bucket"
+        ],
+        "vix_regime": "elevated_20-25",
+        "pre_trend_bucket": "up_+3_to_+10%",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 4.32
+      },
+      {
+        "cols": [
+          "beta_bucket",
+          "pre_trend_bucket"
+        ],
+        "beta_bucket": "high_1.2-1.6",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 5.35
+      }
+    ],
+    "three_way": [
+      {
+        "cols": [
+          "cap_bucket",
+          "sector",
+          "analyst_bucket"
+        ],
+        "cap_bucket": "[20-30B]",
+        "sector": "Technology",
+        "analyst_bucket": "31+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 2.19
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "month",
+          "weekday"
+        ],
+        "cap_bucket": "[0-10B]",
+        "month": 5,
+        "weekday": "Thursday",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 10.3
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "month",
+          "year"
+        ],
+        "cap_bucket": "[0-10B]",
+        "month": 5,
+        "year": 2025,
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 7.41
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "month",
+          "vix_regime"
+        ],
+        "cap_bucket": "[0-10B]",
+        "month": 5,
+        "vix_regime": "elevated_20-25",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 7.41
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "weekday",
+          "year"
+        ],
+        "cap_bucket": "[0-10B]",
+        "weekday": "Thursday",
+        "year": 2025,
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 6.27
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "weekday",
+          "vix_regime"
+        ],
+        "cap_bucket": "[0-10B]",
+        "weekday": "Thursday",
+        "vix_regime": "elevated_20-25",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 10.3
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "year",
+          "vix_regime"
+        ],
+        "cap_bucket": "[10-20B]",
+        "year": 2025,
+        "vix_regime": "elevated_20-25",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 10.4
+      },
+      {
+        "cols": [
+          "cap_bucket",
+          "surprise_bucket",
+          "vix_regime"
+        ],
+        "cap_bucket": "[0-10B]",
+        "surprise_bucket": "12-15%",
+        "vix_regime": "elevated_20-25",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 8.6
+      },
+      {
+        "cols": [
+          "sector",
+          "month",
+          "weekday"
+        ],
+        "sector": "Industrials",
+        "month": 5,
+        "weekday": "Thursday",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 5.82
+      },
+      {
+        "cols": [
+          "sector",
+          "month",
+          "year"
+        ],
+        "sector": "Industrials",
+        "month": 5,
+        "year": 2025,
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 7.35
+      },
+      {
+        "cols": [
+          "sector",
+          "month",
+          "surprise_bucket"
+        ],
+        "sector": "Industrials",
+        "month": 5,
+        "surprise_bucket": "12-15%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 11.24
+      },
+      {
+        "cols": [
+          "sector",
+          "month",
+          "surprise_bucket"
+        ],
+        "sector": "Industrials",
+        "month": 5,
+        "surprise_bucket": "10-12%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 3.45
+      },
+      {
+        "cols": [
+          "sector",
+          "month",
+          "vix_regime"
+        ],
+        "sector": "Industrials",
+        "month": 5,
+        "vix_regime": "elevated_20-25",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 7.35
+      },
+      {
+        "cols": [
+          "sector",
+          "month",
+          "beta_bucket"
+        ],
+        "sector": "Industrials",
+        "month": 5,
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 10.06
+      },
+      {
+        "cols": [
+          "sector",
+          "month",
+          "pre_trend_bucket"
+        ],
+        "sector": "Industrials",
+        "month": 5,
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 9.09
+      },
+      {
+        "cols": [
+          "sector",
+          "weekday",
+          "year"
+        ],
+        "sector": "Industrials",
+        "weekday": "Thursday",
+        "year": 2025,
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 5.82
+      },
+      {
+        "cols": [
+          "sector",
+          "weekday",
+          "surprise_bucket"
+        ],
+        "sector": "Industrials",
+        "weekday": "Thursday",
+        "surprise_bucket": "10-12%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 1.46
+      },
+      {
+        "cols": [
+          "sector",
+          "weekday",
+          "vix_regime"
+        ],
+        "sector": "Technology",
+        "weekday": "Thursday",
+        "vix_regime": "elevated_20-25",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 10.33
+      },
+      {
+        "cols": [
+          "sector",
+          "weekday",
+          "vix_regime"
+        ],
+        "sector": "Healthcare",
+        "weekday": "Friday",
+        "vix_regime": "elevated_20-25",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 6.37
+      },
+      {
+        "cols": [
+          "sector",
+          "weekday",
+          "vix_regime"
+        ],
+        "sector": "Industrials",
+        "weekday": "Thursday",
+        "vix_regime": "elevated_20-25",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 5.82
+      },
+      {
+        "cols": [
+          "sector",
+          "weekday",
+          "beta_bucket"
+        ],
+        "sector": "Technology",
+        "weekday": "Thursday",
+        "beta_bucket": "very_high_1.6+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 10.33
+      },
+      {
+        "cols": [
+          "sector",
+          "year",
+          "surprise_bucket"
+        ],
+        "sector": "Industrials",
+        "year": 2025,
+        "surprise_bucket": "12-15%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 11.24
+      },
+      {
+        "cols": [
+          "sector",
+          "year",
+          "surprise_bucket"
+        ],
+        "sector": "Industrials",
+        "year": 2025,
+        "surprise_bucket": "10-12%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 3.45
+      },
+      {
+        "cols": [
+          "sector",
+          "year",
+          "vix_regime"
+        ],
+        "sector": "Industrials",
+        "year": 2025,
+        "vix_regime": "elevated_20-25",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 7.35
+      },
+      {
+        "cols": [
+          "sector",
+          "year",
+          "vix_regime"
+        ],
+        "sector": "Healthcare",
+        "year": 2025,
+        "vix_regime": "elevated_20-25",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 4.89
+      },
+      {
+        "cols": [
+          "sector",
+          "year",
+          "beta_bucket"
+        ],
+        "sector": "Technology",
+        "year": 2025,
+        "beta_bucket": "very_high_1.6+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 10.08
+      },
+      {
+        "cols": [
+          "sector",
+          "year",
+          "beta_bucket"
+        ],
+        "sector": "Industrials",
+        "year": 2025,
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 10.06
+      },
+      {
+        "cols": [
+          "sector",
+          "year",
+          "pre_trend_bucket"
+        ],
+        "sector": "Industrials",
+        "year": 2025,
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 9.09
+      },
+      {
+        "cols": [
+          "sector",
+          "analyst_bucket",
+          "vix_regime"
+        ],
+        "sector": "Healthcare",
+        "analyst_bucket": "21-30",
+        "vix_regime": "elevated_20-25",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 7.42
+      },
+      {
+        "cols": [
+          "sector",
+          "analyst_bucket",
+          "beta_bucket"
+        ],
+        "sector": "Healthcare",
+        "analyst_bucket": "21-30",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 7.42
+      },
+      {
+        "cols": [
+          "sector",
+          "surprise_bucket",
+          "vix_regime"
+        ],
+        "sector": "Industrials",
+        "surprise_bucket": "12-15%",
+        "vix_regime": "elevated_20-25",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 9.7
+      },
+      {
+        "cols": [
+          "sector",
+          "surprise_bucket",
+          "vix_regime"
+        ],
+        "sector": "Industrials",
+        "surprise_bucket": "10-12%",
+        "vix_regime": "elevated_20-25",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 3.45
+      },
+      {
+        "cols": [
+          "sector",
+          "surprise_bucket",
+          "beta_bucket"
+        ],
+        "sector": "Industrials",
+        "surprise_bucket": "10-12%",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 2.71
+      },
+      {
+        "cols": [
+          "sector",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "sector": "Technology",
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "very_high_1.6+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 10.33
+      },
+      {
+        "cols": [
+          "sector",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "sector": "Industrials",
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 10.06
+      },
+      {
+        "cols": [
+          "sector",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "sector": "Industrials",
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 4.17
+      },
+      {
+        "cols": [
+          "sector",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "sector": "Healthcare",
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 4.02
+      },
+      {
+        "cols": [
+          "sector",
+          "vix_regime",
+          "pre_trend_bucket"
+        ],
+        "sector": "Industrials",
+        "vix_regime": "elevated_20-25",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 9.09
+      },
+      {
+        "cols": [
+          "month",
+          "weekday",
+          "year"
+        ],
+        "month": 5,
+        "weekday": "Thursday",
+        "year": 2025,
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 8.54
+      },
+      {
+        "cols": [
+          "month",
+          "weekday",
+          "year"
+        ],
+        "month": 5,
+        "weekday": "Wednesday",
+        "year": 2025,
+        "n": 5,
+        "wr": 80.0,
+        "avg_pnl": 4.92
+      },
+      {
+        "cols": [
+          "month",
+          "weekday",
+          "surprise_bucket"
+        ],
+        "month": 5,
+        "weekday": "Thursday",
+        "surprise_bucket": "12-15%",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 11.89
+      },
+      {
+        "cols": [
+          "month",
+          "weekday",
+          "surprise_bucket"
+        ],
+        "month": 5,
+        "weekday": "Wednesday",
+        "surprise_bucket": "10-12%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 6.41
+      },
+      {
+        "cols": [
+          "month",
+          "weekday",
+          "vix_regime"
+        ],
+        "month": 5,
+        "weekday": "Thursday",
+        "vix_regime": "elevated_20-25",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 8.54
+      },
+      {
+        "cols": [
+          "month",
+          "weekday",
+          "vix_regime"
+        ],
+        "month": 5,
+        "weekday": "Wednesday",
+        "vix_regime": "elevated_20-25",
+        "n": 5,
+        "wr": 80.0,
+        "avg_pnl": 4.92
+      },
+      {
+        "cols": [
+          "month",
+          "weekday",
+          "beta_bucket"
+        ],
+        "month": 5,
+        "weekday": "Thursday",
+        "beta_bucket": "very_high_1.6+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 11.48
+      },
+      {
+        "cols": [
+          "month",
+          "weekday",
+          "pre_trend_bucket"
+        ],
+        "month": 5,
+        "weekday": "Wednesday",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 6.41
+      },
+      {
+        "cols": [
+          "month",
+          "year",
+          "analyst_bucket"
+        ],
+        "month": 5,
+        "year": 2025,
+        "analyst_bucket": "21-30",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 4.93
+      },
+      {
+        "cols": [
+          "month",
+          "year",
+          "analyst_bucket"
+        ],
+        "month": 5,
+        "year": 2025,
+        "analyst_bucket": "16-20",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 4.23
+      },
+      {
+        "cols": [
+          "month",
+          "year",
+          "analyst_bucket"
+        ],
+        "month": 5,
+        "year": 2025,
+        "analyst_bucket": "11-15",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 8.5
+      },
+      {
+        "cols": [
+          "month",
+          "year",
+          "surprise_bucket"
+        ],
+        "month": 5,
+        "year": 2025,
+        "surprise_bucket": "12-15%",
+        "n": 5,
+        "wr": 100.0,
+        "avg_pnl": 12.33
+      },
+      {
+        "cols": [
+          "month",
+          "year",
+          "surprise_bucket"
+        ],
+        "month": 5,
+        "year": 2025,
+        "surprise_bucket": "10-12%",
+        "n": 5,
+        "wr": 100.0,
+        "avg_pnl": 4.58
+      },
+      {
+        "cols": [
+          "month",
+          "year",
+          "vix_regime"
+        ],
+        "month": 5,
+        "year": 2025,
+        "vix_regime": "elevated_20-25",
+        "n": 13,
+        "wr": 92.3,
+        "avg_pnl": 7.2
+      },
+      {
+        "cols": [
+          "month",
+          "year",
+          "beta_bucket"
+        ],
+        "month": 5,
+        "year": 2025,
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 8.52
+      },
+      {
+        "cols": [
+          "month",
+          "year",
+          "beta_bucket"
+        ],
+        "month": 5,
+        "year": 2025,
+        "beta_bucket": "high_1.2-1.6",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 4.93
+      },
+      {
+        "cols": [
+          "month",
+          "year",
+          "beta_bucket"
+        ],
+        "month": 5,
+        "year": 2025,
+        "beta_bucket": "very_high_1.6+",
+        "n": 5,
+        "wr": 80.0,
+        "avg_pnl": 7.96
+      },
+      {
+        "cols": [
+          "month",
+          "year",
+          "pre_trend_bucket"
+        ],
+        "month": 5,
+        "year": 2025,
+        "pre_trend_bucket": "up_+3_to_+10%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 7.82
+      },
+      {
+        "cols": [
+          "month",
+          "year",
+          "pre_trend_bucket"
+        ],
+        "month": 5,
+        "year": 2025,
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 7.02
+      },
+      {
+        "cols": [
+          "month",
+          "analyst_bucket",
+          "surprise_bucket"
+        ],
+        "month": 5,
+        "analyst_bucket": "21-30",
+        "surprise_bucket": "10-12%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 5.34
+      },
+      {
+        "cols": [
+          "month",
+          "analyst_bucket",
+          "vix_regime"
+        ],
+        "month": 5,
+        "analyst_bucket": "21-30",
+        "vix_regime": "elevated_20-25",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 4.93
+      },
+      {
+        "cols": [
+          "month",
+          "analyst_bucket",
+          "vix_regime"
+        ],
+        "month": 5,
+        "analyst_bucket": "16-20",
+        "vix_regime": "elevated_20-25",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 4.23
+      },
+      {
+        "cols": [
+          "month",
+          "analyst_bucket",
+          "vix_regime"
+        ],
+        "month": 5,
+        "analyst_bucket": "11-15",
+        "vix_regime": "elevated_20-25",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 8.5
+      },
+      {
+        "cols": [
+          "month",
+          "analyst_bucket",
+          "beta_bucket"
+        ],
+        "month": 5,
+        "analyst_bucket": "21-30",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 4.93
+      },
+      {
+        "cols": [
+          "month",
+          "analyst_bucket",
+          "pre_trend_bucket"
+        ],
+        "month": 5,
+        "analyst_bucket": "16-20",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 4.23
+      },
+      {
+        "cols": [
+          "month",
+          "surprise_bucket",
+          "vix_regime"
+        ],
+        "month": 5,
+        "surprise_bucket": "12-15%",
+        "vix_regime": "elevated_20-25",
+        "n": 5,
+        "wr": 100.0,
+        "avg_pnl": 12.33
+      },
+      {
+        "cols": [
+          "month",
+          "surprise_bucket",
+          "vix_regime"
+        ],
+        "month": 5,
+        "surprise_bucket": "10-12%",
+        "vix_regime": "elevated_20-25",
+        "n": 5,
+        "wr": 100.0,
+        "avg_pnl": 4.58
+      },
+      {
+        "cols": [
+          "month",
+          "surprise_bucket",
+          "beta_bucket"
+        ],
+        "month": 5,
+        "surprise_bucket": "12-15%",
+        "beta_bucket": "very_high_1.6+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 11.48
+      },
+      {
+        "cols": [
+          "month",
+          "surprise_bucket",
+          "beta_bucket"
+        ],
+        "month": 5,
+        "surprise_bucket": "10-12%",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 5.34
+      },
+      {
+        "cols": [
+          "month",
+          "surprise_bucket",
+          "pre_trend_bucket"
+        ],
+        "month": 5,
+        "surprise_bucket": "12-15%",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 7.63
+      },
+      {
+        "cols": [
+          "month",
+          "surprise_bucket",
+          "pre_trend_bucket"
+        ],
+        "month": 5,
+        "surprise_bucket": "10-12%",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 6.41
+      },
+      {
+        "cols": [
+          "month",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "month": 5,
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 8.52
+      },
+      {
+        "cols": [
+          "month",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "month": 5,
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 4.93
+      },
+      {
+        "cols": [
+          "month",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "month": 5,
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "very_high_1.6+",
+        "n": 5,
+        "wr": 80.0,
+        "avg_pnl": 7.96
+      },
+      {
+        "cols": [
+          "month",
+          "vix_regime",
+          "pre_trend_bucket"
+        ],
+        "month": 5,
+        "vix_regime": "elevated_20-25",
+        "pre_trend_bucket": "up_+3_to_+10%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 7.82
+      },
+      {
+        "cols": [
+          "month",
+          "vix_regime",
+          "pre_trend_bucket"
+        ],
+        "month": 5,
+        "vix_regime": "elevated_20-25",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 7.02
+      },
+      {
+        "cols": [
+          "weekday",
+          "year",
+          "surprise_bucket"
+        ],
+        "weekday": "Wednesday",
+        "year": 2025,
+        "surprise_bucket": "10-12%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 6.41
+      },
+      {
+        "cols": [
+          "weekday",
+          "year",
+          "surprise_bucket"
+        ],
+        "weekday": "Thursday",
+        "year": 2025,
+        "surprise_bucket": "12-15%",
+        "n": 5,
+        "wr": 80.0,
+        "avg_pnl": 9.14
+      },
+      {
+        "cols": [
+          "weekday",
+          "year",
+          "vix_regime"
+        ],
+        "weekday": "Thursday",
+        "year": 2025,
+        "vix_regime": "elevated_20-25",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 8.54
+      },
+      {
+        "cols": [
+          "weekday",
+          "year",
+          "beta_bucket"
+        ],
+        "weekday": "Thursday",
+        "year": 2025,
+        "beta_bucket": "very_high_1.6+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 11.48
+      },
+      {
+        "cols": [
+          "weekday",
+          "year",
+          "pre_trend_bucket"
+        ],
+        "weekday": "Wednesday",
+        "year": 2025,
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 6.41
+      },
+      {
+        "cols": [
+          "weekday",
+          "surprise_bucket",
+          "vix_regime"
+        ],
+        "weekday": "Thursday",
+        "surprise_bucket": "12-15%",
+        "vix_regime": "elevated_20-25",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 11.89
+      },
+      {
+        "cols": [
+          "weekday",
+          "surprise_bucket",
+          "vix_regime"
+        ],
+        "weekday": "Wednesday",
+        "surprise_bucket": "10-12%",
+        "vix_regime": "elevated_20-25",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 6.41
+      },
+      {
+        "cols": [
+          "weekday",
+          "surprise_bucket",
+          "beta_bucket"
+        ],
+        "weekday": "Thursday",
+        "surprise_bucket": "12-15%",
+        "beta_bucket": "very_high_1.6+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 11.48
+      },
+      {
+        "cols": [
+          "weekday",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "weekday": "Thursday",
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "very_high_1.6+",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 9.37
+      },
+      {
+        "cols": [
+          "weekday",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "weekday": "Friday",
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 5.63
+      },
+      {
+        "cols": [
+          "weekday",
+          "vix_regime",
+          "pre_trend_bucket"
+        ],
+        "weekday": "Friday",
+        "vix_regime": "elevated_20-25",
+        "pre_trend_bucket": "strong_down_<-10%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 6.84
+      },
+      {
+        "cols": [
+          "weekday",
+          "vix_regime",
+          "pre_trend_bucket"
+        ],
+        "weekday": "Wednesday",
+        "vix_regime": "elevated_20-25",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 6.41
+      },
+      {
+        "cols": [
+          "year",
+          "analyst_bucket",
+          "surprise_bucket"
+        ],
+        "year": 2025,
+        "analyst_bucket": "21-30",
+        "surprise_bucket": "10-12%",
+        "n": 5,
+        "wr": 80.0,
+        "avg_pnl": 4.61
+      },
+      {
+        "cols": [
+          "year",
+          "analyst_bucket",
+          "vix_regime"
+        ],
+        "year": 2025,
+        "analyst_bucket": "21-30",
+        "vix_regime": "elevated_20-25",
+        "n": 5,
+        "wr": 100.0,
+        "avg_pnl": 6.04
+      },
+      {
+        "cols": [
+          "year",
+          "analyst_bucket",
+          "vix_regime"
+        ],
+        "year": 2025,
+        "analyst_bucket": "16-20",
+        "vix_regime": "elevated_20-25",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 4.23
+      },
+      {
+        "cols": [
+          "year",
+          "analyst_bucket",
+          "beta_bucket"
+        ],
+        "year": 2025,
+        "analyst_bucket": "21-30",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 6,
+        "wr": 83.3,
+        "avg_pnl": 4.05
+      },
+      {
+        "cols": [
+          "year",
+          "analyst_bucket",
+          "pre_trend_bucket"
+        ],
+        "year": 2025,
+        "analyst_bucket": "16-20",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 4.23
+      },
+      {
+        "cols": [
+          "year",
+          "surprise_bucket",
+          "vix_regime"
+        ],
+        "year": 2025,
+        "surprise_bucket": "10-12%",
+        "vix_regime": "elevated_20-25",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 5.56
+      },
+      {
+        "cols": [
+          "year",
+          "surprise_bucket",
+          "vix_regime"
+        ],
+        "year": 2025,
+        "surprise_bucket": "12-15%",
+        "vix_regime": "elevated_20-25",
+        "n": 6,
+        "wr": 83.3,
+        "avg_pnl": 10.13
+      },
+      {
+        "cols": [
+          "year",
+          "surprise_bucket",
+          "beta_bucket"
+        ],
+        "year": 2025,
+        "surprise_bucket": "10-12%",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 6.63
+      },
+      {
+        "cols": [
+          "year",
+          "surprise_bucket",
+          "beta_bucket"
+        ],
+        "year": 2025,
+        "surprise_bucket": "12-15%",
+        "beta_bucket": "very_high_1.6+",
+        "n": 4,
+        "wr": 75.0,
+        "avg_pnl": 7.42
+      },
+      {
+        "cols": [
+          "year",
+          "surprise_bucket",
+          "pre_trend_bucket"
+        ],
+        "year": 2025,
+        "surprise_bucket": "12-15%",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 7.63
+      },
+      {
+        "cols": [
+          "year",
+          "surprise_bucket",
+          "pre_trend_bucket"
+        ],
+        "year": 2025,
+        "surprise_bucket": "10-12%",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 6.41
+      },
+      {
+        "cols": [
+          "year",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "year": 2025,
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 4,
+        "wr": 100.0,
+        "avg_pnl": 8.52
+      },
+      {
+        "cols": [
+          "year",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "year": 2025,
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 6,
+        "wr": 83.3,
+        "avg_pnl": 4.89
+      },
+      {
+        "cols": [
+          "year",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "year": 2025,
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "very_high_1.6+",
+        "n": 5,
+        "wr": 80.0,
+        "avg_pnl": 7.96
+      },
+      {
+        "cols": [
+          "year",
+          "vix_regime",
+          "pre_trend_bucket"
+        ],
+        "year": 2025,
+        "vix_regime": "elevated_20-25",
+        "pre_trend_bucket": "up_+3_to_+10%",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 7.82
+      },
+      {
+        "cols": [
+          "year",
+          "vix_regime",
+          "pre_trend_bucket"
+        ],
+        "year": 2025,
+        "vix_regime": "elevated_20-25",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 7.02
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "surprise_bucket",
+          "vix_regime"
+        ],
+        "analyst_bucket": "6-10",
+        "surprise_bucket": "12-15%",
+        "vix_regime": "elevated_20-25",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 11.52
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "surprise_bucket",
+          "vix_regime"
+        ],
+        "analyst_bucket": "21-30",
+        "surprise_bucket": "10-12%",
+        "vix_regime": "elevated_20-25",
+        "n": 5,
+        "wr": 100.0,
+        "avg_pnl": 6.92
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "surprise_bucket",
+          "beta_bucket"
+        ],
+        "analyst_bucket": "6-10",
+        "surprise_bucket": "12-15%",
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 11.52
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "surprise_bucket",
+          "beta_bucket"
+        ],
+        "analyst_bucket": "21-30",
+        "surprise_bucket": "10-12%",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 5,
+        "wr": 100.0,
+        "avg_pnl": 6.92
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "analyst_bucket": "6-10",
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 11.52
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "analyst_bucket": "21-30",
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 6,
+        "wr": 100.0,
+        "avg_pnl": 6.38
+      },
+      {
+        "cols": [
+          "analyst_bucket",
+          "vix_regime",
+          "pre_trend_bucket"
+        ],
+        "analyst_bucket": "16-20",
+        "vix_regime": "elevated_20-25",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 4.23
+      },
+      {
+        "cols": [
+          "surprise_bucket",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "surprise_bucket": "12-15%",
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "normal_0.8-1.2",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 11.52
+      },
+      {
+        "cols": [
+          "surprise_bucket",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "surprise_bucket": "12-15%",
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "very_high_1.6+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 11.48
+      },
+      {
+        "cols": [
+          "surprise_bucket",
+          "vix_regime",
+          "beta_bucket"
+        ],
+        "surprise_bucket": "10-12%",
+        "vix_regime": "elevated_20-25",
+        "beta_bucket": "high_1.2-1.6",
+        "n": 5,
+        "wr": 100.0,
+        "avg_pnl": 6.92
+      },
+      {
+        "cols": [
+          "surprise_bucket",
+          "vix_regime",
+          "pre_trend_bucket"
+        ],
+        "surprise_bucket": "12-15%",
+        "vix_regime": "elevated_20-25",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 7.63
+      },
+      {
+        "cols": [
+          "surprise_bucket",
+          "vix_regime",
+          "pre_trend_bucket"
+        ],
+        "surprise_bucket": "10-12%",
+        "vix_regime": "elevated_20-25",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 6.41
+      },
+      {
+        "cols": [
+          "surprise_bucket",
+          "beta_bucket",
+          "pre_trend_bucket"
+        ],
+        "surprise_bucket": "10-12%",
+        "beta_bucket": "high_1.2-1.6",
+        "pre_trend_bucket": "strong_up_+10%+",
+        "n": 3,
+        "wr": 100.0,
+        "avg_pnl": 5.35
+      }
+    ]
+  },
+  "elite_setups_85": [
+    {
+      "cols": [
+        "cap_bucket",
+        "sector"
+      ],
+      "cap_bucket": "[10-20B]",
+      "sector": "Healthcare",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 5.76
+    },
+    {
+      "cols": [
+        "cap_bucket",
+        "analyst_bucket"
+      ],
+      "cap_bucket": "[20-30B]",
+      "analyst_bucket": "31+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 2.19
+    },
+    {
+      "cols": [
+        "cap_bucket",
+        "vix_regime"
+      ],
+      "cap_bucket": "[10-20B]",
+      "vix_regime": "elevated_20-25",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 10.4
+    },
+    {
+      "cols": [
+        "cap_bucket",
+        "pre_trend_bucket"
+      ],
+      "cap_bucket": "[0-10B]",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 7.94
+    },
+    {
+      "cols": [
+        "sector",
+        "month"
+      ],
+      "sector": "Industrials",
+      "month": 5,
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 7.35
+    },
+    {
+      "cols": [
+        "sector",
+        "weekday"
+      ],
+      "sector": "Technology",
+      "weekday": "Thursday",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 10.33
+    },
+    {
+      "cols": [
+        "sector",
+        "weekday"
+      ],
+      "sector": "Healthcare",
+      "weekday": "Friday",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 6.37
+    },
+    {
+      "cols": [
+        "sector",
+        "weekday"
+      ],
+      "sector": "Industrials",
+      "weekday": "Thursday",
+      "n": 5,
+      "wr": 100.0,
+      "avg_pnl": 4.8
+    },
+    {
+      "cols": [
+        "sector",
+        "year"
+      ],
+      "sector": "Industrials",
+      "year": 2025,
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 7.35
+    },
+    {
+      "cols": [
+        "sector",
+        "analyst_bucket"
+      ],
+      "sector": "Technology",
+      "analyst_bucket": "31+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 2.19
+    },
+    {
+      "cols": [
+        "sector",
+        "surprise_bucket"
+      ],
+      "sector": "Industrials",
+      "surprise_bucket": "12-15%",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 9.7
+    },
+    {
+      "cols": [
+        "sector",
+        "surprise_bucket"
+      ],
+      "sector": "Industrials",
+      "surprise_bucket": "10-12%",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 2.77
+    },
+    {
+      "cols": [
+        "sector",
+        "vix_regime"
+      ],
+      "sector": "Industrials",
+      "vix_regime": "elevated_20-25",
+      "n": 7,
+      "wr": 100.0,
+      "avg_pnl": 7.03
+    },
+    {
+      "cols": [
+        "sector",
+        "beta_bucket"
+      ],
+      "sector": "Industrials",
+      "beta_bucket": "normal_0.8-1.2",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 10.06
+    },
+    {
+      "cols": [
+        "sector",
+        "beta_bucket"
+      ],
+      "sector": "Technology",
+      "beta_bucket": "very_high_1.6+",
+      "n": 5,
+      "wr": 100.0,
+      "avg_pnl": 7.89
+    },
+    {
+      "cols": [
+        "sector",
+        "beta_bucket"
+      ],
+      "sector": "Industrials",
+      "beta_bucket": "high_1.2-1.6",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 3.3
+    },
+    {
+      "cols": [
+        "sector",
+        "pre_trend_bucket"
+      ],
+      "sector": "Industrials",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 7.0
+    },
+    {
+      "cols": [
+        "month",
+        "weekday"
+      ],
+      "month": 5,
+      "weekday": "Thursday",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 8.54
+    },
+    {
+      "cols": [
+        "month",
+        "year"
+      ],
+      "month": 5.0,
+      "year": 2025.0,
+      "n": 13.0,
+      "wr": 92.3,
+      "avg_pnl": 7.2
+    },
+    {
+      "cols": [
+        "month",
+        "analyst_bucket"
+      ],
+      "month": 5,
+      "analyst_bucket": "21-30",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 4.93
+    },
+    {
+      "cols": [
+        "month",
+        "analyst_bucket"
+      ],
+      "month": 5,
+      "analyst_bucket": "16-20",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 4.23
+    },
+    {
+      "cols": [
+        "month",
+        "surprise_bucket"
+      ],
+      "month": 5,
+      "surprise_bucket": "12-15%",
+      "n": 5,
+      "wr": 100.0,
+      "avg_pnl": 12.33
+    },
+    {
+      "cols": [
+        "month",
+        "surprise_bucket"
+      ],
+      "month": 5,
+      "surprise_bucket": "10-12%",
+      "n": 5,
+      "wr": 100.0,
+      "avg_pnl": 4.58
+    },
+    {
+      "cols": [
+        "month",
+        "vix_regime"
+      ],
+      "month": 5,
+      "vix_regime": "elevated_20-25",
+      "n": 13,
+      "wr": 92.3,
+      "avg_pnl": 7.2
+    },
+    {
+      "cols": [
+        "month",
+        "beta_bucket"
+      ],
+      "month": 5,
+      "beta_bucket": "normal_0.8-1.2",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 8.52
+    },
+    {
+      "cols": [
+        "month",
+        "beta_bucket"
+      ],
+      "month": 5,
+      "beta_bucket": "high_1.2-1.6",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 4.93
+    },
+    {
+      "cols": [
+        "month",
+        "pre_trend_bucket"
+      ],
+      "month": 5,
+      "pre_trend_bucket": "up_+3_to_+10%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 7.82
+    },
+    {
+      "cols": [
+        "month",
+        "pre_trend_bucket"
+      ],
+      "month": 5,
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 7.02
+    },
+    {
+      "cols": [
+        "weekday",
+        "vix_regime"
+      ],
+      "weekday": "Thursday",
+      "vix_regime": "elevated_20-25",
+      "n": 7,
+      "wr": 100.0,
+      "avg_pnl": 7.75
+    },
+    {
+      "cols": [
+        "weekday",
+        "vix_regime"
+      ],
+      "weekday": "Friday",
+      "vix_regime": "elevated_20-25",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 6.06
+    },
+    {
+      "cols": [
+        "weekday",
+        "beta_bucket"
+      ],
+      "weekday": "Thursday",
+      "beta_bucket": "very_high_1.6+",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 9.37
+    },
+    {
+      "cols": [
+        "year",
+        "vix_regime"
+      ],
+      "year": 2025,
+      "vix_regime": "elevated_20-25",
+      "n": 15,
+      "wr": 86.7,
+      "avg_pnl": 6.88
+    },
+    {
+      "cols": [
+        "year",
+        "pre_trend_bucket"
+      ],
+      "year": 2025,
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 7.02
+    },
+    {
+      "cols": [
+        "year",
+        "pre_trend_bucket"
+      ],
+      "year": 2023,
+      "pre_trend_bucket": "strong_down_<-10%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 6.46
+    },
+    {
+      "cols": [
+        "analyst_bucket",
+        "surprise_bucket"
+      ],
+      "analyst_bucket": "6-10",
+      "surprise_bucket": "12-15%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 11.52
+    },
+    {
+      "cols": [
+        "analyst_bucket",
+        "vix_regime"
+      ],
+      "analyst_bucket": "6-10",
+      "vix_regime": "elevated_20-25",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 11.52
+    },
+    {
+      "cols": [
+        "analyst_bucket",
+        "vix_regime"
+      ],
+      "analyst_bucket": "21-30",
+      "vix_regime": "elevated_20-25",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 6.38
+    },
+    {
+      "cols": [
+        "analyst_bucket",
+        "beta_bucket"
+      ],
+      "analyst_bucket": "21-30",
+      "beta_bucket": "high_1.2-1.6",
+      "n": 7,
+      "wr": 85.7,
+      "avg_pnl": 4.63
+    },
+    {
+      "cols": [
+        "analyst_bucket",
+        "pre_trend_bucket"
+      ],
+      "analyst_bucket": "16-20",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 4.23
+    },
+    {
+      "cols": [
+        "surprise_bucket",
+        "vix_regime"
+      ],
+      "surprise_bucket": "10-12%",
+      "vix_regime": "elevated_20-25",
+      "n": 7,
+      "wr": 100.0,
+      "avg_pnl": 5.92
+    },
+    {
+      "cols": [
+        "surprise_bucket",
+        "vix_regime"
+      ],
+      "surprise_bucket": "12-15%",
+      "vix_regime": "elevated_20-25",
+      "n": 8,
+      "wr": 87.5,
+      "avg_pnl": 9.15
+    },
+    {
+      "cols": [
+        "surprise_bucket",
+        "beta_bucket"
+      ],
+      "surprise_bucket": "10-12%",
+      "beta_bucket": "high_1.2-1.6",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 5.89
+    },
+    {
+      "cols": [
+        "vix_regime",
+        "beta_bucket"
+      ],
+      "vix_regime": "elevated_20-25",
+      "beta_bucket": "normal_0.8-1.2",
+      "n": 5,
+      "wr": 100.0,
+      "avg_pnl": 8.28
+    },
+    {
+      "cols": [
+        "vix_regime",
+        "pre_trend_bucket"
+      ],
+      "vix_regime": "elevated_20-25",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 7.02
+    },
+    {
+      "cols": [
+        "beta_bucket",
+        "pre_trend_bucket"
+      ],
+      "beta_bucket": "high_1.2-1.6",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 5.35
+    },
+    {
+      "cols": [
+        "cap_bucket",
+        "sector",
+        "analyst_bucket"
+      ],
+      "cap_bucket": "[20-30B]",
+      "sector": "Technology",
+      "analyst_bucket": "31+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 2.19
+    },
+    {
+      "cols": [
+        "cap_bucket",
+        "month",
+        "weekday"
+      ],
+      "cap_bucket": "[0-10B]",
+      "month": 5,
+      "weekday": "Thursday",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 10.3
+    },
+    {
+      "cols": [
+        "cap_bucket",
+        "weekday",
+        "vix_regime"
+      ],
+      "cap_bucket": "[0-10B]",
+      "weekday": "Thursday",
+      "vix_regime": "elevated_20-25",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 10.3
+    },
+    {
+      "cols": [
+        "cap_bucket",
+        "year",
+        "vix_regime"
+      ],
+      "cap_bucket": "[10-20B]",
+      "year": 2025,
+      "vix_regime": "elevated_20-25",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 10.4
+    },
+    {
+      "cols": [
+        "sector",
+        "month",
+        "weekday"
+      ],
+      "sector": "Industrials",
+      "month": 5,
+      "weekday": "Thursday",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 5.82
+    },
+    {
+      "cols": [
+        "sector",
+        "month",
+        "year"
+      ],
+      "sector": "Industrials",
+      "month": 5,
+      "year": 2025,
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 7.35
+    },
+    {
+      "cols": [
+        "sector",
+        "month",
+        "surprise_bucket"
+      ],
+      "sector": "Industrials",
+      "month": 5,
+      "surprise_bucket": "12-15%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 11.24
+    },
+    {
+      "cols": [
+        "sector",
+        "month",
+        "surprise_bucket"
+      ],
+      "sector": "Industrials",
+      "month": 5,
+      "surprise_bucket": "10-12%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 3.45
+    },
+    {
+      "cols": [
+        "sector",
+        "month",
+        "vix_regime"
+      ],
+      "sector": "Industrials",
+      "month": 5,
+      "vix_regime": "elevated_20-25",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 7.35
+    },
+    {
+      "cols": [
+        "sector",
+        "month",
+        "beta_bucket"
+      ],
+      "sector": "Industrials",
+      "month": 5,
+      "beta_bucket": "normal_0.8-1.2",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 10.06
+    },
+    {
+      "cols": [
+        "sector",
+        "month",
+        "pre_trend_bucket"
+      ],
+      "sector": "Industrials",
+      "month": 5,
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 9.09
+    },
+    {
+      "cols": [
+        "sector",
+        "weekday",
+        "year"
+      ],
+      "sector": "Industrials",
+      "weekday": "Thursday",
+      "year": 2025,
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 5.82
+    },
+    {
+      "cols": [
+        "sector",
+        "weekday",
+        "surprise_bucket"
+      ],
+      "sector": "Industrials",
+      "weekday": "Thursday",
+      "surprise_bucket": "10-12%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 1.46
+    },
+    {
+      "cols": [
+        "sector",
+        "weekday",
+        "vix_regime"
+      ],
+      "sector": "Technology",
+      "weekday": "Thursday",
+      "vix_regime": "elevated_20-25",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 10.33
+    },
+    {
+      "cols": [
+        "sector",
+        "weekday",
+        "vix_regime"
+      ],
+      "sector": "Healthcare",
+      "weekday": "Friday",
+      "vix_regime": "elevated_20-25",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 6.37
+    },
+    {
+      "cols": [
+        "sector",
+        "weekday",
+        "vix_regime"
+      ],
+      "sector": "Industrials",
+      "weekday": "Thursday",
+      "vix_regime": "elevated_20-25",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 5.82
+    },
+    {
+      "cols": [
+        "sector",
+        "weekday",
+        "beta_bucket"
+      ],
+      "sector": "Technology",
+      "weekday": "Thursday",
+      "beta_bucket": "very_high_1.6+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 10.33
+    },
+    {
+      "cols": [
+        "sector",
+        "year",
+        "surprise_bucket"
+      ],
+      "sector": "Industrials",
+      "year": 2025,
+      "surprise_bucket": "12-15%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 11.24
+    },
+    {
+      "cols": [
+        "sector",
+        "year",
+        "surprise_bucket"
+      ],
+      "sector": "Industrials",
+      "year": 2025,
+      "surprise_bucket": "10-12%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 3.45
+    },
+    {
+      "cols": [
+        "sector",
+        "year",
+        "vix_regime"
+      ],
+      "sector": "Industrials",
+      "year": 2025,
+      "vix_regime": "elevated_20-25",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 7.35
+    },
+    {
+      "cols": [
+        "sector",
+        "year",
+        "beta_bucket"
+      ],
+      "sector": "Technology",
+      "year": 2025,
+      "beta_bucket": "very_high_1.6+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 10.08
+    },
+    {
+      "cols": [
+        "sector",
+        "year",
+        "beta_bucket"
+      ],
+      "sector": "Industrials",
+      "year": 2025,
+      "beta_bucket": "normal_0.8-1.2",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 10.06
+    },
+    {
+      "cols": [
+        "sector",
+        "year",
+        "pre_trend_bucket"
+      ],
+      "sector": "Industrials",
+      "year": 2025,
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 9.09
+    },
+    {
+      "cols": [
+        "sector",
+        "analyst_bucket",
+        "vix_regime"
+      ],
+      "sector": "Healthcare",
+      "analyst_bucket": "21-30",
+      "vix_regime": "elevated_20-25",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 7.42
+    },
+    {
+      "cols": [
+        "sector",
+        "analyst_bucket",
+        "beta_bucket"
+      ],
+      "sector": "Healthcare",
+      "analyst_bucket": "21-30",
+      "beta_bucket": "high_1.2-1.6",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 7.42
+    },
+    {
+      "cols": [
+        "sector",
+        "surprise_bucket",
+        "vix_regime"
+      ],
+      "sector": "Industrials",
+      "surprise_bucket": "12-15%",
+      "vix_regime": "elevated_20-25",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 9.7
+    },
+    {
+      "cols": [
+        "sector",
+        "surprise_bucket",
+        "vix_regime"
+      ],
+      "sector": "Industrials",
+      "surprise_bucket": "10-12%",
+      "vix_regime": "elevated_20-25",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 3.45
+    },
+    {
+      "cols": [
+        "sector",
+        "surprise_bucket",
+        "beta_bucket"
+      ],
+      "sector": "Industrials",
+      "surprise_bucket": "10-12%",
+      "beta_bucket": "high_1.2-1.6",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 2.71
+    },
+    {
+      "cols": [
+        "sector",
+        "vix_regime",
+        "beta_bucket"
+      ],
+      "sector": "Technology",
+      "vix_regime": "elevated_20-25",
+      "beta_bucket": "very_high_1.6+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 10.33
+    },
+    {
+      "cols": [
+        "sector",
+        "vix_regime",
+        "beta_bucket"
+      ],
+      "sector": "Industrials",
+      "vix_regime": "elevated_20-25",
+      "beta_bucket": "normal_0.8-1.2",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 10.06
+    },
+    {
+      "cols": [
+        "sector",
+        "vix_regime",
+        "beta_bucket"
+      ],
+      "sector": "Industrials",
+      "vix_regime": "elevated_20-25",
+      "beta_bucket": "high_1.2-1.6",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 4.17
+    },
+    {
+      "cols": [
+        "sector",
+        "vix_regime",
+        "pre_trend_bucket"
+      ],
+      "sector": "Industrials",
+      "vix_regime": "elevated_20-25",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 9.09
+    },
+    {
+      "cols": [
+        "month",
+        "weekday",
+        "year"
+      ],
+      "month": 5,
+      "weekday": "Thursday",
+      "year": 2025,
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 8.54
+    },
+    {
+      "cols": [
+        "month",
+        "weekday",
+        "surprise_bucket"
+      ],
+      "month": 5,
+      "weekday": "Thursday",
+      "surprise_bucket": "12-15%",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 11.89
+    },
+    {
+      "cols": [
+        "month",
+        "weekday",
+        "surprise_bucket"
+      ],
+      "month": 5,
+      "weekday": "Wednesday",
+      "surprise_bucket": "10-12%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 6.41
+    },
+    {
+      "cols": [
+        "month",
+        "weekday",
+        "vix_regime"
+      ],
+      "month": 5,
+      "weekday": "Thursday",
+      "vix_regime": "elevated_20-25",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 8.54
+    },
+    {
+      "cols": [
+        "month",
+        "weekday",
+        "beta_bucket"
+      ],
+      "month": 5,
+      "weekday": "Thursday",
+      "beta_bucket": "very_high_1.6+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 11.48
+    },
+    {
+      "cols": [
+        "month",
+        "weekday",
+        "pre_trend_bucket"
+      ],
+      "month": 5,
+      "weekday": "Wednesday",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 6.41
+    },
+    {
+      "cols": [
+        "month",
+        "year",
+        "analyst_bucket"
+      ],
+      "month": 5,
+      "year": 2025,
+      "analyst_bucket": "21-30",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 4.93
+    },
+    {
+      "cols": [
+        "month",
+        "year",
+        "analyst_bucket"
+      ],
+      "month": 5,
+      "year": 2025,
+      "analyst_bucket": "16-20",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 4.23
+    },
+    {
+      "cols": [
+        "month",
+        "year",
+        "surprise_bucket"
+      ],
+      "month": 5,
+      "year": 2025,
+      "surprise_bucket": "12-15%",
+      "n": 5,
+      "wr": 100.0,
+      "avg_pnl": 12.33
+    },
+    {
+      "cols": [
+        "month",
+        "year",
+        "surprise_bucket"
+      ],
+      "month": 5,
+      "year": 2025,
+      "surprise_bucket": "10-12%",
+      "n": 5,
+      "wr": 100.0,
+      "avg_pnl": 4.58
+    },
+    {
+      "cols": [
+        "month",
+        "year",
+        "vix_regime"
+      ],
+      "month": 5,
+      "year": 2025,
+      "vix_regime": "elevated_20-25",
+      "n": 13,
+      "wr": 92.3,
+      "avg_pnl": 7.2
+    },
+    {
+      "cols": [
+        "month",
+        "year",
+        "beta_bucket"
+      ],
+      "month": 5,
+      "year": 2025,
+      "beta_bucket": "normal_0.8-1.2",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 8.52
+    },
+    {
+      "cols": [
+        "month",
+        "year",
+        "beta_bucket"
+      ],
+      "month": 5,
+      "year": 2025,
+      "beta_bucket": "high_1.2-1.6",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 4.93
+    },
+    {
+      "cols": [
+        "month",
+        "year",
+        "pre_trend_bucket"
+      ],
+      "month": 5,
+      "year": 2025,
+      "pre_trend_bucket": "up_+3_to_+10%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 7.82
+    },
+    {
+      "cols": [
+        "month",
+        "year",
+        "pre_trend_bucket"
+      ],
+      "month": 5,
+      "year": 2025,
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 7.02
+    },
+    {
+      "cols": [
+        "month",
+        "analyst_bucket",
+        "surprise_bucket"
+      ],
+      "month": 5,
+      "analyst_bucket": "21-30",
+      "surprise_bucket": "10-12%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 5.34
+    },
+    {
+      "cols": [
+        "month",
+        "analyst_bucket",
+        "vix_regime"
+      ],
+      "month": 5,
+      "analyst_bucket": "21-30",
+      "vix_regime": "elevated_20-25",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 4.93
+    },
+    {
+      "cols": [
+        "month",
+        "analyst_bucket",
+        "vix_regime"
+      ],
+      "month": 5,
+      "analyst_bucket": "16-20",
+      "vix_regime": "elevated_20-25",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 4.23
+    },
+    {
+      "cols": [
+        "month",
+        "analyst_bucket",
+        "beta_bucket"
+      ],
+      "month": 5,
+      "analyst_bucket": "21-30",
+      "beta_bucket": "high_1.2-1.6",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 4.93
+    },
+    {
+      "cols": [
+        "month",
+        "analyst_bucket",
+        "pre_trend_bucket"
+      ],
+      "month": 5,
+      "analyst_bucket": "16-20",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 4.23
+    },
+    {
+      "cols": [
+        "month",
+        "surprise_bucket",
+        "vix_regime"
+      ],
+      "month": 5,
+      "surprise_bucket": "12-15%",
+      "vix_regime": "elevated_20-25",
+      "n": 5,
+      "wr": 100.0,
+      "avg_pnl": 12.33
+    },
+    {
+      "cols": [
+        "month",
+        "surprise_bucket",
+        "vix_regime"
+      ],
+      "month": 5,
+      "surprise_bucket": "10-12%",
+      "vix_regime": "elevated_20-25",
+      "n": 5,
+      "wr": 100.0,
+      "avg_pnl": 4.58
+    },
+    {
+      "cols": [
+        "month",
+        "surprise_bucket",
+        "beta_bucket"
+      ],
+      "month": 5,
+      "surprise_bucket": "12-15%",
+      "beta_bucket": "very_high_1.6+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 11.48
+    },
+    {
+      "cols": [
+        "month",
+        "surprise_bucket",
+        "beta_bucket"
+      ],
+      "month": 5,
+      "surprise_bucket": "10-12%",
+      "beta_bucket": "high_1.2-1.6",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 5.34
+    },
+    {
+      "cols": [
+        "month",
+        "surprise_bucket",
+        "pre_trend_bucket"
+      ],
+      "month": 5,
+      "surprise_bucket": "12-15%",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 7.63
+    },
+    {
+      "cols": [
+        "month",
+        "surprise_bucket",
+        "pre_trend_bucket"
+      ],
+      "month": 5,
+      "surprise_bucket": "10-12%",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 6.41
+    },
+    {
+      "cols": [
+        "month",
+        "vix_regime",
+        "beta_bucket"
+      ],
+      "month": 5,
+      "vix_regime": "elevated_20-25",
+      "beta_bucket": "normal_0.8-1.2",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 8.52
+    },
+    {
+      "cols": [
+        "month",
+        "vix_regime",
+        "beta_bucket"
+      ],
+      "month": 5,
+      "vix_regime": "elevated_20-25",
+      "beta_bucket": "high_1.2-1.6",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 4.93
+    },
+    {
+      "cols": [
+        "month",
+        "vix_regime",
+        "pre_trend_bucket"
+      ],
+      "month": 5,
+      "vix_regime": "elevated_20-25",
+      "pre_trend_bucket": "up_+3_to_+10%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 7.82
+    },
+    {
+      "cols": [
+        "month",
+        "vix_regime",
+        "pre_trend_bucket"
+      ],
+      "month": 5,
+      "vix_regime": "elevated_20-25",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 7.02
+    },
+    {
+      "cols": [
+        "weekday",
+        "year",
+        "surprise_bucket"
+      ],
+      "weekday": "Wednesday",
+      "year": 2025,
+      "surprise_bucket": "10-12%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 6.41
+    },
+    {
+      "cols": [
+        "weekday",
+        "year",
+        "vix_regime"
+      ],
+      "weekday": "Thursday",
+      "year": 2025,
+      "vix_regime": "elevated_20-25",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 8.54
+    },
+    {
+      "cols": [
+        "weekday",
+        "year",
+        "beta_bucket"
+      ],
+      "weekday": "Thursday",
+      "year": 2025,
+      "beta_bucket": "very_high_1.6+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 11.48
+    },
+    {
+      "cols": [
+        "weekday",
+        "year",
+        "pre_trend_bucket"
+      ],
+      "weekday": "Wednesday",
+      "year": 2025,
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 6.41
+    },
+    {
+      "cols": [
+        "weekday",
+        "surprise_bucket",
+        "vix_regime"
+      ],
+      "weekday": "Thursday",
+      "surprise_bucket": "12-15%",
+      "vix_regime": "elevated_20-25",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 11.89
+    },
+    {
+      "cols": [
+        "weekday",
+        "surprise_bucket",
+        "vix_regime"
+      ],
+      "weekday": "Wednesday",
+      "surprise_bucket": "10-12%",
+      "vix_regime": "elevated_20-25",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 6.41
+    },
+    {
+      "cols": [
+        "weekday",
+        "surprise_bucket",
+        "beta_bucket"
+      ],
+      "weekday": "Thursday",
+      "surprise_bucket": "12-15%",
+      "beta_bucket": "very_high_1.6+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 11.48
+    },
+    {
+      "cols": [
+        "weekday",
+        "vix_regime",
+        "beta_bucket"
+      ],
+      "weekday": "Thursday",
+      "vix_regime": "elevated_20-25",
+      "beta_bucket": "very_high_1.6+",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 9.37
+    },
+    {
+      "cols": [
+        "weekday",
+        "vix_regime",
+        "beta_bucket"
+      ],
+      "weekday": "Friday",
+      "vix_regime": "elevated_20-25",
+      "beta_bucket": "high_1.2-1.6",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 5.63
+    },
+    {
+      "cols": [
+        "weekday",
+        "vix_regime",
+        "pre_trend_bucket"
+      ],
+      "weekday": "Friday",
+      "vix_regime": "elevated_20-25",
+      "pre_trend_bucket": "strong_down_<-10%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 6.84
+    },
+    {
+      "cols": [
+        "weekday",
+        "vix_regime",
+        "pre_trend_bucket"
+      ],
+      "weekday": "Wednesday",
+      "vix_regime": "elevated_20-25",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 6.41
+    },
+    {
+      "cols": [
+        "year",
+        "analyst_bucket",
+        "vix_regime"
+      ],
+      "year": 2025,
+      "analyst_bucket": "21-30",
+      "vix_regime": "elevated_20-25",
+      "n": 5,
+      "wr": 100.0,
+      "avg_pnl": 6.04
+    },
+    {
+      "cols": [
+        "year",
+        "analyst_bucket",
+        "vix_regime"
+      ],
+      "year": 2025,
+      "analyst_bucket": "16-20",
+      "vix_regime": "elevated_20-25",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 4.23
+    },
+    {
+      "cols": [
+        "year",
+        "analyst_bucket",
+        "pre_trend_bucket"
+      ],
+      "year": 2025,
+      "analyst_bucket": "16-20",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 4.23
+    },
+    {
+      "cols": [
+        "year",
+        "surprise_bucket",
+        "vix_regime"
+      ],
+      "year": 2025,
+      "surprise_bucket": "10-12%",
+      "vix_regime": "elevated_20-25",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 5.56
+    },
+    {
+      "cols": [
+        "year",
+        "surprise_bucket",
+        "beta_bucket"
+      ],
+      "year": 2025,
+      "surprise_bucket": "10-12%",
+      "beta_bucket": "high_1.2-1.6",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 6.63
+    },
+    {
+      "cols": [
+        "year",
+        "surprise_bucket",
+        "pre_trend_bucket"
+      ],
+      "year": 2025,
+      "surprise_bucket": "12-15%",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 7.63
+    },
+    {
+      "cols": [
+        "year",
+        "surprise_bucket",
+        "pre_trend_bucket"
+      ],
+      "year": 2025,
+      "surprise_bucket": "10-12%",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 6.41
+    },
+    {
+      "cols": [
+        "year",
+        "vix_regime",
+        "beta_bucket"
+      ],
+      "year": 2025,
+      "vix_regime": "elevated_20-25",
+      "beta_bucket": "normal_0.8-1.2",
+      "n": 4,
+      "wr": 100.0,
+      "avg_pnl": 8.52
+    },
+    {
+      "cols": [
+        "year",
+        "vix_regime",
+        "pre_trend_bucket"
+      ],
+      "year": 2025,
+      "vix_regime": "elevated_20-25",
+      "pre_trend_bucket": "up_+3_to_+10%",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 7.82
+    },
+    {
+      "cols": [
+        "year",
+        "vix_regime",
+        "pre_trend_bucket"
+      ],
+      "year": 2025,
+      "vix_regime": "elevated_20-25",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 7.02
+    },
+    {
+      "cols": [
+        "analyst_bucket",
+        "surprise_bucket",
+        "vix_regime"
+      ],
+      "analyst_bucket": "6-10",
+      "surprise_bucket": "12-15%",
+      "vix_regime": "elevated_20-25",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 11.52
+    },
+    {
+      "cols": [
+        "analyst_bucket",
+        "surprise_bucket",
+        "vix_regime"
+      ],
+      "analyst_bucket": "21-30",
+      "surprise_bucket": "10-12%",
+      "vix_regime": "elevated_20-25",
+      "n": 5,
+      "wr": 100.0,
+      "avg_pnl": 6.92
+    },
+    {
+      "cols": [
+        "analyst_bucket",
+        "surprise_bucket",
+        "beta_bucket"
+      ],
+      "analyst_bucket": "6-10",
+      "surprise_bucket": "12-15%",
+      "beta_bucket": "normal_0.8-1.2",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 11.52
+    },
+    {
+      "cols": [
+        "analyst_bucket",
+        "surprise_bucket",
+        "beta_bucket"
+      ],
+      "analyst_bucket": "21-30",
+      "surprise_bucket": "10-12%",
+      "beta_bucket": "high_1.2-1.6",
+      "n": 5,
+      "wr": 100.0,
+      "avg_pnl": 6.92
+    },
+    {
+      "cols": [
+        "analyst_bucket",
+        "vix_regime",
+        "beta_bucket"
+      ],
+      "analyst_bucket": "6-10",
+      "vix_regime": "elevated_20-25",
+      "beta_bucket": "normal_0.8-1.2",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 11.52
+    },
+    {
+      "cols": [
+        "analyst_bucket",
+        "vix_regime",
+        "beta_bucket"
+      ],
+      "analyst_bucket": "21-30",
+      "vix_regime": "elevated_20-25",
+      "beta_bucket": "high_1.2-1.6",
+      "n": 6,
+      "wr": 100.0,
+      "avg_pnl": 6.38
+    },
+    {
+      "cols": [
+        "analyst_bucket",
+        "vix_regime",
+        "pre_trend_bucket"
+      ],
+      "analyst_bucket": "16-20",
+      "vix_regime": "elevated_20-25",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 4.23
+    },
+    {
+      "cols": [
+        "surprise_bucket",
+        "vix_regime",
+        "beta_bucket"
+      ],
+      "surprise_bucket": "12-15%",
+      "vix_regime": "elevated_20-25",
+      "beta_bucket": "normal_0.8-1.2",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 11.52
+    },
+    {
+      "cols": [
+        "surprise_bucket",
+        "vix_regime",
+        "beta_bucket"
+      ],
+      "surprise_bucket": "12-15%",
+      "vix_regime": "elevated_20-25",
+      "beta_bucket": "very_high_1.6+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 11.48
+    },
+    {
+      "cols": [
+        "surprise_bucket",
+        "vix_regime",
+        "beta_bucket"
+      ],
+      "surprise_bucket": "10-12%",
+      "vix_regime": "elevated_20-25",
+      "beta_bucket": "high_1.2-1.6",
+      "n": 5,
+      "wr": 100.0,
+      "avg_pnl": 6.92
+    },
+    {
+      "cols": [
+        "surprise_bucket",
+        "vix_regime",
+        "pre_trend_bucket"
+      ],
+      "surprise_bucket": "12-15%",
+      "vix_regime": "elevated_20-25",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 7.63
+    },
+    {
+      "cols": [
+        "surprise_bucket",
+        "vix_regime",
+        "pre_trend_bucket"
+      ],
+      "surprise_bucket": "10-12%",
+      "vix_regime": "elevated_20-25",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 6.41
+    },
+    {
+      "cols": [
+        "surprise_bucket",
+        "beta_bucket",
+        "pre_trend_bucket"
+      ],
+      "surprise_bucket": "10-12%",
+      "beta_bucket": "high_1.2-1.6",
+      "pre_trend_bucket": "strong_up_+10%+",
+      "n": 3,
+      "wr": 100.0,
+      "avg_pnl": 5.35
+    }
+  ]
+}
