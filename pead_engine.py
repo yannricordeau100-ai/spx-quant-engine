@@ -700,22 +700,32 @@ def daily_scan(dry_run: bool = False) -> dict:
     uni_set = set(uni["ticker"])
     today = datetime.now()
 
-    # Earnings dans la fenêtre ±3 jours
-    window_start = (today - timedelta(days=3)).strftime("%Y-%m-%d")
-    window_end = (today + timedelta(days=3)).strftime("%Y-%m-%d")
-    cal = fetch_earnings_range(window_start, window_end)
-    cal = cal[cal["symbol"].isin(uni_set)].copy()
-
-    # Enrichi timing via Nasdaq (un call par date unique)
-    dates_unique = sorted(cal["date"].unique())
+    # Earnings dans la fenêtre ±3 jours — source primaire Nasdaq (pas de quota).
+    # FMP en fallback si Nasdaq down.
+    dates_window = [(today + timedelta(days=d)).strftime("%Y-%m-%d")
+                    for d in range(-3, 4)]
+    cal_rows = []
     timing_cache = {}
-    for dt in dates_unique:
+    for dt in dates_window:
         try:
             t = fetch_nasdaq_timing(dt)
+            if t.empty:
+                continue
             for _, r in t.iterrows():
-                timing_cache[(r["symbol"], dt)] = r["timing"]
-        except Exception:
-            pass
+                if r["symbol"] in uni_set:
+                    cal_rows.append({"symbol": r["symbol"], "date": dt})
+                    timing_cache[(r["symbol"], dt)] = r["timing"]
+        except Exception as e:
+            print(f"[daily_scan] nasdaq {dt} skip: {e}")
+            # Fallback FMP si Nasdaq échoue (ex: captcha)
+            try:
+                fmp_sub = fetch_earnings_range(dt, dt)
+                for _, r in fmp_sub.iterrows():
+                    if r["symbol"] in uni_set:
+                        cal_rows.append({"symbol": r["symbol"], "date": dt})
+            except Exception:
+                pass
+    cal = pd.DataFrame(cal_rows) if cal_rows else pd.DataFrame(columns=["symbol", "date"])
 
     pre_earnings_alerts = []
     signal_alerts = []
