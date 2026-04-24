@@ -65,7 +65,7 @@ except ImportError as _gem_err:
     _GEMINI_AVAILABLE = False
     print(f"[cloud_llm] non dispo: {_gem_err}", flush=True)
 
-VERSION_LOCAL   = "v2.21.3"
+VERSION_LOCAL   = "v2.22.0"
 _MAX_FOLLOWUP_TURNS = 5
 HISTORY_FILE      = BASE_DIR / "data" / "history.json"
 TOKEN_FLAG_FILE   = BASE_DIR / ".token_warning"
@@ -5332,6 +5332,13 @@ div[data-testid="stSlider"] > div > div > div > div > div {
             render_weekly_history(key_prefix="wkhist_applocal")
         except Exception as _e_wh:
             st.error(f"Erreur Historique semaine : {_e_wh}")
+
+    # ── PEAD — Backtest & Scan quotidien (univers Russell 1000 large caps) ─
+    try:
+        from pead_ui import render_pead_tab
+        render_pead_tab()
+    except Exception as _e_pead:
+        st.error(f"Erreur PEAD tab : {_e_pead}")
 
     # ── Affichage du résultat actif ────────────────────────────────────────
     # Priorité 1 : résultat frais stocké au submit (bypasse active_idx)
