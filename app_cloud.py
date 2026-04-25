@@ -4984,6 +4984,13 @@ div[data-testid="stSlider"] > div > div > div > div > div {
                     except Exception as _bbe_err:
                         st.error(f"Erreur {_tk} : {_bbe_err}")
 
+    # ── PEAD — Backtest & Scan quotidien (univers Russell 1000 large caps) ─
+    try:
+        from pead_ui import render_pead_tab
+        render_pead_tab()
+    except Exception as _e_pead:
+        st.error(f"Erreur PEAD tab : {_e_pead}")
+
     with st.form("qform", clear_on_submit=False):
         query = st.text_area(
             "Question", value="", label_visibility="collapsed",
