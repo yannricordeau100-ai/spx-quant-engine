@@ -55,7 +55,7 @@ try:
 except Exception:
     _SPX_PATTERNS_AVAILABLE = False
 
-VERSION_LOCAL   = "v2.21.3"
+VERSION_LOCAL   = "v2.22.0"
 _MAX_FOLLOWUP_TURNS = 5
 HISTORY_FILE      = BASE_DIR / "data" / "history.json"
 TOKEN_FLAG_FILE   = BASE_DIR / ".token_warning"
