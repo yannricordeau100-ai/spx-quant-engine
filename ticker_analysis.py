@@ -73,9 +73,11 @@ def detect_engulfing_strict(df: pd.DataFrame,
         if pattern == "bearish":
             if not (prev["is_green"] and curr["is_red"]):
                 continue
-            if curr["open"] < prev["close"] * 0.999:
+            # Engulfement HAUT strict : open J0 doit dépasser close J-1 d'au moins 0.01
+            if curr["open"] - prev["close"] < 0.01:
                 continue
-            if curr["close"] >= prev["open"]:
+            # Engulfement BAS strict : close J0 doit être sous open J-1 d'au moins 0.01
+            if prev["open"] - curr["close"] < 0.01:
                 continue
             if curr["body"] < prev["body"] * 1.1:
                 continue
@@ -85,9 +87,11 @@ def detect_engulfing_strict(df: pd.DataFrame,
         elif pattern == "bullish":
             if not (prev["is_red"] and curr["is_green"]):
                 continue
-            if curr["open"] > prev["close"] * 1.001:
+            # Engulfement BAS strict : open J0 doit être sous close J-1 d'au moins 0.01
+            if prev["close"] - curr["open"] < 0.01:
                 continue
-            if curr["close"] <= prev["open"]:
+            # Engulfement HAUT strict : close J0 doit dépasser open J-1 d'au moins 0.01
+            if curr["close"] - prev["open"] < 0.01:
                 continue
             if curr["body"] < prev["body"] * 1.1:
                 continue

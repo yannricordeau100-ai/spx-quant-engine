@@ -10,3 +10,9 @@ data/sensitivity_*.json
 *.log
 .DS_Store
 *.zip
+beta2_engulfing/.telegram_*
+beta2_engulfing/.resend_*
+beta2_engulfing/.gmail_*
+beta2_engulfing/.last_successful_scan
+beta2_engulfing/alerts.log
+beta2_engulfing/scanner_std*.log

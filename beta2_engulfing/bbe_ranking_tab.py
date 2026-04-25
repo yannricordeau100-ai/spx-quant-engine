@@ -132,6 +132,11 @@ def render_bbe_ranking(key_prefix: str = "bbe_rank") -> None:
         .apply(lambda s: (s <= threshold_pct).mean() * 100)
         .round(1)
     )
+    # Nb d'échecs (signaux n'ayant PAS atteint le seuil)
+    stats["fails"] = (
+        sig_h.groupby("ticker")[ret_col]
+        .apply(lambda s: int((s > threshold_pct).sum()))
+    )
     stats = stats.reset_index().rename(columns={"ticker": "Ticker"})
     stats = stats.merge(meta, on="Ticker", how="left")
     stats["MktCap"] = stats["MCap_USD"].apply(_fmt_cap)
@@ -152,9 +157,10 @@ def render_bbe_ranking(key_prefix: str = "bbe_rank") -> None:
 
     display = stats[[
         "#", "Ticker", "Company", "Sector", "MktCap",
-        "n_signals", "win_rate_%", "mean_ret_%", "median_ret_%", "worst_%",
+        "n_signals", "fails", "win_rate_%", "mean_ret_%", "median_ret_%", "worst_%",
     ]].rename(columns={
         "n_signals": "N",
+        "fails": "Fails",
         "win_rate_%": "Win rate %",
         "mean_ret_%": "Moy. %",
         "median_ret_%": "Médiane %",
@@ -162,7 +168,8 @@ def render_bbe_ranking(key_prefix: str = "bbe_rank") -> None:
     })
 
     styled = display.style.applymap(_highlight_winrate, subset=["Win rate %"])
-    st.dataframe(styled, use_container_width=True, height=560)
+    # hide_index : supprime la colonne d'index Streamlit (avant #)
+    st.dataframe(styled, use_container_width=True, height=560, hide_index=True)
 
     k1, k2, k3, k4 = st.columns(4)
     k1.metric("Tickers affichés", len(stats))

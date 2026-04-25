@@ -4984,6 +4984,44 @@ div[data-testid="stSlider"] > div > div > div > div > div {
                     except Exception as _bbe_err:
                         st.error(f"Erreur {_tk} : {_bbe_err}")
 
+    # ── BBE Ranking interactif (univers Beta>2) ────────────────────────────
+    with st.expander("📉 BBE Ranking — Univers Beta>2 (164 tickers)", expanded=False):
+        try:
+            import sys as _sys_bbe
+            _bbe_rank_dir = str(BASE_DIR / "beta2_engulfing")
+            if _bbe_rank_dir not in _sys_bbe.path:
+                _sys_bbe.path.insert(0, _bbe_rank_dir)
+            from bbe_ranking_tab import render_bbe_ranking
+            render_bbe_ranking(key_prefix="bbe_rank_appcloud")
+        except FileNotFoundError as _e_bbe:
+            st.error(f"Données BBE manquantes : {_e_bbe}")
+        except Exception as _e_bbe:
+            st.error(f"Erreur chargement BBE ranking : {_e_bbe}")
+
+    # ── Conditions custom (J0 + J+1 ranges) ────────────────────────────────
+    with st.expander("🎯 Conditions custom — variation J0 × J+1 (par ticker)", expanded=False):
+        try:
+            import sys as _sys_cc
+            _cc_dir = str(BASE_DIR / "beta2_engulfing")
+            if _cc_dir not in _sys_cc.path:
+                _sys_cc.path.insert(0, _cc_dir)
+            from conditions_custom_tab import render_conditions_custom
+            render_conditions_custom(key_prefix="ccust_appcloud")
+        except Exception as _e_cc:
+            st.error(f"Erreur chargement Conditions custom : {_e_cc}")
+
+    # ── Historique BBE — cette semaine (45 tickers gardés) ─────────────────
+    with st.expander("📅 Historique BBE — cette semaine (45 tickers gardés)", expanded=False):
+        try:
+            import sys as _sys_wh
+            _wh_dir = str(BASE_DIR / "beta2_engulfing")
+            if _wh_dir not in _sys_wh.path:
+                _sys_wh.path.insert(0, _wh_dir)
+            from weekly_history_tab import render_weekly_history
+            render_weekly_history(key_prefix="wkhist_appcloud")
+        except Exception as _e_wh:
+            st.error(f"Erreur Historique semaine : {_e_wh}")
+
     # ── PEAD — Backtest & Scan quotidien (univers Russell 1000 large caps) ─
     try:
         from pead_ui import render_pead_tab
